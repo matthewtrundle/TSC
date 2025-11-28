@@ -1,26 +1,912 @@
 @import "tailwindcss";
 
+/* =============================================================================
+   PLANODERM DESIGN SYSTEM
+   Inspired by CARBO.tech's premium corporate aesthetic
+   Bold typography, generous whitespace, sophisticated animations
+   ============================================================================= */
+
 :root {
+  /* Primary Brand Colors - Medical Professional */
+  --navy-primary: #1a2f4a;        /* Deep Navy - Authority */
+  --navy-light: #2c4a6e;
+  --navy-dark: #0f1c2e;
+
+  /* Accent Colors - The "Red" equivalent for medical: Teal */
+  --teal-accent: #2d9cca;         /* Vibrant Teal - Action, CTA */
+  --teal-light: #5bb8d9;
+  --teal-dark: #1f7a9f;
+
+  /* Supporting Colors */
+  --cream: #fafbfc;               /* Near-white for sections */
+  --gold: #d4a853;                /* Excellence accents */
+
+  /* Neutrals - CARBO-inspired dark/light contrast */
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* Background & Foreground */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+
+  /* Shadows - Dramatic multi-layer system */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-dramatic: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+  --shadow-glow-teal: 0 0 40px rgba(45, 156, 202, 0.3);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =============================================================================
+   BASE STYLES & TYPOGRAPHY
+   CARBO-inspired: Modern sans-serif, huge headings, clear hierarchy
+   ============================================================================= */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Typography Scale - CARBO-inspired huge headings */
+.text-hero {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Hero Title - Line 1 (Polished) */
+.text-hero-primary {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--navy-primary);
+}
+
+/* Hero Title - Line 2 (Accent - Polished) */
+.text-hero-accent {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  color: var(--teal-accent);
+  margin-top: 0.1em;
+}
+
+.text-display {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.text-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.text-subheading {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.text-body-lg {
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+  line-height: 1.7;
+}
+
+/* Metric Numbers - CARBO-style huge stats */
+.text-metric {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.text-metric-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-500);
+}
+
+/* =============================================================================
+   BUTTONS - CARBO-inspired with arrows and bold styling
+   ============================================================================= */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--navy-primary);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background: var(--navy-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-teal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--teal-accent);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-teal:hover {
+  background: var(--teal-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow-teal);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: transparent;
+  color: var(--navy-primary);
+  border: 2px solid var(--navy-primary);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover {
+  background: var(--navy-primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* =============================================================================
+   HERO SECTION BUTTONS - Premium Polish
+   ============================================================================= */
+
+/* Hero Primary CTA - Appointment (Should be PRIMARY visual weight) */
+.btn-hero-appointment {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  background: var(--navy-primary);
+  color: white;
+  padding: 0.9375rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  box-shadow: 0 4px 14px rgba(26, 47, 74, 0.25);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-hero-appointment:hover {
+  background: var(--navy-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 47, 74, 0.3);
+}
+
+.btn-hero-appointment:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(26, 47, 74, 0.25);
+}
+
+/* Hero Secondary CTA - Phone (Lower visual weight) */
+.btn-hero-phone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  background: transparent;
+  color: var(--navy-primary);
+  border: 1.5px solid var(--gray-300);
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-hero-phone:hover {
+  border-color: var(--navy-primary);
+  background: var(--navy-primary);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(26, 47, 74, 0.15);
+}
+
+/* =============================================================================
+   HERO IMAGE & STAT CARDS - Premium Polish
+   ============================================================================= */
+
+/* Hero Image Container */
+.hero-image-wrapper {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow:
+    0 25px 50px -12px rgba(26, 47, 74, 0.2),
+    0 12px 24px -8px rgba(26, 47, 74, 0.1);
+}
+
+/* Ambient Glow Behind Image */
+.hero-image-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(45, 156, 202, 0.15) 0%,
+    transparent 70%
+  );
+  z-index: -1;
+  filter: blur(40px);
+}
+
+/* 99% Cure Rate Card */
+.stat-card-cure {
+  position: absolute;
+  bottom: -1.5rem;
+  left: -1.5rem;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow:
+    0 20px 40px -8px rgba(26, 47, 74, 0.15),
+    0 8px 16px -4px rgba(26, 47, 74, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.stat-card-cure .stat-number {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--navy-primary);
+}
+
+.stat-card-cure .stat-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  margin-top: 0.25rem;
+  letter-spacing: 0.01em;
+}
+
+/* 3 Expert Surgeons Badge */
+.stat-card-surgeons {
+  position: absolute;
+  top: 1rem;
+  right: -0.75rem;
+  background: var(--navy-primary);
+  color: white;
+  border-radius: 0.875rem;
+  padding: 1rem 1.25rem;
+  box-shadow:
+    0 12px 24px -4px rgba(26, 47, 74, 0.3),
+    0 4px 8px -2px rgba(26, 47, 74, 0.15);
+}
+
+.stat-card-surgeons .stat-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-card-surgeons .stat-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-top: 0.125rem;
+}
+
+/* =============================================================================
+   HERO BACKGROUND ELEMENTS
+   ============================================================================= */
+
+/* Hero Background */
+.hero-bg {
+  position: relative;
+  background: linear-gradient(
+    165deg,
+    #ffffff 0%,
+    #f8fafb 25%,
+    #f4f7f9 50%,
+    rgba(45, 156, 202, 0.03) 100%
+  );
+}
+
+/* Refined Diagonal Pattern for Hero */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    transparent,
+    transparent 60px,
+    rgba(45, 156, 202, 0.025) 60px,
+    rgba(45, 156, 202, 0.025) 61px
+  );
+  pointer-events: none;
+}
+
+/* Accent Orb - Top Right */
+.hero-orb {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+.hero-orb-1 {
+  top: 5%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(45, 156, 202, 0.08) 0%,
+    transparent 70%
+  );
+  filter: blur(60px);
+}
+
+/* Accent Orb - Bottom Left */
+.hero-orb-2 {
+  bottom: 10%;
+  left: 5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(26, 47, 74, 0.04) 0%,
+    transparent 70%
+  );
+  filter: blur(50px);
+}
+
+/* =============================================================================
+   TRUST INDICATORS - Polished
+   ============================================================================= */
+
+/* Trust Indicators Container */
+.trust-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+/* Individual Trust Item */
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.trust-item .icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--teal-accent);
+  flex-shrink: 0;
+}
+
+.trust-item .text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  letter-spacing: 0.01em;
+}
+
+/* White button on dark backgrounds */
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--white);
+  color: var(--navy-primary);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-white:hover {
+  background: var(--gray-100);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* =============================================================================
+   SECTION STYLES
+   ============================================================================= */
+
+.section-padding {
+  padding: 6rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 8rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 10rem 2rem;
+  }
+}
+
+/* =============================================================================
+   CARD STYLES - Clean, minimal with subtle shadows
+   ============================================================================= */
+
+.card {
+  background: var(--white);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card-bordered {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-bordered:hover {
+  border-color: var(--teal-accent);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-premium {
+  background: var(--white);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+}
+
+.card-premium:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-2xl);
+}
+
+/* =============================================================================
+   DIAGONAL STRIPE BACKGROUNDS - CARBO footer style
+   ============================================================================= */
+
+.bg-diagonal-lines {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(45, 156, 202, 0.03) 40px,
+    rgba(45, 156, 202, 0.03) 80px
+  );
+}
+
+.bg-diagonal-lines-dark {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(45, 156, 202, 0.08) 40px,
+    rgba(45, 156, 202, 0.08) 80px
+  );
+}
+
+/* =============================================================================
+   ANIMATIONS - Scroll-triggered, smooth, professional
+   ============================================================================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+
+/* =============================================================================
+   PARALLAX & SCROLL EFFECTS
+   ============================================================================= */
+
+.parallax-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  inset: -20%;
+  width: 140%;
+  height: 140%;
+  will-change: transform;
+}
+
+/* Scroll reveal - works with IntersectionObserver */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============================================================================
+   GRADIENT BACKGROUNDS
+   ============================================================================= */
+
+.gradient-navy {
+  background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-dark) 100%);
+}
+
+.gradient-teal {
+  background: linear-gradient(135deg, var(--teal-accent) 0%, var(--teal-dark) 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(
+    180deg,
+    var(--white) 0%,
+    var(--gray-50) 100%
+  );
+}
+
+.gradient-section {
+  background: linear-gradient(
+    180deg,
+    var(--gray-50) 0%,
+    var(--white) 50%,
+    var(--gray-50) 100%
+  );
+}
+
+/* =============================================================================
+   ACCENT ELEMENTS
+   ============================================================================= */
+
+.accent-line {
+  width: 4rem;
+  height: 4px;
+  background: var(--teal-accent);
+  border-radius: 2px;
+}
+
+.accent-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--teal-accent);
+  border-radius: 50%;
+}
+
+/* Highlight text with accent */
+.text-highlight {
+  color: var(--teal-accent);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--navy-primary) 0%, var(--teal-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =============================================================================
+   PILL TAGS - CARBO style
+   ============================================================================= */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--gray-100);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  transition: all 0.2s ease;
+}
+
+.pill:hover {
+  background: var(--teal-accent);
+  color: var(--white);
+}
+
+.pill-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--gray-300);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.pill-outline:hover {
+  border-color: var(--teal-accent);
+  color: var(--teal-accent);
+}
+
+/* =============================================================================
+   IMAGE EFFECTS
+   ============================================================================= */
+
+.image-zoom {
+  overflow: hidden;
+}
+
+.image-zoom img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-zoom:hover img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: relative;
+}
+
+.image-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.7) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* =============================================================================
+   DARK SECTION STYLES
+   ============================================================================= */
+
+.section-dark {
+  background: var(--navy-primary);
+  color: var(--white);
+}
+
+.section-dark .text-muted {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* =============================================================================
+   SCROLL INDICATOR
+   ============================================================================= */
+
+.scroll-indicator {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 48px;
+  height: 48px;
+  background: var(--teal-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+  z-index: 40;
+}
+
+.scroll-indicator:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-xl), var(--shadow-glow-teal);
+}
+
+/* =============================================================================
+   FOCUS STATES - Accessibility
+   ============================================================================= */
+
+*:focus-visible {
+  outline: 2px solid var(--teal-accent);
+  outline-offset: 2px;
+}
+
+/* =============================================================================
+   RESPONSIVE UTILITIES
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* =============================================================================
+   REDUCED MOTION
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
