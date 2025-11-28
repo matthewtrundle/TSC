@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig, doctors, services, mohsProcess, values, skinCancerTypes, faqs } from "@/lib/data/siteData";
-import { Phone, MapPin, Clock, ChevronRight, CheckCircle, Award, GraduationCap, Target, Heart, ChevronDown, Shield, Sparkles, Users } from "lucide-react";
+import { Phone, MapPin, Clock, ChevronRight, CheckCircle, Award, GraduationCap, Target, Heart, ChevronDown, Shield, Sparkles, Users, Calendar, MessageCircle, Navigation, Star } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
@@ -63,19 +63,60 @@ export default function Home() {
                 with the highest cure rates in dermatologic surgery.
               </p>
 
-              {/* CTA Buttons - Swapped order for proper hierarchy */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                <Link href="/contact" className="btn-hero-appointment group">
-                  Request Appointment
-                  <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              {/* Mobile App-Style Action Buttons */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-10">
+                {/* Book Appointment - Primary */}
+                <Link href="/contact" className="app-btn app-btn-primary group">
+                  <div className="app-btn-icon">
+                    <Calendar className="w-6 h-6" />
+                  </div>
+                  <span className="app-btn-label">Book Now</span>
                 </Link>
-                <a
-                  href={`tel:${siteConfig.contact.phoneRaw}`}
-                  className="btn-hero-phone group"
-                >
-                  <Phone className="w-4 h-4 transition-transform group-hover:scale-110" />
-                  {siteConfig.contact.phone}
+
+                {/* Call Us */}
+                <a href={`tel:${siteConfig.contact.phoneRaw}`} className="app-btn app-btn-secondary group">
+                  <div className="app-btn-icon">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <span className="app-btn-label">Call Us</span>
                 </a>
+
+                {/* Get Directions */}
+                <a
+                  href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.address.full)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="app-btn app-btn-secondary group"
+                >
+                  <div className="app-btn-icon">
+                    <Navigation className="w-6 h-6" />
+                  </div>
+                  <span className="app-btn-label">Directions</span>
+                </a>
+
+                {/* Message/Contact */}
+                <Link href="/contact" className="app-btn app-btn-secondary group">
+                  <div className="app-btn-icon">
+                    <MessageCircle className="w-6 h-6" />
+                  </div>
+                  <span className="app-btn-label">Message</span>
+                </Link>
+              </div>
+
+              {/* Quick Info Pills - App Style */}
+              <div className="flex flex-wrap gap-2 mt-6">
+                <div className="app-pill">
+                  <Star className="w-4 h-4 text-yellow-500" />
+                  <span>5.0 Rating</span>
+                </div>
+                <div className="app-pill">
+                  <Clock className="w-4 h-4 text-[var(--teal-accent)]" />
+                  <span>Same-Day Appointments</span>
+                </div>
+                <div className="app-pill">
+                  <Shield className="w-4 h-4 text-green-500" />
+                  <span>Insurance Accepted</span>
+                </div>
               </div>
 
               {/* Trust Indicators with border separator */}
