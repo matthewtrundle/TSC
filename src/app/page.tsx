@@ -422,79 +422,133 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 bg-section-warm">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="text-eyebrow text-[var(--teal-accent)] mb-4">Got Questions?</p>
-            <h2 className="text-display mb-6">Frequently Asked Questions</h2>
-          </div>
+      {/* FAQ Section - Premium Design */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        {/* Subtle background decoration */}
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--teal-accent)]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[var(--coral-soft)]/5 rounded-full blur-3xl" />
 
-          <div className="space-y-4">
-            {faqs.slice(0, 5).map((faq, index) => (
-              <div key={index} className="bg-white rounded-xl overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4"
-                >
-                  <span className="font-semibold text-[var(--navy-primary)]">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-[var(--warm-gray)] transition-transform ${
-                      openFaq === index ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {openFaq === index && (
-                  <div className="px-6 pb-5 text-[var(--warm-gray)]">
-                    {faq.answer}
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-5 gap-12 items-start">
+            {/* Left Column - Header & Contact */}
+            <div className="lg:col-span-2 lg:sticky lg:top-32">
+              <FadeIn>
+                <p className="text-eyebrow text-[var(--teal-accent)] mb-4">Got Questions?</p>
+                <h2 className="text-display mb-6">Frequently Asked Questions</h2>
+                <p className="text-[var(--warm-gray)] mb-8 leading-relaxed">
+                  Find answers to common questions about Mohs surgery and what to expect during your visit.
+                </p>
+                <div className="bg-gradient-to-br from-[var(--cream)] to-white rounded-2xl p-6 border border-[var(--gray-200)]">
+                  <p className="text-sm text-[var(--navy-primary)] font-medium mb-3">Still have questions?</p>
+                  <a
+                    href={`tel:${siteConfig.contact.phoneRaw}`}
+                    className="flex items-center gap-3 text-[var(--teal-accent)] font-semibold hover:gap-4 transition-all"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-[var(--teal-accent)]/10 flex items-center justify-center">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    {siteConfig.contact.phone}
+                  </a>
+                </div>
+              </FadeIn>
+            </div>
+
+            {/* Right Column - FAQ Accordion */}
+            <div className="lg:col-span-3 space-y-4">
+              {faqs.slice(0, 5).map((faq, index) => (
+                <FadeIn key={index} delay={index * 0.1}>
+                  <div className={`group rounded-2xl border transition-all duration-300 ${
+                    openFaq === index
+                      ? "bg-[var(--navy-primary)] border-[var(--navy-primary)] shadow-lg"
+                      : "bg-white border-[var(--gray-200)] hover:border-[var(--teal-accent)]/30 hover:shadow-md"
+                  }`}>
+                    <button
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="w-full px-6 py-5 text-left flex items-start gap-4"
+                    >
+                      <span className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold transition-colors ${
+                        openFaq === index
+                          ? "bg-[var(--teal-accent)] text-white"
+                          : "bg-[var(--teal-accent)]/10 text-[var(--teal-accent)]"
+                      }`}>
+                        {index + 1}
+                      </span>
+                      <span className={`flex-1 font-semibold transition-colors ${
+                        openFaq === index ? "text-white" : "text-[var(--navy-primary)]"
+                      }`}>
+                        {faq.question}
+                      </span>
+                      <ChevronDown
+                        className={`w-5 h-5 flex-shrink-0 mt-1 transition-all duration-300 ${
+                          openFaq === index ? "rotate-180 text-white" : "text-[var(--warm-gray)]"
+                        }`}
+                      />
+                    </button>
+                    <div className={`overflow-hidden transition-all duration-300 ${
+                      openFaq === index ? "max-h-96" : "max-h-0"
+                    }`}>
+                      <div className="px-6 pb-6 pl-[4.5rem] text-white/80 leading-relaxed">
+                        {faq.answer}
+                      </div>
+                    </div>
                   </div>
-                )}
-              </div>
-            ))}
+                </FadeIn>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-[var(--navy-primary)] relative overflow-hidden">
-        {/* Decorative gradient orbs */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--teal-accent)]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[var(--teal-accent)]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+      {/* CTA Section - Light Background for Contrast */}
+      <section className="py-24 bg-gradient-to-br from-[var(--cream)] via-white to-[var(--teal-accent)]/5 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[var(--teal-accent)]/10 rounded-full blur-3xl -translate-y-1/2" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[var(--coral-soft)]/10 rounded-full blur-3xl translate-y-1/2" />
 
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-display text-white mb-6">
-            Ready to Take the Next Step?
-          </h2>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            Schedule your consultation with one of our board certified Mohs surgeons today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`tel:${siteConfig.contact.phoneRaw}`} className="inline-flex items-center justify-center gap-2 bg-[var(--teal-accent)] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[var(--teal-dark)] transition-colors text-lg">
-              <Phone className="w-5 h-5" />
-              {siteConfig.contact.phone}
-            </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[var(--navy-primary)] transition-colors text-lg"
-            >
-              Contact Us Online
-              <ChevronRight className="w-5 h-5" />
-            </Link>
-          </div>
+        <div className="max-w-5xl mx-auto px-6 relative z-10">
+          <FadeIn>
+            <div className="bg-[var(--navy-primary)] rounded-3xl p-12 lg:p-16 relative overflow-hidden shadow-2xl">
+              {/* Inner decorative orbs */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--teal-accent)]/20 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl" />
 
-          {/* Location Info */}
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-white/70">
-            <div className="flex items-center gap-2">
-              <MapPin className="w-5 h-5" />
-              <span>{siteConfig.contact.address.full}</span>
+              <div className="relative z-10 text-center">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
+                  Ready to Take the Next Step?
+                </h2>
+                <p className="text-lg text-white/80 mb-10 max-w-2xl mx-auto">
+                  Schedule your consultation with one of our board certified Mohs surgeons today.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+                  <a href={`tel:${siteConfig.contact.phoneRaw}`} className="inline-flex items-center justify-center gap-2 bg-[var(--teal-accent)] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[var(--teal-dark)] transition-colors text-lg shadow-lg">
+                    <Phone className="w-5 h-5" />
+                    {siteConfig.contact.phone}
+                  </a>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 bg-white text-[var(--navy-primary)] px-8 py-4 rounded-xl font-semibold hover:bg-[var(--cream)] transition-colors text-lg shadow-lg"
+                  >
+                    Contact Us Online
+                    <ChevronRight className="w-5 h-5" />
+                  </Link>
+                </div>
+
+                {/* Location Info */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/70 text-sm">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4" />
+                    <span>{siteConfig.contact.address.full}</span>
+                  </div>
+                  <div className="hidden sm:block w-1 h-1 rounded-full bg-white/30" />
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4" />
+                    <span>{siteConfig.hours.short}</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5" />
-              <span>{siteConfig.hours.short}</span>
-            </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
     </div>
