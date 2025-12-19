@@ -258,7 +258,7 @@ export default function ServicesPage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors"
             >
-              Contact Us Online
+              Request Appointment
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>

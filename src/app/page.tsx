@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig, doctors, services, mohsProcess, faqs } from "@/lib/data/siteData";
-import { Phone, MapPin, Clock, ChevronRight, ChevronDown, Shield, Target, Heart, CheckCircle, Navigation, Calendar, MessageCircle, Microscope, Stethoscope, Scissors, Plus, Star, Award } from "lucide-react";
+import { Phone, MapPin, Clock, ChevronRight, ChevronDown, Shield, Target, Heart, CheckCircle, Navigation, Calendar, MessageCircle, Microscope, Stethoscope, Scissors, Plus, Star, Award, Coffee, BookOpen, Users, Smile } from "lucide-react";
 import { useState } from "react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { MohsStepper } from "@/components/ui/MohsStepper";
@@ -66,7 +66,7 @@ export default function Home() {
                     className="flex flex-col items-center gap-2 bg-[var(--teal-accent)] text-white rounded-xl p-4 hover:bg-[var(--teal-dark)] transition-colors shadow-md"
                   >
                     <Calendar className="w-6 h-6" />
-                    <span className="text-xs font-semibold">Book Now</span>
+                    <span className="text-xs font-semibold">Request</span>
                   </Link>
                   <a
                     href={`tel:${siteConfig.contact.phoneRaw}`}
@@ -422,6 +422,75 @@ export default function Home() {
         </div>
       </section>
 
+      {/* What to Expect - Emotional Reassurance Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-[var(--cream)]/30">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
+            <div className="text-center mb-12">
+              <p className="text-eyebrow text-[var(--teal-accent)] mb-4">Your Comfort Matters</p>
+              <h2 className="text-display mb-4">What to Expect on Surgery Day</h2>
+              <p className="text-[var(--warm-gray)] max-w-2xl mx-auto">
+                We understand that facing skin cancer surgery can feel overwhelming. Here&apos;s what your day will look like—no surprises, just calm, expert care.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Coffee,
+                time: "Morning",
+                title: "Arrive & Settle In",
+                description: "Enjoy a comfortable waiting area. Bring a book or magazine—we'll take good care of you."
+              },
+              {
+                icon: Users,
+                time: "Check-In",
+                title: "Meet Your Team",
+                description: "Your surgeon and care team will explain each step and answer any last questions."
+              },
+              {
+                icon: Shield,
+                time: "During",
+                title: "You're in Expert Hands",
+                description: "Local anesthesia keeps you comfortable. Most patients feel relaxed and at ease."
+              },
+              {
+                icon: Smile,
+                time: "After",
+                title: "Go Home Same Day",
+                description: "Clear aftercare instructions, our number for questions, and follow-up scheduled."
+              }
+            ].map((step, index) => (
+              <FadeIn key={step.title} delay={index * 0.1}>
+                <div className="bg-white rounded-2xl p-6 shadow-sm border border-[var(--gray-200)] hover:shadow-md transition-shadow h-full">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-[var(--teal-accent)]/10 flex items-center justify-center">
+                      <step.icon className="w-6 h-6 text-[var(--teal-accent)]" />
+                    </div>
+                    <span className="text-xs font-semibold text-[var(--teal-accent)] uppercase tracking-wide">{step.time}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-[var(--navy-primary)] mb-2">{step.title}</h3>
+                  <p className="text-sm text-[var(--warm-gray)] leading-relaxed">{step.description}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.4}>
+            <div className="mt-10 text-center">
+              <p className="text-[var(--warm-gray)] mb-4">
+                Most procedures are completed by midday. You&apos;ll know your cancer is gone before you leave.
+              </p>
+              <Link href="/services#mohs-surgery" className="text-[var(--teal-accent)] font-semibold hover:underline inline-flex items-center gap-1">
+                Learn more about the Mohs process
+                <ChevronRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* FAQ Section - Premium Design */}
       <section className="py-24 bg-white relative overflow-hidden">
         {/* Subtle background decoration */}
@@ -529,7 +598,7 @@ export default function Home() {
                     href="/contact"
                     className="inline-flex items-center justify-center gap-2 bg-white text-[var(--navy-primary)] px-8 py-4 rounded-xl font-semibold hover:bg-[var(--cream)] transition-colors text-lg shadow-lg"
                   >
-                    Contact Us Online
+                    Request Appointment
                     <ChevronRight className="w-5 h-5" />
                   </Link>
                 </div>
