@@ -55,7 +55,7 @@ export default function ServicesPage() {
           <FadeIn>
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-[var(--teal-accent)] text-eyebrow mb-4">Comprehensive Care</p>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'var(--font-serif)' }}>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6" style={{ fontFamily: 'var(--font-serif)', color: 'white' }}>
                 Expert Skin Cancer Treatment
               </h1>
               <div className="w-20 h-1 bg-gradient-to-r from-[var(--teal-accent)] to-[var(--coral-soft)] mx-auto mb-6 rounded-full" />
@@ -234,7 +234,7 @@ export default function ServicesPage() {
           <FadeIn>
             <div className="text-center mb-12 lg:mb-16">
               <p className="text-[var(--teal-accent)] text-eyebrow mb-4">Expert Treatment</p>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-serif)', color: 'white' }}>
                 Skin Cancers We Treat
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-[var(--teal-accent)] to-[var(--coral-soft)] mx-auto mb-6 rounded-full" />
@@ -477,7 +477,7 @@ export default function ServicesPage() {
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl" />
 
               <div className="relative z-10 text-center">
-                <h2 className="text-2xl lg:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
+                <h2 className="text-2xl lg:text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-serif)', color: 'white' }}>
                   Questions About Our Services?
                 </h2>
                 <p className="text-base lg:text-lg text-white/80 mb-8 lg:mb-10 max-w-2xl mx-auto">

@@ -33,16 +33,17 @@ export default function PracticePage() {
                 </h1>
 
                 <p className="text-lg lg:text-xl text-[var(--warm-gray)] mb-8 leading-relaxed">
-                  Three board certified Mohs surgeons and our dedicated support team
-                  providing exceptional skin cancer care in Plano, Texas.
+                  Our highly trained and compassionate team is dedicated to providing
+                  personalized care in a warm, supportive environment where your
+                  comfort and wellbeing come first.
                 </p>
 
                 {/* Stats row */}
                 <div className="flex flex-wrap gap-4 mb-10">
                   {[
-                    { value: "3", label: "Surgeons" },
-                    { value: "30+", label: "Years Exp." },
-                    { value: "99%", label: "Cure Rate" }
+                    { value: "20+", label: "Team Members" },
+                    { value: "5-Star", label: "Patient Care" },
+                    { value: "100%", label: "Dedicated" }
                   ].map((stat) => (
                     <div key={stat.label} className="bg-white/80 backdrop-blur-sm border border-[var(--gray-200)] rounded-xl px-5 py-3 shadow-sm">
                       <div className="text-2xl font-bold text-[var(--navy-primary)]" style={{ fontFamily: 'var(--font-serif)' }}>{stat.value}</div>
