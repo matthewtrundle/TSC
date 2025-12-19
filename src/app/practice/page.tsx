@@ -363,7 +363,7 @@ export default function PracticePage() {
                 <span className="text-sm text-white/90 font-medium">Get Started</span>
               </div>
 
-              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'var(--font-serif)' }}>
+              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'var(--font-serif)', color: 'white' }}>
                 Ready to Schedule Your<br />
                 <span className="text-[var(--teal-accent)]">Consultation?</span>
               </h2>
