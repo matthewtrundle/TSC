@@ -42,9 +42,9 @@ export default function AppointmentPage() {
   };
 
   return (
-    <div className="pt-32">
+    <div className="pt-24 lg:pt-32">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-[var(--cream)]/30 via-white to-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-b from-[var(--cream)]/30 via-white to-white py-12 lg:py-20 overflow-hidden">
         {/* Decorative blobs */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--teal-accent)]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[var(--coral-soft)]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
@@ -57,7 +57,7 @@ export default function AppointmentPage() {
                 Request an Appointment
               </h1>
               <div className="organic-accent-line" />
-              <p className="text-xl text-[var(--warm-gray)] mt-6">
+              <p className="text-base lg:text-xl text-[var(--warm-gray)] mt-6">
                 Take the first step toward expert skin cancer care. Fill out the form below and our team will contact you to confirm your appointment.
               </p>
             </div>
@@ -66,21 +66,21 @@ export default function AppointmentPage() {
       </section>
 
       {/* Quick Info Bar */}
-      <section className="py-8 bg-[var(--navy-primary)]">
+      <section className="py-4 lg:py-8 bg-[var(--navy-primary)]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-white">
-            <div className="flex items-center gap-3">
-              <Phone className="w-5 h-5 text-[var(--teal-accent)]" />
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 lg:gap-8 text-white text-sm lg:text-base">
+            <div className="flex items-center gap-2 lg:gap-3">
+              <Phone className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)]" />
               <span>Call us: <a href={`tel:${siteConfig.contact.phoneRaw}`} className="font-semibold hover:text-[var(--teal-accent)] transition-colors">{siteConfig.contact.phone}</a></span>
             </div>
             <div className="hidden md:block w-1 h-1 rounded-full bg-white/30" />
-            <div className="flex items-center gap-3">
-              <Clock className="w-5 h-5 text-[var(--teal-accent)]" />
+            <div className="flex items-center gap-2 lg:gap-3">
+              <Clock className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)]" />
               <span>{siteConfig.hours.short}</span>
             </div>
             <div className="hidden md:block w-1 h-1 rounded-full bg-white/30" />
-            <div className="flex items-center gap-3">
-              <MapPin className="w-5 h-5 text-[var(--teal-accent)]" />
+            <div className="flex items-center gap-2 lg:gap-3">
+              <MapPin className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)]" />
               <span>Plano, Texas</span>
             </div>
           </div>
@@ -88,35 +88,35 @@ export default function AppointmentPage() {
       </section>
 
       {/* Appointment Form Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-5 gap-16">
+      <section className="py-12 lg:py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 lg:px-6">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-16">
             {/* Left - Form (3 cols) */}
-            <FadeIn className="lg:col-span-3">
-              <div className="bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-10 border border-[var(--gray-200)] shadow-lg">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--teal-accent)]/15 to-[var(--teal-accent)]/5 flex items-center justify-center">
-                    <Calendar className="w-7 h-7 text-[var(--teal-accent)]" />
+            <FadeIn className="lg:col-span-3 order-2 lg:order-1">
+              <div className="bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-6 lg:p-10 border border-[var(--gray-200)] shadow-lg">
+                <div className="flex items-center gap-3 lg:gap-4 mb-6 lg:mb-8">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl bg-gradient-to-br from-[var(--teal-accent)]/15 to-[var(--teal-accent)]/5 flex items-center justify-center flex-shrink-0">
+                    <Calendar className="w-6 h-6 lg:w-7 lg:h-7 text-[var(--teal-accent)]" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-[var(--navy-primary)]" style={{ fontFamily: 'var(--font-serif)' }}>
+                    <h2 className="text-xl lg:text-2xl font-bold text-[var(--navy-primary)]" style={{ fontFamily: 'var(--font-serif)' }}>
                       Appointment Request Form
                     </h2>
-                    <p className="text-[var(--warm-gray)] text-sm">
+                    <p className="text-[var(--warm-gray)] text-xs lg:text-sm">
                       Fields marked with * are required
                     </p>
                   </div>
                 </div>
 
                 {isSubmitted ? (
-                  <div className="text-center py-16">
-                    <div className="w-24 h-24 mx-auto mb-8 rounded-3xl bg-green-100 flex items-center justify-center">
-                      <CheckCircle className="w-12 h-12 text-green-600" />
+                  <div className="text-center py-10 lg:py-16">
+                    <div className="w-20 h-20 lg:w-24 lg:h-24 mx-auto mb-6 lg:mb-8 rounded-2xl lg:rounded-3xl bg-green-100 flex items-center justify-center">
+                      <CheckCircle className="w-10 h-10 lg:w-12 lg:h-12 text-green-600" />
                     </div>
-                    <h3 className="text-3xl font-semibold text-[var(--navy-primary)] mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
+                    <h3 className="text-2xl lg:text-3xl font-semibold text-[var(--navy-primary)] mb-3 lg:mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
                       Request Received!
                     </h3>
-                    <p className="text-[var(--warm-gray)] text-lg mb-8 max-w-md mx-auto">
+                    <p className="text-[var(--warm-gray)] text-base lg:text-lg mb-6 lg:mb-8 max-w-md mx-auto">
                       Thank you for your appointment request. Our team will call you within 1 business day to confirm your appointment.
                     </p>
                     <Link
@@ -128,9 +128,9 @@ export default function AppointmentPage() {
                     </Link>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-5 lg:space-y-6">
                     {/* Name Row */}
-                    <div className="grid md:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
                       <div>
                         <label
                           htmlFor="firstName"
@@ -173,7 +173,7 @@ export default function AppointmentPage() {
                     </div>
 
                     {/* Contact Row */}
-                    <div className="grid md:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
                       <div>
                         <label
                           htmlFor="email"
@@ -243,7 +243,7 @@ export default function AppointmentPage() {
                     </div>
 
                     {/* Date/Time Preference Row */}
-                    <div className="grid md:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
                       <div>
                         <label
                           htmlFor="preferredDate"
@@ -354,93 +354,97 @@ export default function AppointmentPage() {
             </FadeIn>
 
             {/* Right - Info Cards (2 cols) */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-4 lg:space-y-6 order-1 lg:order-2">
+              {/* Mobile: Show call CTA first */}
               <FadeIn delay={0.1}>
-                <div className="bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-8 border border-[var(--gray-200)]">
-                  <h3 className="font-semibold text-[var(--navy-primary)] text-lg mb-4">What to Expect</h3>
-                  <ul className="space-y-3 text-[var(--warm-gray)]">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
+                <div className="bg-gradient-to-br from-[var(--navy-primary)] to-[var(--navy-dark)] rounded-2xl p-6 lg:p-8 text-white">
+                  <h3 className="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Need Immediate Assistance?</h3>
+                  <p className="text-white/80 mb-4 lg:mb-6 text-sm lg:text-base">
+                    Call us directly to speak with our scheduling team.
+                  </p>
+                  <a
+                    href={`tel:${siteConfig.contact.phoneRaw}`}
+                    className="inline-flex items-center gap-2 bg-white text-[var(--navy-primary)] px-5 lg:px-6 py-2.5 lg:py-3 rounded-xl font-semibold hover:bg-[var(--cream)] transition-colors text-sm lg:text-base"
+                  >
+                    <Phone className="w-4 h-4 lg:w-5 lg:h-5" />
+                    {siteConfig.contact.phone}
+                  </a>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.15}>
+                <div className="bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-6 lg:p-8 border border-[var(--gray-200)]">
+                  <h3 className="font-semibold text-[var(--navy-primary)] text-base lg:text-lg mb-3 lg:mb-4">What to Expect</h3>
+                  <ul className="space-y-2.5 lg:space-y-3 text-[var(--warm-gray)] text-sm lg:text-base">
+                    <li className="flex items-start gap-2.5 lg:gap-3">
+                      <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
                       <span>Our team will call you within 1 business day</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
+                    <li className="flex items-start gap-2.5 lg:gap-3">
+                      <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
                       <span>We&apos;ll verify your insurance coverage</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
+                    <li className="flex items-start gap-2.5 lg:gap-3">
+                      <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
                       <span>New patient forms sent via email</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
+                    <li className="flex items-start gap-2.5 lg:gap-3">
+                      <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
                       <span>Appointment confirmation by phone or text</span>
                     </li>
                   </ul>
                 </div>
               </FadeIn>
 
-              <FadeIn delay={0.2}>
-                <div className="bg-gradient-to-br from-[var(--navy-primary)] to-[var(--navy-dark)] rounded-2xl p-8 text-white">
-                  <h3 className="font-semibold text-lg mb-4">Need Immediate Assistance?</h3>
-                  <p className="text-white/80 mb-6">
-                    Call us directly to speak with our scheduling team.
-                  </p>
-                  <a
-                    href={`tel:${siteConfig.contact.phoneRaw}`}
-                    className="inline-flex items-center gap-2 bg-white text-[var(--navy-primary)] px-6 py-3 rounded-xl font-semibold hover:bg-[var(--cream)] transition-colors"
-                  >
-                    <Phone className="w-5 h-5" />
-                    {siteConfig.contact.phone}
-                  </a>
-                </div>
-              </FadeIn>
+              {/* Location & Hours - collapsible on mobile, show condensed */}
+              <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6">
+                <FadeIn delay={0.2}>
+                  <div className="bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-5 lg:p-8 border border-[var(--gray-200)]">
+                    <h3 className="font-semibold text-[var(--navy-primary)] text-sm lg:text-lg mb-2 lg:mb-4">Office Location</h3>
+                    <div className="flex items-start gap-2 lg:gap-3 mb-3 lg:mb-4">
+                      <MapPin className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
+                      <div className="text-[var(--warm-gray)] text-xs lg:text-base">
+                        <p>{siteConfig.contact.address.street}</p>
+                        <p>{siteConfig.contact.address.city}, {siteConfig.contact.address.state} {siteConfig.contact.address.zip}</p>
+                      </div>
+                    </div>
+                    <a
+                      href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.address.full)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--teal-accent)] font-semibold hover:underline inline-flex items-center gap-1 text-xs lg:text-base"
+                    >
+                      Get Directions
+                      <ChevronRight className="w-3 h-3 lg:w-4 lg:h-4" />
+                    </a>
+                  </div>
+                </FadeIn>
 
-              <FadeIn delay={0.3}>
-                <div className="bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-8 border border-[var(--gray-200)]">
-                  <h3 className="font-semibold text-[var(--navy-primary)] text-lg mb-4">Office Location</h3>
-                  <div className="flex items-start gap-3 mb-4">
-                    <MapPin className="w-5 h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
-                    <div className="text-[var(--warm-gray)]">
-                      <p>{siteConfig.contact.address.street}</p>
-                      <p>{siteConfig.contact.address.city}, {siteConfig.contact.address.state} {siteConfig.contact.address.zip}</p>
+                <FadeIn delay={0.25}>
+                  <div className="bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-5 lg:p-8 border border-[var(--gray-200)]">
+                    <h3 className="font-semibold text-[var(--navy-primary)] text-sm lg:text-lg mb-2 lg:mb-4">Office Hours</h3>
+                    <div className="space-y-1.5 lg:space-y-2 text-[var(--warm-gray)]">
+                      {siteConfig.hours.detailed.map((item) => (
+                        <div key={item.day} className="flex justify-between text-xs lg:text-sm">
+                          <span>{item.day}</span>
+                          <span className={item.hours === "Closed" ? "text-[var(--warm-gray)]/50" : "font-medium text-[var(--navy-primary)]"}>
+                            {item.hours}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <a
-                    href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.address.full)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[var(--teal-accent)] font-semibold hover:underline inline-flex items-center gap-1"
-                  >
-                    Get Directions
-                    <ChevronRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.4}>
-                <div className="bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-8 border border-[var(--gray-200)]">
-                  <h3 className="font-semibold text-[var(--navy-primary)] text-lg mb-4">Office Hours</h3>
-                  <div className="space-y-2 text-[var(--warm-gray)]">
-                    {siteConfig.hours.detailed.map((item) => (
-                      <div key={item.day} className="flex justify-between text-sm">
-                        <span>{item.day}</span>
-                        <span className={item.hours === "Closed" ? "text-[var(--warm-gray)]/50" : "font-medium text-[var(--navy-primary)]"}>
-                          {item.hours}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </FadeIn>
+                </FadeIn>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Disclaimer */}
-      <section className="py-10 bg-[var(--cream)]/30 border-t border-[var(--gray-200)]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center text-xs text-[var(--warm-gray)]">
+      <section className="py-6 lg:py-10 bg-[var(--cream)]/30 border-t border-[var(--gray-200)]">
+        <div className="max-w-6xl mx-auto px-4 lg:px-6">
+          <div className="max-w-4xl mx-auto text-center text-[10px] lg:text-xs text-[var(--warm-gray)]">
             <p>
               <strong>DISCLAIMER:</strong> By providing my wireless phone number to The Surgery
               Center at Plano Dermatology, I agree and acknowledge that The Surgery Center at
