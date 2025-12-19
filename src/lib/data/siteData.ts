@@ -57,9 +57,9 @@ export const navigation = {
     { name: "Contact", href: "/contact" },
   ],
   services: [
-    { name: "Mohs Surgery", href: "/services/mohs-surgery" },
-    { name: "Skin Cancer Treatment", href: "/services/skin-cancer" },
-    { name: "Reconstructive Surgery", href: "/services/reconstruction" },
+    { name: "Mohs Surgery", href: "/services#mohs-surgery" },
+    { name: "Skin Cancer Treatment", href: "/services#skin-cancer-treatment" },
+    { name: "Reconstructive Surgery", href: "/services#reconstruction" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy" },
@@ -76,7 +76,7 @@ export const doctors = [
     title: "Board Certified Dermatologist & Mohs Surgeon",
     specialty: "Mohs Surgery & Cutaneous Oncology",
     slug: "dr-gunjan-modi",
-    image: "/images/doctors/dr-modi.jpg",
+    image: "/images/gungon1.png",
     shortBio:
       "Board certified dermatologist and fellowship trained Mohs surgeon with expertise in transplant skin cancer and immunoperoxidase staining techniques.",
     fullBio: `Gunjan Modi is a board certified dermatologist and fellowship trained Mohs surgeon. Originally from Buffalo, New York, he graduated from high school in Sugar Land, Texas. He received his bachelor's degree from the University of Pennsylvania. He went on to medical school at Baylor College of Medicine in Houston, where he graduated with honors.
@@ -102,6 +102,7 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
       "Melanoma treatment",
       "High-risk squamous cell carcinoma",
     ],
+    quote: "Every patient deserves the highest standard of care, and that's what we deliver every day.",
   },
   {
     id: "dr-wells",
@@ -110,7 +111,7 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
     title: "Board Certified Dermatologist & Mohs Surgeon",
     specialty: "Mohs Surgery & Procedural Dermatology",
     slug: "dr-michael-wells",
-    image: "/images/doctors/dr-wells.jpg",
+    image: "/images/Dude3.png",
     shortBio:
       "Former tenured associate professor with over 20 years of experience, specializing in Mohs surgery and dermatologic education.",
     fullBio: `Michael Wells, M.D. began his college career earning a Bachelor of Science degree from the University of Central Arkansas, where he graduated with Alpha Chi honors. He then moved on to complete medical school at the University of Arkansas for Medical Sciences in Little Rock, Arkansas. Here too, Michael Wells, M.D. earned numerous high honors including top pathology and anatomy student, as well as being inducted into the AOA honor society.
@@ -139,6 +140,7 @@ He actively shares his wealth of knowledge and expertise with other healthcare p
       "Texas Medical Association committees",
       "Clinical decision-making resources",
     ],
+    quote: "Education and precision are the foundations of exceptional patient outcomes.",
   },
   {
     id: "dr-parry",
@@ -147,7 +149,7 @@ He actively shares his wealth of knowledge and expertise with other healthcare p
     title: "Board Certified Dermatologist & Mohs Surgeon",
     specialty: "Mohs Surgery & Cutaneous Oncology",
     slug: "dr-edward-parry",
-    image: "/images/doctors/dr-parry.jpg",
+    image: "/images/Dude2.png",
     shortBio:
       "Former LSU professor and fellowship program director with 17 years in academics, having trained hundreds of residents and 15 Mohs surgeons.",
     fullBio: `Ed Parry is a board certified dermatologist and fellowship trained Mohs surgeon. He is a native of upstate New York. He received his bachelor's degree from the United States Air Force Academy in Colorado Springs, Colorado. He then moved to New Orleans and received his medical degree from Tulane University Medical School on a military scholarship.
@@ -176,6 +178,7 @@ Dr. Parry is happily married to Diane, his wife of 37 years. They have three adu
       "Academic dermatology",
       "Cutaneous oncology",
     ],
+    quote: "Training the next generation of surgeons while caring for patients is my greatest privilege.",
   },
 ];
 

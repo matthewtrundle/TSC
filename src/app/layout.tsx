@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -73,6 +74,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} ${cormorant.variable} antialiased`}
       >
+        <ScrollProgress />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

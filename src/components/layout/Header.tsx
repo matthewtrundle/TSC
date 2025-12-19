@@ -1,21 +1,39 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { siteConfig, navigation } from "@/lib/data/siteData";
-import { Phone, ChevronRight } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
+import { Logo } from "@/components/ui/Logo";
 
 export default function Header() {
+  const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const lastScrollY = useRef(0);
   const pathname = usePathname();
 
+  // Disappearing header on scroll + logo shrink
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentY = window.scrollY;
+
+      // Shrink logo after scrolling 50px
+      setIsScrolled(currentY > 50);
+
+      // Show header when scrolling up or at top
+      if (currentY < lastScrollY.current || currentY < 50) {
+        setIsVisible(true);
+      } else if (currentY > 100) {
+        // Hide when scrolling down past 100px
+        setIsVisible(false);
+      }
+
+      lastScrollY.current = currentY;
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -31,163 +49,113 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-white/98 backdrop-blur-md shadow-lg"
-          : "bg-white"
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
+      style={{
+        boxShadow: isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.08)" : "0 1px 0 rgba(0, 0, 0, 0.05)"
+      }}
     >
-      <div className="container mx-auto px-4">
-        {/* Top Bar - Logo only, slides up on scroll */}
-        <div
-          className={`flex items-center justify-center overflow-hidden transition-all duration-500 ease-out ${
-            isScrolled ? "h-0 opacity-0" : "h-14 opacity-100"
-          }`}
-        >
-          <Link href="/" className="flex flex-col items-center group">
-            <span className="text-xl font-bold text-[var(--navy-primary)] transition-colors group-hover:text-[var(--teal-accent)]">
-              The Surgery Center
-            </span>
-            <span className="text-xs text-gray-500 -mt-0.5">
-              at Plano Dermatology
-            </span>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className={`flex items-center justify-between transition-all duration-300 ${
+          isScrolled ? "h-20" : "h-36"
+        }`}>
+          {/* Logo - starts large, shrinks on scroll */}
+          <Link href="/" className="flex items-center">
+            <div className="transition-all duration-300" style={{
+              transform: isScrolled ? "scale(0.6)" : "scale(1)",
+              transformOrigin: "left center"
+            }}>
+              <Logo height={150} />
+            </div>
           </Link>
-        </div>
 
-        {/* Main Nav Bar - Always visible */}
-        <div
-          className={`flex items-center justify-between transition-all duration-500 ${
-            isScrolled ? "h-14" : "h-12 border-t border-gray-100"
-          }`}
-        >
-          {/* Left Side - Logo (only shows when scrolled) */}
-          <div
-            className={`transition-all duration-500 ${
-              isScrolled ? "opacity-100 w-auto" : "opacity-0 w-0 overflow-hidden"
-            }`}
-          >
-            <Link href="/" className="flex items-center gap-2 whitespace-nowrap">
-              <span className="text-lg font-bold text-[var(--navy-primary)]">TSC</span>
-              <span className="hidden sm:inline text-xs text-gray-400">|</span>
-              <span className="hidden sm:inline text-xs text-gray-500">Plano Dermatology</span>
-            </Link>
-          </div>
-
-          {/* Center - Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8">
             {navigation.main.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 rounded-md ${
+                className={`text-sm font-semibold tracking-wide uppercase transition-colors ${
                   isActive(item.href)
-                    ? "text-[var(--teal-accent)]"
-                    : "text-gray-600 hover:text-[var(--navy-primary)] hover:bg-gray-50"
+                    ? "text-[var(--navy-primary)]"
+                    : "text-[var(--warm-gray)] hover:text-[var(--navy-primary)]"
                 }`}
               >
                 {item.name}
-                {isActive(item.href) && (
-                  <span className="absolute bottom-0.5 left-3 right-3 h-0.5 bg-[var(--teal-accent)] rounded-full" />
-                )}
               </Link>
             ))}
           </nav>
 
-          {/* Right Side - Phone & CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* Desktop CTA */}
+          <div className="hidden lg:flex items-center gap-6">
             <a
               href={`tel:${siteConfig.contact.phoneRaw}`}
-              className={`flex items-center gap-2 font-medium transition-all duration-300 ${
-                isScrolled
-                  ? "text-sm text-[var(--navy-primary)]"
-                  : "text-sm text-gray-600"
-              } hover:text-[var(--teal-accent)]`}
+              className="text-sm text-[var(--warm-gray)] hover:text-[var(--navy-primary)] transition-colors"
             >
-              <Phone className="w-4 h-4" />
-              <span className="tabular-nums">{siteConfig.contact.phone}</span>
+              {siteConfig.contact.phone}
             </a>
             <Link
               href="/contact"
-              className={`flex items-center gap-1.5 font-semibold rounded-lg transition-all duration-300 ${
-                isScrolled
-                  ? "bg-[var(--navy-primary)] text-white px-4 py-2 text-sm hover:bg-[var(--navy-dark)] hover:shadow-md"
-                  : "bg-[var(--navy-primary)] text-white px-4 py-2 text-sm hover:bg-[var(--navy-dark)]"
-              }`}
+              className="btn-primary text-sm px-5 py-2.5"
             >
               Request Appointment
-              <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-[var(--navy-primary)] hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-2 text-[var(--navy-primary)]"
             aria-label="Toggle menu"
           >
-            <div className="relative w-5 h-5">
-              <span
-                className={`absolute left-0 top-1 w-5 h-0.5 bg-current transform transition-all duration-300 ${
-                  isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
-                }`}
-              />
-              <span
-                className={`absolute left-0 top-2.5 w-5 h-0.5 bg-current transition-all duration-300 ${
-                  isMobileMenuOpen ? "opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`absolute left-0 top-4 w-5 h-0.5 bg-current transform transition-all duration-300 ${
-                  isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
-                }`}
-              />
-            </div>
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          isMobileMenuOpen ? "max-h-[calc(100vh-5rem)]" : "max-h-0"
-        }`}
-      >
-        <div className="container mx-auto px-4 py-6 bg-white border-t border-gray-100">
-          <nav className="flex flex-col gap-1">
-            {navigation.main.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`flex items-center justify-between py-3 px-4 rounded-lg font-medium transition-colors ${
-                  isActive(item.href)
-                    ? "bg-[var(--teal-accent)]/10 text-[var(--teal-accent)]"
-                    : "text-gray-700 hover:bg-gray-50"
-                }`}
-              >
-                {item.name}
-                <ChevronRight className="w-4 h-4 text-gray-400" />
-              </Link>
-            ))}
-          </nav>
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-100">
+          <div className="max-w-6xl mx-auto px-6 py-6">
+            <nav className="flex flex-col gap-4">
+              {navigation.main.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`text-sm font-semibold tracking-wide uppercase py-2 ${
+                    isActive(item.href)
+                      ? "text-[var(--navy-primary)]"
+                      : "text-[var(--warm-gray)]"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
 
-          <div className="mt-6 pt-6 border-t border-gray-100 space-y-3">
-            <a
-              href={`tel:${siteConfig.contact.phoneRaw}`}
-              className="flex items-center justify-center gap-2 text-[var(--navy-primary)] font-semibold py-3 px-4 border-2 border-[var(--navy-primary)] rounded-xl hover:bg-[var(--navy-primary)] hover:text-white transition-colors"
-            >
-              <Phone className="w-5 h-5" />
-              {siteConfig.contact.phone}
-            </a>
-            <Link
-              href="/contact"
-              className="flex items-center justify-center gap-2 bg-[var(--navy-primary)] text-white py-3 px-4 rounded-xl font-semibold hover:bg-[var(--navy-dark)] transition-colors"
-            >
-              Request Appointment
-              <ChevronRight className="w-4 h-4" />
-            </Link>
+            <div className="mt-6 pt-6 border-t border-gray-100 space-y-4">
+              <a
+                href={`tel:${siteConfig.contact.phoneRaw}`}
+                className="flex items-center gap-2 text-[var(--navy-primary)] font-medium"
+              >
+                <Phone className="w-5 h-5" />
+                {siteConfig.contact.phone}
+              </a>
+              <Link
+                href="/contact"
+                className="btn-primary w-full justify-center"
+              >
+                Request Appointment
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </header>
   );
 }

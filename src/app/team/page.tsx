@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig, doctors } from "@/lib/data/siteData";
 import { Phone, ChevronRight, GraduationCap, Award, BookOpen, MapPin } from "lucide-react";
 
@@ -39,10 +40,13 @@ export default function TeamPage() {
                   {/* Left Column - Photo & Quick Info */}
                   <div className="lg:col-span-1">
                     <div className="sticky top-24">
-                      <div className="w-48 h-48 mx-auto lg:mx-0 mb-6 rounded-full bg-gradient-to-br from-[var(--cream)] to-gray-100 flex items-center justify-center">
-                        <span className="text-4xl font-semibold text-[var(--navy-primary)]">
-                          {doctor.name.split(" ").slice(0, 2).map((n) => n[0]).join("")}
-                        </span>
+                      <div className="w-48 h-48 mx-auto lg:mx-0 mb-6 rounded-full overflow-hidden bg-gradient-to-br from-[var(--cream)] to-gray-100 relative">
+                        <Image
+                          src={doctor.image}
+                          alt={doctor.name}
+                          fill
+                          className="object-cover object-top"
+                        />
                       </div>
                       <div className="text-center lg:text-left">
                         <h2 className="text-2xl font-bold text-[var(--navy-primary)]">
