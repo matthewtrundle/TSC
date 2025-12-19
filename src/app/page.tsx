@@ -140,7 +140,7 @@ export default function Home() {
           <FadeIn>
             <div className="text-center mb-16">
               <p className="text-[var(--teal-accent)] text-eyebrow mb-4">Our Expert Team</p>
-              <h2 className="text-display text-white mb-4">Meet Your Surgeons</h2>
+              <h2 className="text-display text-white mb-4" style={{ color: 'white' }}>Meet Your Surgeons</h2>
               <div className="w-16 h-1 bg-gradient-to-r from-[var(--teal-accent)] to-[var(--coral-soft)] mx-auto mb-6 rounded-full" />
               <p className="text-lg text-white/70 max-w-2xl mx-auto">
                 Three board certified, fellowship trained Mohs surgeons with decades
@@ -582,7 +582,7 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl" />
 
               <div className="relative z-10 text-center">
-                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-serif)', color: 'white' }}>
                   Ready to Take the Next Step?
                 </h2>
                 <p className="text-lg text-white/80 mb-10 max-w-2xl mx-auto">

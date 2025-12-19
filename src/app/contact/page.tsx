@@ -346,7 +346,7 @@ export default function ContactPage() {
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl" />
 
               <div className="relative z-10 text-center">
-                <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
+                <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-serif)', color: 'white' }}>
                   Prefer to Call?
                 </h2>
                 <p className="text-white/80 mb-8 max-w-xl mx-auto">
