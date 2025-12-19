@@ -305,7 +305,7 @@ export default function ServicesPage() {
                     {siteConfig.contact.phone}
                   </a>
                   <Link
-                    href="/contact"
+                    href="/appointment"
                     className="inline-flex items-center justify-center gap-2 bg-white text-[var(--navy-primary)] px-8 py-4 rounded-xl font-semibold hover:bg-[var(--cream)] transition-colors text-lg shadow-lg"
                   >
                     Request Appointment

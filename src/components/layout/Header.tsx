@@ -96,7 +96,7 @@ export default function Header() {
               {siteConfig.contact.phone}
             </a>
             <Link
-              href="/contact"
+              href="/appointment"
               className="btn-primary text-sm px-5 py-2.5"
             >
               Request Appointment
@@ -147,7 +147,7 @@ export default function Header() {
                 {siteConfig.contact.phone}
               </a>
               <Link
-                href="/contact"
+                href="/appointment"
                 className="btn-primary w-full justify-center"
               >
                 Request Appointment

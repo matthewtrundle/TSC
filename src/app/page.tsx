@@ -62,7 +62,7 @@ export default function Home() {
                 {/* Mobile App Style Action Buttons */}
                 <div className="grid grid-cols-4 gap-3 mb-8">
                   <Link
-                    href="/contact"
+                    href="/appointment"
                     className="flex flex-col items-center gap-2 bg-[var(--teal-accent)] text-white rounded-xl p-4 hover:bg-[var(--teal-dark)] transition-colors shadow-md"
                   >
                     <Calendar className="w-6 h-6" />
@@ -595,7 +595,7 @@ export default function Home() {
                     {siteConfig.contact.phone}
                   </a>
                   <Link
-                    href="/contact"
+                    href="/appointment"
                     className="inline-flex items-center justify-center gap-2 bg-white text-[var(--navy-primary)] px-8 py-4 rounded-xl font-semibold hover:bg-[var(--cream)] transition-colors text-lg shadow-lg"
                   >
                     Request Appointment
