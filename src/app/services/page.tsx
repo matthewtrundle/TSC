@@ -245,24 +245,60 @@ export default function ServicesPage() {
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-            {skinCancerTypes.map((type, index) => (
-              <FadeIn key={type.shortName} delay={index * 0.08}>
-                <div className="group bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/20 hover:border-white/20 transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-[var(--teal-accent)]/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                      <AlertCircle className="w-5 h-5 text-[var(--teal-accent)]" />
+          {/* Common Skin Cancers - Top Row */}
+          <div className="mb-8">
+            <FadeIn>
+              <p className="text-xs uppercase tracking-wider text-[var(--teal-accent)]/80 mb-4 text-center font-semibold">
+                Most Common Types
+              </p>
+            </FadeIn>
+            <div className="grid md:grid-cols-3 gap-4 lg:gap-6">
+              {skinCancerTypes.slice(0, 3).map((type, index) => (
+                <FadeIn key={type.shortName} delay={index * 0.08}>
+                  <div className="group bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/20 hover:border-white/20 transition-all duration-300 h-full flex flex-col">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-xl bg-[var(--teal-accent)]/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <AlertCircle className="w-5 h-5 text-[var(--teal-accent)]" />
+                      </div>
+                      <span className="text-xs font-bold text-[var(--teal-accent)] uppercase tracking-wide">
+                        {type.shortName}
+                      </span>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-white mb-2">
-                        {type.name}
-                      </h3>
-                      <p className="text-sm text-white/60 leading-relaxed">{type.description}</p>
-                    </div>
+                    <h3 className="font-semibold text-white mb-3 text-lg">
+                      {type.name.split(' (')[0]}
+                    </h3>
+                    <p className="text-sm text-white/60 leading-relaxed flex-grow">{type.description}</p>
                   </div>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+
+          {/* Rare Skin Cancers - Bottom Row */}
+          <div>
+            <FadeIn delay={0.25}>
+              <p className="text-xs uppercase tracking-wider text-white/40 mb-4 text-center font-semibold">
+                Rare & Complex Cases
+              </p>
+            </FadeIn>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+              {skinCancerTypes.slice(3).map((type, index) => (
+                <FadeIn key={type.shortName} delay={0.3 + index * 0.08}>
+                  <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300 h-full flex flex-col text-center">
+                    <div className="w-10 h-10 rounded-xl bg-[var(--coral-soft)]/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform mx-auto mb-3">
+                      <AlertCircle className="w-5 h-5 text-[var(--coral-soft)]" />
+                    </div>
+                    <span className="text-xs font-bold text-[var(--coral-soft)]/80 uppercase tracking-wide mb-2">
+                      {type.shortName}
+                    </span>
+                    <h3 className="font-semibold text-white mb-2 text-sm">
+                      {type.name.split(' (')[0]}
+                    </h3>
+                    <p className="text-xs text-white/50 leading-relaxed flex-grow">{type.description}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
           </div>
 
           {/* Bottom CTA */}
