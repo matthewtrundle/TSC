@@ -75,12 +75,12 @@ export default function PracticePage() {
               <div className="relative">
                 {/* Main image container */}
                 <div className="relative">
-                  <div className="aspect-[4/5] lg:aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+                  <div className="aspect-[4/3] lg:aspect-[5/4] rounded-3xl overflow-hidden shadow-2xl">
                     <Image
                       src="/images/TheOfficeTeam.png"
                       alt="The Surgery Center at Plano Dermatology team"
                       fill
-                      className="object-cover object-top"
+                      className="object-cover object-center"
                       priority
                     />
                   </div>
