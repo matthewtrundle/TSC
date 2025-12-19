@@ -16,53 +16,51 @@ export default function PracticePage() {
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[var(--coral-soft)]/10 rounded-full blur-3xl translate-x-1/4 translate-y-1/4" />
         <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-[var(--sage)]/8 rounded-full blur-3xl" />
 
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-12 items-center">
-            {/* Left - Text Content */}
-            <FadeIn>
-              <div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-5 gap-8 items-stretch">
+            {/* Left - Text Content in Glass Box (2 cols) */}
+            <FadeIn className="h-full lg:col-span-2">
+              <div className="h-full bg-white/70 backdrop-blur-md rounded-3xl border border-white/50 shadow-xl p-8 lg:p-10 flex flex-col justify-center">
                 {/* Pill badge */}
-                <div className="inline-flex items-center gap-2 bg-[var(--teal-accent)]/10 border border-[var(--teal-accent)]/20 rounded-full px-4 py-2 mb-6">
+                <div className="inline-flex items-center gap-2 bg-[var(--teal-accent)]/10 border border-[var(--teal-accent)]/20 rounded-full px-4 py-2 mb-5 w-fit">
                   <Users className="w-4 h-4 text-[var(--teal-accent)]" />
-                  <span className="text-sm text-[var(--navy-primary)] font-medium">Welcome to Our Practice</span>
+                  <span className="text-sm text-[var(--navy-primary)] font-medium">Our Practice</span>
                 </div>
 
-                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[var(--navy-primary)] mb-6 leading-tight" style={{ fontFamily: 'var(--font-serif)' }}>
+                <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-[var(--navy-primary)] mb-4 leading-tight" style={{ fontFamily: 'var(--font-serif)' }}>
                   World-Class Care,<br />
                   <span className="text-[var(--teal-accent)]">Compassionate Team</span>
                 </h1>
 
-                <p className="text-lg lg:text-xl text-[var(--warm-gray)] mb-8 leading-relaxed">
+                <p className="text-base lg:text-lg text-[var(--warm-gray)] mb-6 leading-relaxed">
                   Our highly trained and compassionate team is dedicated to providing
-                  personalized care in a warm, supportive environment where your
-                  comfort and wellbeing come first.
+                  personalized care in a warm, supportive environment.
                 </p>
 
-                {/* Stats row */}
-                <div className="flex flex-wrap gap-4 mb-10">
+                {/* Compact Stats */}
+                <div className="flex gap-6 mb-6 pb-6 border-b border-[var(--gray-200)]">
                   {[
                     { value: "20+", label: "Team Members" },
                     { value: "5-Star", label: "Patient Care" },
-                    { value: "100%", label: "Dedicated" }
                   ].map((stat) => (
-                    <div key={stat.label} className="bg-white/80 backdrop-blur-sm border border-[var(--gray-200)] rounded-xl px-5 py-3 shadow-sm">
+                    <div key={stat.label}>
                       <div className="text-2xl font-bold text-[var(--navy-primary)]" style={{ fontFamily: 'var(--font-serif)' }}>{stat.value}</div>
                       <div className="text-xs text-[var(--warm-gray)]">{stat.label}</div>
                     </div>
                   ))}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col gap-3">
                   <Link
                     href="/appointment"
-                    className="inline-flex items-center justify-center gap-2 bg-[var(--teal-accent)] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[var(--teal-dark)] transition-colors text-lg shadow-lg"
+                    className="inline-flex items-center justify-center gap-2 bg-[var(--teal-accent)] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[var(--teal-dark)] transition-colors shadow-lg"
                   >
                     Request Appointment
                     <ChevronRight className="w-5 h-5" />
                   </Link>
                   <Link
                     href="/team"
-                    className="inline-flex items-center justify-center gap-2 bg-[var(--navy-primary)] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[var(--navy-dark)] transition-colors text-lg"
+                    className="inline-flex items-center justify-center gap-2 bg-[var(--navy-primary)] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[var(--navy-dark)] transition-colors"
                   >
                     Meet Our Team
                   </Link>
@@ -70,41 +68,50 @@ export default function PracticePage() {
               </div>
             </FadeIn>
 
-            {/* Right - Team Image */}
-            <FadeIn delay={0.2}>
-              <div className="relative">
-                {/* Main image container */}
-                <div className="relative">
-                  <div className="aspect-[4/3] lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl min-h-[400px] lg:min-h-[500px]">
-                    <Image
-                      src="/images/TheOfficeTeam.png"
-                      alt="The Surgery Center at Plano Dermatology team"
-                      fill
-                      className="object-cover object-center"
-                      priority
-                    />
-                  </div>
-
-                  {/* Floating glass stat card */}
-                  <div className="absolute -bottom-6 -left-6 lg:-left-10 bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-white/50">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-[var(--teal-accent)]/10 flex items-center justify-center">
-                        <Users className="w-6 h-6 text-[var(--teal-accent)]" />
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-[var(--navy-primary)]" style={{ fontFamily: 'var(--font-serif)' }}>20+</div>
-                        <div className="text-sm text-[var(--warm-gray)]">Team Members</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Decorative frame */}
-                  <div className="absolute -top-4 -right-4 w-full h-full border-2 border-[var(--teal-accent)]/20 rounded-3xl -z-10" />
+            {/* Right - Team Image (3 cols, offset right) */}
+            <FadeIn delay={0.2} className="hidden lg:flex h-full lg:col-span-3">
+              <div className="relative w-full h-full min-h-[500px]">
+                {/* Main image */}
+                <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/TheOfficeTeam.png"
+                    alt="The Surgery Center at Plano Dermatology team"
+                    fill
+                    className="object-cover object-center"
+                    priority
+                  />
                 </div>
 
-                {/* Background decorative orb */}
+                {/* Floating glass stat card */}
+                <div className="absolute -bottom-6 left-6 bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-white/50 z-10">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-[var(--teal-accent)]/10 flex items-center justify-center">
+                      <Users className="w-6 h-6 text-[var(--teal-accent)]" />
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-[var(--navy-primary)]" style={{ fontFamily: 'var(--font-serif)' }}>20+</div>
+                      <div className="text-sm text-[var(--warm-gray)]">Team Members</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative frame offset to right */}
+                <div className="absolute top-4 -right-4 bottom-4 left-8 border-2 border-[var(--teal-accent)]/20 rounded-3xl -z-10" />
+
+                {/* Background decorative orbs */}
                 <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[var(--coral-soft)]/20 rounded-full blur-2xl -z-10" />
-                <div className="absolute -top-8 -left-8 w-32 h-32 bg-[var(--teal-accent)]/15 rounded-full blur-2xl -z-10" />
+              </div>
+            </FadeIn>
+
+            {/* Mobile Image (shown only on mobile) */}
+            <FadeIn delay={0.2} className="lg:hidden">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/TheOfficeTeam.png"
+                  alt="The Surgery Center at Plano Dermatology team"
+                  fill
+                  className="object-cover object-center"
+                />
               </div>
             </FadeIn>
           </div>
