@@ -9,76 +9,104 @@ import { FadeIn } from "@/components/ui/FadeIn";
 export default function PracticePage() {
   return (
     <div className="pt-24 lg:pt-32">
-      {/* Hero Section - Team Photo with Glassmorphism */}
-      <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/TheOfficeTeam.png"
-            alt="The Surgery Center at Plano Dermatology team"
-            fill
-            className="object-cover object-top"
-            priority
-          />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[var(--navy-primary)]/90 via-[var(--navy-primary)]/70 to-[var(--navy-primary)]/50" />
-        </div>
-
+      {/* Hero Section - Split Layout: Text Left, Image Right */}
+      <section className="relative bg-gradient-to-br from-[var(--cream)]/50 via-white to-[var(--teal-accent)]/5 py-16 lg:py-24 overflow-hidden">
         {/* Glassmorphism Orbs */}
-        <div className="absolute top-20 right-10 w-[300px] h-[300px] bg-[var(--teal-accent)]/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 left-10 w-[400px] h-[400px] bg-[var(--coral-soft)]/15 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-[200px] h-[200px] bg-white/10 rounded-full blur-2xl" />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[var(--teal-accent)]/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[var(--coral-soft)]/10 rounded-full blur-3xl translate-x-1/4 translate-y-1/4" />
+        <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-[var(--sage)]/8 rounded-full blur-3xl" />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 lg:py-24">
-          <FadeIn>
-            <div className="max-w-2xl">
-              {/* Glass pill badge */}
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-6">
-                <Users className="w-4 h-4 text-[var(--teal-accent)]" />
-                <span className="text-sm text-white/90 font-medium">Welcome to Our Practice</span>
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - Text Content */}
+            <FadeIn>
+              <div>
+                {/* Pill badge */}
+                <div className="inline-flex items-center gap-2 bg-[var(--teal-accent)]/10 border border-[var(--teal-accent)]/20 rounded-full px-4 py-2 mb-6">
+                  <Users className="w-4 h-4 text-[var(--teal-accent)]" />
+                  <span className="text-sm text-[var(--navy-primary)] font-medium">Welcome to Our Practice</span>
+                </div>
+
+                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[var(--navy-primary)] mb-6 leading-tight" style={{ fontFamily: 'var(--font-serif)' }}>
+                  World-Class Care,<br />
+                  <span className="text-[var(--teal-accent)]">Compassionate Team</span>
+                </h1>
+
+                <p className="text-lg lg:text-xl text-[var(--warm-gray)] mb-8 leading-relaxed">
+                  Three board certified Mohs surgeons and our dedicated support team
+                  providing exceptional skin cancer care in Plano, Texas.
+                </p>
+
+                {/* Stats row */}
+                <div className="flex flex-wrap gap-4 mb-10">
+                  {[
+                    { value: "3", label: "Surgeons" },
+                    { value: "30+", label: "Years Exp." },
+                    { value: "99%", label: "Cure Rate" }
+                  ].map((stat) => (
+                    <div key={stat.label} className="bg-white/80 backdrop-blur-sm border border-[var(--gray-200)] rounded-xl px-5 py-3 shadow-sm">
+                      <div className="text-2xl font-bold text-[var(--navy-primary)]" style={{ fontFamily: 'var(--font-serif)' }}>{stat.value}</div>
+                      <div className="text-xs text-[var(--warm-gray)]">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    href="/appointment"
+                    className="inline-flex items-center justify-center gap-2 bg-[var(--teal-accent)] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[var(--teal-dark)] transition-colors text-lg shadow-lg"
+                  >
+                    Request Appointment
+                    <ChevronRight className="w-5 h-5" />
+                  </Link>
+                  <Link
+                    href="/team"
+                    className="inline-flex items-center justify-center gap-2 bg-[var(--navy-primary)] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[var(--navy-dark)] transition-colors text-lg"
+                  >
+                    Meet Our Team
+                  </Link>
+                </div>
               </div>
+            </FadeIn>
 
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'var(--font-serif)' }}>
-                World-Class Care,<br />
-                <span className="text-[var(--teal-accent)]">Compassionate Team</span>
-              </h1>
-
-              <p className="text-lg lg:text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
-                Three board certified Mohs surgeons and our dedicated support team
-                providing exceptional skin cancer care in Plano, Texas.
-              </p>
-
-              {/* Glass stats row */}
-              <div className="flex flex-wrap gap-4 mb-10">
-                {[
-                  { value: "3", label: "Surgeons" },
-                  { value: "30+", label: "Years Exp." },
-                  { value: "99%", label: "Cure Rate" }
-                ].map((stat) => (
-                  <div key={stat.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-3">
-                    <div className="text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-serif)' }}>{stat.value}</div>
-                    <div className="text-xs text-white/60">{stat.label}</div>
+            {/* Right - Team Image */}
+            <FadeIn delay={0.2}>
+              <div className="relative">
+                {/* Main image container */}
+                <div className="relative">
+                  <div className="aspect-[4/5] lg:aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+                    <Image
+                      src="/images/TheOfficeTeam.png"
+                      alt="The Surgery Center at Plano Dermatology team"
+                      fill
+                      className="object-cover object-top"
+                      priority
+                    />
                   </div>
-                ))}
-              </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/appointment"
-                  className="inline-flex items-center justify-center gap-2 bg-[var(--teal-accent)] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[var(--teal-dark)] transition-colors text-lg shadow-lg"
-                >
-                  Request Appointment
-                  <ChevronRight className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="/team"
-                  className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-colors text-lg"
-                >
-                  Meet Our Team
-                </Link>
+                  {/* Floating glass stat card */}
+                  <div className="absolute -bottom-6 -left-6 lg:-left-10 bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-white/50">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-[var(--teal-accent)]/10 flex items-center justify-center">
+                        <Users className="w-6 h-6 text-[var(--teal-accent)]" />
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-[var(--navy-primary)]" style={{ fontFamily: 'var(--font-serif)' }}>20+</div>
+                        <div className="text-sm text-[var(--warm-gray)]">Team Members</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Decorative frame */}
+                  <div className="absolute -top-4 -right-4 w-full h-full border-2 border-[var(--teal-accent)]/20 rounded-3xl -z-10" />
+                </div>
+
+                {/* Background decorative orb */}
+                <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[var(--coral-soft)]/20 rounded-full blur-2xl -z-10" />
+                <div className="absolute -top-8 -left-8 w-32 h-32 bg-[var(--teal-accent)]/15 rounded-full blur-2xl -z-10" />
               </div>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
