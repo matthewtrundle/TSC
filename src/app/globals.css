@@ -95,6 +95,10 @@ h1, h2, .text-display {
   font-family: var(--font-serif);
   font-weight: 600;
   letter-spacing: -0.02em;
+}
+
+/* Default heading color - use :where() for low specificity so Tailwind can override */
+:where(h1, h2, .text-display) {
   color: var(--navy-primary);
 }
 
@@ -109,6 +113,10 @@ h3, h4 {
   font-family: var(--font-serif);
   font-weight: 600;
   letter-spacing: -0.02em;
+}
+
+/* Default hero text color - use :where() for low specificity so Tailwind can override */
+:where(.text-hero) {
   color: var(--navy-primary);
 }
 
