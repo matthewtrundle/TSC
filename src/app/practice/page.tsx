@@ -17,7 +17,7 @@ export default function PracticePage() {
         <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-[var(--sage)]/8 rounded-full blur-3xl" />
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-12 items-center">
             {/* Left - Text Content */}
             <FadeIn>
               <div>
@@ -75,7 +75,7 @@ export default function PracticePage() {
               <div className="relative">
                 {/* Main image container */}
                 <div className="relative">
-                  <div className="aspect-[4/3] lg:aspect-[5/4] rounded-3xl overflow-hidden shadow-2xl">
+                  <div className="aspect-[4/3] lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl min-h-[400px] lg:min-h-[500px]">
                     <Image
                       src="/images/TheOfficeTeam.png"
                       alt="The Surgery Center at Plano Dermatology team"
