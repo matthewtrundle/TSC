@@ -210,6 +210,50 @@ export default function PracticePage() {
         </div>
       </section>
 
+      {/* Our Staff Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
+            <div className="text-center mb-12">
+              <p className="text-eyebrow text-[var(--teal-accent)] mb-4">Dedicated Care</p>
+              <h2 className="text-display mb-4">
+                Our Office Team
+              </h2>
+              <div className="organic-accent-line" />
+              <p className="text-[var(--warm-gray)] max-w-2xl mx-auto mt-6">
+                Behind every successful procedure is a dedicated team of professionals
+                committed to providing you with exceptional care and support.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <div className="relative">
+              <div className="aspect-[16/10] lg:aspect-[16/8] rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/TheOfficeTeam.png"
+                  alt="The Surgery Center at Plano Dermatology office team"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+              {/* Decorative accents */}
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[var(--teal-accent)]/10 rounded-2xl -z-10" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[var(--coral-soft)]/10 rounded-2xl -z-10" />
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.3}>
+            <div className="text-center mt-10">
+              <p className="text-[var(--warm-gray)] text-lg">
+                From scheduling to follow-up care, our entire team is here to ensure
+                your experience with us is seamless and comfortable.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Location & Hours */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
