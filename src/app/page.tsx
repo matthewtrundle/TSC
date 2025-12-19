@@ -127,6 +127,32 @@ export default function Home() {
         </div>
       </ParallaxHero>
 
+      {/* Credentials Banner */}
+      <section className="py-8 bg-white border-y border-[var(--gray-200)]">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
+            <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
+              {[
+                { src: "/images/Banner/Gemini_Generated_Image_cemhsocemhsocemh.png", alt: "American Board of Dermatology" },
+                { src: "/images/Banner/Gemini_Generated_Image_4h49u34h49u34h49.png", alt: "American College of Mohs Surgery" },
+                { src: "/images/Banner/Gemini_Generated_Image_j79v8dj79v8dj79v.png", alt: "American Academy of Dermatology" },
+                { src: "/images/Banner/Gemini_Generated_Image_ksju3mksju3mksju.png", alt: "American Society for Dermatologic Surgery" },
+              ].map((logo) => (
+                <div key={logo.alt} className="relative h-12 lg:h-16 w-auto flex-shrink-0">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={180}
+                    height={64}
+                    className="h-full w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Wave transition to navy surgeons section */}
       <WaveDivider fill="var(--navy-primary)" />
 
