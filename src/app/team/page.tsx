@@ -185,22 +185,28 @@ export default function TeamPage() {
                           </span>
                         </p>
                         {award.years.length > 0 && (
-                          <p
-                            className="mt-1.5 text-2xl tabular-nums text-[var(--bronze)]"
-                            style={{ fontFamily: "var(--font-display)" }}
-                          >
-                            {Math.min(...award.years)} – {Math.max(...award.years)}
-                          </p>
+                          <div className="mt-3 flex flex-wrap gap-2">
+                            {award.years.map((year) => (
+                              <span
+                                key={year}
+                                className="border border-[var(--hairline-bronze)] px-2.5 py-1 text-sm tabular-nums text-[var(--bronze-text)]"
+                              >
+                                {year}
+                              </span>
+                            ))}
+                          </div>
                         )}
                       </div>
                     ))}
                   </div>
 
-                  {/* Dr. Modi: D Magazine's official badges (their earliest
-                      publicly issued badge file is 2019). */}
+                  {/* Dr. Modi: one badge tile per year, 2015–2026. Files for
+                      2019–2026 are D Magazine's own; 2015/2016/2018 are
+                      derived from that official artwork (no files were ever
+                      published for those years). */}
                   {doctor.id === "dr-modi" && (
-                    <div className="mt-10 flex flex-wrap items-end gap-4">
-                      {[2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026].map(
+                    <div className="mt-10 grid grid-cols-4 items-end gap-4 sm:grid-cols-6 lg:grid-cols-12">
+                      {[2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026].map(
                         (year) => (
                           <Image
                             key={year}
@@ -208,7 +214,7 @@ export default function TeamPage() {
                             alt={`D Magazine Best ${year} award badge`}
                             width={880}
                             height={1440}
-                            className="h-28 w-auto lg:h-32"
+                            className="h-24 w-auto justify-self-center lg:h-24"
                           />
                         )
                       )}

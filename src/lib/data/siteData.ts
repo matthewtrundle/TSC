@@ -115,12 +115,12 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
       {
         name: "Best Doctors in Collin County",
         source: "D Magazine",
-        years: [2015, 2026],
+        years: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
       },
       {
         name: "Best Doctors",
         source: "D Magazine",
-        years: [2015, 2026],
+        years: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
       },
     ] as { name: string; source: string; years: number[] }[] | undefined,
     quote: "Every patient deserves the highest standard of care, and that's what we deliver every day.",
