@@ -397,37 +397,50 @@ export const skinCancerTypes = [
   {
     name: "Basal Cell Carcinoma (BCC)",
     shortName: "BCC",
-    description: "The most common type of skin cancer, typically appearing as a pearly bump or pinkish patch of skin.",
+    description:
+      "The most common skin cancer, typically appearing on sun-exposed skin as a pearly bump, a pinkish patch, or a sore that heals and returns. It grows slowly and rarely spreads, but left untreated it is locally destructive — Mohs surgery removes it with the most tissue spared.",
   },
   {
     name: "Squamous Cell Carcinoma (SCC)",
     shortName: "SCC",
-    description: "The second most common skin cancer, often appearing as a firm red nodule or scaly patch.",
+    description:
+      "The second most common skin cancer, often a firm red nodule or a scaly, crusted patch that grows or bleeds. Unlike BCC it can occasionally spread, which makes timely treatment important; high-risk tumors here get immunostained margin control in our own laboratory.",
   },
   {
     name: "Melanoma / Malignant Melanoma (MM)",
     shortName: "Melanoma",
-    description: "The most serious type of skin cancer, developing from cells that give skin its color.",
+    description:
+      "The most serious common skin cancer, arising from the skin's pigment cells — watch for a mole that changes, has irregular borders, or stands out from the rest. For appropriate cases we perform same-day, margin-controlled Mohs surgery with MART-1 and S-100 immunostains.",
+  },
+  {
+    name: "Sebaceous Carcinoma (SC)",
+    shortName: "Sebaceous",
+    description:
+      "A rare, aggressive cancer of the skin's oil glands, most often on the eyelids of older adults, where it can masquerade as a stye or chalazion that never resolves. Margin-controlled excision is central to treating it well.",
   },
   {
     name: "Dermatofibrosarcoma Protuberans (DFSP)",
     shortName: "DFSP",
-    description: "A rare skin cancer that begins in the dermis, the middle layer of skin.",
+    description:
+      "A rare cancer that begins in the deeper layer of the skin as a firm, slowly enlarging plaque or nodule. It sends out root-like extensions well beyond what the eye can see, which is exactly the problem margin-controlled surgery was built to solve.",
   },
   {
     name: "Atypical Fibroxanthoma (AFX)",
     shortName: "AFX",
-    description: "A rare skin tumor typically occurring on sun-damaged skin of elderly patients.",
+    description:
+      "A rare tumor of heavily sun-damaged skin, usually on the scalp, ears, or face of older patients. It typically behaves locally, and complete margin-controlled removal is the standard of care.",
   },
   {
     name: "Microcystic Adnexal Carcinoma (MAC)",
     shortName: "MAC",
-    description: "A rare, slow-growing but locally aggressive skin cancer.",
+    description:
+      "A rare, slow-growing cancer of the sweat-gland structures, most often around the lips and central face. It infiltrates far more widely and deeply than it appears on the surface, making complete margin examination especially valuable.",
   },
   {
     name: "Extramammary Paget's Disease (EMP)",
     shortName: "EMP",
-    description: "A rare, slow-growing skin cancer typically affecting the genital area.",
+    description:
+      "A rare, slow-growing cancer of apocrine-gland-rich skin, typically in the genital or perianal area, that often looks like a stubborn rash or eczema for years before diagnosis. Its edges are indistinct, so margin-controlled surgery earns its keep here.",
   },
 ];
 
