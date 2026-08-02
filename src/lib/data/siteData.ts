@@ -60,10 +60,10 @@ export const navigation = {
   services: [
     { name: "Mohs Surgery", href: "/services#mohs-surgery" },
     { name: "Mohs for Melanoma", href: "/services#immunostaining" },
-    { name: "Pilonidal Disease", href: "/services#pilonidal" },
-    { name: "Skin Resurfacing", href: "/services#skin-resurfacing" },
     { name: "Skin Cancer Treatment", href: "/services#skin-cancer-treatment" },
     { name: "Reconstructive Surgery", href: "/services#reconstruction" },
+    { name: "Pilonidal Disease", href: "/services#pilonidal" },
+    { name: "Skin Resurfacing", href: "/services#skin-resurfacing" },
   ],
   // Legal pages are not yet written. These links are intentionally empty rather
   // than pointing at routes that 404. A medical practice does need a Privacy
@@ -286,6 +286,48 @@ export const services = [
     image: undefined as string | undefined,
   },
   {
+    id: "skin-cancer-treatment",
+    badge: "Expert Diagnosis",
+    name: "Skin Cancer Treatment",
+    shortName: "Skin Cancer",
+    slug: "skin-cancer",
+    description:
+      "The most common form of cancer in the United States, skin cancer is defined as the uncontrolled growth of abnormal skin cells. Our surgeons are experts in diagnosing and treating all types of skin cancer before they spread.",
+    shortDescription:
+      "Expert diagnosis and treatment for all types of skin cancer.",
+    icon: "shield",
+    features: [
+      "Comprehensive skin cancer evaluation",
+      "Biopsy and diagnosis services",
+      "Treatment for basal cell carcinoma (BCC)",
+      "Treatment for squamous cell carcinoma (SCC)",
+      "Melanoma and high-risk skin cancer care",
+      "Long-term follow-up and monitoring",
+    ],
+    image: undefined as string | undefined,
+  },
+  {
+    id: "reconstruction",
+    badge: "Skilled Reconstruction",
+    name: "Reconstructive Surgery",
+    shortName: "Reconstruction",
+    slug: "reconstruction",
+    description:
+      "After skin cancer removal, our surgeons provide expert reconstructive techniques to restore both function and appearance. We work to achieve optimal cosmetic results while ensuring complete cancer removal.",
+    shortDescription:
+      "Expert wound closure and reconstruction after cancer removal.",
+    icon: "heart",
+    features: [
+      "Wound closure with stitches",
+      "Skin flap reconstruction",
+      "Skin graft procedures",
+      "Healing by secondary intention when appropriate",
+      "Minimized scarring techniques",
+      "Coordination with other specialists when needed",
+    ],
+    image: undefined as string | undefined,
+  },
+  {
     id: "pilonidal",
     badge: "Beyond Skin Cancer",
     name: "Pilonidal Disease and the Bascom Cleft Lift",
@@ -325,48 +367,6 @@ export const services = [
       "Field treatment of photodamage and actinic keratoses (precancers)",
       "Aesthetic rejuvenation — texture, tone, and fine lines",
       "Performed by a fellowship-trained skin cancer surgeon",
-    ],
-    image: undefined as string | undefined,
-  },
-  {
-    id: "skin-cancer-treatment",
-    badge: "Expert Diagnosis",
-    name: "Skin Cancer Treatment",
-    shortName: "Skin Cancer",
-    slug: "skin-cancer",
-    description:
-      "The most common form of cancer in the United States, skin cancer is defined as the uncontrolled growth of abnormal skin cells. Our surgeons are experts in diagnosing and treating all types of skin cancer before they spread.",
-    shortDescription:
-      "Expert diagnosis and treatment for all types of skin cancer.",
-    icon: "shield",
-    features: [
-      "Comprehensive skin cancer evaluation",
-      "Biopsy and diagnosis services",
-      "Treatment for basal cell carcinoma (BCC)",
-      "Treatment for squamous cell carcinoma (SCC)",
-      "Melanoma and high-risk skin cancer care",
-      "Long-term follow-up and monitoring",
-    ],
-    image: undefined as string | undefined,
-  },
-  {
-    id: "reconstruction",
-    badge: "Skilled Reconstruction",
-    name: "Reconstructive Surgery",
-    shortName: "Reconstruction",
-    slug: "reconstruction",
-    description:
-      "After skin cancer removal, our surgeons provide expert reconstructive techniques to restore both function and appearance. We work to achieve optimal cosmetic results while ensuring complete cancer removal.",
-    shortDescription:
-      "Expert wound closure and reconstruction after cancer removal.",
-    icon: "heart",
-    features: [
-      "Wound closure with stitches",
-      "Skin flap reconstruction",
-      "Skin graft procedures",
-      "Healing by secondary intention when appropriate",
-      "Minimized scarring techniques",
-      "Coordination with other specialists when needed",
     ],
     image: undefined as string | undefined,
   },
