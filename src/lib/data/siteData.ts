@@ -81,7 +81,7 @@ export const doctors = [
     slug: "dr-gunjan-modi",
     // Real photograph from the practice's own site, colour- and exposure-matched
     // to the other two surgeons. Replaces the previous AI-generated face.
-    image: "/images/dr-modi-editorial.webp" as string | undefined,
+    image: "/images/dr-modi-warm.webp" as string | undefined,
     shortBio:
       "Board certified dermatologist and fellowship trained Mohs surgeon with expertise in transplant skin cancer and immunoperoxidase staining techniques.",
     fullBio: `Gunjan Modi is a board certified dermatologist and fellowship trained Mohs surgeon. Originally from Buffalo, New York, he graduated from high school in Sugar Land, Texas. He received his bachelor's degree from the University of Pennsylvania. He went on to medical school at Baylor College of Medicine in Houston, where he graduated with honors.
@@ -132,7 +132,7 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
     title: "Board Certified Dermatologist & Mohs Surgeon",
     specialty: "Mohs Surgery & Procedural Dermatology",
     slug: "dr-michael-wells",
-    image: "/images/dr-wells-editorial.webp" as string | undefined,
+    image: "/images/dr-wells-warm.webp" as string | undefined,
     shortBio:
       "Former tenured associate professor with over 20 years of experience, specializing in Mohs surgery and dermatologic education.",
     fullBio: `Michael Wells, M.D. began his college career earning a Bachelor of Science degree from the University of Central Arkansas, where he graduated with Alpha Chi honors. He then moved on to complete medical school at the University of Arkansas for Medical Sciences in Little Rock, Arkansas. Here too, Michael Wells, M.D. earned numerous high honors including top pathology and anatomy student, as well as being inducted into the AOA honor society.
@@ -171,7 +171,7 @@ He actively shares his wealth of knowledge and expertise with other healthcare p
     title: "Board Certified Dermatologist & Mohs Surgeon",
     specialty: "Mohs Surgery & Cutaneous Oncology",
     slug: "dr-edward-parry",
-    image: "/images/dr-parry-editorial.webp" as string | undefined,
+    image: "/images/dr-parry-warm.webp" as string | undefined,
     shortBio:
       "Former LSU professor and fellowship program director with 17 years in academics, having trained hundreds of residents and 15 Mohs surgeons.",
     fullBio: `Ed Parry is a board certified dermatologist and fellowship trained Mohs surgeon. He is a native of upstate New York. He received his bachelor's degree from the United States Air Force Academy in Colorado Springs, Colorado. He then moved to New Orleans and received his medical degree from Tulane University Medical School on a military scholarship.

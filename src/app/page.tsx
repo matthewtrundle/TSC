@@ -40,9 +40,9 @@ const fellowships: Record<string, string> = {
 // fields swap only after the likeness approval gate; the home page opts into
 // the editorial set directly.
 const editorialPortraits: Record<string, string> = {
-  "dr-modi": "/images/dr-modi-editorial.webp",
-  "dr-wells": "/images/dr-wells-editorial.webp",
-  "dr-parry": "/images/dr-parry-editorial.webp",
+  "dr-modi": "/images/dr-modi-warm.webp",
+  "dr-wells": "/images/dr-wells-warm.webp",
+  "dr-parry": "/images/dr-parry-warm.webp",
 };
 
 export default function Home() {
