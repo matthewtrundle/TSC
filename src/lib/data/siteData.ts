@@ -215,12 +215,33 @@ Dr. Parry is happily married to Diane, his wife of 37 years. They have three adu
 // =============================================================================
 // SERVICES
 //
-// Ordering is deliberate. The first two entries are what distinguishes this
-// practice from every other Mohs practice in North Texas; "up to 99% cure rate"
-// is table stakes that every competitor also advertises. Lead with the former.
+// Ordering is deliberate (client-set 2026-08-02): Mohs surgery leads as the
+// core service, followed immediately by the two immunostaining services that
+// distinguish this practice from every other Mohs practice in North Texas.
 // =============================================================================
 
 export const services = [
+  {
+    id: "mohs-surgery",
+    badge: "Gold Standard Treatment",
+    name: "Mohs Micrographic Surgery",
+    shortName: "Mohs Surgery",
+    slug: "mohs-surgery",
+    description:
+      "Mohs micrographic surgery is a highly specialized procedure for the removal of skin cancer. Developed by Dr. Frederick Mohs in the late 1930s, it has been refined into an incredibly precise and tissue-sparing process, and is the gold standard for treating most skin cancers.",
+    shortDescription:
+      "The gold standard for skin cancer treatment with up to 99% cure rate.",
+    icon: "microscope",
+    features: [
+      "Up to 99% cure rate for previously untreated cancers; up to 94% for recurrent",
+      "Tissue-sparing technique preserves maximum healthy skin",
+      "Complete microscopic examination during surgery",
+      "Same-day results - know cancer is gone before you leave",
+      "Optimal cosmetic outcomes with minimal scarring",
+      "Performed in our state-of-the-art outpatient facility",
+    ],
+    image: undefined as string | undefined,
+  },
   {
     id: "immunostaining",
     badge: "What Sets Us Apart",
@@ -280,27 +301,6 @@ export const services = [
       "Treats recurrent pilonidal disease and sinus tracts",
       "Off-midline closure, where wounds heal more reliably",
       "Alternative to wide excision and open healing",
-    ],
-    image: undefined as string | undefined,
-  },
-  {
-    id: "mohs-surgery",
-    badge: "Gold Standard Treatment",
-    name: "Mohs Micrographic Surgery",
-    shortName: "Mohs Surgery",
-    slug: "mohs-surgery",
-    description:
-      "Mohs micrographic surgery is a highly specialized procedure for the removal of skin cancer. Developed by Dr. Frederick Mohs in the late 1930s, it has been refined into an incredibly precise and tissue-sparing process, and is the gold standard for treating most skin cancers.",
-    shortDescription:
-      "The gold standard for skin cancer treatment with up to 99% cure rate.",
-    icon: "microscope",
-    features: [
-      "Up to 99% cure rate for previously untreated cancers; up to 94% for recurrent",
-      "Tissue-sparing technique preserves maximum healthy skin",
-      "Complete microscopic examination during surgery",
-      "Same-day results - know cancer is gone before you leave",
-      "Optimal cosmetic outcomes with minimal scarring",
-      "Performed in our state-of-the-art outpatient facility",
     ],
     image: undefined as string | undefined,
   },
