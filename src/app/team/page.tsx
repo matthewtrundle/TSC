@@ -175,7 +175,7 @@ export default function TeamPage() {
                   </h3>
                   <span aria-hidden="true" className="rule-bronze mb-8" />
 
-                  <div className="space-y-8">
+                  <div className="space-y-6">
                     {doctor.awards.map((award) => (
                       <div key={award.name}>
                         <p className="font-semibold text-[var(--warm-gray)]">
@@ -184,35 +184,55 @@ export default function TeamPage() {
                             {award.source}
                           </span>
                         </p>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                          {award.years.map((year) => (
-                            <span
-                              key={year}
-                              className="border border-[var(--hairline-bronze)] px-2.5 py-1 text-sm tabular-nums text-[var(--bronze-text)]"
-                            >
-                              {year}
-                            </span>
-                          ))}
-                        </div>
+                        {award.years.length > 0 && (
+                          <p
+                            className="mt-1.5 text-2xl tabular-nums text-[var(--bronze)]"
+                            style={{ fontFamily: "var(--font-display)" }}
+                          >
+                            {Math.min(...award.years)} – {Math.max(...award.years)}
+                          </p>
+                        )}
                       </div>
                     ))}
                   </div>
 
-                  {/* Official badge gallery, 2017–2026. */}
-                  <div className="mt-10 flex flex-wrap items-end gap-4">
-                    {[2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026].map(
-                      (year) => (
-                        <Image
-                          key={year}
-                          src={`/images/awards/d-best-${year}.webp`}
-                          alt={`D Magazine Best ${year} award badge`}
-                          width={980}
-                          height={1600}
-                          className="h-28 w-auto border border-[var(--hairline)] bg-white lg:h-32"
-                        />
-                      )
-                    )}
-                  </div>
+                  {/* Dr. Modi: D Magazine's official badges (their earliest
+                      publicly issued badge file is 2019). */}
+                  {doctor.id === "dr-modi" && (
+                    <div className="mt-10 flex flex-wrap items-end gap-4">
+                      {[2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026].map(
+                        (year) => (
+                          <Image
+                            key={year}
+                            src={`/images/awards/d-best-${year}.webp`}
+                            alt={`D Magazine Best ${year} award badge`}
+                            width={880}
+                            height={1440}
+                            className="h-28 w-auto lg:h-32"
+                          />
+                        )
+                      )}
+                    </div>
+                  )}
+
+                  {/* Dr. Wells: stylized Blue Journal cover (illustrative,
+                      not a reproduction of an actual JAAD issue). */}
+                  {doctor.id === "dr-wells" && (
+                    <div className="mt-10 flex items-end gap-6">
+                      <Image
+                        src="/images/awards/jaad-blue-journal.webp"
+                        alt="Stylized cover evoking the Journal of the American Academy of Dermatology"
+                        width={600}
+                        height={800}
+                        className="h-40 w-auto border border-[var(--hairline)] lg:h-48"
+                      />
+                      <p className="max-w-xs text-sm leading-relaxed text-[var(--warm-gray-light)]">
+                        The Journal of the American Academy of Dermatology —
+                        &ldquo;the Blue Journal&rdquo; — is the Academy&rsquo;s
+                        peer-reviewed publication of record.
+                      </p>
+                    </div>
+                  )}
                 </div>
               </FadeIn>
             )}

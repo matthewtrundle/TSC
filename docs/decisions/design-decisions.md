@@ -7,6 +7,26 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
 > plus `src/app/globals.css`. This file records the decisions and their
 > history; the skill is what agents must load before doing site work.
 
+## Staff group photo
+
+### 2026-08-02 — Hybrid face-faithful composite pipeline for group photos
+- **Decision:** Staff group images are produced by a hybrid pipeline: an AI
+  pass transforms wardrobe/background once, then every person's REAL face
+  pixels from the original photograph are composited back (template-matched
+  alignment, capped Lab color transfer, feathered ellipse masks) via
+  `TSC/scripts/face_restore_composite.py`. Whole-image AI generation of
+  20-person groups was rejected — faces drift unusably. Small artifacts are
+  fixed with face-protected CV inpainting, never global masks (a global red
+  mask erased lips once — see script comments).
+- **Rationale:** Real staff are identifiable employees; only real pixels
+  guarantee likeness. Client explicitly rejected two rounds of whole-image
+  attempts.
+- **Status:** Confirmed. Candidate `team-navy-FINAL.png` (navy scrubs,
+  de-Christmassed office) + per-face QA sheet awaiting client sign-off; staff
+  consent for publication is the client's to obtain.
+- **Source:** chat 2026-08-02
+- **Links:** [[practice-decisions]]
+
 ## Logos & badges
 
 ### 2026-08-02 — Hi-res credential assets; official-art-only policy holds

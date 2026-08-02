@@ -58,3 +58,17 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - **Status:** Confirmed
 - **Source:** planoderm-site SKILL.md
 - **Links:** [[design-decisions]] [[definitions]]
+
+### 2026-08-02 — Facts confirmed by Dr. Modi in chat (batch)
+- **Decision:** (1) Combined experience is 68 years (Modi 12, Wells 16,
+  Parry ~40); displayed as "65+ years" so the plus stays literally true.
+  (2) The practice is described as "physician-owned and operated" (hero line,
+  footer, practice intro). (3) office@planoderm.com is surfaced in the header
+  utility bar, footer, and contact page. (4) Dr. Modi's D Magazine recognition
+  displays as the range 2015–2026 for both awards, per his direct confirmation;
+  badge gallery shows D's own files 2019–2026. (5) Dr. Wells is Assistant
+  Editor of JAAD ("the Blue Journal"); shown with an ILLUSTRATIVE stylized
+  blue-journal cover (awards/jaad-blue-journal.webp), not a real issue.
+- **Status:** Confirmed
+- **Source:** chat 2026-08-02
+- **Links:** [[design-decisions]] [[medical-focus]]

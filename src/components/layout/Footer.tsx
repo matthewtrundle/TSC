@@ -29,8 +29,9 @@ export default function Footer() {
               <span className="block text-xs text-white/60">at Plano Dermatology</span>
             </Link>
             <p className="text-sm leading-relaxed text-white/65">
-              Board-certified, fellowship-trained Mohs surgeons treating skin
-              cancer in Plano, Texas.
+              Physician-owned and operated. Board-certified,
+              fellowship-trained Mohs surgeons treating skin cancer in Plano,
+              Texas.
             </p>
           </div>
 
@@ -61,6 +62,14 @@ export default function Footer() {
                 </a>
               </li>
               <li>Fax: {siteConfig.contact.fax}</li>
+              <li>
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="transition-colors hover:text-white"
+                >
+                  {siteConfig.contact.email}
+                </a>
+              </li>
               <li>
                 <a
                   href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.address.full)}`}

@@ -58,6 +58,12 @@ export default function Header() {
             <Phone className="h-4 w-4 shrink-0" />
             {siteConfig.contact.phone}
           </a>
+          <a
+            href={`mailto:${siteConfig.contact.email}`}
+            className="whitespace-nowrap text-sm text-[var(--warm-gray-light)] transition-colors hover:text-[var(--bronze-text)]"
+          >
+            {siteConfig.contact.email}
+          </a>
           <span className="text-sm text-[var(--warm-gray-light)]">
             {siteConfig.hours.short}
           </span>

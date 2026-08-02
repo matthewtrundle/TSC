@@ -107,20 +107,20 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
       "Melanoma treatment",
       "High-risk squamous cell carcinoma",
     ],
-    // Source: D Magazine online directory listing, supplied by Dr. Modi
-    // 2026-08-01. Badge asset (d-best-2026.jpg) is D Magazine's own 2026 file
-    // from their media kit; prior-year badges must come from D Magazine, not
-    // be recreated.
+    // Source: D Magazine directory listing + Dr. Modi's direct confirmation
+    // in chat 2026-08-02 that the recognition runs 2015 through 2026 for both
+    // awards. Badge assets are D Magazine's own files; recognition displays
+    // the year RANGE (min–max), not per-year chips.
     awards: [
       {
         name: "Best Doctors in Collin County",
         source: "D Magazine",
-        years: [2026, 2025, 2024, 2023, 2022, 2020, 2018, 2017, 2016, 2015],
+        years: [2015, 2026],
       },
       {
         name: "Best Doctors",
         source: "D Magazine",
-        years: [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015],
+        years: [2015, 2026],
       },
     ] as { name: string; source: string; years: number[] }[] | undefined,
     quote: "Every patient deserves the highest standard of care, and that's what we deliver every day.",
@@ -161,7 +161,14 @@ He actively shares his wealth of knowledge and expertise with other healthcare p
       "Texas Medical Association committees",
       "Clinical decision-making resources",
     ],
-    awards: undefined as { name: string; source: string; years: number[] }[] | undefined,
+    // Confirmed by Dr. Modi in chat 2026-08-02.
+    awards: [
+      {
+        name: "Assistant Editor, Journal of the American Academy of Dermatology (JAAD)",
+        source: "The Blue Journal",
+        years: [],
+      },
+    ] as { name: string; source: string; years: number[] }[] | undefined,
     quote: "Education and precision are the foundations of exceptional patient outcomes.",
   },
   {

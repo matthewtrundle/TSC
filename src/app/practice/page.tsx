@@ -51,10 +51,12 @@ export default function PracticePage() {
             <FadeIn delay={0.1} className="lg:col-span-3">
               <div className="space-y-6">
                 <p className="text-lg text-[var(--warm-gray)] leading-relaxed">
-                  The Surgery Center at Plano Dermatology is a surgical
-                  dermatology practice. Dr.&nbsp;Modi, Dr.&nbsp;Wells, and
-                  Dr.&nbsp;Parry are each board certified in dermatology and
-                  fellowship trained in the surgical treatment of skin cancer.
+                  The Surgery Center at Plano Dermatology is a
+                  physician-owned and operated surgical dermatology practice.
+                  Dr.&nbsp;Modi, Dr.&nbsp;Wells, and Dr.&nbsp;Parry are each
+                  board certified in dermatology and fellowship trained in the
+                  surgical treatment of skin cancer — the people who own this
+                  practice are the ones holding the scalpel.
                 </p>
                 <p className="text-lg text-[var(--warm-gray)] leading-relaxed">
                   The work is Mohs micrographic surgery and everything that

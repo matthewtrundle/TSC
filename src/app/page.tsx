@@ -90,7 +90,8 @@ export default function Home() {
             </div>
 
             <p className="text-sm text-white/60">
-              Physician referrals welcome. Most insurance accepted.
+              Physician-owned and operated &middot; Physician referrals welcome
+              &middot; Most insurance accepted
             </p>
           </div>
         </div>
@@ -136,7 +137,7 @@ export default function Home() {
             <div className="mt-16 grid grid-cols-3 gap-8 border-t border-[var(--hairline)] pt-10">
               {[
                 { value: "3", label: "Fellowship-trained Mohs surgeons" },
-                { value: "100+", label: "Years of combined experience" },
+                { value: "65+", label: "Years of combined experience" },
                 { value: "15", label: "Mohs surgeons trained by our physicians" },
               ].map((stat) => (
                 <CountUpStat key={stat.label} value={stat.value} label={stat.label} />
