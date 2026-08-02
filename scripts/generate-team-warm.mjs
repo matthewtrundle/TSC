@@ -4,6 +4,7 @@
  * (gpt-5.4-image-2). Output to _headshot-refresh/ for review.
  * Usage: OPENROUTER_API_KEY=... node scripts/generate-team-warm.mjs
  */
+import "./lib/env.mjs";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

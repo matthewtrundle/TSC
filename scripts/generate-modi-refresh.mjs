@@ -4,6 +4,7 @@
  * Output: _headshot-refresh/ at the repo root, for review only.
  * Usage: OPENROUTER_API_KEY=... node scripts/generate-modi-refresh.mjs
  */
+import "./lib/env.mjs";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

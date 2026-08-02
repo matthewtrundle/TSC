@@ -8,14 +8,17 @@ const SOCIETIES = [
   {
     name: "American College of Mohs Surgery",
     logo: "/images/societies/acms.png",
-    width: 375,
-    height: 95,
+    width: 1875,
+    height: 475,
   },
   {
+    // The board's official round seal, extracted from ABD's own 2023 annual
+    // report PDF (their site serves no standalone asset above 258px).
     name: "American Board of Dermatology",
-    logo: "/images/societies/abd.png",
-    width: 240,
-    height: 57,
+    logo: "/images/societies/abd-seal.png",
+    width: 1700,
+    height: 1700,
+    seal: true,
   },
   {
     name: "American Academy of Dermatology",
@@ -26,8 +29,8 @@ const SOCIETIES = [
   {
     name: "American Society for Dermatologic Surgery",
     logo: "/images/societies/asds.png",
-    width: 473,
-    height: 160,
+    width: 1176,
+    height: 398,
   },
 ] as const;
 
@@ -81,7 +84,11 @@ export function CredentialBar({
             alt={society.name}
             width={society.width}
             height={society.height}
-            className="h-9 w-auto opacity-75 grayscale lg:h-11"
+            // Round seals optically read smaller than horizontal lockups, so
+            // they get a step more height to sit at the same visual weight.
+            className={`w-auto opacity-75 grayscale ${
+              "seal" in society && society.seal ? "h-12 lg:h-14" : "h-9 lg:h-11"
+            }`}
           />
         </li>
       ))}

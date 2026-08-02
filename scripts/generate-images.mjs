@@ -8,6 +8,7 @@
  *
  * The key comes from the environment on purpose — never commit it.
  */
+import "./lib/env.mjs";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

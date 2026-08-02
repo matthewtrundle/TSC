@@ -7,6 +7,27 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
 > plus `src/app/globals.css`. This file records the decisions and their
 > history; the skill is what agents must load before doing site work.
 
+## Logos & badges
+
+### 2026-08-02 — Hi-res credential assets; official-art-only policy holds
+- **Decision:** Society logos and D Magazine badges are served at high
+  resolution from official artwork only: ABD uses the board's round seal
+  extracted from ABD's own 2023 annual-report PDF (1700px, charcoal-tinted
+  from its white-on-alpha original, `societies/abd-seal.png`); ACMS remains
+  the site-served 375px lockup upscaled 5x from its alpha mask; ASDS at full
+  native 1176px; AAD stays vector SVG. D badges 2017 and 2019–2025 are
+  D Magazine's own files (`public/images/awards/`, the 2017/2025 vector PDFs
+  rasterized at 1600px); 2026 is a 5x upscale of the only official file
+  (211px) — re-check D's CDN later in 2026 for a vector.
+- **Rationale:** Pinch-zoom sharpness without fabricating any organization's
+  artwork; a user-supplied redrawn ABD seal was declined because its layout
+  and motto text differ from the genuine seal.
+- **Status:** Confirmed. Open gaps: no official badge files exist publicly
+  for 2015/2016/2018 (typeset year chips only); ACMS has no press kit —
+  email info@mohscollege.org for vector art.
+- **Source:** chat 2026-08-02 / hires-logos agent hunt
+- **Links:** [[practice-decisions]] [[INDEX]]
+
 ## Portraits
 
 ### 2026-08-02 — Warm office-bokeh portrait set is live

@@ -162,10 +162,11 @@ export default function TeamPage() {
               </div>
             </FadeIn>
 
-            {/* Recognition — only for surgeons with award data. The 2026 badge
-                is D Magazine's own file from their media kit; prior years are
-                typeset rather than recreated (their badge art is licensed
-                per year by D Magazine). */}
+            {/* Recognition — only for surgeons with award data. Badge images
+                are D Magazine's own official files (hi-res, the 2017/2025
+                vectors rasterized at 1600px). Years with no publicly issued
+                badge file (2015, 2016, 2018) appear in the typeset lists
+                only — their artwork is never recreated. */}
             {doctor.awards && (
               <FadeIn delay={0.2}>
                 <div className="mt-16 pt-10 border-t border-[var(--gray-200)]">
@@ -173,36 +174,44 @@ export default function TeamPage() {
                     Recognition
                   </h3>
                   <span aria-hidden="true" className="rule-bronze mb-8" />
-                  <div className="grid gap-10 md:grid-cols-[8rem_1fr] lg:gap-14">
-                    <Image
-                      src="/images/d-best-2026.jpg"
-                      alt="D Magazine Best 2026 award badge"
-                      width={211}
-                      height={345}
-                      className="h-auto w-28 border border-[var(--hairline)]"
-                    />
-                    <div className="space-y-8">
-                      {doctor.awards.map((award) => (
-                        <div key={award.name}>
-                          <p className="font-semibold text-[var(--warm-gray)]">
-                            {award.name}
-                            <span className="ml-2 text-sm font-normal text-[var(--warm-gray-light)]">
-                              {award.source}
+
+                  <div className="space-y-8">
+                    {doctor.awards.map((award) => (
+                      <div key={award.name}>
+                        <p className="font-semibold text-[var(--warm-gray)]">
+                          {award.name}
+                          <span className="ml-2 text-sm font-normal text-[var(--warm-gray-light)]">
+                            {award.source}
+                          </span>
+                        </p>
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {award.years.map((year) => (
+                            <span
+                              key={year}
+                              className="border border-[var(--hairline-bronze)] px-2.5 py-1 text-sm tabular-nums text-[var(--bronze-text)]"
+                            >
+                              {year}
                             </span>
-                          </p>
-                          <div className="mt-3 flex flex-wrap gap-2">
-                            {award.years.map((year) => (
-                              <span
-                                key={year}
-                                className="border border-[var(--hairline-bronze)] px-2.5 py-1 text-sm tabular-nums text-[var(--bronze-text)]"
-                              >
-                                {year}
-                              </span>
-                            ))}
-                          </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Official badge gallery, 2017–2026. */}
+                  <div className="mt-10 flex flex-wrap items-end gap-4">
+                    {[2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026].map(
+                      (year) => (
+                        <Image
+                          key={year}
+                          src={`/images/awards/d-best-${year}.webp`}
+                          alt={`D Magazine Best ${year} award badge`}
+                          width={980}
+                          height={1600}
+                          className="h-28 w-auto border border-[var(--hairline)] bg-white lg:h-32"
+                        />
+                      )
+                    )}
                   </div>
                 </div>
               </FadeIn>
