@@ -1,547 +1,357 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig, services, skinCancerTypes, mohsProcess, practiceInfo } from "@/lib/data/siteData";
-import { Phone, ChevronRight, CheckCircle, Microscope, Shield, Heart, Plus, Target, Clock, Award, Scissors, Stethoscope, AlertCircle } from "lucide-react";
+import { procedures } from "@/lib/data/proceduresData";
+import { Phone, ChevronRight } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { LuxuryCta } from "@/components/ui/LuxuryCta";
 
-const serviceIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  microscope: Microscope,
-  shield: Shield,
-  heart: Heart,
-  plus: Plus,
+
+export const metadata: Metadata = {
+  title: "Skin Cancer Treatment & Mohs Surgery",
+  description:
+    "Mohs micrographic surgery, skin cancer treatment, and reconstruction at The Surgery Center at Plano Dermatology. Cure rates up to 99% with same-day margin results.",
+  alternates: { canonical: "/services" },
+  openGraph: { title: "Skin Cancer Treatment & Mohs Surgery", description: "Mohs micrographic surgery, skin cancer treatment, and reconstruction at The Surgery Center at Plano Dermatology. Cure rates up to 99% with same-day margin results.", url: "/services" },
 };
 
-// Service-specific images and colors
-const serviceVisuals: Record<string, { image: string; gradient: string; accent: string }> = {
+// Feature lines still awaiting confirmation from the practice are marked
+// PLACEHOLDER in siteData. They stay in the data file as TODOs but must never
+// reach the page. One legacy line is rewritten here to match the site's voice.
+function publishableFeatures(features: string[]): string[] {
+  return features
+    .filter((feature) => !feature.includes("PLACEHOLDER"))
+    .map((feature) =>
+      feature === "Performed in our state-of-the-art outpatient facility"
+        ? "Performed as an outpatient procedure in our own facility"
+        : feature
+    );
+}
+
+// Evocative laboratory/instrument imagery for the bands that carry it — no
+// staged patients, no fake interiors. Keyed by service id.
+const serviceImages: Record<string, { src: string; alt: string }> = {
+  immunostaining: {
+    src: "/images/svc-histology-art.webp",
+    alt: "Stained tissue section under the microscope, an abstract field of color",
+  },
+  "high-risk-immunostaining": {
+    src: "/images/svc-slide-glass.webp",
+    alt: "Prepared glass microscope slides catching the laboratory light",
+  },
   "mohs-surgery": {
-    image: "/images/generated/mohs-surgery-illustration.png",
-    gradient: "from-[var(--navy-primary)] to-[var(--navy-dark)]",
-    accent: "var(--teal-accent)"
+    src: "/images/svc-microscope-detail.webp",
+    alt: "Close detail of a surgical microscope's polished optics",
   },
-  "skin-cancer-treatment": {
-    image: "/images/generated/skin-health-abstract.png",
-    gradient: "from-[var(--teal-accent)]/20 to-[var(--sage)]/20",
-    accent: "var(--teal-accent)"
+  reconstruction: {
+    src: "/images/svc-surgical-light.webp",
+    alt: "Soft gleam of a surgical light against a darkened room",
   },
-  "reconstruction": {
-    image: "/images/generated/medical-consultation.png",
-    gradient: "from-[var(--coral-soft)]/20 to-[var(--cream)]",
-    accent: "var(--coral-soft)"
-  },
-  "other-procedures": {
-    image: "/images/generated/hero-dermatology.png",
-    gradient: "from-[var(--sage)]/20 to-[var(--cream)]",
-    accent: "var(--sage)"
-  }
 };
 
 export default function ServicesPage() {
+  const mohsParagraphs = practiceInfo.mohsDescription.split("\n\n");
+
   return (
-    <div className="pt-24 lg:pt-32">
-      {/* Hero Section - Premium Design */}
-      <section className="relative bg-gradient-to-br from-[var(--navy-primary)] via-[var(--navy-dark)] to-[var(--navy-primary)] py-16 lg:py-24 overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--teal-accent)]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[var(--coral-soft)]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-5">
-          <svg viewBox="0 0 200 200" className="w-full h-full">
-            <path fill="white" d="M44.7,-76.4C58.9,-69.2,71.8,-59,79.6,-45.8C87.4,-32.6,90.1,-16.3,88.5,-1C86.9,14.4,81,28.7,72.1,40.6C63.2,52.5,51.4,62,38.1,69.3C24.8,76.6,10.1,81.7,-4.7,82.4C-19.6,83.1,-39.2,79.4,-54.3,70.1C-69.4,60.8,-80.1,46,-84.7,29.6C-89.3,13.2,-87.8,-4.8,-82.4,-21.2C-77,-37.6,-67.7,-52.3,-54.7,-60.3C-41.7,-68.2,-25,-69.3,-9.3,-71.3C6.4,-73.2,30.5,-83.5,44.7,-76.4Z" transform="translate(100 100)" />
-          </svg>
-        </div>
-
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <FadeIn>
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="text-[var(--teal-accent)] text-eyebrow mb-4">Comprehensive Care</p>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6" style={{ fontFamily: 'var(--font-serif)', color: 'white' }}>
-                Expert Skin Cancer Treatment
-              </h1>
-              <div className="w-20 h-1 bg-gradient-to-r from-[var(--teal-accent)] to-[var(--coral-soft)] mx-auto mb-6 rounded-full" />
-              <p className="text-lg lg:text-xl text-white/80 mb-10">
-                From diagnosis through reconstruction, our board certified Mohs surgeons
-                deliver comprehensive care with the highest cure rates.
+    <div className="pt-28">
+      {/* Intro. Says what the page holds and lets a reader jump straight to
+          the service they came for. */}
+      <section className="bg-[var(--surface)]">
+        <div className="max-w-6xl mx-auto px-6 pt-16 pb-14">
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+            <FadeIn className="lg:col-span-2">
+              <h1 className="text-hero mb-6">What we do</h1>
+              <p className="text-lg text-[var(--warm-gray)] leading-relaxed mb-4">
+                Skin cancer surgery is the core of the practice. Mohs
+                micrographic surgery removes the tumor with every margin read
+                on site, and our own immunostaining laboratory extends that
+                margin control to melanoma and other high-risk cancers few
+                practices can treat this way.
               </p>
-
-              {/* Quick Stats */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-3xl mx-auto">
-                {[
-                  { icon: Target, value: "99%", label: "Cure Rate" },
-                  { icon: Clock, value: "Same Day", label: "Results" },
-                  { icon: Award, value: "3", label: "Board Certified Surgeons" },
-                  { icon: Heart, value: "30+", label: "Years Experience" }
-                ].map((stat, index) => (
-                  <div key={stat.label} className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-5 border border-white/10">
-                    <stat.icon className="w-5 h-5 lg:w-6 lg:h-6 text-[var(--teal-accent)] mx-auto mb-2" />
-                    <div className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-serif)' }}>
-                      {stat.value}
-                    </div>
-                    <div className="text-xs lg:text-sm text-white/60">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Services List */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 lg:px-6">
-          {/* Section Header */}
-          <FadeIn>
-            <div className="text-center mb-16">
-              <p className="text-eyebrow text-[var(--teal-accent)] mb-4">What We Offer</p>
-              <h2 className="text-display mb-4">Our Specialized Services</h2>
-              <div className="organic-accent-line" />
-            </div>
-          </FadeIn>
-
-          <div className="space-y-16 lg:space-y-24">
-            {services.map((service, index) => {
-              const Icon = serviceIcons[service.icon] || Microscope;
-              const visuals = serviceVisuals[service.id] || serviceVisuals["other-procedures"];
-              const isEven = index % 2 === 0;
-
-              return (
-                <FadeIn key={service.id} delay={index * 0.1}>
-                  <div
-                    id={service.id}
-                    className="scroll-mt-32"
-                  >
-                    <div className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center`}>
-                      {/* Content Side */}
-                      <div className={!isEven ? 'lg:order-2' : ''}>
-                        {/* Service Badge */}
-                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--teal-accent)]/10 to-[var(--sage)]/10 rounded-full px-4 py-2 mb-6">
-                          <Icon className="w-4 h-4 text-[var(--teal-accent)]" />
-                          <span className="text-xs font-semibold text-[var(--navy-primary)] uppercase tracking-wide">
-                            {index === 0 ? 'Gold Standard Treatment' : index === 1 ? 'Expert Diagnosis' : index === 2 ? 'Skilled Reconstruction' : 'Additional Care'}
-                          </span>
-                        </div>
-
-                        <h2 className="text-2xl lg:text-4xl font-bold text-[var(--navy-primary)] mb-6" style={{ fontFamily: 'var(--font-serif)' }}>
-                          {service.name}
-                        </h2>
-                        <p className="text-[var(--warm-gray)] mb-8 leading-relaxed text-lg">
-                          {service.description}
-                        </p>
-
-                        {/* Features Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                          {service.features.map((feature) => (
-                            <div key={feature} className="flex items-start gap-3 bg-[var(--cream)]/50 rounded-xl p-3">
-                              <CheckCircle className="w-5 h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
-                              <span className="text-sm text-[var(--navy-primary)]">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* CTA Button */}
-                        <Link
-                          href="/appointment"
-                          className="inline-flex items-center gap-2 bg-[var(--navy-primary)] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[var(--navy-dark)] transition-colors shadow-lg"
-                        >
-                          Schedule Consultation
-                          <ChevronRight className="w-4 h-4" />
-                        </Link>
-                      </div>
-
-                      {/* Visual Side */}
-                      <div className={!isEven ? 'lg:order-1' : ''}>
-                        {service.id === 'mohs-surgery' ? (
-                          /* Mohs Surgery - Premium Process Card */
-                          <div className="bg-gradient-to-br from-[var(--navy-primary)] to-[var(--navy-dark)] rounded-3xl p-8 lg:p-10 relative overflow-hidden shadow-2xl">
-                            {/* Decorative elements */}
-                            <div className="absolute top-0 right-0 w-48 h-48 bg-[var(--teal-accent)]/20 rounded-full blur-3xl" />
-                            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-2xl" />
-
-                            <div className="relative z-10">
-                              <div className="flex items-center gap-3 mb-8">
-                                <div className="w-12 h-12 rounded-2xl bg-[var(--teal-accent)]/20 flex items-center justify-center">
-                                  <Microscope className="w-6 h-6 text-[var(--teal-accent)]" />
-                                </div>
-                                <h3 className="font-semibold text-white text-xl">
-                                  The Mohs Process
-                                </h3>
-                              </div>
-                              <div className="space-y-4">
-                                {mohsProcess.slice(0, 6).map((step) => (
-                                  <div key={step.step} className="flex gap-4 group">
-                                    <div className="w-10 h-10 rounded-xl bg-[var(--teal-accent)] text-white flex items-center justify-center text-sm font-bold flex-shrink-0 group-hover:scale-110 transition-transform">
-                                      {step.step}
-                                    </div>
-                                    <div>
-                                      <div className="font-semibold text-white text-sm">
-                                        {step.title}
-                                      </div>
-                                      <div className="text-xs text-white/60">{step.description}</div>
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        ) : (
-                          /* Other Services - Image Card */
-                          <div className="relative group">
-                            <div className="aspect-[4/3] relative rounded-3xl overflow-hidden shadow-2xl">
-                              <Image
-                                src={visuals.image}
-                                alt={service.name}
-                                fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                              />
-                              {/* Overlay gradient */}
-                              <div className="absolute inset-0 bg-gradient-to-t from-[var(--navy-primary)]/60 via-transparent to-transparent" />
-
-                              {/* Floating stat card */}
-                              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-lg">
-                                <div className="flex items-center justify-between">
-                                  <div>
-                                    <div className="text-xs text-[var(--warm-gray)] uppercase tracking-wide mb-1">Treatment Focus</div>
-                                    <div className="font-semibold text-[var(--navy-primary)]">{service.name}</div>
-                                  </div>
-                                  <div className="w-12 h-12 rounded-xl bg-[var(--teal-accent)]/10 flex items-center justify-center">
-                                    <Icon className="w-6 h-6 text-[var(--teal-accent)]" />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Decorative corner accent */}
-                            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[var(--teal-accent)]/10 rounded-2xl -z-10" />
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </FadeIn>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Skin Cancer Types */}
-      <section className="py-16 lg:py-24 bg-[var(--navy-primary)] relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[var(--teal-accent)]/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[var(--coral-soft)]/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-
-        <div className="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
-          <FadeIn>
-            <div className="text-center mb-12 lg:mb-16">
-              <p className="text-[var(--teal-accent)] text-eyebrow mb-4">Expert Treatment</p>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-serif)', color: 'white' }}>
-                Skin Cancers We Treat
-              </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-[var(--teal-accent)] to-[var(--coral-soft)] mx-auto mb-6 rounded-full" />
-              <p className="text-white/70 max-w-2xl mx-auto">
-                Our surgeons are experts in treating all types of skin cancer, from the
-                most common to rare and complex cases.
+              <p className="text-[var(--warm-gray-light)] leading-relaxed mb-8">
+                Reconstruction, pilonidal surgery, and everyday dermatologic
+                procedures round out the list below.
               </p>
-            </div>
-          </FadeIn>
-
-          {/* Common Skin Cancers - Top Row */}
-          <div className="mb-8">
-            <FadeIn>
-              <p className="text-xs uppercase tracking-wider text-[var(--teal-accent)]/80 mb-4 text-center font-semibold">
-                Most Common Types
-              </p>
-            </FadeIn>
-            <div className="grid md:grid-cols-3 gap-4 lg:gap-6">
-              {skinCancerTypes.slice(0, 3).map((type, index) => (
-                <FadeIn key={type.shortName} delay={index * 0.08}>
-                  <div className="group bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/20 hover:border-white/20 transition-all duration-300 h-full flex flex-col">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-[var(--teal-accent)]/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                        <AlertCircle className="w-5 h-5 text-[var(--teal-accent)]" />
-                      </div>
-                      <span className="text-xs font-bold text-[var(--teal-accent)] uppercase tracking-wide">
-                        {type.shortName}
-                      </span>
-                    </div>
-                    <h3 className="font-semibold text-white mb-3 text-lg">
-                      {type.name.split(' (')[0]}
-                    </h3>
-                    <p className="text-sm text-white/60 leading-relaxed flex-grow">{type.description}</p>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-
-          {/* Rare Skin Cancers - Bottom Row */}
-          <div>
-            <FadeIn delay={0.25}>
-              <p className="text-xs uppercase tracking-wider text-white/40 mb-4 text-center font-semibold">
-                Rare & Complex Cases
-              </p>
-            </FadeIn>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-              {skinCancerTypes.slice(3).map((type, index) => (
-                <FadeIn key={type.shortName} delay={0.3 + index * 0.08}>
-                  <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300 h-full flex flex-col text-center">
-                    <div className="w-10 h-10 rounded-xl bg-[var(--coral-soft)]/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform mx-auto mb-3">
-                      <AlertCircle className="w-5 h-5 text-[var(--coral-soft)]" />
-                    </div>
-                    <span className="text-xs font-bold text-[var(--coral-soft)]/80 uppercase tracking-wide mb-2">
-                      {type.shortName}
-                    </span>
-                    <h3 className="font-semibold text-white mb-2 text-sm">
-                      {type.name.split(' (')[0]}
-                    </h3>
-                    <p className="text-xs text-white/50 leading-relaxed flex-grow">{type.description}</p>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-
-          {/* Bottom CTA */}
-          <FadeIn delay={0.5}>
-            <div className="text-center mt-12">
-              <p className="text-white/60 mb-4">Concerned about a spot on your skin?</p>
-              <Link
-                href="/appointment"
-                className="inline-flex items-center gap-2 bg-[var(--teal-accent)] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[var(--teal-dark)] transition-colors"
+              <a
+                href={`tel:${siteConfig.contact.phoneRaw}`}
+                className="inline-flex items-center gap-2 text-lg font-semibold text-[var(--navy-primary)] hover:text-[var(--teal-accent)] transition-colors"
               >
-                Schedule a Screening
-                <ChevronRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Mohs Surgery Detail Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-[var(--cream)]/30">
-        <div className="max-w-6xl mx-auto px-4 lg:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left - Content */}
-            <FadeIn>
-              <div>
-                <p className="text-eyebrow text-[var(--teal-accent)] mb-4">The Gold Standard</p>
-                <h2 className="text-3xl lg:text-4xl font-bold text-[var(--navy-primary)] mb-6" style={{ fontFamily: 'var(--font-serif)' }}>
-                  About Mohs Micrographic Surgery
-                </h2>
-
-                <div className="prose prose-gray max-w-none mb-8">
-                  <p className="text-[var(--warm-gray)] mb-4 leading-relaxed">
-                    {practiceInfo.mohsDescription.split('\n\n')[0]}
-                  </p>
-                  <p className="text-[var(--warm-gray)] leading-relaxed">
-                    {practiceInfo.mohsDescription.split('\n\n')[1]}
-                  </p>
-                </div>
-
-                {/* Key Stats */}
-                <div className="grid grid-cols-3 gap-4 mb-8">
-                  {[
-                    { value: "99%", label: "Cure Rate" },
-                    { value: "50+", label: "Years Proven" },
-                    { value: "#1", label: "Treatment Choice" }
-                  ].map((stat) => (
-                    <div key={stat.label} className="text-center p-4 bg-white rounded-xl border border-[var(--gray-200)]">
-                      <div className="text-2xl font-bold text-[var(--teal-accent)]" style={{ fontFamily: 'var(--font-serif)' }}>
-                        {stat.value}
-                      </div>
-                      <div className="text-xs text-[var(--warm-gray)]">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-
-                <Link
-                  href="/appointment"
-                  className="inline-flex items-center gap-2 bg-[var(--navy-primary)] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[var(--navy-dark)] transition-colors"
-                >
-                  Schedule Mohs Consultation
-                  <ChevronRight className="w-4 h-4" />
-                </Link>
-              </div>
+                <Phone className="w-4 h-4" />
+                {siteConfig.contact.phone}
+              </a>
             </FadeIn>
 
-            {/* Right - Advantages Card */}
-            <FadeIn delay={0.2}>
-              <div className="bg-gradient-to-br from-[var(--navy-primary)] to-[var(--navy-dark)] rounded-3xl p-8 lg:p-10 relative overflow-hidden shadow-2xl">
-                {/* Decorative elements */}
-                <div className="absolute top-0 right-0 w-48 h-48 bg-[var(--teal-accent)]/20 rounded-full blur-3xl" />
-
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-8">
-                    <div className="w-12 h-12 rounded-2xl bg-[var(--teal-accent)]/20 flex items-center justify-center">
-                      <Award className="w-6 h-6 text-[var(--teal-accent)]" />
-                    </div>
-                    <h3 className="font-semibold text-white text-xl">
-                      Why Choose Mohs?
-                    </h3>
-                  </div>
-
-                  <div className="space-y-4">
-                    {practiceInfo.advantages.slice(0, 8).map((advantage, index) => (
-                      <div key={advantage} className="flex items-start gap-3 group">
-                        <div className="w-6 h-6 rounded-lg bg-[var(--teal-accent)]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--teal-accent)]/30 transition-colors">
-                          <CheckCircle className="w-4 h-4 text-[var(--teal-accent)]" />
-                        </div>
-                        <span className="text-white/80 text-sm">{advantage}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+            {/* Index of the page — hairline list, one row per service. */}
+            <FadeIn delay={0.1} className="lg:col-span-3">
+              <nav aria-label="Services on this page" className="border-t border-[var(--gray-200)]">
+                {services.map((service) => (
+                  <a
+                    key={service.id}
+                    href={`#${service.id}`}
+                    className="group grid grid-cols-[1fr_auto] gap-4 items-center py-4 border-b border-[var(--gray-200)] transition-colors hover:bg-[var(--cream)]"
+                  >
+                    <span>
+                      <span
+                        className="block text-xl leading-snug text-[var(--navy-primary)]"
+                        style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
+                      >
+                        {service.name}
+                      </span>
+                      <span className="block text-sm text-[var(--warm-gray-light)] mt-0.5">
+                        {service.shortDescription}
+                      </span>
+                    </span>
+                    <ChevronRight className="w-4 h-4 text-[var(--teal-accent)] transition-transform group-hover:translate-x-1" />
+                  </a>
+                ))}
+              </nav>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* What to Expect */}
-      <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--teal-accent)]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[var(--coral-soft)]/5 rounded-full blur-3xl" />
+      {/* One editorial band per service, in the data's deliberate order:
+          the immunostaining work leads because it is what sets the practice
+          apart. Bands alternate deep ivory and surface. */}
+      {services.map((service, index) => {
+        const band = index % 2 === 0 ? "bg-[var(--ivory-deep)]" : "bg-[var(--surface)]";
+        const features = publishableFeatures(service.features);
+        const image = serviceImages[service.id];
 
-        <div className="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
-          <FadeIn>
-            <div className="text-center mb-12 lg:mb-16">
-              <p className="text-eyebrow text-[var(--teal-accent)] mb-4">Your Visit</p>
-              <h2 className="text-display mb-4">
-                What to Expect
-              </h2>
-              <div className="organic-accent-line" />
-              <p className="text-[var(--warm-gray)] mt-6 max-w-2xl mx-auto">
-                We want you to feel prepared and confident. Here&apos;s what your Mohs surgery experience will look like.
-              </p>
+        return (
+          <section key={service.id} id={service.id} className={`${band} scroll-mt-32 py-20 lg:py-24`}>
+            <div className="max-w-6xl mx-auto px-6">
+              <div className="grid lg:grid-cols-3 gap-10 lg:gap-16">
+                {/* Narrow intro column. */}
+                <FadeIn>
+                  <p className="label-caps mb-3">{service.badge}</p>
+                  <h2 className="text-display mb-4">{service.name}</h2>
+                  <p className="text-[var(--warm-gray-light)] leading-relaxed">
+                    {service.shortDescription}
+                  </p>
+                  {image && (
+                    <div className="duotone-frame aspect-[4/5] mt-8">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        sizes="(min-width: 1024px) 21rem, 100vw"
+                        className="img-duotone object-cover"
+                      />
+                      <div
+                        className="absolute inset-2 z-10 border border-[var(--hairline-bronze)] pointer-events-none"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  )}
+                </FadeIn>
+
+                {/* Wide content column. */}
+                <FadeIn delay={0.1} className="lg:col-span-2">
+                  <p className="text-lg text-[var(--warm-gray)] leading-relaxed mb-6">
+                    {service.description}
+                  </p>
+
+                  {service.id === "mohs-surgery" && (
+                    <>
+                      <p className="text-lg text-[var(--warm-gray)] leading-relaxed mb-6">
+                        {mohsParagraphs[1]}
+                      </p>
+                      <p className="text-lg text-[var(--warm-gray)] leading-relaxed mb-6">
+                        {mohsParagraphs[2]}
+                      </p>
+                    </>
+                  )}
+
+                  <ul className="border-t border-[var(--gray-200)] mb-8">
+                    {features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="py-3 border-b border-[var(--gray-200)] text-[var(--navy-primary)]"
+                      >
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* The Mohs entry carries the full procedure walk-through,
+                      what to expect around surgery day, and the list of
+                      cancers the technique treats. */}
+                  {service.id === "mohs-surgery" && (
+                    <>
+                      <h3
+                        className="text-2xl text-[var(--navy-primary)] mt-12 mb-4"
+                        style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
+                      >
+                        The procedure, step by step
+                      </h3>
+                      <ol className="border-t border-[var(--gray-200)] mb-8">
+                        {mohsProcess.map((step) => (
+                          <li
+                            key={step.step}
+                            className="grid grid-cols-[2.5rem_1fr] gap-5 py-4 border-b border-[var(--gray-200)]"
+                          >
+                            <span
+                              className="text-lg text-[var(--warm-gray-light)] tabular-nums"
+                              style={{ fontFamily: "var(--font-serif)" }}
+                            >
+                              {step.step}.
+                            </span>
+                            <span>
+                              <span className="block font-semibold text-[var(--navy-primary)]">
+                                {step.title}
+                              </span>
+                              <span className="block text-[var(--warm-gray)] leading-relaxed mt-0.5">
+                                {step.description}
+                              </span>
+                            </span>
+                          </li>
+                        ))}
+                      </ol>
+
+                      <h3
+                        className="text-2xl text-[var(--navy-primary)] mt-12 mb-4"
+                        style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
+                      >
+                        Around surgery day
+                      </h3>
+                      <div className="grid sm:grid-cols-3 gap-8 mb-8">
+                        {[
+                          {
+                            title: "Before surgery",
+                            items: [
+                              "Get a good night's rest",
+                              "Eat a good breakfast",
+                              "Take regular medications unless directed otherwise",
+                              "Avoid aspirin for 2 weeks prior",
+                              "Avoid alcohol for 2 days prior",
+                              "Bring a book or magazine",
+                              "Arrange for someone to drive you home",
+                            ],
+                          },
+                          {
+                            title: "During surgery",
+                            items: [
+                              "Local anesthesia keeps you comfortable",
+                              "Each stage takes 1–2 hours",
+                              "Average of 2–3 stages needed",
+                              "Most cases complete by midday",
+                              "Tissue is examined while you wait",
+                            ],
+                          },
+                          {
+                            title: "After surgery",
+                            items: [
+                              "Wound care instructions provided",
+                              "Follow-up at 4–6 weeks",
+                              "Then at 3 months, 6 months, annually",
+                              "5-year observation period",
+                              "Healing takes 6–18 months",
+                              "Use sun protection going forward",
+                            ],
+                          },
+                        ].map((phase) => (
+                          <div key={phase.title}>
+                            <h4 className="font-semibold text-[var(--navy-primary)] mb-2">
+                              {phase.title}
+                            </h4>
+                            <ul className="border-t border-[var(--gray-200)]">
+                              {phase.items.map((item) => (
+                                <li
+                                  key={item}
+                                  className="py-2.5 border-b border-[var(--gray-200)] text-[var(--warm-gray)]"
+                                >
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+
+                      <h3
+                        className="text-2xl text-[var(--navy-primary)] mt-12 mb-4"
+                        style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
+                      >
+                        Skin cancers we treat
+                      </h3>
+                      <p className="text-[var(--warm-gray)] leading-relaxed mb-4">
+                        From the most common cancers to rare and locally
+                        aggressive tumors.
+                      </p>
+                      <dl className="border-t border-[var(--gray-200)] mb-8">
+                        {skinCancerTypes.map((type) => (
+                          <div
+                            key={type.shortName}
+                            className="grid sm:grid-cols-[7rem_1fr] gap-1 sm:gap-6 py-4 border-b border-[var(--gray-200)]"
+                          >
+                            <dt className="font-semibold text-[var(--navy-primary)]">
+                              {type.shortName}
+                            </dt>
+                            <dd>
+                              <span className="block font-semibold text-[var(--navy-primary)]">
+                                {type.name}
+                              </span>
+                              <span className="block text-[var(--warm-gray)] leading-relaxed mt-0.5">
+                                {type.description}
+                              </span>
+                            </dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </>
+                  )}
+
+                  <Link href="/appointment" className="btn-outline-bronze">
+                    Request an appointment
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </FadeIn>
+              </div>
             </div>
-          </FadeIn>
+          </section>
+        );
+      })}
 
-          {/* Timeline connector for desktop */}
-          <div className="hidden lg:block absolute top-[280px] left-1/2 -translate-x-1/2 w-[60%] h-1 bg-gradient-to-r from-[var(--teal-accent)]/20 via-[var(--teal-accent)] to-[var(--teal-accent)]/20 rounded-full" />
-
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {[
-              {
-                title: "Before Surgery",
-                icon: Clock,
-                color: "teal",
-                items: [
-                  "Get a good night's rest",
-                  "Eat a good breakfast",
-                  "Take regular medications unless directed otherwise",
-                  "Avoid aspirin for 2 weeks prior",
-                  "Avoid alcohol for 2 days prior",
-                  "Bring a book or magazine",
-                  "Arrange for someone to drive you home"
-                ]
-              },
-              {
-                title: "During Surgery",
-                icon: Scissors,
-                color: "navy",
-                items: [
-                  "Local anesthesia keeps you comfortable",
-                  "Each stage takes 1-2 hours",
-                  "Average of 2-3 stages needed",
-                  "Most complete by midday",
-                  "Tissue examined while you wait",
-                  "Stay in our comfortable waiting area"
-                ]
-              },
-              {
-                title: "After Surgery",
-                icon: Heart,
-                color: "coral",
-                items: [
-                  "Wound care instructions provided",
-                  "Follow-up in 4-6 weeks",
-                  "Then at 3 months, 6 months, annually",
-                  "5-year observation period",
-                  "Healing takes 6-18 months",
-                  "Use sun protection going forward"
-                ]
-              }
-            ].map((phase, index) => (
-              <FadeIn key={phase.title} delay={index * 0.15}>
-                <div className="relative bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-6 lg:p-8 h-full border border-[var(--gray-200)] hover:shadow-xl transition-all hover:-translate-y-1 group">
-                  {/* Top Icon Circle */}
-                  <div className={`absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl shadow-lg flex items-center justify-center ${
-                    index === 0 ? 'bg-[var(--teal-accent)]' : index === 1 ? 'bg-[var(--navy-primary)]' : 'bg-[var(--coral-soft)]'
-                  }`}>
-                    <phase.icon className="w-6 h-6 text-white" />
-                  </div>
-
-                  <div className="pt-6">
-                    <h3 className="font-bold text-[var(--navy-primary)] mb-6 text-xl text-center" style={{ fontFamily: 'var(--font-serif)' }}>
-                      {phase.title}
-                    </h3>
-                    <ul className="space-y-3 text-[var(--warm-gray)]">
-                      {phase.items.map((item) => (
-                        <li key={item} className="flex items-start gap-3 text-sm">
-                          <CheckCircle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${
-                            index === 0 ? 'text-[var(--teal-accent)]' : index === 1 ? 'text-[var(--navy-primary)]' : 'text-[var(--coral-soft)]'
-                          }`} />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Step number badge */}
-                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--gray-200)]/50 flex items-center justify-center text-sm font-bold text-[var(--warm-gray)]">
-                    {index + 1}
-                  </div>
-                </div>
-              </FadeIn>
+      {/* Procedure directory — every nested detail page, as a quiet index. */}
+      <section className="border-t border-[var(--gray-200)] bg-[var(--surface)] py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-12 max-w-2xl">
+            <h2 className="text-display mb-4">Procedures, in detail</h2>
+            <span aria-hidden="true" className="rule-bronze mb-5" />
+            <p className="leading-relaxed text-[var(--warm-gray)]">
+              Every procedure we perform has its own page — what it is, when to
+              come in, and how we treat it.
+            </p>
+          </div>
+          <div className="grid gap-x-10 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
+            {procedures.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/services/${p.slug}`}
+                className="group flex items-baseline justify-between gap-4 border-b border-[var(--gray-200)] py-4"
+              >
+                <span
+                  className="text-lg text-[var(--navy-primary)] transition-colors group-hover:text-[var(--teal-accent)]"
+                  style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
+                >
+                  {p.name}
+                </span>
+                <ChevronRight className="h-4 w-4 shrink-0 self-center text-[var(--teal-accent)] transition-transform group-hover:translate-x-0.5" />
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-[var(--cream)] via-white to-[var(--teal-accent)]/5 relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[var(--teal-accent)]/10 rounded-full blur-3xl -translate-y-1/2" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[var(--coral-soft)]/10 rounded-full blur-3xl translate-y-1/2" />
-
-        <div className="max-w-5xl mx-auto px-4 lg:px-6 relative z-10">
-          <FadeIn>
-            <div className="bg-[var(--navy-primary)] rounded-2xl lg:rounded-3xl p-8 lg:p-16 relative overflow-hidden shadow-2xl">
-              {/* Inner decorative orbs */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--teal-accent)]/20 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl" />
-
-              <div className="relative z-10 text-center">
-                <h2 className="text-2xl lg:text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-serif)', color: 'white' }}>
-                  Questions About Our Services?
-                </h2>
-                <p className="text-base lg:text-lg text-white/80 mb-8 lg:mb-10 max-w-2xl mx-auto">
-                  Contact us to learn more about our services or to schedule
-                  a consultation with one of our board certified surgeons.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
-                  <a
-                    href={`tel:${siteConfig.contact.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-2 bg-[var(--teal-accent)] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl font-semibold hover:bg-[var(--teal-dark)] transition-colors text-base lg:text-lg shadow-lg"
-                  >
-                    <Phone className="w-5 h-5" />
-                    {siteConfig.contact.phone}
-                  </a>
-                  <Link
-                    href="/appointment"
-                    className="inline-flex items-center justify-center gap-2 bg-white text-[var(--navy-primary)] px-6 lg:px-8 py-3 lg:py-4 rounded-xl font-semibold hover:bg-[var(--cream)] transition-colors text-base lg:text-lg shadow-lg"
-                  >
-                    Request Appointment
-                    <ChevronRight className="w-5 h-5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      {/* Final CTA. Full-bleed dark marble band, phone number set large —
+          the one dark band on the page, matching the homepage's closing
+          section. */}
+      <LuxuryCta
+        heading="Talk to us about your diagnosis"
+        subtext="Most patients are seen within days of referral."
+      />
     </div>
   );
 }

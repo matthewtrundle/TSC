@@ -1,450 +1,157 @@
-"use client";
-
-import { useState } from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
 import { siteConfig } from "@/lib/data/siteData";
-import { Phone, Calendar, Clock, MapPin, Send, CheckCircle, ChevronRight, User, Mail, MessageSquare } from "lucide-react";
+import { Phone } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { AppointmentForm } from "@/components/forms/AppointmentForm";
+
+
+export const metadata: Metadata = {
+  title: "Request an Appointment",
+  description:
+    "Request an appointment with a board certified Mohs surgeon at The Surgery Center at Plano Dermatology. Call (972) 378-0620 or submit a request online.",
+  alternates: { canonical: "/appointment" },
+  openGraph: { title: "Request an Appointment", description: "Request an appointment with a board certified Mohs surgeon at The Surgery Center at Plano Dermatology. Call (972) 378-0620 or submit a request online.", url: "/appointment" },
+};
 
 export default function AppointmentPage() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    preferredDate: "",
-    preferredTime: "morning",
-    appointmentType: "new-patient",
-    referralSource: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
   return (
-    <div className="pt-24 lg:pt-32">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-[var(--cream)]/30 via-white to-white py-12 lg:py-20 overflow-hidden">
-        {/* Decorative blobs */}
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--teal-accent)]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[var(--coral-soft)]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
+    <div className="pt-28">
+      {/* Header. Says what will happen, then puts the phone number first. */}
+      <section className="bg-white">
+        <div className="max-w-6xl mx-auto px-6 pt-16 pb-14">
           <FadeIn>
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="text-eyebrow text-[var(--teal-accent)] mb-4">Schedule Your Visit</p>
-              <h1 className="text-display mb-6">
-                Request an Appointment
-              </h1>
-              <div className="organic-accent-line" />
-              <p className="text-base lg:text-xl text-[var(--warm-gray)] mt-6">
-                Take the first step toward expert skin cancer care. Fill out the form below and our team will contact you to confirm your appointment.
+            <div className="max-w-3xl">
+              <h1 className="text-display mb-6">Request an appointment</h1>
+              <p className="text-lg text-[var(--warm-gray)] leading-relaxed mb-8">
+                Fill out the form below and our office will call you within one
+                business day to set a time and verify your insurance.
               </p>
+              <p className="text-[var(--warm-gray)] mb-3">
+                Prefer to call? Many patients do — you will reach a person, not
+                a phone tree.
+              </p>
+              <a
+                href={`tel:${siteConfig.contact.phoneRaw}`}
+                className="inline-flex items-center gap-4 text-4xl lg:text-5xl text-[var(--charcoal)] hover:text-[var(--bronze-text)] transition-colors"
+                style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}
+              >
+                <Phone className="w-7 h-7" style={{ color: "var(--bronze)" }} />
+                {siteConfig.contact.phone}
+              </a>
             </div>
           </FadeIn>
         </div>
-      </section>
 
-      {/* Quick Info Bar */}
-      <section className="py-4 lg:py-8 bg-[var(--navy-primary)]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 lg:gap-8 text-white text-sm lg:text-base">
-            <div className="flex items-center gap-2 lg:gap-3">
-              <Phone className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)]" />
-              <span>Call us: <a href={`tel:${siteConfig.contact.phoneRaw}`} className="font-semibold hover:text-[var(--teal-accent)] transition-colors">{siteConfig.contact.phone}</a></span>
-            </div>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-white/30" />
-            <div className="flex items-center gap-2 lg:gap-3">
-              <Clock className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)]" />
-              <span>{siteConfig.hours.short}</span>
-            </div>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-white/30" />
-            <div className="flex items-center gap-2 lg:gap-3">
-              <MapPin className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)]" />
-              <span>Plano, Texas</span>
-            </div>
+        {/* Hours and address as a quiet hairline strip. */}
+        <div className="border-y border-[var(--hairline)]">
+          <div className="max-w-6xl mx-auto px-6 py-5 flex flex-wrap gap-x-12 gap-y-2 text-base text-[var(--warm-gray)]">
+            <span className="inline-flex items-baseline gap-3">
+              <span className="label-caps">Hours</span>
+              {siteConfig.hours.short}
+            </span>
+            <span className="inline-flex items-baseline gap-3">
+              <span className="label-caps">Address</span>
+              {siteConfig.contact.address.full}
+            </span>
           </div>
         </div>
       </section>
 
-      {/* Appointment Form Section */}
-      <section className="py-12 lg:py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 lg:px-6">
-          <div className="grid lg:grid-cols-5 gap-8 lg:gap-16">
-            {/* Left - Form (3 cols) */}
-            <FadeIn className="lg:col-span-3 order-2 lg:order-1">
-              <div className="bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-6 lg:p-10 border border-[var(--gray-200)] shadow-lg">
-                <div className="flex items-center gap-3 lg:gap-4 mb-6 lg:mb-8">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl bg-gradient-to-br from-[var(--teal-accent)]/15 to-[var(--teal-accent)]/5 flex items-center justify-center flex-shrink-0">
-                    <Calendar className="w-6 h-6 lg:w-7 lg:h-7 text-[var(--teal-accent)]" />
-                  </div>
-                  <div>
-                    <h2 className="text-xl lg:text-2xl font-bold text-[var(--navy-primary)]" style={{ fontFamily: 'var(--font-serif)' }}>
-                      Appointment Request Form
-                    </h2>
-                    <p className="text-[var(--warm-gray)] text-xs lg:text-sm">
-                      Fields marked with * are required
-                    </p>
-                  </div>
-                </div>
+      {/* The form, with what-happens-next alongside. */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+            {/* Form on a stone panel with a hairline. */}
+            <FadeIn className="lg:col-span-3">
+              <div className="texture-ivory border border-[var(--hairline-bronze)] rounded-sm p-6 lg:p-10">
+                <h2
+                  className="text-2xl text-[var(--navy-primary)] mb-2"
+                  style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
+                >
+                  Appointment request
+                </h2>
+                <p className="text-[var(--warm-gray)] mb-8">
+                  Fields marked with * are required.
+                </p>
 
-                {isSubmitted ? (
-                  <div className="text-center py-10 lg:py-16">
-                    <div className="w-20 h-20 lg:w-24 lg:h-24 mx-auto mb-6 lg:mb-8 rounded-2xl lg:rounded-3xl bg-green-100 flex items-center justify-center">
-                      <CheckCircle className="w-10 h-10 lg:w-12 lg:h-12 text-green-600" />
-                    </div>
-                    <h3 className="text-2xl lg:text-3xl font-semibold text-[var(--navy-primary)] mb-3 lg:mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
-                      Request Received!
-                    </h3>
-                    <p className="text-[var(--warm-gray)] text-base lg:text-lg mb-6 lg:mb-8 max-w-md mx-auto">
-                      Thank you for your appointment request. Our team will call you within 1 business day to confirm your appointment.
-                    </p>
-                    <Link
-                      href="/"
-                      className="inline-flex items-center gap-2 text-[var(--teal-accent)] font-semibold hover:gap-3 transition-all"
-                    >
-                      Return to Homepage
-                      <ChevronRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5 lg:space-y-6">
-                    {/* Name Row */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
-                      <div>
-                        <label
-                          htmlFor="firstName"
-                          className="block text-sm font-medium text-[var(--navy-primary)] mb-2"
-                        >
-                          First Name *
-                        </label>
-                        <div className="relative">
-                          <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--warm-gray)]/50" />
-                          <input
-                            type="text"
-                            id="firstName"
-                            name="firstName"
-                            required
-                            value={formData.firstName}
-                            onChange={handleChange}
-                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-[var(--gray-200)] focus:ring-2 focus:ring-[var(--teal-accent)] focus:border-transparent outline-none transition-all bg-white"
-                            placeholder="First name"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="lastName"
-                          className="block text-sm font-medium text-[var(--navy-primary)] mb-2"
-                        >
-                          Last Name *
-                        </label>
-                        <input
-                          type="text"
-                          id="lastName"
-                          name="lastName"
-                          required
-                          value={formData.lastName}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-[var(--gray-200)] focus:ring-2 focus:ring-[var(--teal-accent)] focus:border-transparent outline-none transition-all bg-white"
-                          placeholder="Last name"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Contact Row */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
-                      <div>
-                        <label
-                          htmlFor="email"
-                          className="block text-sm font-medium text-[var(--navy-primary)] mb-2"
-                        >
-                          Email *
-                        </label>
-                        <div className="relative">
-                          <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--warm-gray)]/50" />
-                          <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            value={formData.email}
-                            onChange={handleChange}
-                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-[var(--gray-200)] focus:ring-2 focus:ring-[var(--teal-accent)] focus:border-transparent outline-none transition-all bg-white"
-                            placeholder="you@example.com"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="phone"
-                          className="block text-sm font-medium text-[var(--navy-primary)] mb-2"
-                        >
-                          Phone *
-                        </label>
-                        <div className="relative">
-                          <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--warm-gray)]/50" />
-                          <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            required
-                            value={formData.phone}
-                            onChange={handleChange}
-                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-[var(--gray-200)] focus:ring-2 focus:ring-[var(--teal-accent)] focus:border-transparent outline-none transition-all bg-white"
-                            placeholder="(555) 555-5555"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Appointment Type */}
-                    <div>
-                      <label
-                        htmlFor="appointmentType"
-                        className="block text-sm font-medium text-[var(--navy-primary)] mb-2"
-                      >
-                        Appointment Type *
-                      </label>
-                      <select
-                        id="appointmentType"
-                        name="appointmentType"
-                        required
-                        value={formData.appointmentType}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3.5 rounded-xl border border-[var(--gray-200)] focus:ring-2 focus:ring-[var(--teal-accent)] focus:border-transparent outline-none transition-all bg-white"
-                      >
-                        <option value="new-patient">New Patient Consultation</option>
-                        <option value="mohs-surgery">Mohs Surgery</option>
-                        <option value="follow-up">Follow-Up Appointment</option>
-                        <option value="skin-check">Skin Cancer Screening</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-
-                    {/* Date/Time Preference Row */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
-                      <div>
-                        <label
-                          htmlFor="preferredDate"
-                          className="block text-sm font-medium text-[var(--navy-primary)] mb-2"
-                        >
-                          Preferred Date
-                        </label>
-                        <div className="relative">
-                          <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--warm-gray)]/50" />
-                          <input
-                            type="date"
-                            id="preferredDate"
-                            name="preferredDate"
-                            value={formData.preferredDate}
-                            onChange={handleChange}
-                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-[var(--gray-200)] focus:ring-2 focus:ring-[var(--teal-accent)] focus:border-transparent outline-none transition-all bg-white"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="preferredTime"
-                          className="block text-sm font-medium text-[var(--navy-primary)] mb-2"
-                        >
-                          Preferred Time
-                        </label>
-                        <select
-                          id="preferredTime"
-                          name="preferredTime"
-                          value={formData.preferredTime}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-[var(--gray-200)] focus:ring-2 focus:ring-[var(--teal-accent)] focus:border-transparent outline-none transition-all bg-white"
-                        >
-                          <option value="morning">Morning (8am - 12pm)</option>
-                          <option value="afternoon">Afternoon (12pm - 5pm)</option>
-                          <option value="flexible">I&apos;m Flexible</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    {/* Referral Source */}
-                    <div>
-                      <label
-                        htmlFor="referralSource"
-                        className="block text-sm font-medium text-[var(--navy-primary)] mb-2"
-                      >
-                        How did you hear about us?
-                      </label>
-                      <select
-                        id="referralSource"
-                        name="referralSource"
-                        value={formData.referralSource}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3.5 rounded-xl border border-[var(--gray-200)] focus:ring-2 focus:ring-[var(--teal-accent)] focus:border-transparent outline-none transition-all bg-white"
-                      >
-                        <option value="">Select an option</option>
-                        <option value="doctor-referral">Doctor Referral</option>
-                        <option value="friend-family">Friend or Family</option>
-                        <option value="google">Google Search</option>
-                        <option value="insurance">Insurance Provider</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-
-                    {/* Message */}
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block text-sm font-medium text-[var(--navy-primary)] mb-2"
-                      >
-                        Additional Information
-                      </label>
-                      <div className="relative">
-                        <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-[var(--warm-gray)]/50" />
-                        <textarea
-                          id="message"
-                          name="message"
-                          rows={4}
-                          value={formData.message}
-                          onChange={handleChange}
-                          className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-[var(--gray-200)] focus:ring-2 focus:ring-[var(--teal-accent)] focus:border-transparent outline-none transition-all resize-none bg-white"
-                          placeholder="Any additional details about your visit (e.g., referring physician, specific concerns)..."
-                        />
-                      </div>
-                    </div>
-
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-[var(--teal-accent)] text-white px-6 py-4 rounded-xl font-semibold hover:bg-[var(--teal-dark)] transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-lg shadow-lg"
-                    >
-                      {isSubmitting ? (
-                        "Submitting Request..."
-                      ) : (
-                        <>
-                          <Send className="w-5 h-5" />
-                          Request Appointment
-                        </>
-                      )}
-                    </button>
-
-                    <p className="text-xs text-[var(--warm-gray)] text-center">
-                      By submitting this form, you agree to be contacted by our office to schedule your appointment.
-                    </p>
-                  </form>
-                )}
+                <AppointmentForm />
               </div>
             </FadeIn>
 
-            {/* Right - Info Cards (2 cols) */}
-            <div className="lg:col-span-2 space-y-4 lg:space-y-6 order-1 lg:order-2">
-              {/* Mobile: Show call CTA first */}
+            {/* What happens next, then the practical details. */}
+            <div className="lg:col-span-2">
               <FadeIn delay={0.1}>
-                <div className="bg-gradient-to-br from-[var(--navy-primary)] to-[var(--navy-dark)] rounded-2xl p-6 lg:p-8 text-white">
-                  <h3 className="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Need Immediate Assistance?</h3>
-                  <p className="text-white/80 mb-4 lg:mb-6 text-sm lg:text-base">
-                    Call us directly to speak with our scheduling team.
-                  </p>
-                  <a
-                    href={`tel:${siteConfig.contact.phoneRaw}`}
-                    className="inline-flex items-center gap-2 bg-white text-[var(--navy-primary)] px-5 lg:px-6 py-2.5 lg:py-3 rounded-xl font-semibold hover:bg-[var(--cream)] transition-colors text-sm lg:text-base"
-                  >
-                    <Phone className="w-4 h-4 lg:w-5 lg:h-5" />
-                    {siteConfig.contact.phone}
-                  </a>
-                </div>
+                <h2
+                  className="text-2xl text-[var(--navy-primary)] mb-5"
+                  style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
+                >
+                  What happens next
+                </h2>
+                <ol className="border-t border-[var(--gray-200)] mb-12">
+                  {[
+                    "Our team will call you within 1 business day",
+                    "We'll verify your insurance coverage",
+                    "New patient forms sent via email",
+                    "Appointment confirmation by phone or text",
+                  ].map((step, index) => (
+                    <li
+                      key={step}
+                      className="grid grid-cols-[2rem_1fr] gap-3 py-4 border-b border-[var(--gray-200)]"
+                    >
+                      <span
+                        className="text-lg font-semibold"
+                        style={{ fontFamily: "var(--font-serif)", color: "var(--bronze-text)" }}
+                      >
+                        {index + 1}
+                      </span>
+                      <span className="text-[var(--warm-gray)] self-center">{step}</span>
+                    </li>
+                  ))}
+                </ol>
               </FadeIn>
 
               <FadeIn delay={0.15}>
-                <div className="bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-6 lg:p-8 border border-[var(--gray-200)]">
-                  <h3 className="font-semibold text-[var(--navy-primary)] text-base lg:text-lg mb-3 lg:mb-4">What to Expect</h3>
-                  <ul className="space-y-2.5 lg:space-y-3 text-[var(--warm-gray)] text-sm lg:text-base">
-                    <li className="flex items-start gap-2.5 lg:gap-3">
-                      <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
-                      <span>Our team will call you within 1 business day</span>
-                    </li>
-                    <li className="flex items-start gap-2.5 lg:gap-3">
-                      <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
-                      <span>We&apos;ll verify your insurance coverage</span>
-                    </li>
-                    <li className="flex items-start gap-2.5 lg:gap-3">
-                      <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
-                      <span>New patient forms sent via email</span>
-                    </li>
-                    <li className="flex items-start gap-2.5 lg:gap-3">
-                      <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
-                      <span>Appointment confirmation by phone or text</span>
-                    </li>
-                  </ul>
+                <h3 className="text-lg font-semibold text-[var(--navy-primary)] mb-2">
+                  Office location
+                </h3>
+                <p className="text-[var(--warm-gray)] mb-1">
+                  {siteConfig.contact.address.street}
+                  <br />
+                  {siteConfig.contact.address.city}, {siteConfig.contact.address.state}{" "}
+                  {siteConfig.contact.address.zip}
+                </p>
+                <a
+                  href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.address.full)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--teal-accent)] font-semibold hover:underline"
+                >
+                  Get directions
+                </a>
+
+                <h3 className="text-lg font-semibold text-[var(--navy-primary)] mt-10 mb-2">
+                  Office hours
+                </h3>
+                <div className="space-y-1 text-[var(--warm-gray)]">
+                  {siteConfig.hours.detailed.map((item) => (
+                    <div key={item.day} className="flex justify-between gap-4 max-w-xs">
+                      <span>{item.day}</span>
+                      <span className={item.hours === "Closed" ? "text-[var(--warm-gray-light)]" : ""}>
+                        {item.hours}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </FadeIn>
-
-              {/* Location & Hours - collapsible on mobile, show condensed */}
-              <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6">
-                <FadeIn delay={0.2}>
-                  <div className="bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-5 lg:p-8 border border-[var(--gray-200)]">
-                    <h3 className="font-semibold text-[var(--navy-primary)] text-sm lg:text-lg mb-2 lg:mb-4">Office Location</h3>
-                    <div className="flex items-start gap-2 lg:gap-3 mb-3 lg:mb-4">
-                      <MapPin className="w-4 h-4 lg:w-5 lg:h-5 text-[var(--teal-accent)] mt-0.5 flex-shrink-0" />
-                      <div className="text-[var(--warm-gray)] text-xs lg:text-base">
-                        <p>{siteConfig.contact.address.street}</p>
-                        <p>{siteConfig.contact.address.city}, {siteConfig.contact.address.state} {siteConfig.contact.address.zip}</p>
-                      </div>
-                    </div>
-                    <a
-                      href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.address.full)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[var(--teal-accent)] font-semibold hover:underline inline-flex items-center gap-1 text-xs lg:text-base"
-                    >
-                      Get Directions
-                      <ChevronRight className="w-3 h-3 lg:w-4 lg:h-4" />
-                    </a>
-                  </div>
-                </FadeIn>
-
-                <FadeIn delay={0.25}>
-                  <div className="bg-gradient-to-br from-[var(--cream)]/50 to-white rounded-2xl p-5 lg:p-8 border border-[var(--gray-200)]">
-                    <h3 className="font-semibold text-[var(--navy-primary)] text-sm lg:text-lg mb-2 lg:mb-4">Office Hours</h3>
-                    <div className="space-y-1.5 lg:space-y-2 text-[var(--warm-gray)]">
-                      {siteConfig.hours.detailed.map((item) => (
-                        <div key={item.day} className="flex justify-between text-xs lg:text-sm">
-                          <span>{item.day}</span>
-                          <span className={item.hours === "Closed" ? "text-[var(--warm-gray)]/50" : "font-medium text-[var(--navy-primary)]"}>
-                            {item.hours}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </FadeIn>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Disclaimer */}
-      <section className="py-6 lg:py-10 bg-[var(--cream)]/30 border-t border-[var(--gray-200)]">
-        <div className="max-w-6xl mx-auto px-4 lg:px-6">
-          <div className="max-w-4xl mx-auto text-center text-[10px] lg:text-xs text-[var(--warm-gray)]">
+      <section className="py-10 bg-white border-t border-[var(--gray-200)]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-4xl text-sm text-[var(--warm-gray-light)]">
             <p>
               <strong>DISCLAIMER:</strong> By providing my wireless phone number to The Surgery
               Center at Plano Dermatology, I agree and acknowledge that The Surgery Center at

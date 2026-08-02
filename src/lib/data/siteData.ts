@@ -53,19 +53,22 @@ export const navigation = {
     { name: "Home", href: "/" },
     { name: "Our Practice", href: "/practice" },
     { name: "Services", href: "/services" },
-    { name: "Our Team", href: "/team" },
+    { name: "Our Surgeons", href: "/team" },
+    { name: "Referring Physicians", href: "/referring" },
     { name: "Contact", href: "/contact" },
   ],
   services: [
     { name: "Mohs Surgery", href: "/services#mohs-surgery" },
+    { name: "Mohs for Melanoma", href: "/services#immunostaining" },
+    { name: "Pilonidal Disease", href: "/services#pilonidal" },
     { name: "Skin Cancer Treatment", href: "/services#skin-cancer-treatment" },
     { name: "Reconstructive Surgery", href: "/services#reconstruction" },
   ],
-  legal: [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "HIPAA Notice", href: "/hipaa" },
-  ],
+  // Legal pages are not yet written. These links are intentionally empty rather
+  // than pointing at routes that 404. A medical practice does need a Privacy
+  // Policy and a HIPAA Notice of Privacy Practices — both must be drafted by the
+  // practice's counsel, not generated. Restore entries here once those pages exist.
+  legal: [] as { name: string; href: string }[],
 };
 
 export const doctors = [
@@ -76,7 +79,9 @@ export const doctors = [
     title: "Board Certified Dermatologist & Mohs Surgeon",
     specialty: "Mohs Surgery & Cutaneous Oncology",
     slug: "dr-gunjan-modi",
-    image: "/images/gungon1.png",
+    // Real photograph from the practice's own site, colour- and exposure-matched
+    // to the other two surgeons. Replaces the previous AI-generated face.
+    image: "/images/dr-modi-editorial.webp" as string | undefined,
     shortBio:
       "Board certified dermatologist and fellowship trained Mohs surgeon with expertise in transplant skin cancer and immunoperoxidase staining techniques.",
     fullBio: `Gunjan Modi is a board certified dermatologist and fellowship trained Mohs surgeon. Originally from Buffalo, New York, he graduated from high school in Sugar Land, Texas. He received his bachelor's degree from the University of Pennsylvania. He went on to medical school at Baylor College of Medicine in Houston, where he graduated with honors.
@@ -102,6 +107,22 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
       "Melanoma treatment",
       "High-risk squamous cell carcinoma",
     ],
+    // Source: D Magazine online directory listing, supplied by Dr. Modi
+    // 2026-08-01. Badge asset (d-best-2026.jpg) is D Magazine's own 2026 file
+    // from their media kit; prior-year badges must come from D Magazine, not
+    // be recreated.
+    awards: [
+      {
+        name: "Best Doctors in Collin County",
+        source: "D Magazine",
+        years: [2026, 2025, 2024, 2023, 2022, 2020, 2018, 2017, 2016, 2015],
+      },
+      {
+        name: "Best Doctors",
+        source: "D Magazine",
+        years: [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015],
+      },
+    ] as { name: string; source: string; years: number[] }[] | undefined,
     quote: "Every patient deserves the highest standard of care, and that's what we deliver every day.",
   },
   {
@@ -111,7 +132,7 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
     title: "Board Certified Dermatologist & Mohs Surgeon",
     specialty: "Mohs Surgery & Procedural Dermatology",
     slug: "dr-michael-wells",
-    image: "/images/Dude3.png",
+    image: "/images/dr-wells-editorial.webp" as string | undefined,
     shortBio:
       "Former tenured associate professor with over 20 years of experience, specializing in Mohs surgery and dermatologic education.",
     fullBio: `Michael Wells, M.D. began his college career earning a Bachelor of Science degree from the University of Central Arkansas, where he graduated with Alpha Chi honors. He then moved on to complete medical school at the University of Arkansas for Medical Sciences in Little Rock, Arkansas. Here too, Michael Wells, M.D. earned numerous high honors including top pathology and anatomy student, as well as being inducted into the AOA honor society.
@@ -140,6 +161,7 @@ He actively shares his wealth of knowledge and expertise with other healthcare p
       "Texas Medical Association committees",
       "Clinical decision-making resources",
     ],
+    awards: undefined as { name: string; source: string; years: number[] }[] | undefined,
     quote: "Education and precision are the foundations of exceptional patient outcomes.",
   },
   {
@@ -149,7 +171,7 @@ He actively shares his wealth of knowledge and expertise with other healthcare p
     title: "Board Certified Dermatologist & Mohs Surgeon",
     specialty: "Mohs Surgery & Cutaneous Oncology",
     slug: "dr-edward-parry",
-    image: "/images/Dude2.png",
+    image: "/images/dr-parry-editorial.webp" as string | undefined,
     shortBio:
       "Former LSU professor and fellowship program director with 17 years in academics, having trained hundreds of residents and 15 Mohs surgeons.",
     fullBio: `Ed Parry is a board certified dermatologist and fellowship trained Mohs surgeon. He is a native of upstate New York. He received his bachelor's degree from the United States Air Force Academy in Colorado Springs, Colorado. He then moved to New Orleans and received his medical degree from Tulane University Medical School on a military scholarship.
@@ -178,13 +200,85 @@ Dr. Parry is happily married to Diane, his wife of 37 years. They have three adu
       "Academic dermatology",
       "Cutaneous oncology",
     ],
+    awards: undefined as { name: string; source: string; years: number[] }[] | undefined,
     quote: "Training the next generation of surgeons while caring for patients is my greatest privilege.",
   },
 ];
 
+// =============================================================================
+// SERVICES
+//
+// Ordering is deliberate. The first two entries are what distinguishes this
+// practice from every other Mohs practice in North Texas; "up to 99% cure rate"
+// is table stakes that every competitor also advertises. Lead with the former.
+// =============================================================================
+
 export const services = [
   {
+    id: "immunostaining",
+    badge: "What Sets Us Apart",
+    // Stain panel (MART-1, S-100) and the same-day framing confirmed by
+    // Dr. Modi on 2026-08-01.
+    name: "Mohs Surgery for Melanoma",
+    shortName: "Mohs for Melanoma",
+    slug: "immunostaining",
+    description:
+      "We perform Mohs surgery for melanoma with immunohistochemical staining — MART-1 and S-100 — run in our own laboratory during your surgery. These stains make melanoma cells visible at the margin in a way routine frozen sections cannot. The cancer is removed, every margin is tested with the stains, and once the margins are clear the wound is reconstructed — all on the same day. The traditional alternatives are wide local excision, or a staged excision (sometimes called \"slow Mohs\") that stretches the removal and margin reading over one to three days. True same-day, margin-controlled Mohs for melanoma is what this laboratory was built to do.",
+    shortDescription:
+      "Same-day Mohs for melanoma: removed, margins tested with MART-1 and S-100 stains, and reconstructed — in one visit.",
+    icon: "microscope",
+    features: [
+      "MART-1 and S-100 immunostains, run in our own laboratory",
+      "Removal, margin testing, and reconstruction in a single day",
+      "100% of the margin examined for melanoma and melanoma in situ",
+      "Tissue-sparing alternative to wide local excision",
+      "No multi-day staged excision (\"slow Mohs\") — margins are read while you wait",
+    ],
+    image: undefined as string | undefined,
+  },
+  {
+    id: "high-risk-immunostaining",
+    badge: "What Sets Us Apart",
+    name: "Immunostaining for High-Risk Skin Cancers",
+    shortName: "High-Risk Immunostaining",
+    slug: "high-risk-immunostaining",
+    description:
+      "The same on-site immunostaining capability is applied to aggressive non-melanoma tumors, including high-risk squamous cell carcinoma. Cancers that are difficult to see on routine sections can be traced accurately to their margins, which makes them amenable to tissue-sparing surgery with higher cure rates.",
+    shortDescription:
+      "Aggressive non-melanoma tumors traced accurately to their true margins.",
+    icon: "shield",
+    features: [
+      // TODO(Dr. Modi): confirm which tumor types and which stains.
+      "PLACEHOLDER — tumor types and stain panel to be supplied",
+      "High-risk squamous cell carcinoma",
+      "Same-day, on-site processing",
+      "Margin control for poorly-defined tumors",
+    ],
+    image: undefined as string | undefined,
+  },
+  {
+    id: "pilonidal",
+    badge: "Beyond Skin Cancer",
+    name: "Pilonidal Disease and the Bascom Cleft Lift",
+    shortName: "Pilonidal Disease",
+    slug: "pilonidal",
+    description:
+      "We treat pilonidal disease and pilonidal sinus tracts with the Bascom cleft lift. Rather than excising a large wound in the midline and leaving it to heal slowly, the cleft lift removes the sinus tracts and flattens the natal cleft, moving the closure off the midline. Patients are typically left with a smaller, off-midline scar and a faster return to normal activity than with traditional wide excision.",
+    shortDescription:
+      "Definitive treatment for pilonidal disease, with an off-midline closure.",
+    icon: "plus",
+    features: [
+      // TODO(Dr. Modi): confirm recovery expectations and anesthesia before publishing.
+      "PLACEHOLDER — recovery time and anesthesia details to be confirmed",
+      "Treats recurrent pilonidal disease and sinus tracts",
+      "Off-midline closure, where wounds heal more reliably",
+      "Alternative to wide excision and open healing",
+    ],
+    image: undefined as string | undefined,
+  },
+  {
     id: "mohs-surgery",
+    badge: "Gold Standard Treatment",
     name: "Mohs Micrographic Surgery",
     shortName: "Mohs Surgery",
     slug: "mohs-surgery",
@@ -194,17 +288,18 @@ export const services = [
       "The gold standard for skin cancer treatment with up to 99% cure rate.",
     icon: "microscope",
     features: [
-      "Up to 99% cure rate, even for previously treated cancers",
+      "Up to 99% cure rate for previously untreated cancers; up to 94% for recurrent",
       "Tissue-sparing technique preserves maximum healthy skin",
       "Complete microscopic examination during surgery",
       "Same-day results - know cancer is gone before you leave",
       "Optimal cosmetic outcomes with minimal scarring",
       "Performed in our state-of-the-art outpatient facility",
     ],
-    image: "/images/services/mohs-surgery.jpg",
+    image: undefined as string | undefined,
   },
   {
     id: "skin-cancer-treatment",
+    badge: "Expert Diagnosis",
     name: "Skin Cancer Treatment",
     shortName: "Skin Cancer",
     slug: "skin-cancer",
@@ -221,10 +316,11 @@ export const services = [
       "Melanoma and high-risk skin cancer care",
       "Long-term follow-up and monitoring",
     ],
-    image: "/images/services/skin-cancer.jpg",
+    image: undefined as string | undefined,
   },
   {
     id: "reconstruction",
+    badge: "Skilled Reconstruction",
     name: "Reconstructive Surgery",
     shortName: "Reconstruction",
     slug: "reconstruction",
@@ -241,10 +337,11 @@ export const services = [
       "Minimized scarring techniques",
       "Coordination with other specialists when needed",
     ],
-    image: "/images/services/reconstruction.jpg",
+    image: undefined as string | undefined,
   },
   {
     id: "other-procedures",
+    badge: "Additional Care",
     name: "Additional Procedures",
     shortName: "Other Services",
     slug: "other-procedures",
@@ -260,7 +357,7 @@ export const services = [
       "Benign lesion removal",
       "Expert wound care",
     ],
-    image: "/images/services/other-procedures.jpg",
+    image: undefined as string | undefined,
   },
 ];
 
@@ -377,7 +474,7 @@ Although this procedure is very precise, its major drawback is that it is very t
 Unlike standard microscopic examination, with the advanced Mohs techniques, our surgeons can pinpoint areas involved with cancer and selectively remove only those areas. In this way, the skin cancer is traced out to its "roots." This results in preserving as much normal tissue as possible with the highest chance for cure.`,
 
   advantages: [
-    "Highest cure rates - up to 99% even for previously treated cancers",
+    "Highest cure rates - up to 99% for previously untreated cancers, up to 94% for recurrent",
     "Maximum preservation of healthy tissue",
     "Microscopic examination of 100% of tissue margins",
     "Same-day results - cancer removal verified before you leave",
@@ -393,7 +490,7 @@ export const faqs = [
   },
   {
     question: "How long does Mohs surgery take?",
-    answer: "Plan for a full day at our office. The average procedure requires 2-3 stages, with each stage taking about 1-2 hours including tissue processing. Most patients complete their surgery by midday, though complex cases may take longer.",
+    answer: "Plan for a full day at our office — it is difficult to predict in advance how many stages a tumor will need. Most tumors clear in one to three stages, and each stage takes about an hour including tissue processing (longer when special stains are needed). Bring a book, and know that most patients finish by early afternoon.",
   },
   {
     question: "Is Mohs surgery painful?",

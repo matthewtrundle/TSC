@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
 import { ReactNode, useEffect, useRef, useState } from "react";
 
 interface FadeInProps {
@@ -10,34 +9,54 @@ interface FadeInProps {
   className?: string;
 }
 
-export function FadeIn({
-  children,
-  delay = 0,
-  direction = "up",
-  className = ""
-}: FadeInProps) {
-  const directionOffset = {
-    up: { y: 30 },
-    down: { y: -30 },
-    left: { x: 30 },
-    right: { x: -30 },
-    none: {}
-  };
+// Reveal-on-scroll that can never blank content. Server-rendered fully
+// visible; after mount, elements still BELOW the viewport get .reveal-hidden
+// and animate in via .reveal-in when they intersect. No JS, reduced motion,
+// or a missed callback all leave content visible. direction is ignored —
+// everything rises the same 12px; uniformity reads more expensive.
+export function FadeIn({ children, delay = 0, className = "" }: FadeInProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [state, setState] = useState<"visible" | "hidden" | "revealed">("visible");
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Only hide elements the user hasn't reached yet — above-the-fold content
+    // must never flash out.
+    if (el.getBoundingClientRect().top >= window.innerHeight * 0.92) {
+      setState("hidden");
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setState("revealed");
+            observer.disconnect();
+          }
+        },
+        { rootMargin: "0px 0px -8% 0px" }
+      );
+      observer.observe(el);
+      // Hard backstop: whatever happens with the observer (headless capture,
+      // print, an IO bug), nothing stays hidden longer than 2.5s.
+      const failsafe = window.setTimeout(() => setState("revealed"), 2500);
+      return () => {
+        observer.disconnect();
+        window.clearTimeout(failsafe);
+      };
+    }
+  }, []);
+
+  const motionClass =
+    state === "hidden" ? "reveal-hidden" : state === "revealed" ? "reveal-in" : "";
 
   return (
-    <motion.div
-      initial={{ opacity: 0, ...directionOffset[direction] }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{
-        duration: 0.5,
-        delay,
-        ease: [0.25, 0.4, 0.25, 1]
-      }}
-      className={className}
+    <div
+      ref={ref}
+      className={`${motionClass} ${className}`}
+      style={state === "revealed" && delay ? { animationDelay: `${Math.min(delay, 0.25)}s` } : undefined}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 

@@ -1,38 +1,25 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { siteConfig, navigation } from "@/lib/data/siteData";
 import { Phone, Menu, X } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 
+/**
+ * Two-row luxury header (the reference-site pattern): a slim utility bar with
+ * the phone number and consultation CTA, then the logo + nav row beneath it.
+ * Never hides on scroll — the audience skews older and the phone must stay
+ * reachable; the utility bar is what collapses when scrolled.
+ */
 export default function Header() {
-  const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const lastScrollY = useRef(0);
   const pathname = usePathname();
 
-  // Disappearing header on scroll + logo shrink
   useEffect(() => {
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-
-      // Shrink logo after scrolling 50px
-      setIsScrolled(currentY > 50);
-
-      // Show header when scrolling up or at top
-      if (currentY < lastScrollY.current || currentY < 50) {
-        setIsVisible(true);
-      } else if (currentY > 100) {
-        // Hide when scrolling down past 100px
-        setIsVisible(false);
-      }
-
-      lastScrollY.current = currentY;
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -49,88 +36,88 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-[var(--ivory)]"
       style={{
-        boxShadow: isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.08)" : "0 1px 0 rgba(0, 0, 0, 0.05)"
+        borderBottom: "1px solid var(--gray-200)",
+        boxShadow: isScrolled ? "0 1px 6px rgba(0, 0, 0, 0.06)" : "none",
       }}
     >
-      <div className="max-w-6xl mx-auto px-6">
-        <div className={`flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? "h-20" : "h-36"
-        }`}>
-          {/* Logo - starts large, shrinks on scroll */}
-          <Link href="/" className="flex items-center">
-            <div className="transition-all duration-300" style={{
-              transform: isScrolled ? "scale(0.6)" : "scale(1)",
-              transformOrigin: "left center"
-            }}>
-              <Logo height={150} />
-            </div>
+      {/* Utility bar — collapses once the page is scrolled. */}
+      {/* 40px + 72px main row = 112px, matching the pt-28 offset every page
+          root uses for the fixed header. */}
+      <div
+        className={`hidden lg:block overflow-hidden border-b border-[var(--hairline)] transition-all duration-300 ${
+          isScrolled ? "max-h-0 border-b-0" : "max-h-10"
+        }`}
+      >
+        <div className="mx-auto flex h-10 max-w-7xl items-center justify-end gap-8 px-6">
+          <a
+            href={`tel:${siteConfig.contact.phoneRaw}`}
+            className="inline-flex items-center gap-2 whitespace-nowrap text-[0.9375rem] font-semibold text-[var(--charcoal)] transition-colors hover:text-[var(--bronze-text)]"
+          >
+            <Phone className="h-4 w-4 shrink-0" />
+            {siteConfig.contact.phone}
+          </a>
+          <span className="text-sm text-[var(--warm-gray-light)]">
+            {siteConfig.hours.short}
+          </span>
+        </div>
+      </div>
+
+      {/* Main row — logo left, nav + CTA right. */}
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex h-24 items-center justify-between gap-8 lg:h-[4.5rem]">
+          <Link href="/" className="flex flex-shrink-0 items-center">
+            <Logo height={48} />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-7">
             {navigation.main.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-semibold tracking-wide uppercase transition-colors ${
+                className={`whitespace-nowrap text-[0.8125rem] tracking-[0.14em] uppercase font-semibold transition-colors ${
                   isActive(item.href)
-                    ? "text-[var(--navy-primary)]"
-                    : "text-[var(--warm-gray)] hover:text-[var(--navy-primary)]"
+                    ? "text-[var(--charcoal)] underline decoration-[var(--bronze)] decoration-2 underline-offset-8"
+                    : "text-[var(--warm-gray-light)] hover:text-[var(--charcoal)]"
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-          </nav>
-
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-6">
-            <a
-              href={`tel:${siteConfig.contact.phoneRaw}`}
-              className="text-sm text-[var(--warm-gray)] hover:text-[var(--navy-primary)] transition-colors"
-            >
-              {siteConfig.contact.phone}
-            </a>
             <Link
               href="/appointment"
-              className="btn-primary text-sm px-5 py-2.5"
+              className="btn-outline-bronze whitespace-nowrap px-3.5 py-2 text-[0.75rem]"
             >
               Request Appointment
             </Link>
-          </div>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-[var(--navy-primary)]"
+            className="lg:hidden inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-2 text-[var(--charcoal)]"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100">
-          <div className="max-w-6xl mx-auto px-6 py-6">
-            <nav className="flex flex-col gap-4">
+        <div className="lg:hidden bg-[var(--ivory)] border-t border-[var(--gray-200)]">
+          <div className="mx-auto max-w-7xl px-6 py-6">
+            <nav className="flex flex-col gap-1">
               {navigation.main.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm font-semibold tracking-wide uppercase py-2 ${
+                  className={`flex min-h-[44px] items-center py-2.5 text-lg font-semibold ${
                     isActive(item.href)
-                      ? "text-[var(--navy-primary)]"
-                      : "text-[var(--warm-gray)]"
+                      ? "text-[var(--charcoal)]"
+                      : "text-[var(--warm-gray-light)]"
                   }`}
                 >
                   {item.name}
@@ -138,18 +125,15 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="mt-6 pt-6 border-t border-gray-100 space-y-4">
+            <div className="mt-6 space-y-4 border-t border-[var(--gray-200)] pt-6">
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="flex items-center gap-2 text-[var(--navy-primary)] font-medium"
+                className="flex min-h-[44px] items-center gap-2 text-lg font-semibold text-[var(--charcoal)] transition-colors hover:text-[var(--bronze-text)]"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="h-5 w-5" />
                 {siteConfig.contact.phone}
               </a>
-              <Link
-                href="/appointment"
-                className="btn-primary w-full justify-center"
-              >
+              <Link href="/appointment" className="btn-primary w-full justify-center">
                 Request Appointment
               </Link>
             </div>

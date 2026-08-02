@@ -1,88 +1,34 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCountUp } from "@/components/ui/FadeIn";
 
 interface CountUpStatProps {
+  /** e.g. "3", "100+", "15" — a numeric core with an optional suffix. */
   value: string;
   label: string;
-  qualifier: string;
-  suffix?: string;
-  duration?: number;
 }
 
-export function CountUpStat({
-  value,
-  label,
-  qualifier,
-  suffix = "",
-  duration = 2000
-}: CountUpStatProps) {
-  const [displayValue, setDisplayValue] = useState("0");
-  const [hasStarted, setHasStarted] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  // Extract numeric part from value (e.g., "99%" -> 99, "100+" -> 100, "1000s" -> 1000)
-  const numericValue = parseInt(value.replace(/[^0-9]/g, ""), 10);
-  const hasPercent = value.includes("%");
-  const hasPlus = value.includes("+");
-  const hasS = value.toLowerCase().endsWith("s") && !value.includes("%");
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasStarted) {
-          setHasStarted(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasStarted]);
-
-  useEffect(() => {
-    if (!hasStarted) return;
-
-    let startTime: number | null = null;
-    let animationFrame: number;
-
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-
-      // Ease-out cubic for smooth deceleration
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      const current = Math.floor(easeOut * numericValue);
-
-      let formatted = current.toString();
-      if (hasPercent) formatted += "%";
-      else if (hasPlus) formatted += "+";
-      else if (hasS) formatted += "s";
-
-      setDisplayValue(formatted);
-
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      } else {
-        setDisplayValue(value); // Ensure final value matches exactly
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-
-    return () => cancelAnimationFrame(animationFrame);
-  }, [hasStarted, numericValue, value, hasPercent, hasPlus, hasS, duration]);
+/**
+ * Display stat that counts up from zero when scrolled into view. The numeral
+ * is Cormorant in bronze at display size (the one place decorative bronze is
+ * allowed at text weight — it is ≥48px here).
+ */
+export function CountUpStat({ value, label }: CountUpStatProps) {
+  const match = value.match(/^(\d+)(.*)$/);
+  const target = match ? parseInt(match[1], 10) : 0;
+  const suffix = match ? match[2] : "";
+  const { value: current, ref } = useCountUp(target, 1400);
 
   return (
-    <div ref={ref} className="metric-item">
-      <div className="metric-number">{displayValue}{suffix}</div>
-      <div className="metric-label">{label}</div>
-      <div className="metric-qualifier">{qualifier}</div>
+    <div ref={ref}>
+      <div
+        className="mb-2 text-5xl tabular-nums lg:text-6xl"
+        style={{ fontFamily: "var(--font-display)", color: "var(--bronze)" }}
+      >
+        {current}
+        {suffix}
+      </div>
+      <div className="text-sm text-[var(--warm-gray-light)]">{label}</div>
     </div>
   );
 }
