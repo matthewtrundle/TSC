@@ -229,7 +229,7 @@ export const services = [
     shortName: "Mohs Surgery",
     slug: "mohs-surgery",
     description:
-      "Mohs micrographic surgery is a highly specialized procedure for the removal of skin cancer. Developed by Dr. Frederick Mohs in the late 1930s, it has been refined into an incredibly precise and tissue-sparing process, and is the gold standard for treating most skin cancers.",
+      "Mohs micrographic surgery is the most precise way to remove a skin cancer. Pioneered by Dr. Frederick Mohs and refined over nearly a century, it is today's gold standard for treating most skin cancers: the tumor is removed one thin layer at a time, and every margin is read under the microscope before you go home.",
     shortDescription:
       "The gold standard for skin cancer treatment with up to 99% cure rate.",
     icon: "microscope",
@@ -511,11 +511,11 @@ export const practiceInfo = {
 
 This includes Mohs micrographic surgery, reconstructive surgery, mole and cyst removal, nail procedures, as well as the treatment of melanoma and other high-risk skin cancers.`,
 
-  mohsDescription: `Mohs micrographic surgery is a highly specialized procedure for the removal of skin cancer. It was originally developed in the 1930's by Dr. Frederick Mohs and has been refined since, gaining substantial application only in the past decade.
+  mohsDescription: `What sets Mohs apart is simple. Instead of removing a margin of healthy skin and waiting days for a lab to report whether the edges were clear, your surgeon examines 100% of the margin under the microscope while you wait. If any cancer remains, its exact location is mapped and only that spot is removed — the cancer is traced to its roots, and nothing healthy is taken unnecessarily.
 
-Although this procedure is very precise, its major drawback is that it is very time consuming, and requires specialized training, personnel, and equipment. Consequently, only a few major medical centers can provide this type of therapy.
+Done properly, Mohs requires a fellowship-trained surgeon, dedicated laboratory staff, and an on-site laboratory where your tissue is frozen, sectioned, stained, and read within the hour it is removed. This practice is built around exactly that. The stages of a Mohs day take time because the microscope — not estimation — decides when your surgery is finished.
 
-Unlike standard microscopic examination, with the advanced Mohs techniques, our surgeons can pinpoint areas involved with cancer and selectively remove only those areas. In this way, the skin cancer is traced out to its "roots." This results in preserving as much normal tissue as possible with the highest chance for cure.`,
+The result is the treatment's defining combination: cure rates up to 99% for previously untreated cancers, the most healthy skin preserved, and an answer before you leave that the cancer is gone.`,
 
   advantages: [
     "Highest cure rates - up to 99% for previously untreated cancers, up to 94% for recurrent",

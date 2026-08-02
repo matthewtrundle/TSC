@@ -153,16 +153,18 @@ export default function ServicesPage() {
                     {service.description}
                   </p>
 
-                  {service.id === "mohs-surgery" && (
-                    <>
-                      <p className="text-lg text-[var(--warm-gray)] leading-relaxed mb-6">
-                        {mohsParagraphs[1]}
+                  {/* All of the rewritten explainer paragraphs — the old copy
+                      skipped [0] because it duplicated the description; the
+                      2026 rewrite has three distinct paragraphs. */}
+                  {service.id === "mohs-surgery" &&
+                    mohsParagraphs.map((paragraph) => (
+                      <p
+                        key={paragraph.slice(0, 32)}
+                        className="text-lg text-[var(--warm-gray)] leading-relaxed mb-6"
+                      >
+                        {paragraph}
                       </p>
-                      <p className="text-lg text-[var(--warm-gray)] leading-relaxed mb-6">
-                        {mohsParagraphs[2]}
-                      </p>
-                    </>
-                  )}
+                    ))}
 
                   <ul className="border-t border-[var(--gray-200)] mb-8">
                     {features.map((feature) => (
