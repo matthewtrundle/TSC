@@ -46,3 +46,12 @@ by Dr. Modi (or another physician of the practice) in chat. Never invent
 stats, testimonials, staff, response times, or clinical details. Feature lines
 containing `PLACEHOLDER` must never render. When a physician confirms a claim
 in chat, record it here with the date, then update siteData.
+
+### 2026-08-02 — Skin resurfacing service CONFIRMED (publishable)
+- **Decision:** The practice offers skin resurfacing: fractional CO2 laser and
+  medium-to-deep chemical peels with Jessner's solution and TCA, used for
+  photodamaged skin, field treatment of actinic keratoses/precancers, and
+  aesthetic rejuvenation. Performed/framed under Dr. Modi.
+- **Status:** Confirmed — no percentages, downtime, or session counts are
+  published (unconfirmed; add only if Dr. Modi supplies them).
+- **Source:** chat 2026-08-02

@@ -229,6 +229,36 @@ export const procedures: Procedure[] = [
     imageAlt: "Soft surgical light reflected in polished steel",
   },
   {
+    // Confirmed by Dr. Modi in chat 2026-08-02.
+    slug: "skin-resurfacing",
+    name: "Skin Resurfacing",
+    summary:
+      "Fractional CO2 laser and Jessner's + TCA chemical peels — treating photodamage and actinic precancers while rejuvenating the skin.",
+    body: [
+      "Decades of sun leave a field of damage rather than a single spot: rough texture, uneven tone, fine lines, and scattered actinic keratoses — the precancerous lesions that can progress to squamous cell carcinoma. Resurfacing treats the entire field at once, removing the damaged outer layers so healthier skin can rebuild in their place.",
+      "Dr. Modi uses two tools for this: fractional CO2 laser resurfacing, and medium-to-deep chemical peels with Jessner's solution and TCA. Both serve a double purpose. Medically, they are field treatment for photodamaged, precancer-prone skin. Aesthetically, the same treatments smooth texture, even tone, and soften fine lines — rejuvenation as a direct byproduct of treating the damage.",
+      "Because these treatments are performed by a fellowship-trained skin cancer surgeon, anything suspicious found along the way is evaluated with a surgeon's eye — and the depth of each treatment is chosen deliberately for your skin and your goals.",
+    ],
+    whenToConsider: [
+      "Widespread sun damage — rough, mottled, weathered skin",
+      "Multiple or recurring actinic keratoses treated spot-by-spot until now",
+      "A history of precancers and a desire to treat the whole field",
+      "Aesthetic rejuvenation — texture, tone, and fine lines",
+    ],
+    techniques: [
+      {
+        name: "Fractional CO2 laser resurfacing",
+        note: "Ablative laser resurfacing that treats a fraction of the skin per pass, stimulating collagen remodeling as the field heals.",
+      },
+      {
+        name: "Jessner's + TCA chemical peels",
+        note: "The classic medium-to-deep peel combination, applied in the office at a depth chosen for your skin and goals.",
+      },
+    ],
+    image: "/images/svc-surgical-light.webp",
+    imageAlt: "Soft surgical light reflected in polished steel",
+  },
+  {
     slug: "actinic-keratosis",
     name: "Actinic Keratosis",
     summary:

@@ -61,6 +61,7 @@ export const navigation = {
     { name: "Mohs Surgery", href: "/services#mohs-surgery" },
     { name: "Mohs for Melanoma", href: "/services#immunostaining" },
     { name: "Pilonidal Disease", href: "/services#pilonidal" },
+    { name: "Skin Resurfacing", href: "/services#skin-resurfacing" },
     { name: "Skin Cancer Treatment", href: "/services#skin-cancer-treatment" },
     { name: "Reconstructive Surgery", href: "/services#reconstruction" },
   ],
@@ -301,6 +302,29 @@ export const services = [
       "Treats recurrent pilonidal disease and sinus tracts",
       "Off-midline closure, where wounds heal more reliably",
       "Alternative to wide excision and open healing",
+    ],
+    image: undefined as string | undefined,
+  },
+  {
+    // Confirmed by Dr. Modi in chat 2026-08-02: fractional CO2 and
+    // Jessner's + TCA medium-to-deep peels, used for photodamage, actinic
+    // keratosis / precancer field treatment, and aesthetic rejuvenation.
+    id: "skin-resurfacing",
+    badge: "Beyond Skin Cancer",
+    name: "Skin Resurfacing",
+    shortName: "Skin Resurfacing",
+    slug: "skin-resurfacing",
+    description:
+      "Years of sun leave more than individual spots — they leave a field of damage: rough texture, mottled tone, fine lines, and scattered actinic keratoses, the precancers that can progress to squamous cell carcinoma. Skin resurfacing treats that whole field at once. Dr. Modi performs fractional CO2 laser resurfacing and medium-to-deep chemical peels using Jessner's solution and TCA — the same two tools serving two purposes: clearing photodamaged, precancerous skin, and aesthetic rejuvenation. It is resurfacing supervised by a surgeon who spends the rest of his week looking at skin cancer under a microscope.",
+    shortDescription:
+      "Fractional CO2 laser and Jessner's + TCA peels — for photodamage, actinic precancers, and rejuvenation.",
+    icon: "shield",
+    features: [
+      "Fractional CO2 laser resurfacing",
+      "Medium-to-deep chemical peels with Jessner's solution and TCA",
+      "Field treatment of photodamage and actinic keratoses (precancers)",
+      "Aesthetic rejuvenation — texture, tone, and fine lines",
+      "Performed by a fellowship-trained skin cancer surgeon",
     ],
     image: undefined as string | undefined,
   },
