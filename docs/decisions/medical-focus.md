@@ -55,3 +55,8 @@ in chat, record it here with the date, then update siteData.
 - **Status:** Confirmed — no percentages, downtime, or session counts are
   published (unconfirmed; add only if Dr. Modi supplies them).
 - **Source:** chat 2026-08-02
+
+### 2026-08-02 — Surgery-day timeline refinements (Dr. Modi confirmed)
+- 7:30 AM typical check-in (not a fixed window); most tumors clear in one to
+  two stages (practice experience); "Same morning: repair or reconstruction,
+  then home"; patients usually do NOT need a driver. FAQ updated to match.

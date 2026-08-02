@@ -239,10 +239,10 @@ export default function Home() {
             <div className="lg:col-span-2 divide-y divide-[var(--gray-200)] border-t border-[var(--gray-200)]">
               {[
                 {
-                  time: "7:30 – 8:00am",
+                  time: "7:30 AM",
                   title: "Check in",
                   description:
-                    "Bring a book, headphones, and any medication you take. Eat breakfast first — there is no fasting requirement.",
+                    "A typical day starts at 7:30. Bring a book, headphones, and any medication you normally take. Eat breakfast first — there is no fasting requirement.",
                 },
                 {
                   time: "First hour",
@@ -254,13 +254,13 @@ export default function Home() {
                   time: "About an hour per stage",
                   title: "Waiting while we read the tissue",
                   description:
-                    "Your tissue is frozen, sectioned, and read under the microscope on site — longer when special stains are needed. Most tumors clear in one to three stages.",
+                    "Your tissue is frozen, sectioned, and read under the microscope on site — longer when special stains are needed. Most tumors clear in one to two stages.",
                 },
                 {
-                  time: "Same day",
-                  title: "Repair, then home",
+                  time: "Same morning",
+                  title: "Repair or reconstruction, then home",
                   description:
-                    "Once margins are clear we close the wound. You will know the cancer is out before you leave, and you will need someone to drive you.",
+                    "Once margins are clear, we close the wound. You will know the cancer is out before you leave — and you usually do not need a driver to get home.",
                 },
               ].map((step, index) => (
                 <FadeIn key={step.title} delay={index * 0.08}>

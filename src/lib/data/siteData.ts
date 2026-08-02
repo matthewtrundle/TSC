@@ -534,7 +534,7 @@ export const faqs = [
   },
   {
     question: "How long does Mohs surgery take?",
-    answer: "Plan for a full day at our office — it is difficult to predict in advance how many stages a tumor will need. Most tumors clear in one to three stages, and each stage takes about an hour including tissue processing (longer when special stains are needed). Bring a book, and know that most patients finish by early afternoon.",
+    answer: "Plan for a full day at our office — it is difficult to predict in advance how many stages a tumor will need. Most tumors clear in one to two stages, and each stage takes about an hour including tissue processing (longer when special stains are needed). Bring a book, and know that most patients finish by early afternoon.",
   },
   {
     question: "Is Mohs surgery painful?",
@@ -542,7 +542,7 @@ export const faqs = [
   },
   {
     question: "What should I bring on surgery day?",
-    answer: "Bring a book or magazine, as there will be waiting time between stages. Have someone drive you home. Eat a good breakfast and take your regular medications unless otherwise instructed. Avoid aspirin for two weeks prior.",
+    answer: "Bring a book or magazine, as there will be waiting time between stages. Most patients do not need a driver to get home. Eat a good breakfast and take your regular medications unless otherwise instructed. Avoid aspirin for two weeks prior.",
   },
   {
     question: "What happens after the cancer is removed?",
