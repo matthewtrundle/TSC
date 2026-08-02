@@ -359,7 +359,7 @@ export const services = [
     description:
       "Years of sun leave more than individual spots — they leave a field of damage: rough texture, mottled tone, fine lines, and scattered actinic keratoses, the precancers that can progress to squamous cell carcinoma. Skin resurfacing treats that whole field at once. Dr. Modi performs fractional CO2 laser resurfacing and medium-to-deep chemical peels using Jessner's solution and TCA — the same two tools serving two purposes: clearing photodamaged, precancerous skin, and aesthetic rejuvenation. It is resurfacing supervised by a surgeon who spends the rest of his week looking at skin cancer under a microscope.",
     shortDescription:
-      "Fractional CO2 laser and Jessner's + TCA peels — for photodamage, actinic precancers, and rejuvenation.",
+      "Fractional CO2 laser and full thickness chemical peels — for photo aging, actinic damage and pre-cancers, and facial rejuvenation.",
     icon: "shield",
     features: [
       "Fractional CO2 laser resurfacing",
