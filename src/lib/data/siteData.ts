@@ -536,7 +536,7 @@ The result is the treatment's defining combination: cure rates up to 99% for pre
 export const faqs = [
   {
     question: "How long does Mohs surgery take?",
-    answer: "Generally, the procedure takes about half a day — and you can keep the rest. It is difficult to predict in advance how many stages a tumor will need. Most tumors are clear in one to two stages, and each stage takes about an hour including tissue processing — longer when special stains are needed, as for melanoma.",
+    answer: "Generally, the procedure takes about half a day. It is difficult to predict in advance how many stages a tumor will need. Most tumors are clear in one to two stages, and each stage takes about an hour including tissue processing — longer when special stains are needed, as for melanoma.",
   },
   {
     question: "Is Mohs surgery painful?",
@@ -560,6 +560,6 @@ export const faqs = [
   },
   {
     question: "Do I need follow-up appointments?",
-    answer: "Yes. Follow-up observation for five years is necessary. You'll return at 4-6 weeks, then at 3 months, 6 months, and annually. Patients who have had one skin cancer are at higher risk for developing others.",
+    answer: "Yes. Our surgical team will follow you while your wound heals — in the short term as the scar matures, and then on an as-needed basis for as long as necessary.",
   },
 ];
