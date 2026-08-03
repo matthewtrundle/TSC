@@ -196,7 +196,7 @@ export default function TeamPage() {
                   <span aria-hidden="true" className="rule-bronze mb-8" />
 
                   <div className="space-y-6">
-                    {doctor.awards.map((award) => (
+                    {doctor.id !== "dr-wells" && doctor.awards.map((award) => (
                       <div key={award.name}>
                         <p className="font-semibold text-[var(--warm-gray)]">
                           {award.name}
@@ -249,20 +249,28 @@ export default function TeamPage() {
                     </div>
                   )}
 
-                  {/* Dr. Wells: JAAD cover beside the editorial title. */}
-                  {doctor.id === "dr-wells" && (
-                    <div className="mt-8 flex items-center gap-6">
-                      <Image
-                        src="/images/awards/jaad-cover.webp"
-                        alt="Cover of the Journal of the American Academy of Dermatology"
-                        width={1140}
-                        height={1525}
-                        className="h-44 w-auto border border-[var(--hairline)] lg:h-52"
-                      />
-                      <p className="max-w-xs text-sm leading-relaxed text-[var(--warm-gray-light)]">
-                        The Journal of the American Academy of Dermatology is
-                        the preeminent peer-reviewed publication in
-                        dermatology.
+                  {/* Dr. Wells: linked JAAD cover to the left of the
+                      editorial title — the cover and the title are the whole
+                      story. */}
+                  {doctor.id === "dr-wells" && doctor.awards && (
+                    <div className="flex items-center gap-6">
+                      <a
+                        href="https://www.jaad.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="shrink-0 transition-opacity hover:opacity-85"
+                        title="Journal of the American Academy of Dermatology"
+                      >
+                        <Image
+                          src="/images/awards/jaad-cover.webp"
+                          alt="Cover of the Journal of the American Academy of Dermatology"
+                          width={1140}
+                          height={1525}
+                          className="h-44 w-auto border border-[var(--hairline)] lg:h-52"
+                        />
+                      </a>
+                      <p className="max-w-sm text-lg font-semibold leading-snug text-[var(--warm-gray)]">
+                        {doctor.awards[0].name}
                       </p>
                     </div>
                   )}
