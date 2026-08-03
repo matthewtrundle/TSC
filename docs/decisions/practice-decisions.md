@@ -124,7 +124,9 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   aria-expanded on mobile menu, home stat row stacks on narrow phones,
   framer-motion + motion uninstalled (dead), ScrollProgress/AnimatedText
   deleted (never rendered).
-- Still OPEN from the audit (need Dr. Modi): one-to-two vs one-to-three
-  stages wording; "seen within days of referral" + "call within 1 business
-  day" confirmation; Resend env vars in Vercel before launch; insurance
-  page carrier list; patient-resources/wound-care page content.
+- RESOLVED same day (Dr. Modi confirmed): one-to-two stages wording; "seen
+  within days of referral"; "call within 1 business day" — see
+  [[medical-focus]] 2026-08-03 entry.
+- Still OPEN from the audit: Resend env vars in Vercel before launch (+ one
+  live test submission); office/counsel review of /privacy; insurance page
+  carrier list; patient-resources/wound-care page content.

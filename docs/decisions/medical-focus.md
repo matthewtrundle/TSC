@@ -27,8 +27,21 @@ say-so. See [[practice-decisions]] for the no-fabricated-content rule and the
   untreated / 94% for recurrent" skin cancers (ACMS/SCF figures — never the
   legacy "50–70%" comparator); "most tumors clear in one to three stages";
   "about an hour per stage".
-- **Status:** Confirmed
+- **Status:** Superseded — see 2026-08-03 entry below (94%-recurrent removed
+  from site; stage count corrected to one-to-two)
 - **Source:** planoderm-site SKILL.md (verified-claims list)
+
+### 2026-08-03 — Stage count and response-time claims (Dr. Modi confirmed in chat)
+- **Decision:** "Most tumors clear in **one to two stages**" is the confirmed
+  sitewide wording (not one-to-three). Response-time promises are confirmed
+  publishable: referred patients "**seen within days of referral**" and online
+  requests get a "**call within one business day**". The 94%-recurrent cure
+  figure stays off the site (removed earlier at Dr. Modi's direction); the
+  99%-previously-untreated figure stands. Skill ledger updated to match.
+- **Status:** Confirmed
+- **Source:** Dr. Modi, chat, 2026-08-03 ("one to two stages, yes seen within
+  days of referral, call within one business day")
+- **Links:** [[practice-decisions]]
 
 ## UNCONFIRMED (never render)
 
