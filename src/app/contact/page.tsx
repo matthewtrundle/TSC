@@ -57,10 +57,6 @@ export default function ContactPage() {
                     className="h-auto w-full"
                   />
                 </div>
-                <figcaption className="mt-2.5 text-sm text-[var(--warm-gray-light)]">
-                  Look for the red-brick building with the drive-under canopy
-                  — parking is at the door.
-                </figcaption>
               </figure>
             </FadeIn>
           </div>
