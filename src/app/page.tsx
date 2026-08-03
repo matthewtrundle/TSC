@@ -51,6 +51,8 @@ export default function Home() {
       <HeroMedia
         image="/images/hero-skyline-dusk.webp"
         alt="The Plano skyline at dusk"
+        imageB="/images/hero-building-morning.webp"
+        altB="The Plano Dermatology building on a clear morning"
         priority
         scrim="left"
         className="flex min-h-[82vh] items-center justify-center"

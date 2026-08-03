@@ -10,13 +10,17 @@ import Image from "next/image";
 export function PilonidalDiagram() {
   return (
     <figure className="m-0">
-      <Image
-        src="/images/pilonidal-illustration.webp"
-        alt="Medical illustration: posterior view of the natal cleft with an inflamed pilonidal area, and a magnified cross-section showing a pilonidal cyst containing trapped hairs, its sinus tract to the skin surface, and the tailbone"
-        width={1408}
-        height={768}
-        className="w-full border border-[var(--hairline)]"
-      />
+      {/* Same duotone-at-rest, color-on-hover treatment as the site's other
+          imagery. */}
+      <div className="duotone-frame border border-[var(--hairline)]">
+        <Image
+          src="/images/pilonidal-illustration.webp"
+          alt="Medical illustration: posterior view of the natal cleft with an inflamed pilonidal area, and a magnified cross-section showing a pilonidal cyst containing trapped hairs, its sinus tract to the skin surface, and the tailbone"
+          width={1408}
+          height={768}
+          className="img-duotone w-full"
+        />
+      </div>
       <figcaption className="mt-3 text-sm leading-relaxed text-[var(--warm-gray-light)]">
         Pilonidal cysts and abscesses form in the natal cleft near the
         tailbone. Magnified: the cyst cavity with trapped hair, and the narrow

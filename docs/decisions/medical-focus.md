@@ -8,9 +8,9 @@ say-so. See [[practice-decisions]] for the no-fabricated-content rule and the
 
 ## CONFIRMED (publishable)
 
-### 2026-08-01 — Same-day melanoma Mohs with MART-1 + S-100
+### 2026-08-01 — Same-day melanoma Mohs with MART-1 + SOX10
 - **Decision:** The practice performs Mohs surgery for melanoma with
-  immunohistochemical staining using MART-1 and S-100, all on the same day:
+  immunohistochemical staining using MART-1 and SOX10, all on the same day:
   cancer removed, margins tested with IHC staining, and once margins are clear
   the patient is reconstructed — same day.
 - **Contrast to draw:** historical wide local excision, and staged excision
@@ -60,3 +60,10 @@ in chat, record it here with the date, then update siteData.
 - 7:30 AM typical check-in (not a fixed window); most tumors clear in one to
   two stages (practice experience); "Same morning: repair or reconstruction,
   then home"; patients usually do NOT need a driver. FAQ updated to match.
+
+### 2026-08-03 — Stain correction: SOX10, not S-100
+- **Decision:** The melanoma Mohs immunostain panel is MART-1 and SOX10.
+  Dr. Modi corrected the earlier statement — S-100 is NOT used. All site
+  copy, ledger entries, and the skill were swept.
+- **Status:** Confirmed (supersedes the S-100 references above)
+- **Source:** chat 2026-08-03

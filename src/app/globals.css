@@ -470,6 +470,24 @@ h3, h4 {
   }
 }
 
+/* Hero rotation: the second image layer fades in and out on a slow loop.
+   Hidden entirely for reduced-motion users (the base image remains). */
+.hero-crossfade {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-crossfade {
+    animation: hero-crossfade 24s ease-in-out infinite;
+  }
+
+  @keyframes hero-crossfade {
+    0%, 38% { opacity: 0; }
+    50%, 88% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+}
+
 /* Scrim so ivory hero text holds ≥7:1 over any imagery. */
 .hero-scrim {
   position: absolute;

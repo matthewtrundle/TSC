@@ -13,8 +13,9 @@ for internal orientation — publishable clinical claims live only in
 - **MART-1** — An immunohistochemical stain that highlights melanocytes; used
   to read melanoma margins. Part of the confirmed same-day melanoma Mohs
   workflow ([[medical-focus#confirmed-publishable]]).
-- **S-100** — An immunohistochemical stain marking melanocytic (and neural)
-  cells; used alongside MART-1 for melanoma margin assessment.
+- **SOX10** — An immunohistochemical stain marking melanocytic cells,
+  used with MART-1 during Mohs surgery for melanoma. (Corrected 2026-08-03:
+  the practice uses SOX10, not S-100.)
 - **Immunohistochemistry (IHC)** — Antibody-based tissue staining that makes
   specific cell types visible under the microscope.
 - **Staged excision ("slow Mohs")** — Melanoma excision done over 1–3 days

@@ -13,6 +13,10 @@ type HeroMediaProps = {
   imageAvif?: string;
   /** When set, an ambient looping video replaces the Ken Burns still. */
   video?: string;
+  /** Optional second still — the hero slowly crossfades between the two.
+      Reduced-motion users simply see the first image. */
+  imageB?: string;
+  altB?: string;
   alt: string;
   priority?: boolean;
   scrim?: "left" | "full" | "none";
@@ -32,6 +36,8 @@ type HeroMediaProps = {
 export function HeroMedia({
   image,
   video,
+  imageB,
+  altB,
   alt,
   priority = false,
   scrim = "left",
@@ -55,15 +61,29 @@ export function HeroMedia({
           <source src={video} />
         </video>
       ) : (
-        <Image
-          src={image}
-          alt={alt}
-          fill
-          sizes="100vw"
-          priority={priority}
-          fetchPriority={priority ? "high" : undefined}
-          className="kenburns-media object-cover"
-        />
+        <>
+          <Image
+            src={image}
+            alt={alt}
+            fill
+            sizes="100vw"
+            priority={priority}
+            fetchPriority={priority ? "high" : undefined}
+            className="kenburns-media object-cover"
+          />
+          {imageB && (
+            // Second layer crossfades in and out on a slow CSS loop; with
+            // reduced motion the animation is killed and only the base image
+            // shows. Pure CSS — no client JS, nothing can strand the hero.
+            <Image
+              src={imageB}
+              alt={altB ?? alt}
+              fill
+              sizes="100vw"
+              className="kenburns-media hero-crossfade object-cover"
+            />
+          )}
+        </>
       )}
       {scrim === "left" && <div className="hero-scrim" aria-hidden="true" />}
       {scrim === "full" && (
