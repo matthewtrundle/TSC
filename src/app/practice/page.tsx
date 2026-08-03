@@ -116,19 +116,18 @@ export default function PracticePage() {
                 technique.
               </p>
 
-              <div className="card-dark p-2">
-                <div className="relative aspect-[3/2] overflow-hidden">
-                  <Image
-                    src="/images/svc-slide-glass.webp"
-                    alt="Prepared glass microscope slides catching the light in the laboratory"
-                    fill
-                    sizes="(min-width: 1024px) 26rem, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <p className="label-caps-light px-3 py-3">
-                  The On-Site Laboratory
-                </p>
+              <div className="duotone-frame aspect-[3/2]">
+                <Image
+                  src="/images/svc-slides-he-lab.webp"
+                  alt="Glass slides with H&E-stained Mohs frozen sections — pink tissue discs on bright glass"
+                  fill
+                  sizes="(min-width: 1024px) 26rem, 100vw"
+                  className="img-duotone object-cover"
+                />
+                <div
+                  className="absolute inset-2 z-10 border border-[var(--hairline-bronze)] pointer-events-none"
+                  aria-hidden="true"
+                />
               </div>
             </FadeIn>
 
