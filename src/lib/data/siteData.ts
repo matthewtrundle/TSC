@@ -142,7 +142,7 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
 
 He served as an assistant instructor during his Internal Medicine internship at Vanderbilt University Medical Center in Nashville, then completed his dermatology residency at Texas Tech University Health Sciences Center in Lubbock, serving as chief resident in his final year.
 
-Texas Tech invited him to stay on as faculty, where he rose to the level of **Tenured Associate Professor** and received numerous Dean's awards between 2001 and 2012. He went on to complete an ACGME-approved Procedural Dermatology / ACMS-approved Mohs Micrographic Surgery Fellowship at the University of Texas Southwestern in Dallas.
+Texas Tech invited him to stay on as faculty, where he rose to the level of **Tenured Associate Professor** and received numerous Dean's awards between 2001 and 2012. He went on to complete a Mohs Micrographic Surgery Fellowship at the University of Texas Southwestern in Dallas.
 
 Dr. Wells remains deeply engaged with the academic side of the specialty. He has served on the Editorial Board and as a reviewer for the Journal of the American Academy of Dermatology (JAAD), the preeminent peer-reviewed publication in dermatology, in addition to serving as an editor for e-medicine, authoring chapters for clinical decision-making resources, and active involvement with the Texas Medical Association.`,
     education: [
