@@ -163,8 +163,7 @@ export default function Home() {
                 years of accredited training under an established Mohs surgeon,
                 covering hundreds of cases — the surgery, the microscope work,
                 and the reconstruction. All three of our surgeons carry that
-                training, and two of them spent their careers providing it to
-                others.
+                training.
               </p>
             </aside>
           </FadeIn>

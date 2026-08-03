@@ -245,7 +245,7 @@ export default function PracticePage() {
                 {[
                   { value: "3", label: "Fellowship-trained Mohs surgeons" },
                   { value: "15", label: "Mohs surgeons trained by our physicians" },
-                  { value: "100s", label: "Of dermatology residents taught" },
+                  { value: "100", suffix: "s", label: "Dermatology Resident Physicians trained" },
                 ].map((stat) => (
                   <div key={stat.label}>
                     <div
@@ -257,6 +257,11 @@ export default function PracticePage() {
                       }}
                     >
                       {stat.value}
+                      {/* Cormorant's display "s" reads as a capital next to
+                          lining figures — shrink it to lowercase scale. */}
+                      {"suffix" in stat && (
+                        <span className="text-[0.62em]">{stat.suffix}</span>
+                      )}
                     </div>
                     <div className="text-[var(--warm-gray-light)] text-sm">
                       {stat.label}
