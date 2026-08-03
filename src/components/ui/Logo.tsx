@@ -3,65 +3,74 @@
 interface LogoProps {
   className?: string;
   height?: number;
+  /** "dark" renders ivory/champagne for charcoal surfaces (footer). */
+  variant?: "light" | "dark";
 }
 
 /**
- * The TSC wordmark, recut as inline SVG. The original raster mark's identity
- * — the monogram with two incision lines passing through it — is kept, but
- * set in the site's display serif, charcoal on ivory with bronze lines. The
- * ivory stroke behind the letters knocks the lines out around each glyph, so
- * the "incision through the monogram" reads crisply at any size.
- * (The old /images/logo-tsc.png remains on disk as rollback.)
+ * The master lockup (adopted 2026-08-02, concept riff-b1): "THE SURGERY
+ * CENTER" stacked in the display serif, a bronze rule, and "PLANO
+ * DERMATOLOGY" in tracked caps beneath. Live-text SVG on the site's own font
+ * variables — resolution-independent and always in sync with the brand type.
+ * (The previous TSC incision-line mark is archived in _logo-concepts-v2/.)
  */
-export function Logo({ className = "", height = 56 }: LogoProps) {
-  const width = (height * 250) / 110;
+export function Logo({ className = "", height = 64, variant = "light" }: LogoProps) {
+  const width = (height * 344) / 170;
+  const ink = variant === "dark" ? "var(--ivory)" : "var(--charcoal)";
+  const accent = variant === "dark" ? "var(--champagne)" : "var(--bronze)";
+  const subInk = variant === "dark" ? "var(--champagne)" : "var(--bronze-text)";
+
   return (
     <svg
       width={width}
       height={height}
-      viewBox="0 0 250 110"
+      viewBox="0 0 344 170"
       role="img"
-      aria-label="TSC — The Surgery Center at Plano Dermatology"
+      aria-label="The Surgery Center — Plano Dermatology"
       className={className}
     >
-      {/* Incision lines */}
-      <line x1="4" y1="42" x2="246" y2="42" stroke="var(--bronze)" strokeWidth="2.25" />
-      <line x1="4" y1="50" x2="246" y2="50" stroke="var(--bronze)" strokeWidth="2.25" />
-
-      {/* Monogram — ivory stroke knocks the lines out around the glyphs */}
       <text
-        x="125"
-        y="66"
+        x="172"
+        y="52"
         textAnchor="middle"
-        fill="var(--charcoal)"
-        stroke="var(--ivory)"
-        strokeWidth="10"
+        fill={ink}
         style={{
           fontFamily: "var(--font-display)",
           fontWeight: 600,
-          fontSize: "68px",
-          letterSpacing: "0.06em",
-          paintOrder: "stroke fill",
+          fontSize: "46px",
+          letterSpacing: "0.05em",
         }}
       >
-        TSC
+        THE SURGERY
       </text>
-
-      {/* Descriptor */}
       <text
-        x="125"
-        y="97"
+        x="172"
+        y="100"
         textAnchor="middle"
-        fill="var(--bronze-text)"
+        fill={ink}
+        style={{
+          fontFamily: "var(--font-display)",
+          fontWeight: 600,
+          fontSize: "46px",
+          letterSpacing: "0.05em",
+        }}
+      >
+        CENTER
+      </text>
+      <rect x="84" y="117" width="176" height="2.5" fill={accent} />
+      <text
+        x="172"
+        y="146"
+        textAnchor="middle"
+        fill={subInk}
         style={{
           fontFamily: "var(--font-sans)",
           fontWeight: 600,
-          fontSize: "12.5px",
-          letterSpacing: "0.32em",
-          textTransform: "uppercase",
+          fontSize: "14.5px",
+          letterSpacing: "0.34em",
         }}
       >
-        THE SURGERY CENTER
+        PLANO DERMATOLOGY
       </text>
     </svg>
   );

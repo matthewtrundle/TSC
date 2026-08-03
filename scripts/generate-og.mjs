@@ -29,7 +29,7 @@ const svg = `
   <rect x="${MARGIN_X}" y="176" width="72" height="2" fill="${BRONZE}"/>
 
   <!-- Display line -->
-  <text x="${MARGIN_X}" y="288" font-family="Georgia, serif" font-size="84" fill="${IVORY}">The Surgery Center</text>
+  <text x="${MARGIN_X}" y="288" font-family="Georgia, serif" font-size="84" fill="${IVORY}">THE SURGERY CENTER</text>
 
   <!-- Tracked small-caps secondary line -->
   <text x="${MARGIN_X + 4}" y="352" font-family="Georgia, serif" font-size="30" letter-spacing="7" fill="${IVORY}" opacity="0.85">AT PLANO DERMATOLOGY</text>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { siteConfig, navigation } from "@/lib/data/siteData";
 import { CredentialBar } from "@/components/ui/CredentialBar";
+import { Logo } from "@/components/ui/Logo";
 
 /**
  * Slim luxury footer. One nav column only — the Services column duplicated
@@ -19,14 +20,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3 lg:gap-14">
           {/* Practice */}
           <div>
-            <Link href="/" className="mb-4 inline-block">
-              <span
-                className="block text-2xl text-white"
-                style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}
-              >
-                The Surgery Center
-              </span>
-              <span className="block text-xs text-white/60">at Plano Dermatology</span>
+            <Link href="/" className="mb-5 inline-block">
+              <Logo variant="dark" height={92} />
             </Link>
             <p className="text-sm leading-relaxed text-white/65">
               Physician-owned and operated. Board-certified,

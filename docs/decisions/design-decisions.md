@@ -143,3 +143,17 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   Never reintroduce these patterns; the old CLAUDE.md documenting them was
   rewritten 2026-08-02.
 - **Links:** [[medical-focus]]
+
+### 2026-08-02 — New master logo adopted (riff-b1)
+- **Decision:** The master logo is the stacked lockup: "THE SURGERY CENTER"
+  in Cormorant Garamond 600, bronze rule, "PLANO DERMATOLOGY" in tracked
+  Libre Franklin caps — implemented as live-text SVG in `ui/Logo.tsx` with
+  light/dark variants (header/footer), brand hexes only. App icon updated to
+  a matching SC monogram; OG card text updated. viewBox is 344 wide — 300
+  clipped Cormorant's T/Y (client caught it).
+- **Rationale:** Client selected concept riff-b1 from the _logo-concepts-v2
+  album after two exploration rounds; emphasis intentionally on "The Surgery
+  Center" with Plano Dermatology as anchor line.
+- **Status:** Confirmed. Prior TSC incision-line mark archived in
+  `_logo-concepts-v2/OLD-MASTER-*` (asset + component) for future revisit.
+- **Source:** chat 2026-08-02
