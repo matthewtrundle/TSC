@@ -6,21 +6,25 @@ import Image from "next/image";
 // Dr. Modi's D Magazine directory profile).
 const ITEMS = [
   {
+    // True vector (Adobe-vectorized from the College's own artwork) —
+    // resolution-independent at any zoom.
     name: "American College of Mohs Surgery",
-    logo: "/images/societies/acms.png",
+    logo: "/images/societies/acms.svg",
     width: 1875,
     height: 475,
     href: "https://www.mohscollege.org",
   },
   {
     // The board's official round seal, extracted from ABD's own 2023 annual
-    // report PDF (their site serves no standalone asset above 258px).
+    // report PDF. The name renders as live text beside it (per abderm.org's
+    // own header lockup) — text stays perfectly sharp at any zoom.
     name: "American Board of Dermatology",
     logo: "/images/societies/abd-seal.png",
     width: 1700,
     height: 1700,
     href: "https://www.abderm.org",
     seal: true,
+    textLockup: true,
   },
   {
     name: "American Academy of Dermatology",
@@ -108,7 +112,7 @@ export function CredentialBar({
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-opacity hover:opacity-100"
+            className="flex items-center gap-2.5 transition-opacity hover:opacity-100"
             title={item.name}
           >
             <Image
@@ -122,6 +126,13 @@ export function CredentialBar({
                 "seal" in item && item.seal ? "h-12 lg:h-14" : "h-9 lg:h-11"
               }`}
             />
+            {"textLockup" in item && item.textLockup && (
+              <span className="text-left text-[0.8125rem] font-semibold leading-snug text-[var(--charcoal)] opacity-75">
+                American Board
+                <br />
+                of Dermatology
+              </span>
+            )}
           </a>
         </li>
       ))}

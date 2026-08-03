@@ -88,7 +88,18 @@ export default function TeamPage() {
                     >
                       {doctor.name}
                     </h2>
-                    <p className="label-caps mb-1.5">{doctor.title}</p>
+                    {/* The board-certification line links to the surgeon's
+                        ABMS Certification Matters profile — third-party
+                        verification a click away. */}
+                    <a
+                      href={doctor.certificationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="label-caps mb-1.5 inline-block underline decoration-[var(--hairline-bronze)] underline-offset-4 transition-colors hover:decoration-[var(--bronze)]"
+                      title="Verify board certification at Certification Matters (ABMS)"
+                    >
+                      {doctor.title}
+                    </a>
                     <p className="label-caps" style={{ color: "var(--warm-gray-light)" }}>
                       {fellowships[doctor.id]}
                     </p>

@@ -75,6 +75,7 @@ export const navigation = {
 export const doctors = [
   {
     id: "dr-modi",
+    certificationUrl: "https://www.certificationmatters.org/practitioner/?crtmat_pid=997770&crtmat_ped=OWVJdlRsYXBwOXhpdlhBcGFKYy83UFZIc3hCUUNMcVhDTjIxdkVrdEZUcz0&qs=ZHNlYXJjaD0xJmxuYW1lPW1vZGkmZm5hbWU9Z3VuamFuJnN0YXRlPSZzcGVjaWFsdHk9",
     name: "Gunjan Modi, MD, FAAD, FACMS",
     credentials: "MD, FAAD, FACMS",
     title: "Double Board-Certified Dermatologist & Mohs Surgeon",
@@ -128,6 +129,7 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
   },
   {
     id: "dr-wells",
+    certificationUrl: "https://www.certificationmatters.org/practitioner/?crtmat_pid=708100&crtmat_ped=T2VVcy82M2IzZzF0YzBSbk9vUFJ6Mm5ZeEFGbVorMG42Ym1KeFdRM0JXQT0&qs=ZHNlYXJjaD0xJmxuYW1lPXdlbGxzJmZuYW1lPW1pY2hhZWwmc3RhdGU9JnNwZWNpYWx0eT0",
     name: "Michael Wells, MD, FAAD, FACMS",
     credentials: "MD, FAAD, FACMS",
     title: "Double Board-Certified Dermatologist & Mohs Surgeon",
@@ -174,6 +176,7 @@ He actively shares his wealth of knowledge and expertise with other healthcare p
   },
   {
     id: "dr-parry",
+    certificationUrl: "https://www.certificationmatters.org/practitioner/?crtmat_pid=264474&crtmat_ped=dGJ6aERiaUdvK1l6b0NHSEpub0dDejErZmNnYUxqaTZaV1lucVBEa3lhTT0&qs=ZHNlYXJjaD0xJmxuYW1lPXBhcnJ5JmZuYW1lPWVkd2FyZCZzdGF0ZT0mc3BlY2lhbHR5PQ=",
     name: "Edward Parry, MD, FAAD, FACMS",
     credentials: "MD, FAAD, FACMS",
     title: "Board Certified Dermatologist & Mohs Surgeon",
