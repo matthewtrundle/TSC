@@ -82,6 +82,9 @@ export default function Footer() {
                 <a href={siteConfig.links.billPay} target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--champagne)] transition-opacity hover:opacity-80">
                   Bill Pay
                 </a>
+                <a href={siteConfig.links.googleReviews} target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--champagne)] transition-opacity hover:opacity-80">
+                  Google Reviews
+                </a>
               </li>
               <li className="pt-1 text-xs text-white/55">
                 {siteConfig.hours.weekdays}

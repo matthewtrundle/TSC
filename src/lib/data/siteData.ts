@@ -43,6 +43,11 @@ export const siteConfig = {
   links: {
     patientPortal: "https://sadio.com/",
     billPay: "https://quickclick.com/r/c5orl",
+    // The practice's Google Business Profile (place ID verified against the
+    // 6100 Windhaven Pkwy listing). Opens Google's own reviews panel — we
+    // link to real reviews rather than restating ratings on-site.
+    googleReviews:
+      "https://search.google.com/local/reviews?placeid=ChIJUTM9KV8jTIYRgt9pgc15Z6g",
   },
 
   social: {
@@ -74,7 +79,10 @@ export const navigation = {
   // than pointing at routes that 404. A medical practice does need a Privacy
   // Policy and a HIPAA Notice of Privacy Practices — both must be drafted by the
   // practice's counsel, not generated. Restore entries here once those pages exist.
-  legal: [] as { name: string; href: string }[],
+  legal: [
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Accessibility", href: "/accessibility" },
+  ] as { name: string; href: string }[],
 };
 
 export const doctors = [

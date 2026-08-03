@@ -19,5 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/referring`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/appointment`, lastModified, changeFrequency: "yearly", priority: 0.9 },
     { url: `${SITE_URL}/contact`, lastModified, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${SITE_URL}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${SITE_URL}/accessibility`, lastModified, changeFrequency: "yearly", priority: 0.2 },
   ];
 }

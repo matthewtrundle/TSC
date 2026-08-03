@@ -39,6 +39,18 @@ export default function AppointmentPage() {
                 {siteConfig.contact.phone}
               </a>
               <p className="mt-6 text-sm text-[var(--warm-gray-light)]">
+                Wondering what to expect?{" "}
+                <a
+                  href={siteConfig.links.googleReviews}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[var(--bronze-text)] hover:underline"
+                >
+                  Read our patients&rsquo; reviews on Google
+                </a>
+                .
+              </p>
+              <p className="mt-2 text-sm text-[var(--warm-gray-light)]">
                 Existing patient?{" "}
                 <a
                   href={siteConfig.links.patientPortal}
@@ -173,8 +185,12 @@ export default function AppointmentPage() {
               found by texting &quot;HELP&quot;.
             </p>
             <p className="mt-2">
-              Privacy Policy: No mobile information will be shared with third parties/affiliates
-              for marketing/promotional purposes.
+              No mobile information will be shared with third parties/affiliates
+              for marketing/promotional purposes. See our{" "}
+              <a href="/privacy" className="underline hover:text-[var(--warm-gray)]">
+                Privacy Policy
+              </a>
+              .
             </p>
           </div>
         </div>

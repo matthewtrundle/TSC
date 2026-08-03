@@ -99,9 +99,10 @@ export default function RootLayout({
     // the reference is unresolvable at :root and the whole property is invalid,
     // so every serif heading silently falls back to the sans stack.
     <html lang="en" className={`scroll-smooth ${franklin.variable} ${sourceSerif.variable} ${cormorant.variable}`}>
-      {/* pb-14 reserves space for the fixed MobileCallBar below lg so no
-          content (footer links especially) hides behind it. */}
-      <body className="antialiased pb-14 lg:pb-0">
+      {/* Reserves space for the fixed MobileCallBar below lg so no content
+          (footer links especially) hides behind it — 56px bar height plus the
+          home-indicator safe area on notched phones. */}
+      <body className="antialiased pb-[calc(3.5rem+env(safe-area-inset-bottom))] lg:pb-0">
         <JsonLd data={medicalBusinessSchema()} />
         <Header />
         <main className="min-h-screen">{children}</main>

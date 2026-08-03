@@ -135,7 +135,7 @@ export default function Home() {
           </div>
 
           <FadeIn delay={0.3}>
-            <div className="mt-16 grid grid-cols-3 gap-8 border-t border-[var(--hairline)] pt-10">
+            <div className="mt-16 grid grid-cols-1 gap-8 border-t border-[var(--hairline)] pt-10 sm:grid-cols-3">
               {[
                 { value: "3", label: "Fellowship-trained Mohs surgeons" },
                 { value: "65+", label: "Years of combined experience" },
