@@ -36,7 +36,7 @@ export function Logo({ className = "", height = 64, variant = "light" }: LogoPro
         fill={ink}
         style={{
           fontFamily: "var(--font-display)",
-          fontWeight: 600,
+          fontWeight: 700,
           fontSize: "46px",
           letterSpacing: "0.05em",
         }}
@@ -50,7 +50,7 @@ export function Logo({ className = "", height = 64, variant = "light" }: LogoPro
         fill={ink}
         style={{
           fontFamily: "var(--font-display)",
-          fontWeight: 600,
+          fontWeight: 700,
           fontSize: "46px",
           letterSpacing: "0.05em",
         }}

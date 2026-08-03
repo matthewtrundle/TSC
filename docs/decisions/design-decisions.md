@@ -157,3 +157,9 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
 - **Status:** Confirmed. Prior TSC incision-line mark archived in
   `_logo-concepts-v2/OLD-MASTER-*` (asset + component) for future revisit.
 - **Source:** chat 2026-08-02
+
+### 2026-08-03 — Master logo wordmark weight: Cormorant 700
+- **Decision:** "THE SURGERY CENTER" lines in the master lockup use Cormorant
+  Garamond 700 (was 600); PLANO DERMATOLOGY sub-line stays Franklin 600.
+  Chosen from four weight variants (BOLD-1) in _logo-concepts-v2/.
+- **Source:** chat 2026-08-03
