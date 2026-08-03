@@ -53,6 +53,27 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
   },
 };
 
+// Detail pages that belong to each band — rendered as "In detail" links so
+// the bands and the nested pages stop living in separate worlds.
+const bandDetailLinks: Record<string, { name: string; slug: string }[]> = {
+  "mohs-surgery": [
+    { name: "Basal cell carcinoma", slug: "basal-cell-carcinoma" },
+    { name: "Squamous cell carcinoma", slug: "squamous-cell-carcinoma" },
+    { name: "Actinic keratosis", slug: "actinic-keratosis" },
+  ],
+  "skin-resurfacing": [{ name: "Skin resurfacing, in detail", slug: "skin-resurfacing" }],
+  "hair-loss": [{ name: "Hair loss & PRP, in detail", slug: "prp-hair-restoration" }],
+  "other-procedures": [
+    { name: "Cyst removal", slug: "cyst-removal" },
+    { name: "Lipoma removal", slug: "lipoma-removal" },
+    { name: "Mole evaluation & removal", slug: "mole-removal" },
+    { name: "Keloid & scar revision", slug: "keloid-scar-revision" },
+    { name: "Benign lesion removal", slug: "benign-lesion-removal" },
+    { name: "Nail procedures & biopsies", slug: "nail-procedures" },
+    { name: "Eyelid biopsies", slug: "eyelid-biopsies" },
+  ],
+};
+
 export default function ServicesPage() {
   const mohsParagraphs = practiceInfo.mohsDescription.split("\n\n");
 
@@ -268,6 +289,21 @@ export default function ServicesPage() {
                     </>
                   )}
 
+                  {bandDetailLinks[service.id] && (
+                    <div className="mb-8 flex flex-wrap gap-x-7 gap-y-2.5">
+                      {bandDetailLinks[service.id].map((link) => (
+                        <Link
+                          key={link.slug}
+                          href={`/services/${link.slug}`}
+                          className="inline-flex items-center gap-1.5 font-semibold text-[var(--teal-accent)] transition-all hover:gap-2.5"
+                        >
+                          {link.name}
+                          <ChevronRight className="h-4 w-4" />
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+
                   <Link href="/appointment" className="btn-outline-bronze">
                     Request an appointment
                     <ChevronRight className="w-4 h-4" />
@@ -290,21 +326,45 @@ export default function ServicesPage() {
               come in, and how we treat it.
             </p>
           </div>
-          <div className="grid gap-x-10 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
-            {procedures.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/services/${p.slug}`}
-                className="group flex items-baseline justify-between gap-4 border-b border-[var(--gray-200)] py-4"
-              >
-                <span
-                  className="text-lg text-[var(--navy-primary)] transition-colors group-hover:text-[var(--teal-accent)]"
-                  style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
-                >
-                  {p.name}
-                </span>
-                <ChevronRight className="h-4 w-4 shrink-0 self-center text-[var(--teal-accent)] transition-transform group-hover:translate-x-0.5" />
-              </Link>
+          <div className="grid gap-x-12 gap-y-10 md:grid-cols-3">
+            {[
+              {
+                group: "Skin cancer & precancer",
+                slugs: ["basal-cell-carcinoma", "squamous-cell-carcinoma", "actinic-keratosis", "mole-removal"],
+              },
+              {
+                group: "Everyday procedures",
+                slugs: ["cyst-removal", "lipoma-removal", "benign-lesion-removal", "nail-procedures", "eyelid-biopsies"],
+              },
+              {
+                group: "Restorative & aesthetic",
+                slugs: ["skin-resurfacing", "prp-hair-restoration", "keloid-scar-revision"],
+              },
+            ].map(({ group, slugs }) => (
+              <div key={group}>
+                <h3 className="label-caps mb-2">{group}</h3>
+                <span aria-hidden="true" className="rule-bronze mb-3" />
+                <div>
+                  {slugs
+                    .map((slug) => procedures.find((p) => p.slug === slug))
+                    .filter((p): p is NonNullable<typeof p> => Boolean(p))
+                    .map((p) => (
+                      <Link
+                        key={p.slug}
+                        href={`/services/${p.slug}`}
+                        className="group flex items-baseline justify-between gap-4 border-b border-[var(--gray-200)] py-3.5"
+                      >
+                        <span
+                          className="text-lg text-[var(--navy-primary)] transition-colors group-hover:text-[var(--teal-accent)]"
+                          style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
+                        >
+                          {p.name}
+                        </span>
+                        <ChevronRight className="h-4 w-4 shrink-0 self-center text-[var(--teal-accent)] transition-transform group-hover:translate-x-0.5" />
+                      </Link>
+                    ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
