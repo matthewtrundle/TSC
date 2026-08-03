@@ -340,10 +340,12 @@ export default function PracticePage() {
                 ))}
               </dl>
 
+              {/* The practice's own building at dusk (replaced the generic
+                  Legacy West streetscape — archived in _archived-site-images/). */}
               <div className="duotone-frame aspect-[16/9] mt-10">
                 <Image
-                  src="/images/practice-legacy-west.webp"
-                  alt="Legacy West streetscape in Plano at dusk"
+                  src="/images/building-dusk.webp"
+                  alt="The Plano Dermatology building at dusk, windows glowing"
                   fill
                   sizes="(min-width: 1024px) 40rem, 100vw"
                   className="img-duotone object-cover"
