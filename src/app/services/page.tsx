@@ -6,6 +6,7 @@ import { procedures } from "@/lib/data/proceduresData";
 import { Phone, ChevronRight } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { LuxuryCta } from "@/components/ui/LuxuryCta";
+import { PilonidalDiagram } from "@/components/ui/PilonidalDiagram";
 
 
 export const metadata: Metadata = {
@@ -143,6 +144,13 @@ export default function ServicesPage() {
                         className="absolute inset-2 z-10 border border-[var(--hairline-bronze)] pointer-events-none"
                         aria-hidden="true"
                       />
+                    </div>
+                  )}
+                  {/* Pilonidal gets an educational diagram instead of an
+                      evocative photo. */}
+                  {service.id === "pilonidal" && (
+                    <div className="mt-8 border border-[var(--hairline)] bg-[var(--surface)] p-5">
+                      <PilonidalDiagram />
                     </div>
                   )}
                 </FadeIn>

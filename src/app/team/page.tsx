@@ -208,14 +208,22 @@ export default function TeamPage() {
                     <div className="mt-10 grid grid-cols-4 items-end gap-4 sm:grid-cols-6 lg:grid-cols-12">
                       {[2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026].map(
                         (year) => (
-                          <Image
+                          <a
                             key={year}
-                            src={`/images/awards/d-best-${year}.webp`}
-                            alt={`D Magazine Best ${year} award badge`}
-                            width={880}
-                            height={1440}
-                            className="h-24 w-auto justify-self-center lg:h-24"
-                          />
+                            href="https://directory.dmagazine.com/doctors/gunjan-m-modi-md/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="justify-self-center transition-opacity hover:opacity-80"
+                            title={`D Magazine Best Doctors — Dr. Modi's directory profile`}
+                          >
+                            <Image
+                              src={`/images/awards/d-best-${year}.webp`}
+                              alt={`D Magazine Best ${year} award badge`}
+                              width={880}
+                              height={1440}
+                              className="h-24 w-auto lg:h-24"
+                            />
+                          </a>
                         )
                       )}
                     </div>

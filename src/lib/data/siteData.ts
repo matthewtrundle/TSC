@@ -60,10 +60,10 @@ export const navigation = {
   services: [
     { name: "Mohs Surgery", href: "/services#mohs-surgery" },
     { name: "Mohs for Melanoma", href: "/services#immunostaining" },
-    { name: "Skin Cancer Treatment", href: "/services#skin-cancer-treatment" },
     { name: "Reconstructive Surgery", href: "/services#reconstruction" },
     { name: "Pilonidal Disease", href: "/services#pilonidal" },
     { name: "Skin Resurfacing", href: "/services#skin-resurfacing" },
+    { name: "Hair Loss & PRP", href: "/services#hair-loss" },
   ],
   // Legal pages are not yet written. These links are intentionally empty rather
   // than pointing at routes that 404. A medical practice does need a Privacy
@@ -188,7 +188,7 @@ Dr. Parry did his internship in general medicine at Scott Air Force Base Medical
 
 Dr. Parry subsequently joined the faculty at LSU Medical Center, where he served as a professor of dermatology and the director of Mohs surgery for 17 years. During his tenure at LSU, Dr. Parry taught hundreds of residents, and started a fellowship training program in Mohs surgery, which graduated 15 Mohs surgeons. Dr. Parry retired from academics in 2007 and moved to Plano to join his first fellow, Dr. Eric Hollabaugh, in private practice.
 
-Dr. Parry is happily married to Diane, his wife of 37 years. They have three adult children – Hugh, Phillip, and David – and four grandchildren. Dr. Parry is an avid sailor and tennis player.`,
+Dr. Parry has three adult children – Hugh, Phillip, and David – and four grandchildren. He is an avid sailor and tennis player.`,
     education: [
       { degree: "Fellowship", institution: "Scripps Clinic and Research Foundation", field: "Mohs Surgery & Cutaneous Oncology" },
       { degree: "Residency", institution: "Wilford Hall Medical Center", field: "Dermatology" },
@@ -286,27 +286,6 @@ export const services = [
     image: undefined as string | undefined,
   },
   {
-    id: "skin-cancer-treatment",
-    badge: "Expert Diagnosis",
-    name: "Skin Cancer Treatment",
-    shortName: "Skin Cancer",
-    slug: "skin-cancer",
-    description:
-      "The most common form of cancer in the United States, skin cancer is defined as the uncontrolled growth of abnormal skin cells. Our surgeons are experts in diagnosing and treating all types of skin cancer before they spread.",
-    shortDescription:
-      "Expert diagnosis and treatment for all types of skin cancer.",
-    icon: "shield",
-    features: [
-      "Comprehensive skin cancer evaluation",
-      "Biopsy and diagnosis services",
-      "Treatment for basal cell carcinoma (BCC)",
-      "Treatment for squamous cell carcinoma (SCC)",
-      "Melanoma and high-risk skin cancer care",
-      "Long-term follow-up and monitoring",
-    ],
-    image: undefined as string | undefined,
-  },
-  {
     id: "reconstruction",
     badge: "Skilled Reconstruction",
     name: "Reconstructive Surgery",
@@ -334,14 +313,16 @@ export const services = [
     shortName: "Pilonidal Disease",
     slug: "pilonidal",
     description:
-      "We treat pilonidal disease and pilonidal sinus tracts with the Bascom cleft lift. Rather than excising a large wound in the midline and leaving it to heal slowly, the cleft lift removes the sinus tracts and flattens the natal cleft, moving the closure off the midline. Patients are typically left with a smaller, off-midline scar and a faster return to normal activity than with traditional wide excision.",
+      "Pilonidal disease — pilonidal cysts and pilonidal abscesses — arises in the natal cleft, the crease between the buttocks near the tailbone, where hair and debris work under the skin and form infected pockets and sinus tracts. It most often affects young adults, and it tends to come back when treated with drainage or simple excision alone. We treat it with the Bascom cleft lift, the current gold standard for cure: the sinus tracts are removed, the cleft is flattened, and the closure is moved off the midline where skin heals reliably. Success rates in large published series run 95 to 97 percent, and patients are typically left with a smaller, off-midline scar and a faster return to normal activity than with traditional wide excision.",
     shortDescription:
       "Definitive treatment for pilonidal disease, with an off-midline closure.",
     icon: "plus",
     features: [
       // TODO(Dr. Modi): confirm recovery expectations and anesthesia before publishing.
       "PLACEHOLDER — recovery time and anesthesia details to be confirmed",
-      "Treats recurrent pilonidal disease and sinus tracts",
+      "Pilonidal cysts, abscesses, and sinus tracts — including recurrent disease",
+      "Bascom cleft lift: the gold standard for cure",
+      "Success rates of 95–97% in large published series",
       "Off-midline closure, where wounds heal more reliably",
       "Alternative to wide excision and open healing",
     ],
@@ -367,6 +348,28 @@ export const services = [
       "Field treatment of photodamage and actinic keratoses (precancers)",
       "Aesthetic rejuvenation — texture, tone, and fine lines",
       "Performed by a fellowship-trained skin cancer surgeon",
+    ],
+    image: undefined as string | undefined,
+  },
+  {
+    // Confirmed by Dr. Modi in chat 2026-08-02: hair loss treated as a
+    // medical problem — exam, labs, oral and topical medication, and PRP.
+    id: "hair-loss",
+    badge: "Beyond Skin Cancer",
+    name: "Hair Loss & Platelet-Rich Plasma",
+    shortName: "Hair Loss & PRP",
+    slug: "hair-loss",
+    description:
+      "Hair loss is a medical problem before it is a cosmetic one, and we treat it that way. Evaluation starts with a physical and clinical examination and, where indicated, laboratory testing — because thyroid disease, iron deficiency, and other medical causes need to be found, not covered up. Treatment is then built holistically from the tools with evidence behind them: oral medications, topical medications, and platelet-rich plasma (PRP) — your own concentrated platelets injected into thinning areas over a series of sessions. PRP is one tool in a complete plan, not the whole plan.",
+    shortDescription:
+      "Hair loss treated holistically — clinical exam, laboratory workup, oral and topical medication, and PRP.",
+    icon: "plus",
+    features: [
+      "Physical and clinical examination of the scalp and hair",
+      "Laboratory evaluation where indicated",
+      "Oral and topical medical therapy",
+      "Platelet-rich plasma (PRP) injections",
+      "A complete, medical approach — not PRP in isolation",
     ],
     image: undefined as string | undefined,
   },

@@ -72,3 +72,16 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - **Status:** Confirmed
 - **Source:** chat 2026-08-02
 - **Links:** [[design-decisions]] [[medical-focus]]
+
+### 2026-08-02 — Batch of eight (Dr. Modi confirmed in chat)
+- Certification Matters (ABMS) logo + link added to credential strip; all
+  credential marks now link out (light bar + footer). D Best year-less mark
+  (cropped from official badge) links to Dr. Modi's D Magazine profile, as do
+  his 12 badge tiles. Dr. Parry is a widower — Diane removed from bio, family
+  facts otherwise kept. Redundant "Skin Cancer Treatment" service deleted.
+  Pilonidal expanded: cysts/abscesses terminology, natal-cleft origin, ORIGINAL
+  line-art diagram (third-party graphic declined — copyright), cleft lift as
+  gold standard with 95–97% success per large published series (NOT 99% — the
+  literature does not support it; Svarre 2023, Immerman series). Hair Loss &
+  PRP added as holistic service (exam, labs, oral/topical meds, PRP) — band +
+  rewritten detail page.

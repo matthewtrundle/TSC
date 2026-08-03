@@ -207,19 +207,29 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "prp-hair-restoration",
-    name: "PRP Hair Restoration",
+    name: "Hair Loss & PRP",
     summary:
-      "Platelet-rich plasma injections that use your own blood's growth factors to support thinning hair.",
+      "Hair loss treated holistically — clinical examination, laboratory workup, oral and topical medication, and platelet-rich plasma.",
     body: [
-      "Platelet-rich plasma (PRP) is prepared from your own blood: a small sample is drawn and concentrated so the platelets — and the growth factors they carry — can be injected into the scalp where hair is thinning.",
-      "PRP is a nonsurgical option typically delivered as a series of sessions. Whether it makes sense for you depends on the pattern and cause of your hair loss — that conversation comes first, and honest candidacy assessment is part of it.",
+      "Hair loss is a medical problem before it is a cosmetic one, and we treat it that way. Evaluation starts with a physical and clinical examination of the scalp and hair and, where indicated, laboratory testing — because thyroid disease, iron deficiency, and other medical causes need to be found, not covered up.",
+      "Treatment is then built from the tools with evidence behind them: oral medications, topical medications, and platelet-rich plasma (PRP). PRP is prepared from your own blood — a small sample is drawn and concentrated so the platelets, and the growth factors they carry, can be injected into the scalp where hair is thinning, typically over a series of sessions.",
+      "PRP is one tool in a complete plan, not the whole plan. Whether it makes sense for you depends on the pattern and cause of your hair loss — that conversation comes first, and honest candidacy assessment is part of it.",
     ],
     whenToConsider: [
-      "Early thinning you would like to address without surgery",
+      "Thinning hair you want evaluated medically, not just treated cosmetically",
       "Androgenetic (pattern) hair loss, in men or women",
-      "You want a treatment that uses your own blood, not a drug",
+      "Hair loss that deserves a workup — labs, exam, and a diagnosis",
+      "Early thinning you would like to address without surgery",
     ],
     techniques: [
+      {
+        name: "Clinical examination and laboratory workup",
+        note: "Scalp and hair examination, with lab testing where indicated to find treatable medical causes.",
+      },
+      {
+        name: "Oral and topical medical therapy",
+        note: "Evidence-based medications, chosen for your pattern of loss and your health picture.",
+      },
       {
         name: "PRP scalp injections",
         note: "Your own concentrated platelets, injected into thinning areas over a series of sessions.",
