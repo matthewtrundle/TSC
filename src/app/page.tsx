@@ -68,11 +68,13 @@ export default function Home() {
             </h1>
 
             <p className="mb-8 text-lg leading-relaxed text-white/80">
-              Skin cancer is what we do — all we do. Our three board-certified
-              and <strong className="font-semibold text-white">fellowship-trained</strong> surgeons remove it with Mohs
-              micrographic surgery, reading 100%
-              of your margins in our own laboratory while you wait, with cure
-              rates up to 99%.
+              Skin cancer is what we do — all we do. Our{" "}
+              <strong className="font-semibold text-white">
+                three board-certified and fellowship-trained surgeons
+              </strong>{" "}
+              remove it with Mohs micrographic surgery, reading 100% of your
+              margins in our own laboratory while you wait, with cure rates up
+              to 99%.
             </p>
 
             <div className="mb-8 flex flex-wrap items-center gap-6">
