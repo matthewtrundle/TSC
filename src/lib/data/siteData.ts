@@ -138,13 +138,13 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
     image: "/images/dr-wells-warm.webp" as string | undefined,
     shortBio:
       "Double board-certified dermatologist and fellowship-trained Mohs surgeon; former tenured associate professor with over 20 years of experience.",
-    fullBio: `Michael Wells, M.D. began his college career earning a Bachelor of Science degree from the University of Central Arkansas, where he graduated with Alpha Chi honors. He then moved on to complete medical school at the University of Arkansas for Medical Sciences in Little Rock, Arkansas. Here too, Michael Wells, M.D. earned numerous high honors including top pathology and anatomy student, as well as being inducted into the AOA honor society.
+    fullBio: `Michael Wells, M.D. earned his Bachelor of Science from the University of Central Arkansas, graduating with Alpha Chi honors, and completed medical school at the University of Arkansas for Medical Sciences in Little Rock — where he was the top student in pathology and anatomy and was inducted into the AOA medical honor society.
 
-Following medical school, he served as an assistant instructor during his Internal Medicine Internship at Vanderbilt University Medical Center in Nashville. He then completed a three-year dermatology residency program at Texas Tech University Health Sciences Center in Lubbock, where he served as chief resident in his final year.
+He served as an assistant instructor during his Internal Medicine internship at Vanderbilt University Medical Center in Nashville, then completed his dermatology residency at Texas Tech University Health Sciences Center in Lubbock, serving as chief resident in his final year.
 
-After his residency he reached the level of tenured associate professor while at TTUHSC and received many Dean's awards during his time there from 2001-2012. Additionally, he completed an ACGME-approved Procedural Dermatology / ACMS-approved Mohs Micrographic Surgery Fellowship at the University of Texas Southwestern in Dallas, TX.
+Texas Tech invited him to stay on as faculty, where he rose to the level of **Tenured Associate Professor** and received numerous Dean's awards between 2001 and 2012. He went on to complete an ACGME-approved Procedural Dermatology / ACMS-approved Mohs Micrographic Surgery Fellowship at the University of Texas Southwestern in Dallas.
 
-He actively shares his wealth of knowledge and expertise with other healthcare professionals in numerous ways, including serving as editor for e-medicine, authoring chapters for clinical decision-making resources, peer reviewing medical journals, and active involvement with the Texas Medical Association.`,
+Dr. Wells remains deeply engaged with the academic side of the specialty. He has served on the Editorial Board and as a reviewer for the Journal of the American Academy of Dermatology (JAAD), the preeminent peer-reviewed publication in dermatology, in addition to serving as an editor for e-medicine, authoring chapters for clinical decision-making resources, and active involvement with the Texas Medical Association.`,
     education: [
       { degree: "Fellowship", institution: "University of Texas Southwestern Medical Center", field: "Procedural Dermatology & Mohs Surgery" },
       { degree: "Residency", institution: "Texas Tech University Health Sciences Center", field: "Dermatology (Chief Resident)" },
@@ -168,7 +168,7 @@ He actively shares his wealth of knowledge and expertise with other healthcare p
     awards: [
       {
         name: "Assistant Editor, Journal of the American Academy of Dermatology (JAAD)",
-        source: "The Blue Journal",
+        source: "Editorial Board",
         years: [],
       },
     ] as { name: string; source: string; years: number[] }[] | undefined,
@@ -237,7 +237,7 @@ export const services = [
       "The gold standard for skin cancer treatment with up to 99% cure rate.",
     icon: "microscope",
     features: [
-      "Up to 99% cure rate for previously untreated cancers; up to 94% for recurrent",
+      "Up to 99% cure rate for previously untreated cancers",
       "Tissue-sparing technique preserves maximum healthy skin",
       "Complete microscopic examination during surgery",
       "Same-day results - know cancer is gone before you leave",
@@ -419,7 +419,7 @@ export const skinCancerTypes = [
       "The most serious common skin cancer, arising from the skin's pigment cells — watch for a mole that changes, has irregular borders, or stands out from the rest. For appropriate cases we perform same-day, margin-controlled Mohs surgery with MART-1 and S-100 immunostains.",
   },
   {
-    name: "Sebaceous Carcinoma (SC)",
+    name: "Sebaceous Carcinoma",
     shortName: "Sebaceous",
     description:
       "A rare, aggressive cancer of the skin's oil glands, most often on the eyelids of older adults, where it can masquerade as a stye or chalazion that never resolves. Margin-controlled excision is central to treating it well.",
@@ -443,8 +443,8 @@ export const skinCancerTypes = [
       "A rare, slow-growing cancer of the sweat-gland structures, most often around the lips and central face. It infiltrates far more widely and deeply than it appears on the surface, making complete margin examination especially valuable.",
   },
   {
-    name: "Extramammary Paget's Disease (EMP)",
-    shortName: "EMP",
+    name: "Extramammary Paget's Disease (EMPD)",
+    shortName: "EMPD",
     description:
       "A rare, slow-growing cancer of apocrine-gland-rich skin, typically in the genital or perianal area, that often looks like a stubborn rash or eczema for years before diagnosis. Its edges are indistinct, so margin-controlled surgery earns its keep here.",
   },
@@ -524,7 +524,7 @@ Done properly, Mohs requires a fellowship-trained surgeon, dedicated laboratory 
 The result is the treatment's defining combination: cure rates up to 99% for previously untreated cancers, the most healthy skin preserved, and an answer before you leave that the cancer is gone.`,
 
   advantages: [
-    "Highest cure rates - up to 99% for previously untreated cancers, up to 94% for recurrent",
+    "Highest cure rates - up to 99% for previously untreated cancers",
     "Maximum preservation of healthy tissue",
     "Microscopic examination of 100% of tissue margins",
     "Same-day results - cancer removal verified before you leave",

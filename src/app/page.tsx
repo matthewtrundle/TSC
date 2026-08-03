@@ -17,7 +17,7 @@ import { JsonLd, faqPageSchema } from "@/lib/structuredData";
 // The homepage treatment index, derived from the services data so copy stays
 // in one place. Feature lines still pending the practice's confirmation
 // ("PLACEHOLDER") are filtered here exactly as on the services page.
-const treatmentIndex = ["mohs-surgery", "immunostaining", "reconstruction", "pilonidal", "skin-resurfacing", "other-procedures"]
+const treatmentIndex = ["mohs-surgery", "immunostaining", "high-risk-immunostaining", "reconstruction", "pilonidal", "skin-resurfacing", "hair-loss", "other-procedures"]
   .map((id) => services.find((s) => s.id === id))
   .filter((s): s is NonNullable<typeof s> => Boolean(s))
   .map((s) => ({
@@ -191,7 +191,7 @@ export default function Home() {
 
               <dl className="border-t border-white/15">
                 {[
-                  ["Up to 99%", "cure rate for previously untreated skin cancers — up to 94% for recurrent ones"],
+                  ["Up to 99%", "cure rate for previously untreated skin cancers"],
                   ["100%", "of the surgical margin examined, not a sample"],
                   ["Same day", "you know the cancer is gone before you leave"],
                 ].map(([value, label]) => (
@@ -314,7 +314,7 @@ export default function Home() {
                 <h2 className="text-display mb-4">What we treat</h2>
                 <p className="leading-relaxed text-[var(--warm-gray)]">
                   Skin cancer surgery is the core of the practice, but not all of
-                  it. Below is the full range, from Mohs through reconstruction.
+                  it. Below is the full range of services we offer.
                 </p>
               </div>
 

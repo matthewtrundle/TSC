@@ -114,7 +114,16 @@ export default function TeamPage() {
                       key={pIndex}
                       className="text-lg text-[var(--warm-gray)] leading-relaxed mb-6 last:mb-0"
                     >
-                      {paragraph}
+                      {/* Minimal **bold** support for bio emphasis. */}
+                      {paragraph.split("**").map((part, i) =>
+                        i % 2 === 1 ? (
+                          <strong key={i} className="font-semibold text-[var(--navy-primary)]">
+                            {part}
+                          </strong>
+                        ) : (
+                          part
+                        )
+                      )}
                     </p>
                   ))}
                 </div>
@@ -240,21 +249,20 @@ export default function TeamPage() {
                     </div>
                   )}
 
-                  {/* Dr. Wells: stylized Blue Journal cover (illustrative,
-                      not a reproduction of an actual JAAD issue). */}
+                  {/* Dr. Wells: JAAD cover beside the editorial title. */}
                   {doctor.id === "dr-wells" && (
-                    <div className="mt-10 flex items-end gap-6">
+                    <div className="mt-8 flex items-center gap-6">
                       <Image
-                        src="/images/awards/jaad-blue-journal.webp"
-                        alt="Stylized cover evoking the Journal of the American Academy of Dermatology"
-                        width={600}
-                        height={800}
-                        className="h-40 w-auto border border-[var(--hairline)] lg:h-48"
+                        src="/images/awards/jaad-cover.webp"
+                        alt="Cover of the Journal of the American Academy of Dermatology"
+                        width={1140}
+                        height={1525}
+                        className="h-44 w-auto border border-[var(--hairline)] lg:h-52"
                       />
                       <p className="max-w-xs text-sm leading-relaxed text-[var(--warm-gray-light)]">
-                        The Journal of the American Academy of Dermatology —
-                        &ldquo;the Blue Journal&rdquo; — is the Academy&rsquo;s
-                        peer-reviewed publication of record.
+                        The Journal of the American Academy of Dermatology is
+                        the preeminent peer-reviewed publication in
+                        dermatology.
                       </p>
                     </div>
                   )}

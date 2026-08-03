@@ -233,19 +233,14 @@ export default function ServicesPage() {
                       <dl className="border-t border-[var(--gray-200)] mb-8">
                         {skinCancerTypes.map((type) => (
                           <div
-                            key={type.shortName}
-                            className="grid sm:grid-cols-[7rem_1fr] gap-1 sm:gap-6 py-4 border-b border-[var(--gray-200)]"
+                            key={type.name}
+                            className="py-4 border-b border-[var(--gray-200)]"
                           >
                             <dt className="font-semibold text-[var(--navy-primary)]">
-                              {type.shortName}
+                              {type.name}
                             </dt>
-                            <dd>
-                              <span className="block font-semibold text-[var(--navy-primary)]">
-                                {type.name}
-                              </span>
-                              <span className="block text-[var(--warm-gray)] leading-relaxed mt-0.5">
-                                {type.description}
-                              </span>
+                            <dd className="text-[var(--warm-gray)] leading-relaxed mt-0.5">
+                              {type.description}
                             </dd>
                           </div>
                         ))}
