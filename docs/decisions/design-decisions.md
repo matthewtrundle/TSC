@@ -163,3 +163,14 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   Garamond 700 (was 600); PLANO DERMATOLOGY sub-line stays Franklin 600.
   Chosen from four weight variants (BOLD-1) in _logo-concepts-v2/.
 - **Source:** chat 2026-08-03
+
+### 2026-08-03 — Accessibility: axe-core scan gate
+- Prompted by Dr. Modi's ADA-litigation question. Full axe-core scan (WCAG
+  2.1 A/AA + best-practice) across all 22 routes via
+  `scripts/axe-scan.mjs` (needs prod server on :3111). Initial run found
+  three sitewide issues, all fixed same day: footer bottom-bar text
+  white/45 → white/65 (contrast), footer h4 → h2 + MohsStepper h4 → h3
+  (heading order), ABD seal alt="" beside its live-text lockup (redundant
+  alt). All routes now scan clean. Re-run the script before launch and
+  after any design change; automated scans cover only part of WCAG — the
+  manual checks (keyboard, reduced-motion, zoom) remain part of QA.

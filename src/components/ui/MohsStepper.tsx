@@ -87,7 +87,7 @@ export function MohsStepper({ steps }: MohsStepperProps) {
               )}
             </div>
             <div className="mohs-stepper-content">
-              <h4>{step.title}</h4>
+              <h3>{step.title}</h3>
               <p>{step.description}</p>
             </div>
           </div>

@@ -32,7 +32,7 @@ export default function Footer() {
 
           {/* Navigate */}
           <div>
-            <h4 className="label-caps-light mb-4 text-xs">Navigate</h4>
+            <h2 className="label-caps-light mb-4 text-xs">Navigate</h2>
             <ul className="space-y-2.5 text-sm">
               {navigation.main.map((item) => (
                 <li key={item.name}>
@@ -46,7 +46,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="label-caps-light mb-4 text-xs">Contact</h4>
+            <h2 className="label-caps-light mb-4 text-xs">Contact</h2>
             <ul className="space-y-2.5 text-sm text-white/75">
               <li>
                 <a
@@ -100,13 +100,13 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl space-y-5 px-6 py-7">
           <CredentialBar variant="dark" className="justify-center" />
-          <p className="text-center text-xs text-white/45">
+          <p className="text-center text-xs text-white/65">
             &copy; {currentYear} {siteConfig.name}. All rights reserved.
             {navigation.legal.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="ml-5 text-white/45 transition-colors hover:text-white"
+                className="ml-5 text-white/65 transition-colors hover:text-white"
               >
                 {item.name}
               </Link>

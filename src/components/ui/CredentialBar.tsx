@@ -117,7 +117,9 @@ export function CredentialBar({
           >
             <Image
               src={item.logo}
-              alt={item.name}
+              // When the name renders as live text beside the mark, the image
+              // is decorative — a non-empty alt would read the name twice.
+              alt={"textLockup" in item && item.textLockup ? "" : item.name}
               width={item.width}
               height={item.height}
               // Round/stacked marks optically read smaller than horizontal

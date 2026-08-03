@@ -19,8 +19,10 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "axe-core": "^4.12.1",
     "eslint": "^9",
     "eslint-config-next": "16.0.5",
+    "playwright-core": "^1.62.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
