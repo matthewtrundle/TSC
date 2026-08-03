@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { siteConfig, doctors, mohsProcess, faqs, services } from "@/lib/data/siteData";
+import { siteConfig, doctors, mohsProcess, services } from "@/lib/data/siteData";
 import { Phone, ChevronRight, Calendar } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { MohsStepper } from "@/components/ui/MohsStepper";
 import { MohsDiagram } from "@/components/ui/MohsDiagram";
 import { HeroMedia } from "@/components/ui/HeroMedia";
@@ -12,7 +11,6 @@ import { CredentialBar } from "@/components/ui/CredentialBar";
 import { CountUpStat } from "@/components/ui/CountUpStat";
 import { LuxuryCta } from "@/components/ui/LuxuryCta";
 import { ServiceAccordion } from "@/components/ui/ServiceAccordion";
-import { JsonLd, faqPageSchema } from "@/lib/structuredData";
 
 // The homepage treatment index, derived from the services data so copy stays
 // in one place. Feature lines still pending the practice's confirmation
@@ -366,33 +364,6 @@ export default function Home() {
                 <ChevronRight className="ml-0.5 inline h-4 w-4 align-[-2px]" />
               </Link>
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-24 bg-[var(--surface)]">
-        <JsonLd data={faqPageSchema(faqs.slice(0, 5))} />
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-5 gap-12 items-start">
-            <div className="lg:col-span-2 lg:sticky lg:top-32">
-              <FadeIn>
-                <h2 className="text-display mb-6">Common questions</h2>
-                <p className="text-[var(--warm-gray)] mb-8 leading-relaxed">
-                  What patients ask most before Mohs surgery. For anything else,
-                  call the office — you will reach a person, not a phone tree.
-                </p>
-                <a
-                  href={`tel:${siteConfig.contact.phoneRaw}`}
-                  className="inline-flex items-center gap-3 text-xl font-semibold text-[var(--navy-primary)] hover:text-[var(--teal-accent)] transition-colors"
-                >
-                  <Phone className="w-5 h-5" />
-                  {siteConfig.contact.phone}
-                </a>
-              </FadeIn>
-            </div>
-
-            <FaqAccordion faqs={faqs.slice(0, 5)} />
           </div>
         </div>
       </section>

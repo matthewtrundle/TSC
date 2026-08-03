@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { siteConfig, services, skinCancerTypes, mohsProcess, practiceInfo } from "@/lib/data/siteData";
+import { siteConfig, services, skinCancerTypes, mohsProcess, practiceInfo, faqs } from "@/lib/data/siteData";
 import { procedures } from "@/lib/data/proceduresData";
 import { Phone, ChevronRight } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { JsonLd, faqPageSchema } from "@/lib/structuredData";
 import { LuxuryCta } from "@/components/ui/LuxuryCta";
 import { PilonidalDiagram } from "@/components/ui/PilonidalDiagram";
 
@@ -245,6 +247,19 @@ export default function ServicesPage() {
                           </div>
                         ))}
                       </dl>
+
+                      <h3
+                        className="text-2xl text-[var(--navy-primary)] mt-12 mb-2"
+                        style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
+                      >
+                        Common questions
+                      </h3>
+                      <p className="text-[var(--warm-gray-light)] mb-4">
+                        For anything else, call the office — you will reach a
+                        person, not a phone tree.
+                      </p>
+                      <JsonLd data={faqPageSchema(faqs)} />
+                      <FaqAccordion faqs={faqs} />
                     </>
                   )}
 

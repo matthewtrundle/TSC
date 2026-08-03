@@ -535,24 +535,24 @@ The result is the treatment's defining combination: cure rates up to 99% for pre
 
 export const faqs = [
   {
-    question: "What is Mohs surgery?",
-    answer: "Mohs micrographic surgery is a highly specialized procedure for the removal of skin cancer. It offers the highest cure rate (up to 99%) while preserving the maximum amount of healthy tissue. The surgeon removes thin layers of skin and examines them under a microscope until no cancer cells remain.",
-  },
-  {
     question: "How long does Mohs surgery take?",
-    answer: "Plan for a full day at our office — it is difficult to predict in advance how many stages a tumor will need. Most tumors clear in one to two stages, and each stage takes about an hour including tissue processing (longer when special stains are needed). Bring a book, and know that most patients finish by early afternoon.",
+    answer: "Generally, the procedure takes about half a day — and you can keep the rest. It is difficult to predict in advance how many stages a tumor will need. Most tumors are clear in one to two stages, and each stage takes about an hour including tissue processing — longer when special stains are needed, as for melanoma.",
   },
   {
     question: "Is Mohs surgery painful?",
-    answer: "Local anesthesia is used to numb the surgical area, so you should not feel pain during the procedure. You will be awake throughout. Some patients experience mild discomfort during the healing process.",
+    answer: "Most patients find the procedure extremely well tolerated. The area is numbed with local anesthesia, so you should not feel pain during the surgery itself — you will be awake and comfortable throughout. Some mild soreness after the numbness wears off is normal, and pain medicine is routinely prescribed so you have it if you need it.",
   },
   {
     question: "What should I bring on surgery day?",
-    answer: "Bring a book or magazine, as there will be waiting time between stages. Most patients do not need a driver to get home. Eat a good breakfast and take your regular medications unless otherwise instructed. Avoid aspirin for two weeks prior.",
+    answer: "Bring something to read or a screen — there will be waiting between stages while we read your tissue. Eat a good breakfast and take your regular medications unless we instruct otherwise. Most patients do not need a driver to get home.",
   },
   {
     question: "What happens after the cancer is removed?",
-    answer: "Once all cancer is removed, your surgeon will discuss reconstruction options. This may include stitches, skin grafts, skin flaps, or allowing the wound to heal naturally. The best option depends on the size and location of the wound.",
+    answer: "Once all cancer is removed, your surgeon will discuss reconstruction, which typically follows immediately. This may include stitches, skin flaps, skin grafts, or allowing the wound to heal naturally.",
+  },
+  {
+    question: "How long will my recovery be?",
+    answer: "Most patients are back to normal light activity the next day. Expect stitches for one to two weeks depending on the site, and hold off on strenuous exercise until they are out. The wound itself heals over a few weeks, and the scar continues to fade and soften over the following months.",
   },
   {
     question: "Will I have a scar?",
