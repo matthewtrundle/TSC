@@ -24,7 +24,7 @@ export default function PracticePage() {
           <FadeIn>
             <div className="duotone-frame aspect-[21/9] mb-14">
               <Image
-                src="/images/microscope-olympus.webp"
+                src="/images/hero-microscope-dark.webp"
                 alt="Macro detail of a bronze-rimmed microscope objective against a dark ground"
                 fill
                 sizes="(min-width: 1152px) 1104px, 100vw"
