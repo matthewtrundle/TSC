@@ -40,6 +40,11 @@ export const siteConfig = {
     ],
   },
 
+  links: {
+    patientPortal: "https://sadio.com/",
+    billPay: "https://quickclick.com/r/c5orl",
+  },
+
   social: {
     facebook: "#",
     instagram: "#",

@@ -50,7 +50,26 @@ export default function Header() {
           isScrolled ? "max-h-0 border-b-0" : "max-h-10"
         }`}
       >
-        <div className="mx-auto flex h-10 max-w-7xl items-center justify-end gap-8 px-6">
+        <div className="mx-auto flex h-10 max-w-7xl items-center justify-between gap-8 px-6">
+          <div className="flex items-center gap-6">
+            <a
+              href={siteConfig.links.patientPortal}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[0.8125rem] font-semibold tracking-[0.1em] uppercase text-[var(--bronze-text)] transition-colors hover:text-[var(--charcoal)]"
+            >
+              Patient Portal
+            </a>
+            <a
+              href={siteConfig.links.billPay}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[0.8125rem] font-semibold tracking-[0.1em] uppercase text-[var(--bronze-text)] transition-colors hover:text-[var(--charcoal)]"
+            >
+              Bill Pay
+            </a>
+          </div>
+          <div className="flex items-center gap-8">
           <a
             href={`tel:${siteConfig.contact.phoneRaw}`}
             className="inline-flex items-center gap-2 whitespace-nowrap text-[0.9375rem] font-semibold text-[var(--charcoal)] transition-colors hover:text-[var(--bronze-text)]"
@@ -67,6 +86,7 @@ export default function Header() {
           <span className="text-sm text-[var(--warm-gray-light)]">
             {siteConfig.hours.short}
           </span>
+          </div>
         </div>
       </div>
 
@@ -131,7 +151,26 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="mt-6 space-y-4 border-t border-[var(--gray-200)] pt-6">
+            <div className="mt-4 flex gap-6 border-t border-[var(--gray-200)] pt-4">
+              <a
+                href={siteConfig.links.patientPortal}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-[44px] items-center text-[0.9375rem] font-semibold text-[var(--bronze-text)]"
+              >
+                Patient Portal
+              </a>
+              <a
+                href={siteConfig.links.billPay}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-[44px] items-center text-[0.9375rem] font-semibold text-[var(--bronze-text)]"
+              >
+                Bill Pay
+              </a>
+            </div>
+
+            <div className="mt-2 space-y-4 border-t border-[var(--gray-200)] pt-6">
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
                 className="flex min-h-[44px] items-center gap-2 text-lg font-semibold text-[var(--charcoal)] transition-colors hover:text-[var(--bronze-text)]"

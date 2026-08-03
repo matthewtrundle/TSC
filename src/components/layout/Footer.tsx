@@ -75,6 +75,14 @@ export default function Footer() {
                   {siteConfig.contact.address.full}
                 </a>
               </li>
+              <li className="flex gap-5 pt-1">
+                <a href={siteConfig.links.patientPortal} target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--champagne)] transition-opacity hover:opacity-80">
+                  Patient Portal
+                </a>
+                <a href={siteConfig.links.billPay} target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--champagne)] transition-opacity hover:opacity-80">
+                  Bill Pay
+                </a>
+              </li>
               <li className="pt-1 text-xs text-white/55">
                 {siteConfig.hours.weekdays}
                 <br />

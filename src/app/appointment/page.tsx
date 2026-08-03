@@ -38,6 +38,18 @@ export default function AppointmentPage() {
                 <Phone className="w-7 h-7" style={{ color: "var(--bronze)" }} />
                 {siteConfig.contact.phone}
               </a>
+              <p className="mt-6 text-sm text-[var(--warm-gray-light)]">
+                Existing patient?{" "}
+                <a
+                  href={siteConfig.links.patientPortal}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[var(--bronze-text)] hover:underline"
+                >
+                  Visit the patient portal
+                </a>{" "}
+                to message us or manage your visits.
+              </p>
             </div>
           </FadeIn>
         </div>
