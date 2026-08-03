@@ -225,10 +225,7 @@ export default function Home() {
           <div className="mt-20 border-t border-white/10 pt-14">
             <p className="label-caps-light mb-10">The procedure, drawn simply</p>
             <MohsDiagram />
-            <p className="mt-6 text-sm text-white/55">
-              Stages 02 through 04 are the loop you will live on surgery day —
-              each pass takes an hour or two while the laboratory reads your
-              margins.{" "}
+            <p className="mt-6 text-sm">
               <a
                 href="#surgery-day"
                 className="font-semibold text-[var(--champagne)] hover:text-white transition-colors"
