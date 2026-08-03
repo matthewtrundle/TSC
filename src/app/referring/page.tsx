@@ -69,14 +69,13 @@ export default function ReferringPage() {
                   <Phone className="h-6 w-6 shrink-0" />
                   {siteConfig.contact.phone}
                 </a>
-                <p className="flex items-center gap-3 text-[var(--warm-gray)]">
+                <p
+                  className="flex items-center gap-3 text-2xl font-medium text-[var(--navy-primary)] lg:text-3xl"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
                   <Printer className="h-5 w-5 shrink-0 text-[var(--bronze-text)]" aria-hidden="true" />
-                  <span>
-                    Fax{" "}
-                    <span className="font-semibold text-[var(--navy-primary)]">
-                      {siteConfig.contact.fax}
-                    </span>
-                  </span>
+                  <span>{siteConfig.contact.fax}</span>
+                  <span className="label-caps pt-1 text-xs">Fax</span>
                 </p>
               </div>
             </FadeIn>
@@ -144,12 +143,16 @@ export default function ReferringPage() {
               <div className="divide-y divide-[var(--gray-200)] border-t border-[var(--gray-200)]">
                 {[
                   {
-                    title: "Operative note and margin status",
-                    note: "A report of the procedure, the number of stages, and the final margin status, sent to your office the same week.",
+                    title: "A procedure letter, with photos and disposition",
+                    note: "Your office receives a procedure letter that includes clinical photographs and the final disposition — what was found, what was done, and where things stand.",
                   },
                   {
                     title: "Wound care handoff",
                     note: "How the wound was repaired and the follow-up instructions the patient was given, so your office knows exactly where healing stands.",
+                  },
+                  {
+                    title: "Escalation of care, coordinated",
+                    note: "We act as coordinators of care. When a case calls for it, we handle the referrals — radiation oncology, plastic surgery, medical oncology — and keep you informed at every step.",
                   },
                   {
                     title: "The patient, returned to your care",
@@ -190,7 +193,7 @@ export default function ReferringPage() {
                   </h2>
                   <p className="mb-6 text-lg leading-relaxed text-white/75">
                     Our laboratory runs immunoperoxidase stains on site during
-                    Mohs surgery. Melanoma and high-risk squamous cell
+                    Mohs surgery — including MART-1 and SOX10 for melanoma. Melanoma and high-risk squamous cell
                     carcinoma become visible at the margin, so cancers usually
                     treated with wide excision can be removed with the same
                     tissue-sparing, margin-controlled technique.
@@ -205,8 +208,8 @@ export default function ReferringPage() {
 
                 <div className="duotone-frame aspect-[4/3]">
                   <Image
-                    src="/images/svc-slide-glass.webp"
-                    alt="Prepared glass microscope slides catching the light in the laboratory"
+                    src="/images/svc-slides-he.webp"
+                    alt="Glass slides with H&E-stained Mohs frozen sections — pink and magenta tissue discs"
                     fill
                     sizes="(min-width: 1024px) 32rem, 100vw"
                     className="img-duotone object-cover"

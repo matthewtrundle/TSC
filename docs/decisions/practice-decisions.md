@@ -99,3 +99,9 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   before/after Results gallery from the practice's own brochure — pairs
   derived from the brochure's own slide layout (image2→3 = Patient 1,
   image4→5 = Patient 2), crops per the brochure's srcRect, 2x upscale only.
+
+### 2026-08-03 — Referring-page facts (Dr. Modi confirmed)
+- What goes back to referrers: a PROCEDURE LETTER with clinical photos and
+  disposition (not "operative note and margin status"; unconfirmed "same
+  week" timing removed). The practice coordinates escalation of care —
+  referrals to radiation oncology, plastic surgery, and medical oncology.
