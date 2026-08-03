@@ -49,10 +49,8 @@ export default function Home() {
       {/* Hero. Full-bleed dusk skyline with ambient Ken Burns drift; the
           destination claim up top, the factual positioning beneath it. */}
       <HeroMedia
-        image="/images/hero-skyline-dusk.webp"
-        alt="The Plano skyline at dusk"
-        imageB="/images/hero-building-morning.webp"
-        altB="The Plano Dermatology building on a clear morning"
+        image="/images/hero-building-morning.webp"
+        alt="The Plano Dermatology building on a clear morning"
         priority
         scrim="left"
         className="flex min-h-[82vh] items-center justify-center"
