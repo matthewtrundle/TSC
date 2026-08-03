@@ -20,26 +20,50 @@ export default function ContactPage() {
       {/* Header. The phone number leads — most patients would rather call. */}
       <section className="bg-white">
         <div className="max-w-6xl mx-auto px-6 pt-16 pb-14">
-          <FadeIn>
-            <div className="max-w-3xl">
-              <h1 className="text-display mb-6">Contact the office</h1>
-              <p className="text-lg text-[var(--warm-gray)] leading-relaxed mb-8">
-                Call, write, or come by. During office hours you will reach a
-                person, not a phone tree.
-              </p>
-              <p className="text-[var(--warm-gray)] mb-3">
-                Prefer to call? Most questions are settled fastest by phone.
-              </p>
-              <a
-                href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="inline-flex items-center gap-4 text-4xl lg:text-5xl text-[var(--charcoal)] hover:text-[var(--bronze-text)] transition-colors"
-                style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}
-              >
-                <Phone className="w-7 h-7" style={{ color: "var(--bronze)" }} />
-                {siteConfig.contact.phone}
-              </a>
-            </div>
-          </FadeIn>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <FadeIn>
+              <div>
+                <h1 className="text-display mb-6">Contact the office</h1>
+                <p className="text-lg text-[var(--warm-gray)] leading-relaxed mb-8">
+                  Call, write, or come by. During office hours you will reach a
+                  person, not a phone tree.
+                </p>
+                <p className="text-[var(--warm-gray)] mb-3">
+                  Prefer to call? Most questions are settled fastest by phone.
+                </p>
+                <a
+                  href={`tel:${siteConfig.contact.phoneRaw}`}
+                  className="inline-flex items-center gap-4 text-4xl lg:text-5xl text-[var(--charcoal)] hover:text-[var(--bronze-text)] transition-colors"
+                  style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}
+                >
+                  <Phone className="w-7 h-7" style={{ color: "var(--bronze)" }} />
+                  {siteConfig.contact.phone}
+                </a>
+              </div>
+            </FadeIn>
+
+            {/* The building, wide and prominent — so patients know what they
+                are looking for before they ever open the map. Full color on
+                purpose: wayfinding, not mood. */}
+            <FadeIn delay={0.1}>
+              <figure className="m-0">
+                <div className="border border-[var(--gray-200)] rounded-sm overflow-hidden">
+                  <Image
+                    src="/images/building-morning.webp"
+                    alt="The Plano Dermatology building: two-story red brick with a drive-under porte-cochere and PLANO DERMATOLOGY in white letters"
+                    width={1600}
+                    height={679}
+                    priority
+                    className="h-auto w-full"
+                  />
+                </div>
+                <figcaption className="mt-2.5 text-sm text-[var(--warm-gray-light)]">
+                  Look for the red-brick building with the drive-under canopy
+                  — parking is at the door.
+                </figcaption>
+              </figure>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -115,25 +139,6 @@ export default function ContactPage() {
                     </dd>
                   </div>
                 </dl>
-
-                {/* The building itself — so patients know what to look for
-                    when they arrive. Full color on purpose: this is
-                    wayfinding, not mood. */}
-                <figure className="m-0 mt-8">
-                  <div className="border border-[var(--gray-200)] rounded-sm overflow-hidden">
-                    <Image
-                      src="/images/building-morning.webp"
-                      alt="The Plano Dermatology building: two-story red brick with a drive-under porte-cochere and PLANO DERMATOLOGY in white letters"
-                      width={1600}
-                      height={679}
-                      className="h-auto w-full"
-                    />
-                  </div>
-                  <figcaption className="mt-2.5 text-sm text-[var(--warm-gray-light)]">
-                    Look for the red-brick building with the drive-under
-                    canopy — parking is at the door.
-                  </figcaption>
-                </figure>
 
                 {/* Map — hairline border; the CSS filter mutes Google's default
                     palette toward the site's ivory/charcoal so the embed stops
