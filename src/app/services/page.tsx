@@ -61,6 +61,7 @@ const bandDetailLinks: Record<string, { name: string; slug: string }[]> = {
     { name: "Squamous cell carcinoma", slug: "squamous-cell-carcinoma" },
     { name: "Actinic keratosis", slug: "actinic-keratosis" },
   ],
+  immunostaining: [{ name: "Melanoma, in detail", slug: "melanoma" }],
   "skin-resurfacing": [{ name: "Skin resurfacing, in detail", slug: "skin-resurfacing" }],
   "hair-loss": [{ name: "Hair loss & PRP, in detail", slug: "prp-hair-restoration" }],
   "other-procedures": [
@@ -72,6 +73,13 @@ const bandDetailLinks: Record<string, { name: string; slug: string }[]> = {
     { name: "Nail procedures & biopsies", slug: "nail-procedures" },
     { name: "Eyelid biopsies", slug: "eyelid-biopsies" },
   ],
+};
+
+// Cancers in the "we treat" list that have their own detail pages.
+const cancerDetailSlugs: Record<string, string> = {
+  BCC: "basal-cell-carcinoma",
+  SCC: "squamous-cell-carcinoma",
+  Melanoma: "melanoma",
 };
 
 export default function ServicesPage() {
@@ -260,7 +268,17 @@ export default function ServicesPage() {
                             className="py-4 border-b border-[var(--gray-200)]"
                           >
                             <dt className="font-semibold text-[var(--navy-primary)]">
-                              {type.name}
+                              {cancerDetailSlugs[type.shortName] ? (
+                                <Link
+                                  href={`/services/${cancerDetailSlugs[type.shortName]}`}
+                                  className="inline-flex items-center gap-1.5 underline decoration-[var(--hairline-bronze)] underline-offset-4 transition-colors hover:text-[var(--teal-accent)] hover:decoration-[var(--bronze)]"
+                                >
+                                  {type.name}
+                                  <ChevronRight className="h-4 w-4 text-[var(--teal-accent)]" />
+                                </Link>
+                              ) : (
+                                type.name
+                              )}
                             </dt>
                             <dd className="text-[var(--warm-gray)] leading-relaxed mt-0.5">
                               {type.description}
@@ -330,7 +348,7 @@ export default function ServicesPage() {
             {[
               {
                 group: "Skin cancer & precancer",
-                slugs: ["basal-cell-carcinoma", "squamous-cell-carcinoma", "actinic-keratosis", "mole-removal"],
+                slugs: ["melanoma", "basal-cell-carcinoma", "squamous-cell-carcinoma", "actinic-keratosis", "mole-removal"],
               },
               {
                 group: "Everyday procedures",

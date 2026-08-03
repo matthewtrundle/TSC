@@ -392,12 +392,13 @@ export const services = [
     shortDescription:
       "Mole removal, cyst removal, nail procedures, and more.",
     icon: "plus",
+    // Specific procedures live as linked detail pages on the services page —
+    // these features carry the how, not a duplicate what.
     features: [
-      "Mole evaluation and removal",
-      "Cyst removal",
-      "Nail procedures",
-      "Benign lesion removal",
-      "Expert wound care",
+      "Performed in our office under local anesthetic",
+      "Same-day procedures — you walk in and walk out",
+      "Pathology review whenever removed tissue warrants it",
+      "Expert wound care and attention to the final scar",
     ],
     image: undefined as string | undefined,
   },

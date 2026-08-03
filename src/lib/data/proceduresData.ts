@@ -303,6 +303,39 @@ export const procedures: Procedure[] = [
     imageAlt: "Stained tissue section as abstract art",
   },
   {
+    slug: "melanoma",
+    name: "Melanoma",
+    summary:
+      "The most serious common skin cancer — treated here with same-day, margin-controlled Mohs surgery for appropriate cases.",
+    body: [
+      "Melanoma arises from the skin's pigment cells and is the most serious of the common skin cancers, because it can spread if it is not treated early. It usually announces itself as a mole that changes — in size, shape, or color — or a new spot that stands out from the rest.",
+      "For appropriate melanomas, we offer what few practices can: same-day, margin-controlled Mohs surgery with immunohistochemical staining — MART-1 and SOX10 — run in our own laboratory. The cancer is removed, every margin is tested, and once the margins are clear the wound is reconstructed, all in one visit. Wide local excision remains the right operation for some melanomas, and when a deeper melanoma calls for sentinel lymph node evaluation or additional specialists, we coordinate that care.",
+      "Your surgeon will recommend the approach that fits your melanoma — its depth, its location, and you.",
+    ],
+    whenToConsider: [
+      "A mole changing in size, shape, or color",
+      "A spot with irregular borders or multiple colors",
+      "A new or changing spot that stands out from your other moles",
+      "A biopsy-confirmed melanoma referred for surgery",
+    ],
+    techniques: [
+      {
+        name: "Same-day Mohs surgery with immunostains",
+        note: "MART-1 and SOX10 staining in our own laboratory — margin-controlled, tissue-sparing removal for appropriate melanomas.",
+      },
+      {
+        name: "Wide local excision",
+        note: "The standard operation for melanomas where conventional margins are the right approach.",
+      },
+      {
+        name: "Coordinated escalation when indicated",
+        note: "Sentinel lymph node evaluation and referrals to medical oncology, arranged and followed by our team.",
+      },
+    ],
+    image: "/images/svc-histology-art.webp",
+    imageAlt: "Stained tissue section as abstract art",
+  },
+  {
     slug: "basal-cell-carcinoma",
     name: "Basal Cell Carcinoma",
     summary:
