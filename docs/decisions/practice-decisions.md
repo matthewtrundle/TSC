@@ -105,3 +105,26 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   disposition (not "operative note and margin status"; unconfirmed "same
   week" timing removed). The practice coordinates escalation of care —
   referrals to radiation oncology, plastic surgery, and medical oncology.
+
+### 2026-08-03 — Post-audit fixes batch (Dr. Modi approved in chat)
+- Google reviews: integrated as LINKS to the practice's real Google Business
+  Profile (place ID ChIJUTM9KV8jTIYRgt9pgc15Z6g, verified to resolve to the
+  6100 Windhaven listing — 28 Google reviews at time of check). Placement:
+  appointment page ("Wondering what to expect?") + footer champagne link.
+  Deliberately NO on-site star widgets, review quotes, or aggregateRating
+  schema — Google treats self-serving ratings markup as spam, and on-site
+  numbers would go stale or shade into fabrication. If Dr. Modi supplies the
+  short "review us" link (g.page/...) from his GBP dashboard, swap it in.
+- Legal pages: /privacy (website-scope only; PHI/HIPAA explicitly deferred to
+  the office's Notice of Privacy Practices; states factually that the site
+  sets no advertising cookies/trackers) and /accessibility (WCAG 2.1 AA
+  target) added, linked in footer bottom bar, in sitemap. Office/counsel
+  should review privacy wording before production launch.
+- Mechanical: MobileCallBar safe-area padding fix (iPhone footer overlap),
+  aria-expanded on mobile menu, home stat row stacks on narrow phones,
+  framer-motion + motion uninstalled (dead), ScrollProgress/AnimatedText
+  deleted (never rendered).
+- Still OPEN from the audit (need Dr. Modi): one-to-two vs one-to-three
+  stages wording; "seen within days of referral" + "call within 1 business
+  day" confirmation; Resend env vars in Vercel before launch; insurance
+  page carrier list; patient-resources/wound-care page content.
