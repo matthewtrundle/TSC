@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { siteConfig } from "@/lib/data/siteData";
 import { Phone } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -114,6 +115,25 @@ export default function ContactPage() {
                     </dd>
                   </div>
                 </dl>
+
+                {/* The building itself — so patients know what to look for
+                    when they arrive. Full color on purpose: this is
+                    wayfinding, not mood. */}
+                <figure className="m-0 mt-8">
+                  <div className="border border-[var(--gray-200)] rounded-sm overflow-hidden">
+                    <Image
+                      src="/images/building-morning.webp"
+                      alt="The Plano Dermatology building: two-story red brick with a drive-under porte-cochere and PLANO DERMATOLOGY in white letters"
+                      width={1600}
+                      height={679}
+                      className="h-auto w-full"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 text-sm text-[var(--warm-gray-light)]">
+                    Look for the red-brick building with the drive-under
+                    canopy — parking is at the door.
+                  </figcaption>
+                </figure>
 
                 {/* Map — hairline border; the CSS filter mutes Google's default
                     palette toward the site's ivory/charcoal so the embed stops
