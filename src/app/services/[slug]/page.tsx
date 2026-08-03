@@ -139,6 +139,55 @@ export default async function ProcedurePage({
         </div>
       </section>
 
+      {/* Before & after gallery — only for procedures with practice photos. */}
+      {procedure.gallery && (
+        <section className="border-t border-[var(--gray-200)] bg-[var(--surface)] py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <h2 className="text-display mb-3">Results</h2>
+            <span aria-hidden="true" className="rule-bronze mb-10" />
+            <div className="grid gap-12 md:grid-cols-2">
+              {procedure.gallery.map((pair) => (
+                <figure key={pair.label} className="m-0">
+                  <div className="grid grid-cols-2 gap-px border border-[var(--hairline)] bg-[var(--hairline)]">
+                    <div className="relative bg-white">
+                      <Image
+                        src={pair.before}
+                        alt={`${procedure.name} — ${pair.label}, before treatment`}
+                        width={800}
+                        height={800}
+                        className="h-auto w-full"
+                      />
+                      <span className="label-caps absolute left-3 top-3 bg-[var(--ivory)]/90 px-2.5 py-1 text-xs">
+                        Before
+                      </span>
+                    </div>
+                    <div className="relative bg-white">
+                      <Image
+                        src={pair.after}
+                        alt={`${procedure.name} — ${pair.label}, after treatment`}
+                        width={800}
+                        height={800}
+                        className="h-auto w-full"
+                      />
+                      <span className="label-caps absolute left-3 top-3 bg-[var(--ivory)]/90 px-2.5 py-1 text-xs">
+                        After
+                      </span>
+                    </div>
+                  </div>
+                  <figcaption className="mt-3 text-sm text-[var(--warm-gray-light)]">
+                    {pair.label} — our patient, photographed by the practice.
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <p className="mt-8 text-sm text-[var(--warm-gray-light)]">
+              Individual results vary. Photographs are of this practice&rsquo;s
+              own patients, unretouched apart from cropping.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Related procedures */}
       <section className="py-20 bg-[var(--surface)]">
         <div className="mx-auto max-w-6xl px-6">

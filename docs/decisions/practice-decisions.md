@@ -85,3 +85,17 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   literature does not support it; Svarre 2023, Immerman series). Hair Loss &
   PRP added as holistic service (exam, labs, oral/topical meds, PRP) — band +
   rewritten detail page.
+
+### 2026-08-02 — Batch of nine (Dr. Modi confirmed in chat)
+- Parry: nine grandchildren; Hollabaugh mention removed. All three surgeons
+  styled MD, FAAD, FACMS; Modi + Wells titled Double Board-Certified (Modi's
+  ACMS line upgraded Associate→Fellow to match FACMS, per his instruction).
+  Hero: "board-certified and **fellowship-trained**" bolded. "Why fellowship
+  training matters" education blurb added under home surgeon stats. Redundant
+  "Around surgery day" 3-column block deleted from services (also carried
+  stale 2–3-stage/driver claims). Pilonidal diagram replaced with an ORIGINAL
+  Mayo-style flat illustration (generated, no text baked in). D badges
+  fill-normalized to exactly identical 880x1440 tiles. PRP page gained a
+  before/after Results gallery from the practice's own brochure — pairs
+  derived from the brochure's own slide layout (image2→3 = Patient 1,
+  image4→5 = Patient 2), crops per the brochure's srcRect, 2x upscale only.

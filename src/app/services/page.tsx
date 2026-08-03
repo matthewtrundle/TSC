@@ -146,13 +146,6 @@ export default function ServicesPage() {
                       />
                     </div>
                   )}
-                  {/* Pilonidal gets an educational diagram instead of an
-                      evocative photo. */}
-                  {service.id === "pilonidal" && (
-                    <div className="mt-8 border border-[var(--hairline)] bg-[var(--surface)] p-5">
-                      <PilonidalDiagram />
-                    </div>
-                  )}
                 </FadeIn>
 
                 {/* Wide content column. */}
@@ -164,6 +157,14 @@ export default function ServicesPage() {
                   {/* All of the rewritten explainer paragraphs — the old copy
                       skipped [0] because it duplicated the description; the
                       2026 rewrite has three distinct paragraphs. */}
+                  {/* Pilonidal gets an educational diagram, full width of
+                      the content column. */}
+                  {service.id === "pilonidal" && (
+                    <div className="my-8 bg-[var(--surface)] border border-[var(--hairline)] p-5 lg:p-7">
+                      <PilonidalDiagram />
+                    </div>
+                  )}
+
                   {service.id === "mohs-surgery" &&
                     mohsParagraphs.map((paragraph) => (
                       <p
@@ -185,9 +186,8 @@ export default function ServicesPage() {
                     ))}
                   </ul>
 
-                  {/* The Mohs entry carries the full procedure walk-through,
-                      what to expect around surgery day, and the list of
-                      cancers the technique treats. */}
+                  {/* The Mohs entry carries the full procedure walk-through
+                      and the list of cancers the technique treats. */}
                   {service.id === "mohs-surgery" && (
                     <>
                       <h3
@@ -219,66 +219,6 @@ export default function ServicesPage() {
                           </li>
                         ))}
                       </ol>
-
-                      <h3
-                        className="text-2xl text-[var(--navy-primary)] mt-12 mb-4"
-                        style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
-                      >
-                        Around surgery day
-                      </h3>
-                      <div className="grid sm:grid-cols-3 gap-8 mb-8">
-                        {[
-                          {
-                            title: "Before surgery",
-                            items: [
-                              "Get a good night's rest",
-                              "Eat a good breakfast",
-                              "Take regular medications unless directed otherwise",
-                              "Avoid aspirin for 2 weeks prior",
-                              "Avoid alcohol for 2 days prior",
-                              "Bring a book or magazine",
-                              "Arrange for someone to drive you home",
-                            ],
-                          },
-                          {
-                            title: "During surgery",
-                            items: [
-                              "Local anesthesia keeps you comfortable",
-                              "Each stage takes 1–2 hours",
-                              "Average of 2–3 stages needed",
-                              "Most cases complete by midday",
-                              "Tissue is examined while you wait",
-                            ],
-                          },
-                          {
-                            title: "After surgery",
-                            items: [
-                              "Wound care instructions provided",
-                              "Follow-up at 4–6 weeks",
-                              "Then at 3 months, 6 months, annually",
-                              "5-year observation period",
-                              "Healing takes 6–18 months",
-                              "Use sun protection going forward",
-                            ],
-                          },
-                        ].map((phase) => (
-                          <div key={phase.title}>
-                            <h4 className="font-semibold text-[var(--navy-primary)] mb-2">
-                              {phase.title}
-                            </h4>
-                            <ul className="border-t border-[var(--gray-200)]">
-                              {phase.items.map((item) => (
-                                <li
-                                  key={item}
-                                  className="py-2.5 border-b border-[var(--gray-200)] text-[var(--warm-gray)]"
-                                >
-                                  {item}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
 
                       <h3
                         className="text-2xl text-[var(--navy-primary)] mt-12 mb-4"

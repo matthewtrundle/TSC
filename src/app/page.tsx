@@ -69,7 +69,8 @@ export default function Home() {
 
             <p className="mb-8 text-lg leading-relaxed text-white/80">
               Skin cancer is what we do — all we do. Our three board-certified
-              surgeons remove it with Mohs micrographic surgery, reading 100%
+              and <strong className="font-semibold text-white">fellowship-trained</strong> surgeons remove it with Mohs
+              micrographic surgery, reading 100%
               of your margins in our own laboratory while you wait, with cure
               rates up to 99%.
             </p>
@@ -143,6 +144,29 @@ export default function Home() {
                 <CountUpStat key={stat.label} value={stat.value} label={stat.label} />
               ))}
             </div>
+          </FadeIn>
+
+          {/* Why fellowship training matters — a light education for patients
+              and referring physicians alike. */}
+          <FadeIn delay={0.35}>
+            <aside className="mt-14 border-l-2 border-[var(--bronze)] bg-[var(--ivory-deep)] px-8 py-7 lg:px-10">
+              <h3
+                className="mb-3 text-xl text-[var(--navy-primary)]"
+                style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
+              >
+                Why fellowship training matters
+              </h3>
+              <p className="max-w-3xl leading-relaxed text-[var(--warm-gray)]">
+                Any dermatologist may perform Mohs surgery. A{" "}
+                <strong className="font-semibold">fellowship-trained</strong>{" "}
+                Mohs surgeon has done something harder: one to two additional
+                years of accredited training under an established Mohs surgeon,
+                covering hundreds of cases — the surgery, the microscope work,
+                and the reconstruction. All three of our surgeons carry that
+                training, and two of them spent their careers providing it to
+                others.
+              </p>
+            </aside>
           </FadeIn>
         </div>
       </section>

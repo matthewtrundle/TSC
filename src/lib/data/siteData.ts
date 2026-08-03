@@ -75,17 +75,17 @@ export const navigation = {
 export const doctors = [
   {
     id: "dr-modi",
-    name: "Gunjan Modi, MD, FAAD",
-    credentials: "MD, FAAD",
-    title: "Board Certified Dermatologist & Mohs Surgeon",
+    name: "Gunjan Modi, MD, FAAD, FACMS",
+    credentials: "MD, FAAD, FACMS",
+    title: "Double Board-Certified Dermatologist & Mohs Surgeon",
     specialty: "Mohs Surgery & Cutaneous Oncology",
     slug: "dr-gunjan-modi",
     // Real photograph from the practice's own site, colour- and exposure-matched
     // to the other two surgeons. Replaces the previous AI-generated face.
     image: "/images/dr-modi-warm.webp" as string | undefined,
     shortBio:
-      "Board certified dermatologist and fellowship trained Mohs surgeon with expertise in transplant skin cancer and immunoperoxidase staining techniques.",
-    fullBio: `Gunjan Modi is a board certified dermatologist and fellowship trained Mohs surgeon. Originally from Buffalo, New York, he graduated from high school in Sugar Land, Texas. He received his bachelor's degree from the University of Pennsylvania. He went on to medical school at Baylor College of Medicine in Houston, where he graduated with honors.
+      "Double board-certified dermatologist and fellowship-trained Mohs surgeon with expertise in transplant skin cancer and immunoperoxidase staining techniques.",
+    fullBio: `Gunjan Modi is a double board-certified dermatologist and fellowship-trained Mohs surgeon. Originally from Buffalo, New York, he graduated from high school in Sugar Land, Texas. He received his bachelor's degree from the University of Pennsylvania. He went on to medical school at Baylor College of Medicine in Houston, where he graduated with honors.
 
 Dr. Modi remained at Baylor to do his dermatology residency, where he scored in the top 1% of all residents in the country on the national dermatology inservice examination. He then completed a fellowship in Mohs surgery, cutaneous oncology, and procedural dermatology at UT Southwestern Medical Center in Dallas, where he was voted outstanding teaching fellow.
 
@@ -98,7 +98,7 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
     ],
     certifications: [
       "Diplomate, American Board of Dermatology",
-      "Associate, American College of Mohs Surgery",
+      "Fellow, American College of Mohs Surgery",
       "Fellow, American Academy of Dermatology",
       "Fellow, American Society for Dermatologic Surgery",
     ],
@@ -128,14 +128,14 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
   },
   {
     id: "dr-wells",
-    name: "Michael Wells, MD, FAAD",
-    credentials: "MD, FAAD",
-    title: "Board Certified Dermatologist & Mohs Surgeon",
+    name: "Michael Wells, MD, FAAD, FACMS",
+    credentials: "MD, FAAD, FACMS",
+    title: "Double Board-Certified Dermatologist & Mohs Surgeon",
     specialty: "Mohs Surgery & Procedural Dermatology",
     slug: "dr-michael-wells",
     image: "/images/dr-wells-warm.webp" as string | undefined,
     shortBio:
-      "Former tenured associate professor with over 20 years of experience, specializing in Mohs surgery and dermatologic education.",
+      "Double board-certified dermatologist and fellowship-trained Mohs surgeon; former tenured associate professor with over 20 years of experience.",
     fullBio: `Michael Wells, M.D. began his college career earning a Bachelor of Science degree from the University of Central Arkansas, where he graduated with Alpha Chi honors. He then moved on to complete medical school at the University of Arkansas for Medical Sciences in Little Rock, Arkansas. Here too, Michael Wells, M.D. earned numerous high honors including top pathology and anatomy student, as well as being inducted into the AOA honor society.
 
 Following medical school, he served as an assistant instructor during his Internal Medicine Internship at Vanderbilt University Medical Center in Nashville. He then completed a three-year dermatology residency program at Texas Tech University Health Sciences Center in Lubbock, where he served as chief resident in his final year.
@@ -186,9 +186,9 @@ He actively shares his wealth of knowledge and expertise with other healthcare p
 
 Dr. Parry did his internship in general medicine at Scott Air Force Base Medical Center in Illinois, after which he came to Texas to do his dermatology residency at Wilford Hall Medical Center in San Antonio. He then completed a fellowship in Mohs surgery and cutaneous oncology at Scripps Clinic in San Diego.
 
-Dr. Parry subsequently joined the faculty at LSU Medical Center, where he served as a professor of dermatology and the director of Mohs surgery for 17 years. During his tenure at LSU, Dr. Parry taught hundreds of residents, and started a fellowship training program in Mohs surgery, which graduated 15 Mohs surgeons. Dr. Parry retired from academics in 2007 and moved to Plano to join his first fellow, Dr. Eric Hollabaugh, in private practice.
+Dr. Parry subsequently joined the faculty at LSU Medical Center, where he served as a professor of dermatology and the director of Mohs surgery for 17 years. During his tenure at LSU, Dr. Parry taught hundreds of residents, and started a fellowship training program in Mohs surgery, which graduated 15 Mohs surgeons. Dr. Parry retired from academics in 2007 and moved to Plano to enter private practice.
 
-Dr. Parry has three adult children – Hugh, Phillip, and David – and four grandchildren. He is an avid sailor and tennis player.`,
+Dr. Parry has three adult children – Hugh, Phillip, and David – and nine grandchildren. He is an avid sailor and tennis player.`,
     education: [
       { degree: "Fellowship", institution: "Scripps Clinic and Research Foundation", field: "Mohs Surgery & Cutaneous Oncology" },
       { degree: "Residency", institution: "Wilford Hall Medical Center", field: "Dermatology" },

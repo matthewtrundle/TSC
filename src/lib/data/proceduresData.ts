@@ -23,6 +23,8 @@ export type Procedure = {
   /** Which evocative image pairs with the page. */
   image: string;
   imageAlt: string;
+  /** Optional before/after pairs, from the practice's own patient photos. */
+  gallery?: { before: string; after: string; label: string }[];
 };
 
 export const procedures: Procedure[] = [
@@ -237,6 +239,11 @@ export const procedures: Procedure[] = [
     ],
     image: "/images/svc-surgical-light.webp",
     imageAlt: "Soft surgical light reflected in polished steel",
+    // From the practice's own PRP brochure (crops per the brochure layout).
+    gallery: [
+      { before: "/images/prp/patient1-before.webp", after: "/images/prp/patient1-after.webp", label: "Patient 1" },
+      { before: "/images/prp/patient2-before.webp", after: "/images/prp/patient2-after.webp", label: "Patient 2" },
+    ],
   },
   {
     // Confirmed by Dr. Modi in chat 2026-08-02.
