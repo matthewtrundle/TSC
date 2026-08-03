@@ -259,7 +259,12 @@ export default function ServicesPage() {
                         person, not a phone tree.
                       </p>
                       <JsonLd data={faqPageSchema(faqs)} />
-                      <FaqAccordion faqs={faqs} />
+                      {/* mb-8 mirrors the feature lists' bottom margin, so
+                          the appointment button keeps the same rhythm on
+                          every band. */}
+                      <div className="mb-8">
+                        <FaqAccordion faqs={faqs} />
+                      </div>
                     </>
                   )}
 
