@@ -92,9 +92,9 @@ Dr. Modi remained at Baylor to do his dermatology residency, where he scored in 
 
 During his fellowship, Dr. Modi developed a keen interest in the management of solid organ transplant recipients with skin cancer, and he is now an active member of the International Transplant Skin Cancer Collaborative. He also specializes in the use of immunoperoxidase stains in Mohs surgery. These special stains have made certain more aggressive cancers such as melanoma and high-risk squamous cell carcinoma more amenable to tissue sparing surgical techniques with higher cure rates.`,
     education: [
-      { degree: "Fellowship", institution: "University of Texas Southwestern Medical Center", field: "Mohs Surgery & Cutaneous Oncology" },
+      { degree: "Fellowship", institution: "University of Texas Southwestern Medical Center", field: "Mohs Surgery and Dermatologic Oncology" },
       { degree: "Residency", institution: "Baylor College of Medicine", field: "Dermatology" },
-      { degree: "Medical School", institution: "Baylor College of Medicine", field: "Medicine" },
+      { degree: "Medical School", institution: "Baylor College of Medicine", field: "Doctor of Medicine" },
       { degree: "Undergraduate", institution: "University of Pennsylvania", field: "Bachelor's Degree" },
     ],
     certifications: [
@@ -146,10 +146,10 @@ Texas Tech invited him to stay on as faculty, where he rose to the level of **Te
 
 Dr. Wells remains deeply engaged with the academic side of the specialty. He has served on the Editorial Board and as a reviewer for the Journal of the American Academy of Dermatology (JAAD), the preeminent peer-reviewed publication in dermatology, in addition to serving as an editor for e-medicine, authoring chapters for clinical decision-making resources, and active involvement with the Texas Medical Association.`,
     education: [
-      { degree: "Fellowship", institution: "University of Texas Southwestern Medical Center", field: "Procedural Dermatology & Mohs Surgery" },
+      { degree: "Fellowship", institution: "University of Texas Southwestern Medical Center", field: "Mohs Surgery and Dermatologic Oncology" },
       { degree: "Residency", institution: "Texas Tech University Health Sciences Center", field: "Dermatology (Chief Resident)" },
       { degree: "Internship", institution: "Vanderbilt University Medical Center", field: "Internal Medicine" },
-      { degree: "Medical School", institution: "University of Arkansas for Medical Sciences", field: "Medicine" },
+      { degree: "Medical School", institution: "University of Arkansas for Medical Sciences", field: "Doctor of Medicine" },
       { degree: "Undergraduate", institution: "University of Central Arkansas", field: "Bachelor of Science" },
     ],
     certifications: [
@@ -193,10 +193,10 @@ Dr. Parry subsequently joined the faculty at LSU Medical Center, where he served
 
 Dr. Parry has three adult children – Hugh, Phillip, and David – and nine grandchildren. He is an avid sailor and tennis player.`,
     education: [
-      { degree: "Fellowship", institution: "Scripps Clinic and Research Foundation", field: "Mohs Surgery & Cutaneous Oncology" },
+      { degree: "Fellowship", institution: "Scripps Clinic and Research Foundation", field: "Mohs Surgery and Dermatologic Oncology" },
       { degree: "Residency", institution: "Wilford Hall Medical Center", field: "Dermatology" },
       { degree: "Internship", institution: "Scott Air Force Base Medical Center", field: "General Medicine" },
-      { degree: "Medical School", institution: "Tulane University Medical School", field: "Medicine" },
+      { degree: "Medical School", institution: "Tulane University Medical School", field: "Doctor of Medicine" },
       { degree: "Undergraduate", institution: "United States Air Force Academy", field: "Bachelor's Degree" },
     ],
     certifications: [
