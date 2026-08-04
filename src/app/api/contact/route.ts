@@ -30,9 +30,9 @@ export async function POST(request: Request) {
   // appointment form, where we need a number to call back.
   const phone = optionalPhone(errors, "phone", data.phone);
 
-  // General enquiry text. The form warns against medical detail, but a patient
-  // may still type some, so this is capped and the practice is reminded to move
-  // any clinical discussion to the phone.
+  // General enquiry text. May contain patient-provided health context —
+  // permitted because transport is the practice's BAA-covered Workspace (see
+  // src/lib/email.ts). Never log it.
   const message = requireText(errors, "message", data.message, "Message", 2000);
   const preferredContact = oneOf(data.preferredContact, CONTACT_METHODS, "phone");
 
@@ -52,8 +52,8 @@ export async function POST(request: Request) {
     message,
     "",
     "---",
-    "If this message contains medical detail, continue the conversation by phone",
-    "rather than replying by email.",
+    "May contain patient health information — handle per practice policy and",
+    "do not forward outside the practice.",
   ].join("\n");
 
   const result = await sendToPractice({

@@ -52,10 +52,12 @@ export default function PrivacyPage() {
                 <p>
                   The only personal information this website collects is what
                   you choose to submit through our contact and appointment
-                  request forms: your name, phone number, email address,
-                  scheduling preferences, and any message you include. Please
-                  do not include detailed medical history in a form message —
-                  our team will gather what is needed when we call you back.
+                  request forms: your name, phone number, email address, and
+                  any message you include. Form submissions are delivered to
+                  our practice&apos;s email system, which operates under our
+                  HIPAA compliance program, and any health information you
+                  choose to share is treated as confidential patient
+                  information.
                 </p>
               </section>
 

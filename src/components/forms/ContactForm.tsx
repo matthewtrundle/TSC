@@ -200,15 +200,16 @@ export function ContactForm() {
               id="message-privacy-note"
               className="mt-2 text-base text-[var(--warm-gray-light)]"
             >
-              Please don&apos;t include medical details — this form isn&apos;t a
-              secure channel for health information. Call us at{" "}
+              Your message goes directly to our office&apos;s secure practice
+              email, so include whatever context helps us help you. For
+              anything urgent, call{" "}
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
                 className="font-semibold text-[var(--teal-accent)] hover:underline"
               >
                 {siteConfig.contact.phone}
-              </a>{" "}
-              to discuss symptoms or your medical history.
+              </a>
+              .
             </p>
             <FieldError id="message" message={fieldErrors.message} />
           </div>

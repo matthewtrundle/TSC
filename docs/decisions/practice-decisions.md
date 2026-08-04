@@ -149,3 +149,24 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   API swap or a HIPAA form vendor like Jotform HIPAA/IntakeQ); presented as
   an upgrade path, no vendor chosen yet. If a BAA transport lands, broaden
   the message-field copy and email footer accordingly.
+
+### 2026-08-04 — Form transport: practice's own Google Workspace (Dr. Modi)
+- Dr. Modi confirmed the practice's Google Workspace BAA has been signed
+  since 2018. Form email transport switched from Resend (never configured;
+  no BAA) to Gmail SMTP via the practice's own Workspace account
+  (nodemailer, app password; env: GMAIL_USER, GMAIL_APP_PASSWORD,
+  PRACTICE_INBOX defaults to office@planoderm.com). Mail therefore stays in
+  BAA-covered infrastructure at rest end to end.
+- CONSEQUENCE: message fields on both forms now INVITE health context
+  ("share as much as you're comfortable"; diagnosis/biopsy/referrer),
+  per Dr. Modi's triage goal. Appointment + contact routes' email footers
+  now carry a handling reminder (may contain PHI, do not forward outside
+  the practice). Privacy page updated to match. RULE: if the transport
+  ever changes to a non-BAA sender, the form copy MUST be re-restricted
+  first — see comments in src/lib/email.ts.
+- Residual nuance flagged for counsel: the Vercel serverless function
+  handles submissions transiently in memory (no persistence, no content
+  logging); strictest reading would want a BAA with the host too.
+- Launch blocker is now: create app password on a Workspace account
+  (2-Step Verification required), set GMAIL_USER + GMAIL_APP_PASSWORD in
+  Vercel, redeploy, one live test submission.

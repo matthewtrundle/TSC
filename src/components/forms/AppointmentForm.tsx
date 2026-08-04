@@ -245,12 +245,10 @@ export function AppointmentForm() {
             </select>
           </div>
       
-          {/* Free-text message. The helper copy steers patients toward
-              scheduling-and-triage context and away from clinical detail:
-              submissions travel by ordinary email, which is not a
-              HIPAA-compliant transport (see src/lib/email.ts). If that
-              transport is ever replaced with a BAA-covered vendor, this
-              wording can broaden to invite fuller detail. */}
+          {/* Free-text message. The copy may invite health context because
+              submissions travel through the practice's own BAA-covered Google
+              Workspace (see src/lib/email.ts). If that transport ever
+              changes, this wording must be re-reviewed first. */}
           <div>
             <label
               htmlFor="message"
@@ -268,18 +266,15 @@ export function AppointmentForm() {
               value={formData.message}
               onChange={handleChange}
               className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
-              placeholder="Anything that helps us schedule you well"
+              placeholder="Tell us as much as you're comfortable sharing"
             />
             <FieldError id="message" message={fieldErrors.message} />
             <p id="message-help" className="mt-2 text-sm text-[var(--warm-gray)] leading-relaxed">
-              Helpful things to mention: who referred you, how soon you&apos;d
-              like to be seen, and any scheduling or insurance questions.{" "}
-              <span className="font-semibold text-[var(--navy-primary)]">
-                Please save your diagnosis and medical history for our phone
-                call
-              </span>{" "}
-              — this form travels by standard email, and we&apos;ll go through
-              those details securely at{" "}
+              The more context, the better we can prepare for your call — for
+              example, who referred you, your diagnosis or biopsy results if
+              you know them, and how soon you&apos;d like to be seen. Your
+              message goes directly to our office&apos;s secure practice
+              email. Prefer to talk it through instead? Call{" "}
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
                 className="font-semibold text-[var(--teal-accent)] hover:underline"

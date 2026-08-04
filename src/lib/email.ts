@@ -1,27 +1,36 @@
 // =============================================================================
 // TRANSACTIONAL EMAIL
-// Sends form submissions to the practice via Resend.
+// Sends form submissions to the practice through its own Google Workspace
+// account (Gmail SMTP with an app password).
 //
-// IMPORTANT — standard email is not a HIPAA-compliant transport. Nothing routed
-// through here may carry protected health information. The forms that feed this
-// module are deliberately scoped to contact and scheduling details only: no
-// diagnosis, no symptoms, no free-text clinical field. If a clinical intake
-// field is ever added, this transport has to be replaced with a BAA-covered
-// vendor first.
+// Why Workspace and not a third-party sender: the practice's Google Workspace
+// has a signed HIPAA BAA (in place since 2018), so mail sent from the
+// practice's own account to the practice's own inbox stays inside BAA-covered
+// infrastructure end to end at rest. That is what permits the forms to accept
+// free-text messages that may contain health information. Do NOT swap this for
+// a convenience sender (Resend, SendGrid, etc.) without a signed BAA — that
+// would silently break the compliance posture the form copy promises.
+//
+// Two rules for callers:
+//   - Never log message bodies. This module and its callers log only
+//     error reasons, never content.
+//   - The serverless function handles the submission transiently in memory
+//     only; keep it that way (no persistence, no analytics on form routes).
 // =============================================================================
 
-const RESEND_ENDPOINT = "https://api.resend.com/emails";
+import nodemailer from "nodemailer";
 
 export type SendResult =
   | { ok: true }
   | { ok: false; reason: "unconfigured" | "upstream"; detail: string };
 
 /**
- * Sends a plain-text email to the practice inbox.
+ * Sends a plain-text email to the practice inbox via the practice's own
+ * Workspace account.
  *
  * Returns a discriminated result rather than throwing, so callers can
  * distinguish "the site isn't set up yet" from "the send genuinely failed" and
- * report each honestly. It never resolves successfully unless Resend accepted
+ * report each honestly. It never resolves successfully unless Gmail accepted
  * the message.
  */
 export async function sendToPractice({
@@ -33,42 +42,33 @@ export async function sendToPractice({
   body: string;
   replyTo?: string;
 }): Promise<SendResult> {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.PRACTICE_INBOX;
-  const from = process.env.FORM_FROM_ADDRESS;
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_APP_PASSWORD;
+  const to = process.env.PRACTICE_INBOX || "office@planoderm.com";
 
-  if (!apiKey || !to || !from) {
+  if (!user || !pass) {
     return {
       ok: false,
       reason: "unconfigured",
-      detail:
-        "Missing RESEND_API_KEY, PRACTICE_INBOX, or FORM_FROM_ADDRESS. See .env.example.",
+      detail: "Missing GMAIL_USER or GMAIL_APP_PASSWORD. See .env.example.",
     };
   }
 
   try {
-    const response = await fetch(RESEND_ENDPOINT, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from,
-        to: [to],
-        subject,
-        text: body,
-        ...(replyTo ? { reply_to: replyTo } : {}),
-      }),
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: { user, pass },
     });
 
-    if (!response.ok) {
-      return {
-        ok: false,
-        reason: "upstream",
-        detail: `Resend responded ${response.status}: ${await response.text()}`,
-      };
-    }
+    await transporter.sendMail({
+      from: user,
+      to,
+      subject,
+      text: body,
+      ...(replyTo ? { replyTo } : {}),
+    });
 
     return { ok: true };
   } catch (error) {

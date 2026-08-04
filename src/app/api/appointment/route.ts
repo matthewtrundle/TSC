@@ -46,9 +46,9 @@ export async function POST(request: Request) {
   const visitType = oneOf(data.visitType, VISIT_TYPES, "new-patient");
   const referralSource = oneOf(data.referralSource, REFERRAL_SOURCES, "");
 
-  // Optional free-text message. The form steers patients away from clinical
-  // detail (email transport — see src/lib/email.ts), but length is enforced
-  // here regardless of what the client sends.
+  // Optional free-text message. May contain patient-provided health context —
+  // permitted because transport is the practice's BAA-covered Workspace (see
+  // src/lib/email.ts). Never log it. Length enforced here regardless of client.
   const message = typeof data.message === "string" ? data.message.trim() : "";
   if (message.length > 1000) {
     errors.message = "Message must be under 1000 characters.";
@@ -70,7 +70,8 @@ export async function POST(request: Request) {
     "Message from the patient:",
     message || "(none)",
     "",
-    "The form asks patients to hold medical detail for the phone call.",
+    "May contain patient health information — handle per practice policy and",
+    "do not forward outside the practice.",
   ].join("\n");
 
   const result = await sendToPractice({
