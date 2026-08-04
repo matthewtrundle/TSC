@@ -130,3 +130,11 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - Still OPEN from the audit: Resend env vars in Vercel before launch (+ one
   live test submission); office/counsel review of /privacy; insurance page
   carrier list; patient-resources/wound-care page content.
+
+### 2026-08-04 — Appointment-form upgrades deferred (Dr. Modi)
+- Researched 2026 derm scheduling landscape (retail groups self-schedule;
+  surgical/Mohs practices universally phone/callback-based — our model is
+  correct). Proposed: SMS-consent checkbox + preferred-contact field,
+  optional referring-physician field, and (office-side) a two-way texting
+  vendor (Klara/Weave; McGuiness runs Klara). Dr. Modi: hold off for now.
+  Do not re-pitch unprompted; revisit if he raises scheduling or texting.
