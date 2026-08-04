@@ -138,3 +138,14 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   optional referring-physician field, and (office-side) a two-way texting
   vendor (Klara/Weave; McGuiness runs Klara). Dr. Modi: hold off for now.
   Do not re-pitch unprompted; revisit if he raises scheduling or texting.
+
+### 2026-08-04 — Appointment form: date/time out, message field in (Dr. Modi)
+- Preferred-date and preferred-time fields removed. Optional free-text
+  Message field (1000 chars) added for triage. Wording walks the HIPAA
+  tightrope: invites logistics/triage context (referrer, urgency, insurance
+  questions) and explicitly steers diagnosis/medical history to the phone,
+  because transport is ordinary email (Resend, no BAA). Dr. Modi's ideal —
+  patients sharing freely — requires a BAA-covered transport (e.g., Paubox
+  API swap or a HIPAA form vendor like Jotform HIPAA/IntakeQ); presented as
+  an upgrade path, no vendor chosen yet. If a BAA transport lands, broaden
+  the message-field copy and email footer accordingly.

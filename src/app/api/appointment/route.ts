@@ -9,8 +9,6 @@ import {
 } from "@/lib/email";
 
 // Values must stay in sync with the selects in src/app/appointment/page.tsx.
-// Windows are derived from siteConfig.hours: Mon-Thu 7:30am-4pm, Fri 10am-2pm.
-const TIME_WINDOWS = ["morning", "afternoon", "flexible"] as const;
 const VISIT_TYPES = ["new-patient", "returning-patient"] as const;
 const REFERRAL_SOURCES = [
   "",
@@ -20,12 +18,6 @@ const REFERRAL_SOURCES = [
   "insurance",
   "other",
 ] as const;
-
-const TIME_WINDOW_LABELS: Record<(typeof TIME_WINDOWS)[number], string> = {
-  morning: "Morning (7:30am - 12pm)",
-  afternoon: "Afternoon (12pm - 4pm)",
-  flexible: "Flexible",
-};
 
 const VISIT_TYPE_LABELS: Record<(typeof VISIT_TYPES)[number], string> = {
   "new-patient": "New patient",
@@ -52,12 +44,15 @@ export async function POST(request: Request) {
   const phone = requirePhone(errors, "phone", data.phone);
 
   const visitType = oneOf(data.visitType, VISIT_TYPES, "new-patient");
-  const preferredTime = oneOf(data.preferredTime, TIME_WINDOWS, "flexible");
   const referralSource = oneOf(data.referralSource, REFERRAL_SOURCES, "");
 
-  // Optional; a bare date string carries no clinical meaning on its own.
-  const preferredDate =
-    typeof data.preferredDate === "string" ? data.preferredDate.trim().slice(0, 40) : "";
+  // Optional free-text message. The form steers patients away from clinical
+  // detail (email transport — see src/lib/email.ts), but length is enforced
+  // here regardless of what the client sends.
+  const message = typeof data.message === "string" ? data.message.trim() : "";
+  if (message.length > 1000) {
+    errors.message = "Message must be under 1000 characters.";
+  }
 
   if (Object.keys(errors).length > 0) {
     return NextResponse.json({ ok: false, errors }, { status: 400 });
@@ -70,11 +65,12 @@ export async function POST(request: Request) {
     `Phone:           ${phone}`,
     `Email:           ${email}`,
     `Visit type:      ${VISIT_TYPE_LABELS[visitType]}`,
-    `Preferred date:  ${preferredDate || "No preference"}`,
-    `Preferred time:  ${TIME_WINDOW_LABELS[preferredTime]}`,
     `Heard about us:  ${referralSource || "Not specified"}`,
     "",
-    "This form does not collect medical information. Call the patient to discuss.",
+    "Message from the patient:",
+    message || "(none)",
+    "",
+    "The form asks patients to hold medical detail for the phone call.",
   ].join("\n");
 
   const result = await sendToPractice({

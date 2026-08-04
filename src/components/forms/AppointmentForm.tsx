@@ -28,10 +28,9 @@ export function AppointmentForm() {
     lastName: "",
     email: "",
     phone: "",
-    preferredDate: "",
-    preferredTime: "flexible",
     visitType: "new-patient",
     referralSource: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -222,45 +221,6 @@ export function AppointmentForm() {
             </select>
           </div>
       
-          {/* Date/Time Preference Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
-            <div>
-              <label
-                htmlFor="preferredDate"
-                className="block text-base font-medium text-[var(--navy-primary)] mb-2"
-              >
-                Preferred Date
-              </label>
-              <input
-                type="date"
-                id="preferredDate"
-                name="preferredDate"
-                value={formData.preferredDate}
-                onChange={handleChange}
-                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="preferredTime"
-                className="block text-base font-medium text-[var(--navy-primary)] mb-2"
-              >
-                Preferred Time
-              </label>
-              <select
-                id="preferredTime"
-                name="preferredTime"
-                value={formData.preferredTime}
-                onChange={handleChange}
-                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
-              >
-                <option value="flexible">I&apos;m Flexible</option>
-                <option value="morning">Morning (7:30am - 12pm)</option>
-                <option value="afternoon">Afternoon (12pm - 4pm)</option>
-              </select>
-            </div>
-          </div>
-      
           {/* Referral Source */}
           <div>
             <label
@@ -285,16 +245,41 @@ export function AppointmentForm() {
             </select>
           </div>
       
-          {/* Replaces the former free-text "specific concerns" box. That
-              field invited patients to describe symptoms, which this
-              transport cannot legally carry. */}
-          <div className="rounded-sm border border-[var(--gray-200)] bg-white p-4">
-            <p className="text-base text-[var(--warm-gray)] leading-relaxed">
+          {/* Free-text message. The helper copy steers patients toward
+              scheduling-and-triage context and away from clinical detail:
+              submissions travel by ordinary email, which is not a
+              HIPAA-compliant transport (see src/lib/email.ts). If that
+              transport is ever replaced with a BAA-covered vendor, this
+              wording can broaden to invite fuller detail. */}
+          <div>
+            <label
+              htmlFor="message"
+              className="block text-base font-medium text-[var(--navy-primary)] mb-2"
+            >
+              Message <span className="font-normal text-[var(--warm-gray-light)]">(optional)</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              maxLength={1000}
+              aria-invalid={!!fieldErrors.message}
+              aria-describedby={fieldErrors.message ? "message-error" : "message-help"}
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+              placeholder="Anything that helps us schedule you well"
+            />
+            <FieldError id="message" message={fieldErrors.message} />
+            <p id="message-help" className="mt-2 text-sm text-[var(--warm-gray)] leading-relaxed">
+              Helpful things to mention: who referred you, how soon you&apos;d
+              like to be seen, and any scheduling or insurance questions.{" "}
               <span className="font-semibold text-[var(--navy-primary)]">
-                Please don&apos;t include medical details on this form.
+                Please save your diagnosis and medical history for our phone
+                call
               </span>{" "}
-              This request is only used to arrange a call. We&apos;ll discuss
-              your symptoms, referral, and history securely by phone at{" "}
+              — this form travels by standard email, and we&apos;ll go through
+              those details securely at{" "}
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
                 className="font-semibold text-[var(--teal-accent)] hover:underline"
