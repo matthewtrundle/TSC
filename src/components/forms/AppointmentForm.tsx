@@ -241,6 +241,7 @@ export function AppointmentForm() {
             >
               <option value="">Select a reason</option>
               <option value="skin-cancer">Skin cancer</option>
+              <option value="follow-up">Follow-up / wound check</option>
               <option value="cyst-lipoma">Cyst or lipoma</option>
               <option value="pilonidal">Pilonidal cyst</option>
               <option value="keloid">Keloids</option>
@@ -248,6 +249,7 @@ export function AppointmentForm() {
               <option value="skin-biopsy">Skin biopsy</option>
               <option value="laser-resurfacing">Laser resurfacing</option>
               <option value="chemical-peel">Chemical peel</option>
+              <option value="nail-issue">Nail issue</option>
               <option value="other">Other</option>
             </select>
             <FieldError id="reason" message={fieldErrors.reason} />

@@ -14,6 +14,7 @@ const VISIT_TYPES = ["new-patient", "returning-patient"] as const;
 // Ordered by how often each reason brings patients in.
 const REASONS = [
   "skin-cancer",
+  "follow-up",
   "cyst-lipoma",
   "pilonidal",
   "keloid",
@@ -21,11 +22,13 @@ const REASONS = [
   "skin-biopsy",
   "laser-resurfacing",
   "chemical-peel",
+  "nail-issue",
   "other",
 ] as const;
 
 const REASON_LABELS: Record<(typeof REASONS)[number], string> = {
   "skin-cancer": "Skin cancer",
+  "follow-up": "Follow-up / wound check",
   "cyst-lipoma": "Cyst or lipoma",
   pilonidal: "Pilonidal cyst",
   keloid: "Keloids",
@@ -33,6 +36,7 @@ const REASON_LABELS: Record<(typeof REASONS)[number], string> = {
   "skin-biopsy": "Skin biopsy",
   "laser-resurfacing": "Laser resurfacing",
   "chemical-peel": "Chemical peel",
+  "nail-issue": "Nail issue",
   other: "Other",
 };
 const REFERRAL_SOURCES = [
