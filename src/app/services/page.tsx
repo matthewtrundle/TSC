@@ -72,6 +72,7 @@ const bandDetailLinks: Record<string, { name: string; slug: string }[]> = {
     { name: "Benign lesion removal", slug: "benign-lesion-removal" },
     { name: "Nail procedures & biopsies", slug: "nail-procedures" },
     { name: "Eyelid biopsies", slug: "eyelid-biopsies" },
+    { name: "Lip & oral biopsies", slug: "lip-oral-biopsies" },
   ],
 };
 
@@ -352,7 +353,7 @@ export default function ServicesPage() {
               },
               {
                 group: "Everyday procedures",
-                slugs: ["cyst-removal", "lipoma-removal", "benign-lesion-removal", "nail-procedures", "eyelid-biopsies"],
+                slugs: ["cyst-removal", "lipoma-removal", "benign-lesion-removal", "nail-procedures", "eyelid-biopsies", "lip-oral-biopsies"],
               },
               {
                 group: "Restorative & aesthetic",

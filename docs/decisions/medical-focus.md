@@ -80,3 +80,13 @@ in chat, record it here with the date, then update siteData.
   copy, ledger entries, and the skill were swept.
 - **Status:** Confirmed (supersedes the S-100 references above)
 - **Source:** chat 2026-08-03
+
+### 2026-08-04 — Lip and oral biopsies (Dr. Modi confirmed in chat)
+- **Decision:** The practice performs lip and oral biopsies — including the
+  gums and the tongue. Indications: growths, and confirming inflammatory or
+  autoimmune conditions such as oral lichen planus and Sjögren's syndrome
+  (lip biopsy). Published as a detail page (/services/lip-oral-biopsies)
+  and listed under Additional Procedures. The inner-lip minor-salivary-gland
+  description is standard medicine, phrased generally.
+- **Status:** Confirmed
+- **Source:** Dr. Modi, chat, 2026-08-04

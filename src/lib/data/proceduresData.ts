@@ -208,6 +208,34 @@ export const procedures: Procedure[] = [
     imageAlt: "Prepared glass slides catching the light",
   },
   {
+    slug: "lip-oral-biopsies",
+    name: "Lip & Oral Biopsies",
+    summary:
+      "Biopsies of the lip, gums, and tongue — for growths, and to help confirm inflammatory and autoimmune conditions.",
+    body: [
+      "Lesions of the mouth often fall between specialties: too far inside for many dermatologists, outside the territory of most physicians. Our surgeons perform biopsies of the lip, the gums, and the tongue as brief office procedures under local anesthetic.",
+      "These biopsies do two different jobs. The first is diagnosing growths — a lump, sore, or patch that needs a name before it can be treated. The second is confirming inflammatory and autoimmune conditions: a biopsy can establish oral lichen planus, and a small sample from the inside of the lip — where the minor salivary glands sit — helps confirm Sjögren's syndrome. Either way, the tissue goes to pathology and you get an answer.",
+    ],
+    whenToConsider: [
+      "A growth or lump on the lip, gums, or tongue",
+      "A sore or patch in the mouth that does not heal",
+      "White, lacy, or inflamed areas that may be lichen planus",
+      "A lip biopsy recommended by your physician, dentist, or rheumatologist to help confirm Sjögren's syndrome",
+    ],
+    techniques: [
+      {
+        name: "Office biopsy under local anesthetic",
+        note: "A small sample from the lip, gum, or tongue, taken comfortably and sent for pathology review.",
+      },
+      {
+        name: "Lip biopsy for Sjögren's syndrome",
+        note: "A small inner-lip sample of the minor salivary glands, read by pathology to support the diagnosis.",
+      },
+    ],
+    image: "/images/svc-microscope-detail.webp",
+    imageAlt: "Microscope objective in close detail",
+  },
+  {
     slug: "prp-hair-restoration",
     name: "Hair Loss & PRP",
     summary:
