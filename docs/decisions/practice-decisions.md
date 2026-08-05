@@ -175,3 +175,16 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - Home stat changed 65+ → 70+ years combined experience, per Dr. Modi's
   direct instruction. Supersedes the 2026-08-02 "68 shown as 65+" note.
   Only the home stat displays a number; other copy says "decades".
+
+### 2026-08-04 — Bio cleanup batch (Dr. Modi confirmed in chat)
+- New confirmed personal facts: Dr. Modi is married with two young boys;
+  Dr. Wells is married with three grown children. Modi origin wording:
+  "born in Buffalo, New York, but grew up and graduated from high school in
+  Sugar Land, Texas." Wells "over 20 years of experience" CONFIRMED correct
+  (stands alongside the 70+ combined stat). Parry bio now opens "Edward"
+  (not "Ed"). Wells bio: para-1 split, "tenured associate professor"
+  lowercased, final paragraph rebuilt with present-tense "serves as an
+  Assistant Editor of JAAD". Modi closing stain sentence tightened;
+  shortBio says "skin cancer in transplant patients". Unused doctor
+  `quote` fields DELETED from siteData (never rendered; not the doctors'
+  real words — must never be resurrected without their actual quotes).

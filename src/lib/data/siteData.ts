@@ -98,12 +98,14 @@ export const doctors = [
     // to the other two surgeons. Replaces the previous AI-generated face.
     image: "/images/dr-modi-warm.webp" as string | undefined,
     shortBio:
-      "Double board-certified dermatologist and fellowship-trained Mohs surgeon with expertise in transplant skin cancer and immunoperoxidase staining techniques.",
-    fullBio: `Gunjan Modi is a double board-certified dermatologist and fellowship-trained Mohs surgeon. Originally from Buffalo, New York, he graduated from high school in Sugar Land, Texas. He received his bachelor's degree from the University of Pennsylvania. He went on to medical school at Baylor College of Medicine in Houston, where he graduated with honors.
+      "Double board-certified dermatologist and fellowship-trained Mohs surgeon with expertise in skin cancer in transplant patients and immunoperoxidase staining techniques.",
+    fullBio: `Gunjan Modi is a double board-certified dermatologist and fellowship-trained Mohs surgeon. He was born in Buffalo, New York, but grew up and graduated from high school in Sugar Land, Texas. He received his bachelor's degree from the University of Pennsylvania. He went on to medical school at Baylor College of Medicine in Houston, where he graduated with honors.
 
 Dr. Modi remained at Baylor to do his dermatology residency, where he scored in the top 1% of all residents in the country on the national dermatology inservice examination. He then completed a fellowship in Mohs surgery, cutaneous oncology, and procedural dermatology at UT Southwestern Medical Center in Dallas, where he was voted outstanding teaching fellow.
 
-During his fellowship, Dr. Modi developed a keen interest in the management of solid organ transplant recipients with skin cancer, and he is now an active member of the International Transplant Skin Cancer Collaborative. He also specializes in the use of immunoperoxidase stains in Mohs surgery. These special stains have made certain more aggressive cancers such as melanoma and high-risk squamous cell carcinoma more amenable to tissue sparing surgical techniques with higher cure rates.`,
+During his fellowship, Dr. Modi developed a keen interest in the management of solid organ transplant recipients with skin cancer, and he is now an active member of the International Transplant Skin Cancer Collaborative. He also specializes in the use of immunoperoxidase stains in Mohs surgery. These stains make it possible to treat more aggressive cancers — melanoma, high-risk squamous cell carcinoma — with the same tissue-sparing, margin-controlled surgery.
+
+Dr. Modi is married and has two young boys.`,
     education: [
       { degree: "Fellowship", institution: "University of Texas Southwestern Medical Center", field: "Mohs Surgery and Dermatologic Oncology" },
       { degree: "Residency", institution: "Baylor College of Medicine", field: "Dermatology" },
@@ -138,7 +140,6 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
         years: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
       },
     ] as { name: string; source: string; years: number[] }[] | undefined,
-    quote: "Every patient deserves the highest standard of care, and that's what we deliver every day.",
   },
   {
     id: "dr-wells",
@@ -151,13 +152,15 @@ During his fellowship, Dr. Modi developed a keen interest in the management of s
     image: "/images/dr-wells-warm.webp" as string | undefined,
     shortBio:
       "Double board-certified dermatologist and fellowship-trained Mohs surgeon; former tenured associate professor with over 20 years of experience.",
-    fullBio: `Michael Wells, M.D. earned his Bachelor of Science from the University of Central Arkansas, graduating with Alpha Chi honors, and completed medical school at the University of Arkansas for Medical Sciences in Little Rock — where he was the top student in pathology and anatomy and was inducted into the AOA medical honor society.
+    fullBio: `Michael Wells earned his Bachelor of Science from the University of Central Arkansas, graduating with Alpha Chi honors. He completed medical school at the University of Arkansas for Medical Sciences in Little Rock, where he was the top student in pathology and anatomy and was inducted into the AOA medical honor society.
 
 He served as an assistant instructor during his Internal Medicine internship at Vanderbilt University Medical Center in Nashville, then completed his dermatology residency at Texas Tech University Health Sciences Center in Lubbock, serving as chief resident in his final year.
 
-Texas Tech invited him to stay on as faculty, where he rose to the level of Tenured Associate Professor and received numerous Dean's awards between 2001 and 2012. He went on to complete a Mohs Micrographic Surgery Fellowship at the University of Texas Southwestern in Dallas.
+Texas Tech invited him to stay on as faculty, where he rose to tenured associate professor and received numerous Dean's awards between 2001 and 2012. He went on to complete a Mohs Micrographic Surgery Fellowship at the University of Texas Southwestern in Dallas.
 
-Dr. Wells remains deeply engaged with the academic side of the specialty. He has served on the Editorial Board and as a reviewer for the Journal of the American Academy of Dermatology (JAAD), the preeminent peer-reviewed publication in dermatology, in addition to serving as an editor for e-medicine, authoring chapters for clinical decision-making resources, and active involvement with the Texas Medical Association.`,
+Dr. Wells remains deeply engaged with the academic side of the specialty. He serves as an Assistant Editor of the Journal of the American Academy of Dermatology (JAAD), the specialty's preeminent peer-reviewed journal, has served as an editor for e-medicine, and has authored chapters for clinical decision-making resources. He is active in the Texas Medical Association.
+
+Dr. Wells is married and has three grown children.`,
     education: [
       { degree: "Fellowship", institution: "University of Texas Southwestern Medical Center", field: "Mohs Surgery and Dermatologic Oncology" },
       { degree: "Residency", institution: "Texas Tech University Health Sciences Center", field: "Dermatology (Chief Resident)" },
@@ -185,7 +188,6 @@ Dr. Wells remains deeply engaged with the academic side of the specialty. He has
         years: [],
       },
     ] as { name: string; source: string; years: number[] }[] | undefined,
-    quote: "Education and precision are the foundations of exceptional patient outcomes.",
   },
   {
     id: "dr-parry",
@@ -198,7 +200,7 @@ Dr. Wells remains deeply engaged with the academic side of the specialty. He has
     image: "/images/dr-parry-warm.webp" as string | undefined,
     shortBio:
       "Former LSU professor and fellowship program director with 17 years in academics, having trained hundreds of residents and 15 Mohs surgeons.",
-    fullBio: `Ed Parry is a board certified dermatologist and fellowship trained Mohs surgeon. He is a native of upstate New York. He received his bachelor's degree from the United States Air Force Academy in Colorado Springs, Colorado. He then moved to New Orleans and received his medical degree from Tulane University Medical School on a military scholarship.
+    fullBio: `Edward Parry is a board certified dermatologist and fellowship trained Mohs surgeon. He is a native of upstate New York. He received his bachelor's degree from the United States Air Force Academy in Colorado Springs, Colorado. He then moved to New Orleans and received his medical degree from Tulane University Medical School on a military scholarship.
 
 Dr. Parry did his internship in general medicine at Scott Air Force Base Medical Center in Illinois, after which he came to Texas to do his dermatology residency at Wilford Hall Medical Center in San Antonio. He then completed a fellowship in Mohs surgery and cutaneous oncology at Scripps Clinic in San Diego.
 
@@ -225,7 +227,6 @@ Dr. Parry has three adult children – Hugh, Phillip, and David – and nine gra
       "Cutaneous oncology",
     ],
     awards: undefined as { name: string; source: string; years: number[] }[] | undefined,
-    quote: "Training the next generation of surgeons while caring for patients is my greatest privilege.",
   },
 ];
 
