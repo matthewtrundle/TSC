@@ -8,8 +8,33 @@ import {
   type FieldErrors,
 } from "@/lib/email";
 
-// Values must stay in sync with the selects in src/app/appointment/page.tsx.
+// Values must stay in sync with the selects in AppointmentForm.tsx.
 const VISIT_TYPES = ["new-patient", "returning-patient"] as const;
+
+// Ordered by how often each reason brings patients in.
+const REASONS = [
+  "skin-cancer",
+  "cyst-lipoma",
+  "pilonidal",
+  "keloid",
+  "prp-hair-loss",
+  "skin-biopsy",
+  "laser-resurfacing",
+  "chemical-peel",
+  "other",
+] as const;
+
+const REASON_LABELS: Record<(typeof REASONS)[number], string> = {
+  "skin-cancer": "Skin cancer",
+  "cyst-lipoma": "Cyst or lipoma",
+  pilonidal: "Pilonidal cyst",
+  keloid: "Keloids",
+  "prp-hair-loss": "PRP / hair loss",
+  "skin-biopsy": "Skin biopsy",
+  "laser-resurfacing": "Laser resurfacing",
+  "chemical-peel": "Chemical peel",
+  other: "Other",
+};
 const REFERRAL_SOURCES = [
   "",
   "doctor-referral",
@@ -46,6 +71,15 @@ export async function POST(request: Request) {
   const visitType = oneOf(data.visitType, VISIT_TYPES, "new-patient");
   const referralSource = oneOf(data.referralSource, REFERRAL_SOURCES, "");
 
+  // Required — this is the triage key for the callback.
+  const reason =
+    typeof data.reason === "string" && (REASONS as readonly string[]).includes(data.reason)
+      ? (data.reason as (typeof REASONS)[number])
+      : null;
+  if (!reason) {
+    errors.reason = "Please select a reason for your visit.";
+  }
+
   // Optional free-text message. May contain patient-provided health context —
   // permitted because transport is the practice's BAA-covered Workspace (see
   // src/lib/email.ts). Never log it. Length enforced here regardless of client.
@@ -65,6 +99,7 @@ export async function POST(request: Request) {
     `Phone:           ${phone}`,
     `Email:           ${email}`,
     `Visit type:      ${VISIT_TYPE_LABELS[visitType]}`,
+    `Reason:          ${REASON_LABELS[reason!]}`,
     `Heard about us:  ${referralSource || "Not specified"}`,
     "",
     "Message from the patient:",

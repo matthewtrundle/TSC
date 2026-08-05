@@ -29,6 +29,7 @@ export function AppointmentForm() {
     email: "",
     phone: "",
     visitType: "new-patient",
+    reason: "",
     referralSource: "",
     message: "",
   });
@@ -197,10 +198,6 @@ export function AppointmentForm() {
             </div>
           </div>
       
-          {/* Visit type — deliberately administrative only. The previous
-              options (Mohs Surgery, Skin Cancer Screening) disclosed a
-              reason for the visit, which is protected health information
-              and must not travel over ordinary email. */}
           <div>
             <label
               htmlFor="visitType"
@@ -220,7 +217,42 @@ export function AppointmentForm() {
               <option value="returning-patient">Yes — I&apos;m a returning patient</option>
             </select>
           </div>
-      
+
+          {/* Reason for visit — ordered by how often each brings patients in.
+              Collecting this is fine on the BAA-covered Workspace transport
+              (see src/lib/email.ts); it was previously omitted because the
+              old email pipe couldn't carry it. */}
+          <div>
+            <label
+              htmlFor="reason"
+              className="block text-base font-medium text-[var(--navy-primary)] mb-2"
+            >
+              Reason for your visit *
+            </label>
+            <select
+              id="reason"
+              name="reason"
+              required
+              aria-invalid={!!fieldErrors.reason}
+              aria-describedby={fieldErrors.reason ? "reason-error" : undefined}
+              value={formData.reason}
+              onChange={handleChange}
+              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+            >
+              <option value="">Select a reason</option>
+              <option value="skin-cancer">Skin cancer</option>
+              <option value="cyst-lipoma">Cyst or lipoma</option>
+              <option value="pilonidal">Pilonidal cyst</option>
+              <option value="keloid">Keloids</option>
+              <option value="prp-hair-loss">PRP / hair loss</option>
+              <option value="skin-biopsy">Skin biopsy</option>
+              <option value="laser-resurfacing">Laser resurfacing</option>
+              <option value="chemical-peel">Chemical peel</option>
+              <option value="other">Other</option>
+            </select>
+            <FieldError id="reason" message={fieldErrors.reason} />
+          </div>
+
           {/* Referral Source */}
           <div>
             <label
