@@ -185,3 +185,11 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   contact dl columns use minmax(0,1fr); contact hours rows flex-wrap.
   All routes x widths scan clean. Run this scan plus axe-scan before launch
   and after layout changes.
+
+### 2026-08-04 — AAD credential logo: Academy, not Association (Dr. Modi)
+- The credential bar's AAD file was the "American Academy of Dermatology
+  Association" (AADA) lockup — aad.org's own header art. Rebuilt as the
+  Academy-only lockup by editing the AAD's own vector: removed the dotted
+  rule + "Association" line (subpath-level surgery, descender-safe),
+  re-centered the wordmark against the dotted-circle mark, viewBox
+  trimmed to 1075x475.2. Still pure SVG — resolution-independent.

@@ -27,9 +27,11 @@ const ITEMS = [
     textLockup: true,
   },
   {
+    // Academy-only lockup, derived from the AAD's own vector artwork (the
+    // previous file was the "Association" variant).
     name: "American Academy of Dermatology",
     logo: "/images/societies/aad.svg",
-    width: 1157,
+    width: 1075,
     height: 475,
     href: "https://www.aad.org",
   },
