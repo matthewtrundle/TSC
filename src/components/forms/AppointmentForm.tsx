@@ -218,6 +218,30 @@ export function AppointmentForm() {
             </select>
           </div>
 
+          {/* Referral Source */}
+          <div>
+            <label
+              htmlFor="referralSource"
+              className="block text-base font-medium text-[var(--navy-primary)] mb-2"
+            >
+              How did you hear about us?
+            </label>
+            <select
+              id="referralSource"
+              name="referralSource"
+              value={formData.referralSource}
+              onChange={handleChange}
+              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+            >
+              <option value="">Select an option</option>
+              <option value="doctor-referral">Doctor Referral</option>
+              <option value="friend-family">Friend or Family</option>
+              <option value="google">Google Search</option>
+              <option value="insurance">Insurance Provider</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
           {/* Reason for visit — ordered by how often each brings patients in.
               Collecting this is fine on the BAA-covered Workspace transport
               (see src/lib/email.ts); it was previously omitted because the
@@ -253,30 +277,6 @@ export function AppointmentForm() {
               <option value="other">Other</option>
             </select>
             <FieldError id="reason" message={fieldErrors.reason} />
-          </div>
-
-          {/* Referral Source */}
-          <div>
-            <label
-              htmlFor="referralSource"
-              className="block text-base font-medium text-[var(--navy-primary)] mb-2"
-            >
-              How did you hear about us?
-            </label>
-            <select
-              id="referralSource"
-              name="referralSource"
-              value={formData.referralSource}
-              onChange={handleChange}
-              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
-            >
-              <option value="">Select an option</option>
-              <option value="doctor-referral">Doctor Referral</option>
-              <option value="friend-family">Friend or Family</option>
-              <option value="google">Google Search</option>
-              <option value="insurance">Insurance Provider</option>
-              <option value="other">Other</option>
-            </select>
           </div>
       
           {/* Free-text message. The copy may invite health context because
