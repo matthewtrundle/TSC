@@ -225,3 +225,12 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   counter restored via backing rect under the white D. Both transparent,
   true vector. Supersedes same-day earlier traces from small/derived
   sources.
+
+### 2026-08-04 — Legacy-URL redirect map (SEO launch prep)
+- next.config.ts now 301s every URL from the old WordPress site's own
+  sitemaps to its new-site equivalent (physicians/* → /team anchors,
+  mohs page → /services#mohs-surgery, sun-protection → actinic-keratosis,
+  privacy-policy → /privacy, WP debris → home). Dormant until the redesign
+  serves planoderm.com; preserves existing Google equity at launch.
+  UPDATE-LATER markers inside: insurance + wound-care/forms redirects
+  should re-point when the insurance and patient-resources pages ship.
