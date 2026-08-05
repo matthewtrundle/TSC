@@ -138,7 +138,7 @@ export default function Home() {
             <div className="mt-16 grid grid-cols-1 gap-8 border-t border-[var(--hairline)] pt-10 sm:grid-cols-3">
               {[
                 { value: "3", label: "Fellowship-trained Mohs surgeons" },
-                { value: "65+", label: "Years of combined experience" },
+                { value: "70+", label: "Years of combined experience" },
                 { value: "15", label: "Mohs surgeons trained by our physicians" },
               ].map((stat) => (
                 <CountUpStat key={stat.label} value={stat.value} label={stat.label} />

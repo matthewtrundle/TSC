@@ -170,3 +170,8 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - Launch blocker is now: create app password on a Workspace account
   (2-Step Verification required), set GMAIL_USER + GMAIL_APP_PASSWORD in
   Vercel, redeploy, one live test submission.
+
+### 2026-08-04 — Combined experience: 70+ years (Dr. Modi)
+- Home stat changed 65+ → 70+ years combined experience, per Dr. Modi's
+  direct instruction. Supersedes the 2026-08-02 "68 shown as 65+" note.
+  Only the home stat displays a number; other copy says "decades".
