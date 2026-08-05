@@ -174,3 +174,14 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   alt). All routes now scan clean. Re-run the script before launch and
   after any design change; automated scans cover only part of WCAG — the
   manual checks (keyboard, reduced-motion, zoom) remain part of QA.
+
+### 2026-08-04 — Responsive overflow sweep gate
+- Prompted by Dr. Modi's iPad screenshot (header CTA cropped in Safari,
+  landscape). `scripts/overflow-scan.mjs` now sweeps all routes x 15 device
+  widths (320-1440) for page-level horizontal scroll and cropped interactive
+  elements. Fixes shipped: header nav compacts below xl and hands off to the
+  menu button under 1120px (six tracked-caps items + CTA need ~1300px full
+  size / ~1116px compact); footer credential names may wrap on phones;
+  contact dl columns use minmax(0,1fr); contact hours rows flex-wrap.
+  All routes x widths scan clean. Run this scan plus axe-scan before launch
+  and after layout changes.

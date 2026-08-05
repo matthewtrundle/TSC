@@ -71,7 +71,7 @@ export default function ContactPage() {
             <FadeIn className="lg:col-span-2">
               <div>
                 <dl className="border-t border-[var(--gray-200)]">
-                  <div className="grid grid-cols-[6.5rem_1fr] gap-6 py-4 border-b border-[var(--gray-200)]">
+                  <div className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-6 py-4 border-b border-[var(--gray-200)]">
                     <dt className="label-caps pt-1">Phone</dt>
                     <dd>
                       <a
@@ -83,12 +83,12 @@ export default function ContactPage() {
                     </dd>
                   </div>
 
-                  <div className="grid grid-cols-[6.5rem_1fr] gap-6 py-4 border-b border-[var(--gray-200)]">
+                  <div className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-6 py-4 border-b border-[var(--gray-200)]">
                     <dt className="label-caps pt-1">Fax</dt>
                     <dd className="text-[var(--warm-gray)]">{siteConfig.contact.fax}</dd>
                   </div>
 
-                  <div className="grid grid-cols-[6.5rem_1fr] gap-6 py-4 border-b border-[var(--gray-200)]">
+                  <div className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-6 py-4 border-b border-[var(--gray-200)]">
                     <dt className="label-caps pt-1">Email</dt>
                     <dd>
                       <a
@@ -100,7 +100,7 @@ export default function ContactPage() {
                     </dd>
                   </div>
 
-                  <div className="grid grid-cols-[6.5rem_1fr] gap-6 py-4 border-b border-[var(--gray-200)]">
+                  <div className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-6 py-4 border-b border-[var(--gray-200)]">
                     <dt className="label-caps pt-1">Address</dt>
                     <dd className="text-[var(--warm-gray)]">
                       {siteConfig.contact.address.street}
@@ -119,14 +119,21 @@ export default function ContactPage() {
                     </dd>
                   </div>
 
-                  <div className="grid grid-cols-[6.5rem_1fr] gap-6 py-4 border-b border-[var(--gray-200)]">
+                  <div className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-6 py-4 border-b border-[var(--gray-200)]">
                     <dt className="label-caps pt-1">Hours</dt>
                     <dd className="text-[var(--warm-gray)]">
                       <div className="space-y-1">
                         {siteConfig.hours.detailed.map((item) => (
-                          <div key={item.day} className="flex justify-between gap-4">
+                          // flex-wrap: on the narrowest phones the label column
+                          // leaves too little room for day + time on one line,
+                          // so the time drops to its own right-aligned line.
+                          <div key={item.day} className="flex flex-wrap justify-between gap-x-4">
                             <span>{item.day}</span>
-                            <span className={item.hours === "Closed" ? "text-[var(--warm-gray-light)]" : ""}>
+                            <span
+                              className={`ml-auto whitespace-nowrap ${
+                                item.hours === "Closed" ? "text-[var(--warm-gray-light)]" : ""
+                              }`}
+                            >
                               {item.hours}
                             </span>
                           </div>

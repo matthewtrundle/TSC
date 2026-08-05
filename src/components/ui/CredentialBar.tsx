@@ -88,11 +88,13 @@ export function CredentialBar({
                 &#9670;
               </span>
             )}
+            {/* Nowrap only once the viewport can afford it — on phones the
+                longest society name is wider than the screen and must wrap. */}
             <a
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="label-caps-light whitespace-nowrap text-xs transition-opacity hover:opacity-75"
+              className="label-caps-light max-w-full text-center text-xs transition-opacity hover:opacity-75 sm:whitespace-nowrap"
             >
               {item.name.split(" — ")[0]}
             </a>
