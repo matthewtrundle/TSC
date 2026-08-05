@@ -204,3 +204,14 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
 - AAD: marked `seal` in CredentialBar so the Academy lockup renders at the
   taller size — its dotted mark + three stacked lines read optically
   smaller than horizontal lockups at equal height (Dr. Modi flagged it).
+
+### 2026-08-04 — Certification Matters + D Best mark vectorized
+- Both credential-bar raster logos Adobe-vectorized to true SVG.
+  Certification Matters: traced from the 300px source (only public copy;
+  ABMS has no public brand kit) — trace surprisingly clean; illegible TM
+  smudge and a stray speck removed; transparent background. D Best mark:
+  source quantized to the badge's 4 official colors before tracing (raw
+  JPEG edges traced wobbly); halo shapes unified to official colors —
+  cream D knockout (#F7EFE2) on red, transparent outside, letter bowls
+  genuinely transparent. Old PNGs deleted. All six credential marks are
+  now vector except the ABD seal (official raster from ABD's own PDF).
