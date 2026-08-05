@@ -48,6 +48,11 @@ export const siteConfig = {
     // link to real reviews rather than restating ratings on-site.
     googleReviews:
       "https://search.google.com/local/reviews?placeid=ChIJUTM9KV8jTIYRgt9pgc15Z6g",
+    // Owner "Ask for reviews" link from Dr. Modi's Business Profile
+    // (verified: resolves to the same listing). This one opens the
+    // WRITE-a-review dialog — use it for post-op materials or any future
+    // "leave us a review" CTA, never for the read-reviews links above.
+    googleReviewForm: "https://g.page/r/CYLfaYHNeWeoEBM/review",
   },
 
   social: {
