@@ -20,8 +20,7 @@ const REASONS = [
   "keloid",
   "prp-hair-loss",
   "skin-biopsy",
-  "laser-resurfacing",
-  "chemical-peel",
+  "laser-chemical-peel",
   "nail-issue",
   "other",
 ] as const;
@@ -34,8 +33,7 @@ const REASON_LABELS: Record<(typeof REASONS)[number], string> = {
   keloid: "Keloids",
   "prp-hair-loss": "PRP / hair loss",
   "skin-biopsy": "Skin biopsy",
-  "laser-resurfacing": "Laser resurfacing",
-  "chemical-peel": "Chemical peel",
+  "laser-chemical-peel": "Laser or chemical peel",
   "nail-issue": "Nail issue",
   other: "Other",
 };

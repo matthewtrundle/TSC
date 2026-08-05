@@ -271,8 +271,7 @@ export function AppointmentForm() {
               <option value="keloid">Keloids</option>
               <option value="prp-hair-loss">PRP / hair loss</option>
               <option value="skin-biopsy">Skin biopsy</option>
-              <option value="laser-resurfacing">Laser resurfacing</option>
-              <option value="chemical-peel">Chemical peel</option>
+              <option value="laser-chemical-peel">Laser or chemical peel</option>
               <option value="nail-issue">Nail issue</option>
               <option value="other">Other</option>
             </select>
