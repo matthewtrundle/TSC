@@ -152,7 +152,7 @@ Dr. Modi is married and has two young boys.`,
     image: "/images/dr-wells-warm.webp" as string | undefined,
     shortBio:
       "Double board-certified dermatologist and fellowship-trained Mohs surgeon; former tenured associate professor with over 20 years of experience.",
-    fullBio: `Michael Wells earned his Bachelor of Science from the University of Central Arkansas, graduating with Alpha Chi honors. He completed medical school at the University of Arkansas for Medical Sciences in Little Rock, where he was the top student in pathology and anatomy and was inducted into the AOA medical honor society.
+    fullBio: `Michael Wells is a double board-certified dermatologist and fellowship-trained Mohs surgeon. He earned his Bachelor of Science from the University of Central Arkansas, graduating with Alpha Chi honors, and completed medical school at the University of Arkansas for Medical Sciences in Little Rock, where he was the top student in pathology and anatomy and was inducted into the AOA medical honor society.
 
 He served as an assistant instructor during his Internal Medicine internship at Vanderbilt University Medical Center in Nashville, then completed his dermatology residency at Texas Tech University Health Sciences Center in Lubbock, serving as chief resident in his final year.
 
