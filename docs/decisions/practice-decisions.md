@@ -188,3 +188,12 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   shortBio says "skin cancer in transplant patients". Unused doctor
   `quote` fields DELETED from siteData (never rendered; not the doctors'
   real words — must never be resurrected without their actual quotes).
+
+### 2026-08-04 — Analytics tabled (Dr. Modi)
+- Analytics discussed and TABLED. Standing recommendation when revisited:
+  Vercel Web Analytics first (cookieless, no PII, free tier; dashboard
+  toggle is Dr. Modi/Matthew's); Fathom or Plausible (~$15/mo) only if
+  goal tracking wanted; CallRail w/ BAA as future call-tracking option.
+  Google Analytics and ad pixels are RULED OUT (HHS OCR tracking-tech
+  guidance; would contradict the /privacy page's no-trackers statement).
+  Adding any analytics requires a one-line /privacy update.
