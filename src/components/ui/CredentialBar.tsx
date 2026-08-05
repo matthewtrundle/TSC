@@ -47,22 +47,21 @@ const ITEMS = [
     href: "https://www.asds.net",
   },
   {
-    // Adobe-vectorized from the program mark (transparent; TM smudge from
-    // the small source removed).
+    // Adobe-vectorized from the full-size program mark Dr. Modi supplied
+    // (transparent; TM intact, rendered navy).
     name: "Certification Matters — American Board of Medical Specialties",
     logo: "/images/societies/certification-matters.svg",
-    width: 300,
-    height: 103,
+    width: 1015,
+    height: 340,
     href: "https://www.certificationmatters.org",
   },
   {
-    // Year-less crop of D Magazine's official badge artwork, Adobe-vectorized
-    // from a 4-color flattened source (transparent background, official
-    // cream-on-red D knockout).
+    // Adobe-vectorized from the official 2024 badge Dr. Modi supplied,
+    // year cropped (transparent; white D on red with red counter).
     name: "D Magazine Best Doctors",
     logo: "/images/societies/d-best-mark.svg",
-    width: 1642,
-    height: 1956,
+    width: 1400,
+    height: 1757,
     href: "https://directory.dmagazine.com/doctors/gunjan-m-modi-md/",
     seal: true,
   },

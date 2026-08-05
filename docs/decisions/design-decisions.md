@@ -215,3 +215,13 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   cream D knockout (#F7EFE2) on red, transparent outside, letter bowls
   genuinely transparent. Old PNGs deleted. All six credential marks are
   now vector except the ABD seal (official raster from ABD's own PDF).
+
+### 2026-08-04 — Cert Matters + D Best re-vectorized from Dr. Modi's sources
+- Dr. Modi supplied full-size official art for both. Certification Matters:
+  710px source with legible TM — quantized to its 3 brand colors, Adobe-
+  vectorized, halo noise stripped, TM kept and unified navy, viewBox
+  trimmed to content. D Best: official 2024 badge; year band cropped
+  before tracing, quantized to 3 colors, vectorized, noise stripped, red
+  counter restored via backing rect under the white D. Both transparent,
+  true vector. Supersedes same-day earlier traces from small/derived
+  sources.
