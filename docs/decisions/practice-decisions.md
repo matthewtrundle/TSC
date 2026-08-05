@@ -197,3 +197,12 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   Google Analytics and ad pixels are RULED OUT (HHS OCR tracking-tech
   guidance; would contradict the /privacy page's no-trackers statement).
   Adding any analytics requires a one-line /privacy update.
+
+### 2026-08-05 — Form email VERIFIED working (local)
+- App password created on office@planoderm.com (first two attempts failed:
+  hand-transcription typos — copy-paste solved it). SMTP login verified;
+  both forms sent live test emails successfully from the local build
+  (office@ → office@, reply-to = patient). REMAINING for production:
+  GMAIL_USER + GMAIL_APP_PASSWORD into Vercel env (Production + Preview),
+  redeploy, one test submission on the deployed site. The app password
+  lives in .env.local (gitignored) and Vercel only — never in git.
