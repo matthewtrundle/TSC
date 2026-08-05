@@ -193,3 +193,14 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   rule + "Association" line (subpath-level surgery, descender-safe),
   re-centered the wordmark against the dotted-circle mark, viewBox
   trimmed to 1075x475.2. Still pure SVG — resolution-independent.
+
+### 2026-08-04 — ACMS logo rebuilt from official artwork; AAD sized up
+- ACMS: rebuilt from the College's official stacked logo (source PNG
+  supplied by Dr. Modi via share link). Tagline dropped per his direction.
+  Rearranged losslessly to a horizontal lockup (mark left, text right,
+  vertically centered), then Adobe-vectorized to true SVG (gradient sphere
+  preserved, white canvas removed for transparency). Replaces the old
+  autotrace whose edge glyphs were clipped.
+- AAD: marked `seal` in CredentialBar so the Academy lockup renders at the
+  taller size — its dotted mark + three stacked lines read optically
+  smaller than horizontal lockups at equal height (Dr. Modi flagged it).

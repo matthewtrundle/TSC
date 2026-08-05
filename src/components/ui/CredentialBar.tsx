@@ -6,12 +6,13 @@ import Image from "next/image";
 // Dr. Modi's D Magazine directory profile).
 const ITEMS = [
   {
-    // True vector (Adobe-vectorized from the College's own artwork) —
+    // True vector (Adobe-vectorized from the College's official logo,
+    // rearranged mark-left/text-right; tagline dropped per Dr. Modi) —
     // resolution-independent at any zoom.
     name: "American College of Mohs Surgery",
     logo: "/images/societies/acms.svg",
-    width: 1875,
-    height: 475,
+    width: 1392,
+    height: 273,
     href: "https://www.mohscollege.org",
   },
   {
@@ -28,12 +29,15 @@ const ITEMS = [
   },
   {
     // Academy-only lockup, derived from the AAD's own vector artwork (the
-    // previous file was the "Association" variant).
+    // previous file was the "Association" variant). Marked seal so it gets
+    // the taller size — a dotted mark + three stacked text lines reads
+    // optically smaller than the horizontal lockups at equal height.
     name: "American Academy of Dermatology",
     logo: "/images/societies/aad.svg",
     width: 1075,
     height: 475,
     href: "https://www.aad.org",
+    seal: true,
   },
   {
     name: "American Society for Dermatologic Surgery",
