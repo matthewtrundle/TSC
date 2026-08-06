@@ -234,3 +234,16 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   serves planoderm.com; preserves existing Google equity at launch.
   UPDATE-LATER markers inside: insurance + wound-care/forms redirects
   should re-point when the insurance and patient-resources pages ship.
+
+### 2026-08-06 — Hero: wet golden-hour treatment of the real building
+- Dr. Modi brought a ChatGPT-generated building hero he liked; identity
+  review showed it was NOT the real building, so the look (golden hour,
+  rain-wet reflective paving, wispy sky) was regenerated onto the REAL
+  approved building master (angle-morning-FINAL) via gemini-3-pro-image
+  with the ChatGPT image as style reference only. Winner: wet-golden-nb-2
+  (album _building-cinematic/, incl. gpt variants + mockups + reference).
+  Shipped as hero-building-wet.webp/avif (2880w lanczos upscale from
+  1376w native + gentle sharpen; 242KB webp). REVERT PATH (Dr. Modi's
+  condition): hero-building-morning.webp remains in public/images
+  untouched — swapping the one image prop in src/app/page.tsx line ~52
+  restores the previous hero exactly.
