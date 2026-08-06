@@ -13,7 +13,7 @@ const ROUTES = [
   "/services/cyst-removal", "/services/lipoma-removal", "/services/mole-removal",
   "/services/keloid-scar-revision", "/services/benign-lesion-removal",
   "/services/nail-procedures", "/services/eyelid-biopsies", "/services/lip-oral-biopsies",
-  "/services/prp-hair-restoration", "/services/skin-resurfacing",
+  "/services/pilonidal-cyst-surgery", "/services/sebaceous-carcinoma", "/services/dermatofibrosarcoma-protuberans", "/services/atypical-fibroxanthoma", "/services/microcystic-adnexal-carcinoma", "/services/extramammary-paget-disease", "/services/prp-hair-restoration", "/services/skin-resurfacing",
 ];
 
 // iPhone SE .. small Android .. iPhones .. iPad mini/portrait .. iPad Air/Pro

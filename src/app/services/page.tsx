@@ -61,7 +61,19 @@ const bandDetailLinks: Record<string, { name: string; slug: string }[]> = {
     { name: "Squamous cell carcinoma", slug: "squamous-cell-carcinoma" },
     { name: "Actinic keratosis", slug: "actinic-keratosis" },
   ],
-  immunostaining: [{ name: "Melanoma, in detail", slug: "melanoma" }],
+  immunostaining: [
+    { name: "Melanoma, in detail", slug: "melanoma" },
+    { name: "Sebaceous carcinoma", slug: "sebaceous-carcinoma" },
+    { name: "DFSP", slug: "dermatofibrosarcoma-protuberans" },
+  ],
+  "high-risk-immunostaining": [
+    { name: "Atypical fibroxanthoma", slug: "atypical-fibroxanthoma" },
+    { name: "Microcystic adnexal carcinoma", slug: "microcystic-adnexal-carcinoma" },
+    { name: "Extramammary Paget's disease", slug: "extramammary-paget-disease" },
+  ],
+  pilonidal: [
+    { name: "Pilonidal disease & the cleft lift, in detail", slug: "pilonidal-cyst-surgery" },
+  ],
   "skin-resurfacing": [{ name: "Skin resurfacing, in detail", slug: "skin-resurfacing" }],
   "hair-loss": [{ name: "Hair loss & PRP, in detail", slug: "prp-hair-restoration" }],
   "other-procedures": [
@@ -81,6 +93,11 @@ const cancerDetailSlugs: Record<string, string> = {
   BCC: "basal-cell-carcinoma",
   SCC: "squamous-cell-carcinoma",
   Melanoma: "melanoma",
+  Sebaceous: "sebaceous-carcinoma",
+  DFSP: "dermatofibrosarcoma-protuberans",
+  AFX: "atypical-fibroxanthoma",
+  MAC: "microcystic-adnexal-carcinoma",
+  EMPD: "extramammary-paget-disease",
 };
 
 export default function ServicesPage() {
@@ -349,11 +366,11 @@ export default function ServicesPage() {
             {[
               {
                 group: "Skin cancer & precancer",
-                slugs: ["melanoma", "basal-cell-carcinoma", "squamous-cell-carcinoma", "actinic-keratosis", "mole-removal"],
+                slugs: ["melanoma", "basal-cell-carcinoma", "squamous-cell-carcinoma", "actinic-keratosis", "sebaceous-carcinoma", "dermatofibrosarcoma-protuberans", "atypical-fibroxanthoma", "microcystic-adnexal-carcinoma", "extramammary-paget-disease", "mole-removal"],
               },
               {
                 group: "Everyday procedures",
-                slugs: ["cyst-removal", "lipoma-removal", "benign-lesion-removal", "nail-procedures", "eyelid-biopsies", "lip-oral-biopsies"],
+                slugs: ["cyst-removal", "lipoma-removal", "benign-lesion-removal", "nail-procedures", "eyelid-biopsies", "lip-oral-biopsies", "pilonidal-cyst-surgery"],
               },
               {
                 group: "Restorative & aesthetic",

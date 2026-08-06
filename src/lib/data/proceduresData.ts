@@ -25,6 +25,13 @@ export type Procedure = {
   imageAlt: string;
   /** Optional before/after pairs, from the practice's own patient photos. */
   gallery?: { before: string; after: string; label: string }[];
+  /** Optional two-column treatment comparison table. */
+  comparison?: {
+    title: string;
+    columns: [string, string];
+    rows: { label: string; a: string; b: string }[];
+    note?: string;
+  };
 };
 
 export const procedures: Procedure[] = [
@@ -418,6 +425,205 @@ export const procedures: Procedure[] = [
     ],
     image: "/images/svc-slide-glass.webp",
     imageAlt: "Prepared glass slides catching the light",
+  },
+  {
+    slug: "sebaceous-carcinoma",
+    name: "Sebaceous Carcinoma",
+    summary:
+      "A rare, aggressive cancer of the skin's oil glands — often on the eyelid, often mistaken for a stye — treated with margin-controlled surgery.",
+    body: [
+      "Sebaceous carcinoma arises from the skin's oil glands, most often on the eyelids of older adults. Its reputation comes from disguise: it can look like a stye or chalazion that never resolves, or a patch of chronic eyelid irritation, and the delay that causes is the dangerous part.",
+      "Because it can spread within the skin beyond what the eye can see, margin-controlled excision is central to treating it well. Our surgeons examine the margins microscopically during surgery, and eyelid work of this kind is territory they operate in routinely — with reconstruction planned by the same team.",
+    ],
+    whenToConsider: [
+      "A stye or chalazion that keeps coming back in the same spot",
+      "A firm, painless eyelid nodule that slowly enlarges",
+      "Persistent one-sided eyelid inflammation that resists treatment",
+      "A biopsy-confirmed sebaceous carcinoma referred for surgery",
+    ],
+    techniques: [
+      {
+        name: "Mohs micrographic surgery",
+        note: "Margin-controlled removal, tissue-sparing where every millimeter matters — as on the eyelid.",
+      },
+      {
+        name: "Coordinated reconstruction",
+        note: "Repair planned with the excision, by surgeons who reconstruct eyelids regularly.",
+      },
+    ],
+    image: "/images/svc-slide-glass.webp",
+    imageAlt: "Prepared glass slides catching the light",
+  },
+  {
+    slug: "dermatofibrosarcoma-protuberans",
+    name: "Dermatofibrosarcoma Protuberans (DFSP)",
+    summary:
+      "A rare cancer of the deeper skin that spreads by root-like extensions — the problem margin-controlled surgery was built to solve.",
+    body: [
+      "DFSP begins in the deeper layer of the skin as a firm, slowly enlarging plaque or nodule, often on the trunk or shoulders, and often present for years before diagnosis. It rarely spreads to other organs — its danger is local: it sends out root-like extensions well beyond the visible edge of the tumor.",
+      "That growth pattern is exactly what margin-controlled surgery exists for. Standard excision judged by eye leaves those roots behind; examining the full margin under the microscope lets the surgeon follow every extension to its end before closing.",
+    ],
+    whenToConsider: [
+      "A firm, slowly growing plaque or nodule, often on the trunk or shoulder",
+      "A scar-like patch that thickens or becomes raised over time",
+      "A biopsy-confirmed DFSP referred for margin-controlled excision",
+    ],
+    techniques: [
+      {
+        name: "Mohs micrographic surgery",
+        note: "Complete margin examination that follows DFSP's root-like extensions to their true end.",
+      },
+      {
+        name: "Coordinated reconstruction",
+        note: "Larger defects planned and repaired by the same surgical team.",
+      },
+    ],
+    image: "/images/svc-microscope-detail.webp",
+    imageAlt: "Microscope objective in close detail",
+  },
+  {
+    slug: "atypical-fibroxanthoma",
+    name: "Atypical Fibroxanthoma (AFX)",
+    summary:
+      "A rare tumor of heavily sun-damaged skin — scalp, ears, face — where complete margin-controlled removal is the standard of care.",
+    body: [
+      "Atypical fibroxanthoma appears on heavily sun-damaged skin, usually the scalp, ears, or face of older patients — often as a rapidly growing, sometimes bleeding nodule. It typically behaves locally, and treated properly the outlook is good.",
+      "Treated properly means removed completely. Complete margin-controlled excision is the standard of care, and on the thin, sun-worn skin of the scalp and ears, the tissue-sparing precision of Mohs surgery earns its keep twice: once in clearing the tumor, and again in leaving enough healthy tissue for a clean repair.",
+    ],
+    whenToConsider: [
+      "A new, rapidly growing nodule on the scalp, ear, or face",
+      "A sore or lump on sun-damaged skin that bleeds easily",
+      "A biopsy-confirmed AFX referred for surgery",
+    ],
+    techniques: [
+      {
+        name: "Mohs micrographic surgery",
+        note: "Margin-controlled, tissue-sparing removal on thin, sun-damaged skin.",
+      },
+      {
+        name: "Reconstruction of scalp and ear defects",
+        note: "Repair matched to the site, performed by the same team.",
+      },
+    ],
+    image: "/images/svc-histology-art.webp",
+    imageAlt: "Stained tissue section as seen under magnification",
+  },
+  {
+    slug: "microcystic-adnexal-carcinoma",
+    name: "Microcystic Adnexal Carcinoma (MAC)",
+    summary:
+      "A rare sweat-gland cancer of the central face that runs far deeper and wider than it appears — margin control is what catches it.",
+    body: [
+      "Microcystic adnexal carcinoma is a rare, slow-growing cancer of the sweat-gland structures, most often around the lips and central face. On the surface it can look small and innocent — a firm patch or subtle thickening — while infiltrating far more widely and deeply than it appears, often along nerves.",
+      "That mismatch between what shows and what is there makes complete margin examination especially valuable. Mohs surgery reads the entire margin under the microscope during the procedure, following the tumor's true extent rather than its visible footprint, on the part of the body where sparing every millimeter of healthy tissue matters most.",
+    ],
+    whenToConsider: [
+      "A firm, slowly enlarging patch or thickening near the lips or central face",
+      "Numbness or tingling around a subtle skin change",
+      "A biopsy-confirmed MAC referred for margin-controlled excision",
+    ],
+    techniques: [
+      {
+        name: "Mohs micrographic surgery",
+        note: "Full margin examination that tracks deep and nerve-associated extension the eye cannot see.",
+      },
+      {
+        name: "Facial reconstruction",
+        note: "Central-face repair planned with the excision by the same surgical team.",
+      },
+    ],
+    image: "/images/svc-slide-glass.webp",
+    imageAlt: "Prepared glass slides catching the light",
+  },
+  {
+    slug: "extramammary-paget-disease",
+    name: "Extramammary Paget's Disease (EMPD)",
+    summary:
+      "A rare cancer that masquerades as a stubborn rash in delicate areas — indistinct edges make margin-controlled surgery the right tool.",
+    body: [
+      "Extramammary Paget's disease is a rare, slow-growing cancer of apocrine-gland-rich skin, typically in the genital or perianal area. It often looks like a stubborn rash or eczema — itching, redness, scale — and is commonly treated as one for years before a biopsy gives the real answer. If that story sounds familiar, no part of it is your fault; this disease is a known master of disguise.",
+      "Its edges are indistinct: the cancer routinely extends well beyond the visible rash. That is why margin-controlled surgery earns its keep here — the entire margin is examined microscopically, so the surgery ends where the disease actually ends, not where it appears to. Care in these areas is handled with the discretion and respect it deserves.",
+    ],
+    whenToConsider: [
+      "A persistent itchy, red, or scaly patch in the groin, genital, or perianal area",
+      "A \"rash\" that has not responded to creams over months",
+      "A biopsy-confirmed EMPD referred for margin-controlled excision",
+    ],
+    techniques: [
+      {
+        name: "Margin-controlled excision",
+        note: "Microscopic examination of the full margin, so surgery ends where the disease truly ends.",
+      },
+      {
+        name: "Coordinated care",
+        note: "Reconstruction and any additional specialty care arranged by our team.",
+      },
+    ],
+    image: "/images/svc-microscope-detail.webp",
+    imageAlt: "Microscope objective in close detail",
+  },
+  {
+    slug: "pilonidal-cyst-surgery",
+    name: "Pilonidal Disease & the Bascom Cleft Lift",
+    summary:
+      "Definitive surgery for pilonidal disease — a lift and a shift that fixes the infection, the wound, and the anatomy that caused it.",
+    body: [
+      "Pilonidal disease is usually called a cyst, but that name misleads: it is really an infection — abscesses and sinus tracts near the tailbone, in the cleft between the buttocks. Hair and debris work their way into stretched pores in that deep, moist crease, the area cannot heal, and the result is a cycle of painful flare-ups, drainage, and waiting for the next one.",
+      "If you have it, two things are worth saying plainly. First: it is nobody's fault. Pilonidal disease comes from anatomy — a naturally deep cleft — plus hair, friction, and often heredity. It is not caused by poor hygiene, and it is far more common than people realize; it mostly strikes healthy young people, and almost no one wants to talk about an abscess near their tailbone. Second: it is genuinely miserable. Sitting hurts. Flare-ups arrive without warning. Many patients quietly plan their lives around it for years. You do not have to.",
+      "The reason pilonidal disease so often comes back after surgery is that traditional operations remove the infection but leave the cause. A midline excision takes out the diseased tissue and then closes the wound — or leaves it open to heal for months — in the deepest part of the cleft, exactly where wounds heal worst. The valley remains; hair and debris collect again; and published recurrence rates for midline excision run as high as 30 to 50 percent.",
+      "The Bascom cleft lift takes the opposite approach: a lift and a shift. The diseased tissue is removed, the closure is shifted off the midline to healthy, well-aired skin where it can actually heal, and the cleft itself is lifted and flattened so the anatomy that trapped hair and moisture no longer exists. One operation addresses the disease, the infection, and the anatomy at once — which is why, in large published series, the cleft lift succeeds in 95 to 97 percent of patients, including many whose previous surgeries had failed.",
+      "It is an outpatient operation: no hospital stay, a wound that heals in weeks rather than months, and no daily packing of an open midline wound. For most patients who have lived with this disease, the striking part is simply that the cycle stops.",
+    ],
+    whenToConsider: [
+      "Recurring abscesses or drainage near the tailbone",
+      "A pilonidal wound from previous surgery that has never fully healed",
+      "Disease that has come back after excision or other procedures",
+      "Pain with sitting that you have been told to live with",
+    ],
+    techniques: [
+      {
+        name: "Bascom cleft lift",
+        note: "The definitive repair: diseased tissue removed, closure shifted off the midline, cleft flattened so the disease has nowhere to return.",
+      },
+      {
+        name: "Drainage of an acute abscess",
+        note: "An acutely infected abscess is drained first for relief; the cleft lift then addresses the cause once things settle.",
+      },
+    ],
+    comparison: {
+      title: "Traditional excision vs. the Bascom cleft lift",
+      columns: ["Simple (midline) excision", "Bascom cleft lift"],
+      rows: [
+        {
+          label: "What it addresses",
+          a: "Removes the infected tissue, but the deep midline cleft — the cause — remains.",
+          b: "Removes the disease and reshapes the cleft, so the cause is corrected too.",
+        },
+        {
+          label: "Where the wound sits",
+          a: "In the midline crease — the most difficult place on the body for a wound to heal.",
+          b: "Shifted off the midline to healthy, well-aired skin that heals reliably.",
+        },
+        {
+          label: "Healing",
+          a: "Open wounds commonly take months, often with daily packing and dressing changes.",
+          b: "Typically heals in weeks, with simple dressings and no packing.",
+        },
+        {
+          label: "Setting",
+          a: "Frequently a hospital operation.",
+          b: "Outpatient — you go home the same day.",
+        },
+        {
+          label: "Chance of cure",
+          a: "Recurrence reported as high as 30-50% in published series.",
+          b: "95-97% success in large published series, including recurrent disease.",
+        },
+      ],
+      note: "Figures reflect ranges reported in the published surgical literature and patient-advocacy resources for midline excision and the Bascom cleft lift; individual results vary, and your surgeon will discuss what applies to you.",
+    },
+    image: "/images/pilonidal-illustration.webp",
+    imageAlt: "Illustration of the cleft lift concept",
   },
 ];
 

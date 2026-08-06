@@ -213,3 +213,26 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   Basis for the label: the practice's Google Workspace BAA (signed 2018).
   Intro line now reads "Call the office, fax the referral, or send it by
   secure email."
+
+### 2026-08-06 — Comb round 3: confirmations + six new pages (Dr. Modi)
+- CONFIRMED TRUE by Dr. Modi: "few practices can treat melanoma this way";
+  "we offer what few practices can"; "many practices do not offer nail
+  surgery at all"; lip-oral "too far inside for many dermatologists" —
+  all four competitive claims stand as-is.
+- Hero: "— all we do" REMOVED (home + referring) per Dr. Modi ("we are
+  Mohs surgeons first and foremost but we do other things").
+- Home's duplicate Mohs stepper removed; the full 7-step walkthrough
+  already lives on /services (his requested destination).
+- NEW: /services/pilonidal-cyst-surgery — expanded per his brief
+  (abscesses not "cysts"; nobody's fault + stigma addressed; "a lift and
+  a shift" fixing disease/infection/anatomy; excision-vs-cleft-lift
+  comparison table adapted from pilonidal.clinic/Sternberg/Immerman/
+  pilonidal.org research, using conservative literature figures; ledger
+  95-97% retained). Comparison-table support added to the procedure
+  template (optional field).
+- NEW: five rare-cancer child pages (sebaceous-carcinoma, DFSP,
+  atypical-fibroxanthoma, microcystic-adnexal-carcinoma,
+  extramammary-paget-disease) — house voice, no stain-panel specifics
+  (high-risk panel remains unconfirmed). All 8 cancers in the "we treat"
+  list now linkify; services bands + directory + curated related-links
+  wired; 29 pages in sitemap. New pages pass axe + layout checks.

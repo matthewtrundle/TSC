@@ -56,6 +56,12 @@ export default async function ProcedurePage({
     "lip-oral-biopsies": ["eyelid-biopsies", "benign-lesion-removal", "squamous-cell-carcinoma"],
     "prp-hair-restoration": ["skin-resurfacing", "keloid-scar-revision", "mole-removal"],
     "skin-resurfacing": ["actinic-keratosis", "prp-hair-restoration", "keloid-scar-revision"],
+    "sebaceous-carcinoma": ["eyelid-biopsies", "basal-cell-carcinoma", "microcystic-adnexal-carcinoma"],
+    "dermatofibrosarcoma-protuberans": ["atypical-fibroxanthoma", "squamous-cell-carcinoma", "melanoma"],
+    "atypical-fibroxanthoma": ["squamous-cell-carcinoma", "dermatofibrosarcoma-protuberans", "actinic-keratosis"],
+    "microcystic-adnexal-carcinoma": ["sebaceous-carcinoma", "basal-cell-carcinoma", "squamous-cell-carcinoma"],
+    "extramammary-paget-disease": ["squamous-cell-carcinoma", "melanoma", "microcystic-adnexal-carcinoma"],
+    "pilonidal-cyst-surgery": ["cyst-removal", "benign-lesion-removal", "keloid-scar-revision"],
   };
   const relatedSlugs = RELATED[procedure.slug] ?? [];
   const related = relatedSlugs.length
@@ -158,6 +164,48 @@ export default async function ProcedurePage({
           </div>
         </div>
       </section>
+
+      {/* Optional treatment comparison table */}
+      {procedure.comparison && (
+        <section className="border-t border-[var(--gray-200)] bg-white py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <h2 className="text-display mb-8">{procedure.comparison.title}</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[640px] border-t border-[var(--gray-200)] text-left">
+                <thead>
+                  <tr className="border-b border-[var(--gray-200)]">
+                    <th scope="col" className="w-1/4 py-4 pr-6 align-bottom">
+                      <span className="label-caps text-xs">Compare</span>
+                    </th>
+                    <th scope="col" className="w-[37.5%] py-4 pr-6 align-bottom text-lg font-semibold text-[var(--warm-gray-light)]">
+                      {procedure.comparison.columns[0]}
+                    </th>
+                    <th scope="col" className="w-[37.5%] py-4 align-bottom text-lg font-semibold text-[var(--navy-primary)]">
+                      {procedure.comparison.columns[1]}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[var(--gray-200)]">
+                  {procedure.comparison.rows.map((row) => (
+                    <tr key={row.label}>
+                      <th scope="row" className="py-4 pr-6 align-top text-sm font-semibold text-[var(--warm-gray-light)]">
+                        {row.label}
+                      </th>
+                      <td className="py-4 pr-6 align-top leading-relaxed text-[var(--warm-gray)]">{row.a}</td>
+                      <td className="py-4 align-top font-medium leading-relaxed text-[var(--navy-primary)]">{row.b}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {procedure.comparison.note && (
+              <p className="mt-6 max-w-3xl text-sm leading-relaxed text-[var(--warm-gray-light)]">
+                {procedure.comparison.note}
+              </p>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Before & after gallery — only for procedures with practice photos. */}
       {procedure.gallery && (
