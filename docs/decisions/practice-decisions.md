@@ -206,3 +206,10 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   GMAIL_USER + GMAIL_APP_PASSWORD into Vercel env (Production + Preview),
   redeploy, one test submission on the deployed site. The app password
   lives in .env.local (gitignored) and Vercel only — never in git.
+
+### 2026-08-06 — Referring page: secure email added to How to refer (Dr. Modi)
+- office@planoderm.com added as a third referral channel (phone, fax,
+  email) with Mail icon and "Secure email" label, per Dr. Modi's direction.
+  Basis for the label: the practice's Google Workspace BAA (signed 2018).
+  Intro line now reads "Call the office, fax the referral, or send it by
+  secure email."

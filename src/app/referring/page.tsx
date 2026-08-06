@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { siteConfig } from "@/lib/data/siteData";
-import { Phone, Printer } from "lucide-react";
+import { Mail, Phone, Printer } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { LuxuryCta } from "@/components/ui/LuxuryCta";
 
@@ -55,9 +55,9 @@ export default function ReferringPage() {
             <FadeIn className="lg:col-span-2">
               <h2 className="text-display mb-6">How to refer</h2>
               <p className="text-[var(--warm-gray)] leading-relaxed mb-8">
-                Call the office or fax the referral. Either way, we schedule
-                directly with the patient and confirm the appointment with your
-                office.
+                Call the office, fax the referral, or send it by secure email.
+                Either way, we schedule directly with the patient and confirm
+                the appointment with your office.
               </p>
 
               <div className="space-y-5">
@@ -77,6 +77,15 @@ export default function ReferringPage() {
                   <span>{siteConfig.contact.fax}</span>
                   <span className="label-caps pt-1 text-xs">Fax</span>
                 </p>
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="inline-flex items-center gap-3 py-1 text-xl font-medium text-[var(--navy-primary)] transition-colors hover:text-[var(--teal-accent)] lg:text-2xl"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  <Mail className="h-5 w-5 shrink-0 text-[var(--bronze-text)]" aria-hidden="true" />
+                  <span>{siteConfig.contact.email}</span>
+                  <span className="label-caps whitespace-nowrap pt-1 text-xs">Secure email</span>
+                </a>
               </div>
             </FadeIn>
 
