@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { siteConfig, doctors, mohsProcess, services } from "@/lib/data/siteData";
+import { siteConfig, doctors, services } from "@/lib/data/siteData";
 import { Phone, ChevronRight, Calendar } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { MohsStepper } from "@/components/ui/MohsStepper";
 import { MohsDiagram } from "@/components/ui/MohsDiagram";
 import { HeroMedia } from "@/components/ui/HeroMedia";
 import { PortraitCard } from "@/components/ui/PortraitCard";
@@ -66,7 +65,7 @@ export default function Home() {
             </h1>
 
             <p className="mb-8 text-lg leading-relaxed text-white/80">
-              Skin cancer is what we do — all we do. Our{" "}
+              Skin cancer is what we do. Our{" "}
               <strong className="font-semibold text-white">
                 three board-certified and fellowship-trained surgeons
               </strong>{" "}
@@ -213,10 +212,6 @@ export default function Home() {
               </Link>
             </FadeIn>
 
-            <FadeIn delay={0.15}>
-              <p className="mb-8 font-semibold text-white/60">How the day unfolds, stage by stage</p>
-              <MohsStepper steps={mohsProcess.slice(0, 6)} />
-            </FadeIn>
           </div>
 
           {/* The procedure as line art — draws itself in as it enters view. */}

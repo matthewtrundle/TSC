@@ -66,7 +66,10 @@ export function useCountUp(
   duration: number = 2000,
   startOnView: boolean = true
 ): { value: number; ref: React.RefObject<HTMLDivElement | null> } {
-  const [value, setValue] = useState(0);
+  // Initialize at the target so server-rendered HTML carries the real number
+  // (no-JS and crawlers must never read "0 surgeons"); the count-up animation
+  // takes over from zero only once the element scrolls into view.
+  const [value, setValue] = useState(end);
   const [hasStarted, setHasStarted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 

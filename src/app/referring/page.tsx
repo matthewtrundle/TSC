@@ -29,8 +29,8 @@ export default function ReferringPage() {
               <p className="label-caps mb-6">For Referring Physicians</p>
               <h1 className="text-hero mb-6">Refer a patient</h1>
               <p className="text-lg text-[var(--warm-gray-light)] leading-relaxed">
-                Skin cancer surgery is all we do, and referrals are how most of
-                it arrives.
+                Skin cancer surgery is what we do, and referrals are how most
+                of it arrives.
               </p>
             </FadeIn>
 

@@ -20,9 +20,9 @@ const ITEMS = [
     // report PDF. The name renders as live text beside it (per abderm.org's
     // own header lockup) — text stays perfectly sharp at any zoom.
     name: "American Board of Dermatology",
-    logo: "/images/societies/abd-seal.png",
-    width: 1700,
-    height: 1700,
+    logo: "/images/societies/abd-seal.webp",
+    width: 800,
+    height: 800,
     href: "https://www.abderm.org",
     seal: true,
     textLockup: true,
