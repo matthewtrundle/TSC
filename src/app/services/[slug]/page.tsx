@@ -22,8 +22,8 @@ export async function generateMetadata({
   const procedure = getProcedure((await params).slug);
   if (!procedure) return {};
   return {
-    title: procedure.name,
-    description: procedure.summary,
+    title: procedure.seoTitle ?? procedure.name,
+    description: procedure.seoDescription ?? procedure.summary,
     alternates: { canonical: `/services/${procedure.slug}` },
     openGraph: {
       title: procedure.name,

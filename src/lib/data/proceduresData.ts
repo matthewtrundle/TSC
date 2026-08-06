@@ -25,6 +25,9 @@ export type Procedure = {
   imageAlt: string;
   /** Optional before/after pairs, from the practice's own patient photos. */
   gallery?: { before: string; after: string; label: string }[];
+  /** Optional SEO overrides for the metadata title/description. */
+  seoTitle?: string;
+  seoDescription?: string;
   /** Optional page-specific FAQ (rendered with FAQPage schema). */
   faqs?: { question: string; answer: string }[];
   /** Optional two-column treatment comparison table. */
@@ -341,6 +344,8 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "melanoma",
+    seoTitle: "Mohs Surgery for Melanoma in Plano, TX",
+    seoDescription: "Same-day Mohs surgery for melanoma with MART-1 and SOX10 immunostaining read in our own Plano laboratory - removal, margin control, and reconstruction in one visit. (972) 378-0620.",
     name: "Melanoma",
     summary:
       "The most serious common skin cancer — treated here with same-day, margin-controlled Mohs surgery for appropriate cases.",
