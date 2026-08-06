@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/data/siteData";
 import { procedures, getProcedure } from "@/lib/data/proceduresData";
 import { LuxuryCta } from "@/components/ui/LuxuryCta";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { CleftLiftDiagram } from "@/components/ui/CleftLiftDiagram";
 import { JsonLd, faqPageSchema } from "@/lib/structuredData";
 
 export function generateStaticParams() {
@@ -166,6 +167,16 @@ export default async function ProcedurePage({
           </div>
         </div>
       </section>
+
+      {/* Pilonidal only: the operation, drawn simply */}
+      {procedure.slug === "pilonidal-cyst-surgery" && (
+        <section className="border-t border-[var(--gray-200)] bg-white py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <p className="label-caps mb-10">A lift and a shift, drawn simply</p>
+            <CleftLiftDiagram />
+          </div>
+        </section>
+      )}
 
       {/* Optional page-specific FAQ */}
       {procedure.faqs && (
