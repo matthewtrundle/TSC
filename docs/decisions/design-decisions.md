@@ -257,3 +257,12 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   DOWNSCALED to 2880 as hero-building-wet2.webp/avif (385/291KB).
   Identity verified against the approved building master. Revert path
   unchanged: hero-building-morning.webp untouched in public/images.
+
+### 2026-08-06 — Hero iterated to rain-glaze + tighter crop (Dr. Modi)
+- "Too wet" verdict on the mirror version; regenerated at 4K with rain
+  glaze (broken sheen, no standing water) + tighter brief. Shipped
+  glaze-4k-1 (most architecturally faithful) with a crop-zoom executing
+  "zoom in a touch, less parking lot": 4% off sides, 2% top, 16% bottom.
+  hero-building-glaze.webp/avif (335KB). Alternates in album: glaze-4k-2
+  (tighter, foreground grasses, slight canopy drift), wet-4k-b (full
+  mirror). Revert to hero-building-morning.webp remains one line.
