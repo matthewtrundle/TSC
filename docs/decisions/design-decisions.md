@@ -247,3 +247,13 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   condition): hero-building-morning.webp remains in public/images
   untouched — swapping the one image prop in src/app/page.tsx line ~52
   restores the previous hero exactly.
+
+### 2026-08-06 — Hero upgraded to native-4K wet-mirror (staff preference)
+- Dr. Modi + staff preferred the high-shine mirror look; the first nb-2
+  ship was soft (1376px native, upscaled). Solved by regenerating at
+  NATIVE 4K: google/gemini-3.1-flash-image-preview-20260226 honors
+  image_config {image_size:"4K"} (5504x3072 out); the pro snapshots
+  ignore/reject it. Master: _building-cinematic/wet-4k-b.png. Shipped
+  DOWNSCALED to 2880 as hero-building-wet2.webp/avif (385/291KB).
+  Identity verified against the approved building master. Revert path
+  unchanged: hero-building-morning.webp untouched in public/images.
