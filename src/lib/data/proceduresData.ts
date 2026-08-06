@@ -25,6 +25,8 @@ export type Procedure = {
   imageAlt: string;
   /** Optional before/after pairs, from the practice's own patient photos. */
   gallery?: { before: string; after: string; label: string }[];
+  /** Optional page-specific FAQ (rendered with FAQPage schema). */
+  faqs?: { question: string; answer: string }[];
   /** Optional two-column treatment comparison table. */
   comparison?: {
     title: string;
@@ -588,6 +590,40 @@ export const procedures: Procedure[] = [
       {
         name: "Drainage of an acute abscess",
         note: "An acutely infected abscess is drained first for relief; the cleft lift then addresses the cause once things settle.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What kind of anesthesia is used for a cleft lift?",
+        answer: "General anesthesia is the most common approach — it is the safest way to keep you comfortable while you are positioned face-down for the operation. Your surgeon will go over the anesthesia plan with you before anything is scheduled.",
+      },
+      {
+        question: "Will I have a drain afterward?",
+        answer: "Usually, yes. A small drain exits the skin well away from the incision and empties into a self-contained bulb that you empty a few times a day. It typically stays in for about a week, and removing it is quick and simple.",
+      },
+      {
+        question: "What does wound care look like?",
+        answer: "Minimal — and that is much of the point. The incision is closed with dissolvable sutures and skin glue: no open wound, no daily packing. Most patients can shower the day after surgery.",
+      },
+      {
+        question: "Can I sit after the operation?",
+        answer: "Yes — sitting is not just allowed, it is encouraged, starting the day after surgery on a cushioned but supportive surface. Gentle pressure on the area actually helps the healing tissue settle.",
+      },
+      {
+        question: "How painful is the recovery?",
+        answer: "Generally much milder than patients expect — most discomfort is managed with simple oral medication in the first days. The chronic pain of the disease itself, by contrast, is what patients are usually gladdest to be rid of.",
+      },
+      {
+        question: "How much time will I need off work or school?",
+        answer: "Most patients are back within a few days. If your work involves prolonged sitting or heavy lifting, plan on one to two weeks. Your surgeon will tailor this to what you actually do all day.",
+      },
+      {
+        question: "When can I exercise again?",
+        answer: "Walking is encouraged from the first week. More vigorous activity — running, swimming — typically resumes once the drain is out, and full unrestricted exercise follows complete healing, usually within three to six weeks.",
+      },
+      {
+        question: "What will the area look like afterward?",
+        answer: "A gently curved scar that sits off to the side of the midline, and a cleft that is noticeably shallower and flatter than before. That reshaping is not a side effect — it is the treatment, and it is why the disease does not come back.",
       },
     ],
     comparison: {

@@ -6,6 +6,8 @@ import { ChevronRight, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/data/siteData";
 import { procedures, getProcedure } from "@/lib/data/proceduresData";
 import { LuxuryCta } from "@/components/ui/LuxuryCta";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { JsonLd, faqPageSchema } from "@/lib/structuredData";
 
 export function generateStaticParams() {
   return procedures.map((p) => ({ slug: p.slug }));
@@ -164,6 +166,28 @@ export default async function ProcedurePage({
           </div>
         </div>
       </section>
+
+      {/* Optional page-specific FAQ */}
+      {procedure.faqs && (
+        <section className="border-t border-[var(--gray-200)] bg-[var(--ivory-deep)] py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <JsonLd data={faqPageSchema(procedure.faqs)} />
+            <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
+              <div className="lg:col-span-2">
+                <h2 className="text-display mb-4">Common questions</h2>
+                <span aria-hidden="true" className="rule-bronze mb-6" />
+                <p className="leading-relaxed text-[var(--warm-gray-light)]">
+                  Answers reflect the typical course — your surgeon will go
+                  over the specifics of your own plan.
+                </p>
+              </div>
+              <div className="lg:col-span-3">
+                <FaqAccordion faqs={procedure.faqs} />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Optional treatment comparison table */}
       {procedure.comparison && (
