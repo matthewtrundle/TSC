@@ -266,3 +266,10 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   hero-building-glaze.webp/avif (335KB). Alternates in album: glaze-4k-2
   (tighter, foreground grasses, slight canopy drift), wet-4k-b (full
   mirror). Revert to hero-building-morning.webp remains one line.
+
+### 2026-08-06 — Hero CONFIRMED: rain-glaze (staff + Dr. Modi)
+- Staff reviewed the rain-glaze hero on the preview and approved; Dr. Modi
+  confirmed "let's keep it." hero-building-glaze.webp is the standing home
+  hero. hero-building-morning.webp stays in public/images as the archived
+  revert option (do not delete). The 4K masters and all alternates remain
+  in _building-cinematic/.
