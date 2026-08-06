@@ -79,8 +79,11 @@ export default function PrivacyPage() {
                   Cookies and tracking
                 </h2>
                 <p>
-                  This website does not set advertising cookies and does not
-                  use advertising or social-media tracking pixels. Embedded
+                  This website uses privacy-preserving, cookieless analytics
+                  (Vercel Web Analytics) that count page visits without
+                  identifying or tracking individual visitors. It does not set
+                  advertising cookies and does not use advertising or
+                  social-media tracking pixels. Embedded
                   third-party content — such as the Google map on our contact
                   page — and the external services we link to (our patient
                   portal, bill pay, and Google reviews) are operated by their

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileCallBar from "@/components/layout/MobileCallBar";
+import { Analytics } from "@vercel/analytics/next";
 import { JsonLd, medicalBusinessSchema, SITE_URL } from "@/lib/structuredData";
 
 // Three-tier type system: Cormorant Garamond carries display sizes only
@@ -108,6 +109,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
         <MobileCallBar />
+        <Analytics />
       </body>
     </html>
   );
