@@ -56,8 +56,8 @@ export default function ReferringPage() {
               <h2 className="text-display mb-6">How to refer</h2>
               <p className="text-[var(--warm-gray)] leading-relaxed mb-8">
                 Call the office, fax the referral, or send it by secure email.
-                Either way, we schedule directly with the patient and confirm
-                the appointment with your office.
+                However it reaches us, we schedule directly with the patient
+                and confirm the appointment with your office.
               </p>
 
               <div className="space-y-5">
@@ -79,7 +79,7 @@ export default function ReferringPage() {
                 </p>
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="inline-flex items-center gap-3 py-1 text-xl font-medium text-[var(--navy-primary)] transition-colors hover:text-[var(--teal-accent)] lg:text-2xl"
+                  className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 py-1 text-xl font-medium text-[var(--navy-primary)] transition-colors hover:text-[var(--teal-accent)] lg:text-2xl"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   <Mail className="h-5 w-5 shrink-0 text-[var(--bronze-text)]" aria-hidden="true" />

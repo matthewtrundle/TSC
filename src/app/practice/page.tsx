@@ -143,7 +143,7 @@ export default function PracticePage() {
                   ],
                   [
                     "Up to 99%",
-                    "cure rate, including cancers that have been treated before.",
+                    "cure rate for previously untreated skin cancers.",
                   ],
                   [
                     "Same day",
@@ -284,8 +284,8 @@ export default function PracticePage() {
                 <span className="font-semibold text-[var(--navy-primary)]">
                   {siteConfig.contact.address.full}
                 </span>
-                , with parking at the door. Surgery days start early — most
-                patients check in between 7:30 and 8:00am.
+                , with parking at the door. Surgery days start early — a
+                typical day begins with a 7:30 AM check-in.
               </p>
 
               <div className="space-y-4">

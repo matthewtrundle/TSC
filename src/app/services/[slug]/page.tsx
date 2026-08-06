@@ -38,7 +38,29 @@ export default async function ProcedurePage({
   const procedure = getProcedure((await params).slug);
   if (!procedure) notFound();
 
-  const related = procedures.filter((p) => p.slug !== procedure.slug).slice(0, 3);
+  // Curated per page: cancer pages cross-link cancers, benign pages link
+  // benign — the old first-three fallback sent melanoma readers to lipoma
+  // removal and starved the cancer pages of internal links.
+  const RELATED: Record<string, string[]> = {
+    melanoma: ["basal-cell-carcinoma", "squamous-cell-carcinoma", "actinic-keratosis"],
+    "basal-cell-carcinoma": ["squamous-cell-carcinoma", "melanoma", "actinic-keratosis"],
+    "squamous-cell-carcinoma": ["basal-cell-carcinoma", "actinic-keratosis", "melanoma"],
+    "actinic-keratosis": ["squamous-cell-carcinoma", "basal-cell-carcinoma", "skin-resurfacing"],
+    "cyst-removal": ["lipoma-removal", "benign-lesion-removal", "mole-removal"],
+    "lipoma-removal": ["cyst-removal", "benign-lesion-removal", "mole-removal"],
+    "mole-removal": ["benign-lesion-removal", "cyst-removal", "melanoma"],
+    "keloid-scar-revision": ["skin-resurfacing", "cyst-removal", "benign-lesion-removal"],
+    "benign-lesion-removal": ["mole-removal", "cyst-removal", "lipoma-removal"],
+    "nail-procedures": ["benign-lesion-removal", "mole-removal", "squamous-cell-carcinoma"],
+    "eyelid-biopsies": ["basal-cell-carcinoma", "mole-removal", "benign-lesion-removal"],
+    "lip-oral-biopsies": ["eyelid-biopsies", "benign-lesion-removal", "squamous-cell-carcinoma"],
+    "prp-hair-restoration": ["skin-resurfacing", "keloid-scar-revision", "mole-removal"],
+    "skin-resurfacing": ["actinic-keratosis", "prp-hair-restoration", "keloid-scar-revision"],
+  };
+  const relatedSlugs = RELATED[procedure.slug] ?? [];
+  const related = relatedSlugs.length
+    ? relatedSlugs.map((s) => procedures.find((p) => p.slug === s)).filter((p): p is NonNullable<typeof p> => Boolean(p))
+    : procedures.filter((p) => p.slug !== procedure.slug).slice(0, 3);
 
   return (
     <div className="pt-28">
@@ -129,10 +151,8 @@ export default async function ProcedurePage({
                 ))}
               </div>
               <p className="mt-6 text-sm leading-relaxed text-[var(--warm-gray-light)]">
-                Procedures are performed in our Plano office under local
-                anesthetic, and you leave with written wound-care instructions.
-                Your surgeon will walk you through what to expect before
-                anything is scheduled.
+                Your surgeon will walk you through what to expect — including
+                preparation and aftercare — before anything is scheduled.
               </p>
             </div>
           </div>

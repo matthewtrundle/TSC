@@ -113,7 +113,7 @@ export default function AppointmentPage() {
                 </h2>
                 <ol className="border-t border-[var(--gray-200)] mb-12">
                   {[
-                    "Our team will call you within 1 business day",
+                    "Our team will call you within one business day",
                     "We'll verify your insurance coverage",
                     "New patient forms sent via email",
                     "Appointment confirmation by phone or text",

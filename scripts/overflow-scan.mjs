@@ -12,7 +12,7 @@ const ROUTES = [
   "/services/squamous-cell-carcinoma", "/services/actinic-keratosis",
   "/services/cyst-removal", "/services/lipoma-removal", "/services/mole-removal",
   "/services/keloid-scar-revision", "/services/benign-lesion-removal",
-  "/services/nail-procedures", "/services/eyelid-biopsies",
+  "/services/nail-procedures", "/services/eyelid-biopsies", "/services/lip-oral-biopsies",
   "/services/prp-hair-restoration", "/services/skin-resurfacing",
 ];
 

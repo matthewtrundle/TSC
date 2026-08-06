@@ -200,8 +200,12 @@ export default function ContactPage() {
               found by texting &quot;HELP&quot;.
             </p>
             <p className="mt-2">
-              Privacy Policy: No mobile information will be shared with third parties/affiliates
-              for marketing/promotional purposes.
+              No mobile information will be shared with third parties/affiliates
+              for marketing/promotional purposes. See our{" "}
+              <a href="/privacy" className="underline hover:text-[var(--warm-gray)]">
+                Privacy Policy
+              </a>
+              .
             </p>
           </div>
         </div>

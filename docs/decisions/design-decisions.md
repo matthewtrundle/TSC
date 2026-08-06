@@ -273,3 +273,19 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   hero. hero-building-morning.webp stays in public/images as the archived
   revert option (do not delete). The 4K masters and all alternates remain
   in _building-cinematic/.
+
+### 2026-08-06 — Fine-tooth comb sweep (agents + mechanical) and fixes batch
+- Full-site comb (content agent, SEO agent, link crawl, axe 23 routes, 15
+  device widths, stale-claim greps). Fixed same day: practice-page 99%
+  claim wrongly extended to previously-treated cancers (ledger violation);
+  home accordion "state-of-the-art" (banned word, fixed at siteData
+  source); service-page boilerplate asserting unconfirmed anesthesia/
+  wound-care specifics softened to process language; BCC "reach 99%" →
+  "up to 99%"; practice check-in "7:30-8:00" window → 7:30 typical per
+  ledger; Parry title hyphenation aligned; referring "Either way" after
+  three options; accessibility "always available by phone" → office
+  hours; appointment "1"/"one business day" unified; contact SMS
+  disclaimer now links /privacy like appointment; referring email row
+  flex-wrap (overflowed ≤360px); related-procedures now CURATED per page
+  (cancer pages cross-link cancers — old first-3 logic sent melanoma
+  readers to lipoma removal and starved cancer pages of internal links).

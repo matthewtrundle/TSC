@@ -52,7 +52,8 @@ export default function AccessibilityPage() {
                 </h2>
                 <p>
                   If any part of this site is difficult for you to use, we
-                  want to know — and our staff is always available by phone.
+                  want to know — and our staff is available by phone during
+                  office hours.
                   Call{" "}
                   <a href={`tel:${siteConfig.contact.phoneRaw}`} className="font-semibold text-[var(--bronze-text)] hover:underline">
                     {siteConfig.contact.phone}

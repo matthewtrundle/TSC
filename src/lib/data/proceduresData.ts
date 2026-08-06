@@ -370,7 +370,7 @@ export const procedures: Procedure[] = [
       "The most common skin cancer — slow to spread, but destructive locally. Mohs offers the most precise removal.",
     body: [
       "Basal cell carcinoma is the most common type of skin cancer. It typically develops on sun-exposed skin, grows slowly, and rarely spreads to other parts of the body — but left untreated it can be locally destructive, especially on the face.",
-      "For most basal cell carcinomas, Mohs micrographic surgery is the most precise treatment: the cancer is removed layer by layer with 100% of the margin examined on site, sparing as much healthy tissue as possible. Cure rates reach 99% for previously untreated cancers.",
+      "For most basal cell carcinomas, Mohs micrographic surgery is the most precise treatment: the cancer is removed layer by layer with 100% of the margin examined on site, sparing as much healthy tissue as possible. Cure rates are up to 99% for previously untreated cancers.",
     ],
     whenToConsider: [
       "A new bump that looks pearly, shiny, or translucent",
