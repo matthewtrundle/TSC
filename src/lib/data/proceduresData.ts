@@ -599,7 +599,7 @@ export const procedures: Procedure[] = [
       },
       {
         question: "Will I have a drain afterward?",
-        answer: "Usually, yes. A small drain exits the skin well away from the incision and empties into a self-contained bulb that you empty a few times a day. It typically stays in for about a week, and removing it is quick and simple.",
+        answer: "Usually, yes. A small drain exits the skin well away from the incision and empties into a self-contained bulb that you empty a few times a day. It typically stays in for about two days, and removing it is quick and simple.",
       },
       {
         question: "What does wound care look like?",

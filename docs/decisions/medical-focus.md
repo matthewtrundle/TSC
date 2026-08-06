@@ -90,3 +90,14 @@ in chat, record it here with the date, then update siteData.
   description is standard medicine, phrased generally.
 - **Status:** Confirmed
 - **Source:** Dr. Modi, chat, 2026-08-04
+
+### 2026-08-06 — Cleft-lift FAQ details CONFIRMED (Dr. Modi in chat)
+- **Decision:** The pilonidal cleft-lift FAQ answers are confirmed practice
+  facts: general anesthesia most common; drain typically ~TWO DAYS (his
+  correction — not the adapted source's one week); sitting encouraged from
+  the day after surgery; back to work in days (1-2 weeks for prolonged
+  sitting/heavy lifting); full activity with no restrictions in 3-6 weeks.
+  This supersedes the "pilonidal recovery details UNCONFIRMED" entry for
+  these specific items.
+- **Status:** Confirmed
+- **Source:** Dr. Modi, chat, 2026-08-06
