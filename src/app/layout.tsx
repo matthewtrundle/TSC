@@ -34,12 +34,12 @@ export const metadata: Metadata = {
   // Lets per-page `openGraph` and `alternates` use relative paths.
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "The Surgery Center at Plano Dermatology | Skin Cancer Specialists",
+    default: "Mohs Surgery in Plano, TX | The Surgery Center at Plano Dermatology",
     template: "%s | Plano Dermatology",
   },
   alternates: { canonical: "/" },
   description:
-    "Expert skin cancer surgery and medical dermatology care in Plano, Texas. Board-certified Mohs surgeons Dr. Modi, Dr. Wells, and Dr. Parry provide compassionate, advanced treatment.",
+    "Fellowship-trained Mohs surgeons treating skin cancer in Plano, TX - margins read in our own lab, cure rates up to 99%. Physician-owned. (972) 378-0620.",
   keywords: [
     "Mohs surgery",
     "skin cancer treatment",

@@ -12,11 +12,11 @@ import { PilonidalDiagram } from "@/components/ui/PilonidalDiagram";
 
 
 export const metadata: Metadata = {
-  title: "Skin Cancer Treatment & Mohs Surgery",
+  title: "Skin Cancer Treatment & Mohs Surgery in Plano, TX",
   description:
     "Mohs micrographic surgery, skin cancer treatment, and reconstruction at The Surgery Center at Plano Dermatology. Cure rates up to 99% with same-day margin results.",
   alternates: { canonical: "/services" },
-  openGraph: { title: "Skin Cancer Treatment & Mohs Surgery", description: "Mohs micrographic surgery, skin cancer treatment, and reconstruction at The Surgery Center at Plano Dermatology. Cure rates up to 99% with same-day margin results.", url: "/services" },
+  openGraph: { title: "Skin Cancer Treatment & Mohs Surgery in Plano, TX", description: "Mohs micrographic surgery, skin cancer treatment, and reconstruction at The Surgery Center at Plano Dermatology. Cure rates up to 99% with same-day margin results.", url: "/services" },
 };
 
 // Feature lines still awaiting confirmation from the practice are marked

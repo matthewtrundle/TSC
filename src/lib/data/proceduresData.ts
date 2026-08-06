@@ -42,6 +42,7 @@ export type Procedure = {
 export const procedures: Procedure[] = [
   {
     slug: "cyst-removal",
+    seoTitle: "Cyst Removal in Plano, TX",
     name: "Cyst Removal",
     summary:
       "Complete excision of painful, infected, or bothersome cysts, including the sac, to help prevent recurrence.",
@@ -70,6 +71,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "lipoma-removal",
+    seoTitle: "Lipoma Removal in Plano, TX",
     name: "Lipoma Removal",
     summary:
       "Removal of benign fatty growths through a small incision, preserving the surrounding tissue.",
@@ -93,6 +95,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "mole-removal",
+    seoTitle: "Mole Removal & Evaluation in Plano, TX",
     name: "Mole Evaluation & Removal",
     summary:
       "Surgical evaluation and removal of irregular, symptomatic, or unwanted moles — with pathology when it matters.",
@@ -121,6 +124,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "keloid-scar-revision",
+    seoTitle: "Keloid Removal & Scar Revision in Plano, TX",
     name: "Keloid & Scar Revision",
     summary:
       "Surgical revision of raised, thickened, or uncomfortable scars to improve appearance and function.",
@@ -145,6 +149,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "benign-lesion-removal",
+    seoTitle: "Benign Skin Lesion Removal in Plano, TX",
     name: "Benign Lesion Removal",
     summary:
       "Seborrheic keratoses, skin tags, warts, and other benign growths, removed with attention to cosmetic outcome.",
@@ -169,6 +174,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "nail-procedures",
+    seoTitle: "Nail Surgery & Nail Biopsies in Plano, TX",
     name: "Nail Procedures & Nail Biopsies",
     summary:
       "Nail matrix surgery and nail-unit biopsies — including evaluation of streaks and growths under the nail.",
@@ -197,6 +203,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "eyelid-biopsies",
+    seoTitle: "Eyelid Biopsies in Plano, TX",
     name: "Eyelid Biopsies",
     summary:
       "Careful sampling of suspicious eyelid lesions — delicate territory our surgeons work in routinely.",
@@ -221,6 +228,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "lip-oral-biopsies",
+    seoTitle: "Lip, Gum & Oral Biopsies in Plano, TX",
     name: "Lip & Oral Biopsies",
     summary:
       "Biopsies of the lip, gums, and tongue — for growths, and to help confirm inflammatory and autoimmune conditions.",
@@ -249,6 +257,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "prp-hair-restoration",
+    seoTitle: "PRP Hair Restoration & Hair Loss Treatment in Plano, TX",
     name: "Hair Loss & PRP",
     summary:
       "Hair loss treated holistically — clinical examination, laboratory workup, oral and topical medication, and platelet-rich plasma.",
@@ -288,6 +297,7 @@ export const procedures: Procedure[] = [
   {
     // Confirmed by Dr. Modi in chat 2026-08-02.
     slug: "skin-resurfacing",
+    seoTitle: "CO2 Laser & Chemical Peel Skin Resurfacing in Plano, TX",
     name: "Skin Resurfacing",
     summary:
       "Fractional CO2 laser and full thickness chemical peels — for photo aging, actinic damage and pre-cancers, and facial rejuvenation.",
@@ -317,6 +327,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "actinic-keratosis",
+    seoTitle: "Actinic Keratosis Treatment in Plano, TX",
     name: "Actinic Keratosis",
     summary:
       "Treatment of precancerous sun-damage lesions before they can progress to squamous cell carcinoma.",
@@ -379,6 +390,8 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "basal-cell-carcinoma",
+    seoTitle: "Basal Cell Carcinoma Treatment & Mohs Surgery in Plano, TX",
+    seoDescription: "Mohs micrographic surgery for basal cell carcinoma in Plano, TX - margins read on site, cure rates up to 99% for previously untreated cancers, same-day reconstruction.",
     name: "Basal Cell Carcinoma",
     summary:
       "The most common skin cancer — slow to spread, but destructive locally. Mohs offers the most precise removal.",
@@ -407,6 +420,8 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "squamous-cell-carcinoma",
+    seoTitle: "Squamous Cell Carcinoma Treatment & Mohs Surgery in Plano, TX",
+    seoDescription: "Mohs surgery for squamous cell carcinoma in Plano, TX by fellowship-trained surgeons - full margin control, high-risk tumors immunostained in our own laboratory.",
     name: "Squamous Cell Carcinoma",
     summary:
       "The second most common skin cancer — treated promptly because it can spread. High-risk tumors get immunostained margin control.",
@@ -435,6 +450,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "sebaceous-carcinoma",
+    seoTitle: "Sebaceous Carcinoma Treatment in Plano, TX",
     name: "Sebaceous Carcinoma",
     summary:
       "A rare, aggressive cancer of the skin's oil glands — often on the eyelid, often mistaken for a stye — treated with margin-controlled surgery.",
@@ -463,6 +479,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "dermatofibrosarcoma-protuberans",
+    seoTitle: "DFSP Treatment (Dermatofibrosarcoma Protuberans) in Plano, TX",
     name: "Dermatofibrosarcoma Protuberans (DFSP)",
     summary:
       "A rare cancer of the deeper skin that spreads by root-like extensions — the problem margin-controlled surgery was built to solve.",
@@ -490,6 +507,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "atypical-fibroxanthoma",
+    seoTitle: "Atypical Fibroxanthoma (AFX) Treatment in Plano, TX",
     name: "Atypical Fibroxanthoma (AFX)",
     summary:
       "A rare tumor of heavily sun-damaged skin — scalp, ears, face — where complete margin-controlled removal is the standard of care.",
@@ -517,6 +535,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "microcystic-adnexal-carcinoma",
+    seoTitle: "Microcystic Adnexal Carcinoma Treatment in Plano, TX",
     name: "Microcystic Adnexal Carcinoma (MAC)",
     summary:
       "A rare sweat-gland cancer of the central face that runs far deeper and wider than it appears — margin control is what catches it.",
@@ -544,6 +563,7 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "extramammary-paget-disease",
+    seoTitle: "Extramammary Paget's Disease Treatment in Plano, TX",
     name: "Extramammary Paget's Disease (EMPD)",
     summary:
       "A rare cancer that masquerades as a stubborn rash in delicate areas — indistinct edges make margin-controlled surgery the right tool.",
@@ -571,6 +591,8 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "pilonidal-cyst-surgery",
+    seoTitle: "Pilonidal Cyst Surgery & Bascom Cleft Lift in Plano, TX",
+    seoDescription: "The Bascom cleft lift for pilonidal disease in Plano, TX - outpatient surgery that fixes the infection and the anatomy, with 95-97% success in published series.",
     name: "Pilonidal Disease & the Bascom Cleft Lift",
     summary:
       "Definitive surgery for pilonidal disease — a lift and a shift that fixes the infection, the wound, and the anatomy that caused it.",

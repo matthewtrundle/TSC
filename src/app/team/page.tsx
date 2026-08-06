@@ -8,11 +8,11 @@ import { JsonLd, physicianSchema } from "@/lib/structuredData";
 
 
 export const metadata: Metadata = {
-  title: "Our Surgeons",
+  title: "Board-Certified Dermatologists & Mohs Surgeons in Plano, TX",
   description:
     "Meet Dr. Gunjan Modi, Dr. Michael Wells, and Dr. Edward Parry — three board certified, fellowship trained Mohs surgeons in Plano, Texas.",
   alternates: { canonical: "/team" },
-  openGraph: { title: "Our Surgeons", description: "Meet Dr. Gunjan Modi, Dr. Michael Wells, and Dr. Edward Parry — three board certified, fellowship trained Mohs surgeons in Plano, Texas.", url: "/team" },
+  openGraph: { title: "Board-Certified Dermatologists & Mohs Surgeons in Plano, TX", description: "Meet Dr. Gunjan Modi, Dr. Michael Wells, and Dr. Edward Parry — three board certified, fellowship trained Mohs surgeons in Plano, Texas.", url: "/team" },
 };
 
 // Fellowship line per surgeon, pulled from the education data so the header
