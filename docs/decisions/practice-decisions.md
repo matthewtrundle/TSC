@@ -236,3 +236,10 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   (high-risk panel remains unconfirmed). All 8 cancers in the "we treat"
   list now linkify; services bands + directory + curated related-links
   wired; 29 pages in sitemap. New pages pass axe + layout checks.
+
+### 2026-08-07 — Privacy page accepted; launch blockers cleared (Dr. Modi)
+- Dr. Modi accepted the /privacy page on Claude's assessment ("If you think
+  the privacy page is good, I'm okay with that right now") — final launch
+  blocker cleared. Attorney review remains a someday-item, not a blocker.
+- Texting on the main office number TABLED until the 8x8 BAA is confirmed
+  signed (request process given to office manager 2026-08-07).
