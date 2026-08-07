@@ -252,3 +252,11 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   {"ok":true}, MX/email untouched. Zero downtime. Rollback = revert the
   two DNS records. Polish pending: bare-domain primary in Vercel, Search
   Console, GBP links, DreamHost cancellation after stability window.
+
+### 2026-08-07 — Group photo APPROVED by all three surgeons
+- group-navy-2-FINAL.png (navy scrubs, Wells brow matched to group-1 ref,
+  FIGS de-branded, faces identity-locked from the approved warm portraits)
+  passed the three-surgeon likeness gate ("They are good with the photo").
+  Cleared for public use: GBP team photo (JPG exported to
+  _google-business-photos/team-three-surgeons.jpg) and website when
+  desired. This RESOLVES the parked staff-group-photo item.
