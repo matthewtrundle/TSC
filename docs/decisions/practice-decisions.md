@@ -243,3 +243,12 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   blocker cleared. Attorney review remains a someday-item, not a blocker.
 - Texting on the main office number TABLED until the 8x8 BAA is confirmed
   signed (request process given to office manager 2026-08-07).
+
+### 2026-08-07 — 🚀 LAUNCHED (Dr. Modi: "launch")
+- planoderm.com now serves the redesign from Dr. Modi's own Vercel.
+  Merge main 96ce55d (fast-forward); DNS: root A → 76.76.21.21, www CNAME
+  → cname.vercel-dns.com (both gray). Verified live: title, redirect map
+  (old /physicians/modi/ → /team#dr-modi end-to-end), production form
+  {"ok":true}, MX/email untouched. Zero downtime. Rollback = revert the
+  two DNS records. Polish pending: bare-domain primary in Vercel, Search
+  Console, GBP links, DreamHost cancellation after stability window.
