@@ -24,7 +24,6 @@ function FieldError({ id, message }: { id: string; message?: string }) {
  */
 export function AppointmentForm() {
   const [formData, setFormData] = useState({
-    company: "",
     firstName: "",
     lastName: "",
     email: "",
@@ -34,8 +33,6 @@ export function AppointmentForm() {
     referralSource: "",
     message: "",
   });
-  // Honeypot timing: bots submit instantly; humans take seconds.
-  const [startedAt] = useState(() => Date.now());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
@@ -51,7 +48,7 @@ export function AppointmentForm() {
       const response = await fetch("/api/appointment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, startedAt }),
+        body: JSON.stringify(formData),
       });
       const result = await response.json();
 
@@ -329,12 +326,6 @@ export function AppointmentForm() {
               {formError}
             </div>
           )}
-          {/* Honeypot — invisible to humans; bots that fill it are dropped. */}
-          <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", height: 0, overflow: "hidden" }}>
-            <label htmlFor="hp-company">Company</label>
-            <input id="hp-company" name="company" type="text" tabIndex={-1} autoComplete="off" value={formData.company} onChange={handleChange} />
-          </div>
-
       
           <button
             type="submit"

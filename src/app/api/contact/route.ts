@@ -22,6 +22,13 @@ export async function POST(request: Request) {
   }
 
   const data = (payload ?? {}) as Record<string, unknown>;
+  // Honeypot + timing: pretend success so bots learn nothing; send nothing.
+  const hp = typeof data.company === "string" && data.company.trim().length > 0;
+  const tooFast = typeof data.startedAt === "number" && Date.now() - data.startedAt < 4000;
+  if (hp || tooFast) {
+    return NextResponse.json({ ok: true });
+  }
+
   const errors: FieldErrors = {};
 
   const name = requireText(errors, "name", data.name, "Name", 120);
