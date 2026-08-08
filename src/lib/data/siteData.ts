@@ -402,9 +402,9 @@ export const services = [
     shortName: "Other Services",
     slug: "other-procedures",
     description:
-      "Beyond skin cancer treatment, our surgeons perform a variety of dermatologic procedures including mole and cyst removal, nail procedures, and treatment of other skin conditions.",
+      "Beyond skin cancer treatment, our surgeons perform a variety of dermatologic procedures including mole and cyst removal, earlobe repair, nail procedures, and treatment of other skin conditions.",
     shortDescription:
-      "Mole removal, cyst removal, nail procedures, and more.",
+      "Mole removal, cyst removal, earlobe repair, nail procedures, and more.",
     icon: "plus",
     // Specific procedures live as linked detail pages on the services page —
     // these features carry the how, not a duplicate what.

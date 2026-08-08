@@ -148,6 +148,73 @@ export const procedures: Procedure[] = [
     imageAlt: "Soft surgical light reflected in polished steel",
   },
   {
+    // Offering confirmed by Dr. Modi in chat 2026-08-08. Procedure framing
+    // follows national norms (torn / stretched / age-related elongation);
+    // no pricing, duration, or protocol specifics until the doctors set them.
+    slug: "earlobe-repair",
+    seoTitle: "Earlobe Repair in Plano, TX — Torn & Stretched Earlobes",
+    seoDescription:
+      "Surgical repair of torn, split, and stretched earlobes in Plano, TX. In-office procedure under local anesthetic by fellowship-trained surgeons, with fine layered closure and re-piercing guidance.",
+    name: "Earlobe Repair",
+    summary:
+      "Surgical repair of torn, split, or stretched earlobes — a short office procedure with closure designed for the final appearance.",
+    body: [
+      "Earlobes carry a lifetime of wear. A single pull — an earring caught on a sweater, a grab from a small child — can split the lobe outright. More often the change is gradual: years of earrings slowly lengthen the piercing until studs sit low, dangle unevenly, or slip through altogether. And with time the lobe itself softens and elongates, so earrings no longer rest where they once did.",
+      "Repair is a short procedure performed in our office under local anesthetic. The torn or stretched tract is removed entirely — simply stitching over it would leave a weakened channel — and the lobe is rebuilt with fine, layered sutures that restore its natural contour. The closure draws on the same techniques our surgeons use every day in facial reconstruction after skin cancer surgery, where the final appearance is the measure of the work.",
+      "Most patients return to their normal day immediately. Once the repair has fully healed, most earlobes can be pierced again, with the new piercing placed just beside the repaired line — your surgeon will tell you when the tissue is ready.",
+    ],
+    whenToConsider: [
+      "A torn or split earlobe — whether it happened yesterday or years ago",
+      "A piercing stretched so far that earrings droop, hang unevenly, or pull through",
+      "Earlobes elongated by years of heavy earrings",
+      "A partial tear you would like repaired before it splits completely",
+    ],
+    techniques: [
+      {
+        name: "Torn earlobe repair",
+        note: "The edges of the tear are freshened and the lobe rebuilt with fine layered sutures under local anesthetic.",
+      },
+      {
+        name: "Stretched piercing repair",
+        note: "The elongated tract is removed entirely and the lobe closed so it can hold an earring securely again.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Does earlobe repair hurt?",
+        answer:
+          "The lobe is numbed first with local anesthetic — a brief sting, then nothing. The repair itself is painless, and any soreness afterward is usually managed with over-the-counter medication.",
+      },
+      {
+        question: "Will there be a scar?",
+        answer:
+          "Any incision leaves a mark, but the earlobe heals well and the repair line typically fades into a fine, faint line. The layered closure techniques come from facial reconstruction, where the final appearance is the entire point.",
+      },
+      {
+        question: "Can I get my ear re-pierced afterward?",
+        answer:
+          "Usually, yes. Once the repair has fully healed and the tissue has regained its strength, the new piercing is placed just beside the repaired line rather than through it. Your surgeon will tell you when the lobe is ready.",
+      },
+      {
+        question: "My earlobe isn't torn — it has just stretched and drooped over the years. Can that be fixed?",
+        answer:
+          "Yes. A piercing lengthened by years of earrings, or a lobe that has elongated with time, can be reshaped the same way: the stretched tract is removed and the lobe rebuilt to a natural contour.",
+      },
+      {
+        question: "What is recovery like?",
+        answer:
+          "Most patients drive themselves home and return to normal activities the same day. You will care for the site with ointment for a short period, sutures are removed at a follow-up visit, and heavy earrings wait until the repair has matured.",
+      },
+      {
+        question: "Is earlobe repair covered by insurance?",
+        answer:
+          "It is generally considered a cosmetic procedure, so most insurance plans do not cover it. Our office can discuss cost with you when you schedule.",
+      },
+    ],
+    image: "/images/svc-surgical-light.webp",
+    imageAlt: "Soft surgical light reflected in polished steel",
+  },
+  {
     slug: "benign-lesion-removal",
     seoTitle: "Benign Skin Lesion Removal in Plano, TX",
     name: "Benign Lesion Removal",

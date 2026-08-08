@@ -52,7 +52,8 @@ export default async function ProcedurePage({
     "cyst-removal": ["lipoma-removal", "benign-lesion-removal", "mole-removal"],
     "lipoma-removal": ["cyst-removal", "benign-lesion-removal", "mole-removal"],
     "mole-removal": ["benign-lesion-removal", "cyst-removal", "melanoma"],
-    "keloid-scar-revision": ["skin-resurfacing", "cyst-removal", "benign-lesion-removal"],
+    "keloid-scar-revision": ["earlobe-repair", "skin-resurfacing", "benign-lesion-removal"],
+    "earlobe-repair": ["keloid-scar-revision", "cyst-removal", "benign-lesion-removal"],
     "benign-lesion-removal": ["mole-removal", "cyst-removal", "lipoma-removal"],
     "nail-procedures": ["benign-lesion-removal", "mole-removal", "squamous-cell-carcinoma"],
     "eyelid-biopsies": ["basal-cell-carcinoma", "mole-removal", "benign-lesion-removal"],
@@ -88,7 +89,13 @@ export default async function ProcedurePage({
 
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
             <div className="lg:col-span-3">
-              <h1 className="text-display-lg mb-6">{procedure.name}</h1>
+              {/* overflow-wrap:anywhere + hyphens: names like
+                  "Dermatofibrosarcoma" are wider than a 320px viewport at
+                  display size, and also inflate the grid column's min-content
+                  width — anywhere fixes both. */}
+              <h1 className="text-display-lg mb-6 [overflow-wrap:anywhere] [hyphens:auto]" lang="en">
+                {procedure.name}
+              </h1>
               <span aria-hidden="true" className="rule-bronze mb-6" />
               {procedure.body.map((paragraph) => (
                 <p

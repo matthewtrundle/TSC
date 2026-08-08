@@ -260,3 +260,21 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   Cleared for public use: GBP team photo (JPG exported to
   _google-business-photos/team-three-surgeons.jpg) and website when
   desired. This RESOLVES the parked staff-group-photo item.
+
+### 2026-08-08 — Earlobe repair added as a service (Dr. Modi)
+- Dr. Modi confirmed the practice performs earlobe repair and asked for a
+  full service treatment: front-page mention, services section, dedicated
+  SEO subpage, sitemap. Framing he specified: trauma tears, and gradual
+  elongation from heavy jewelry/time (phrased politely) letting earrings
+  droop, hang unevenly, or slip through.
+- Built /services/earlobe-repair (torn + stretched repair, 6 FAQs with
+  FAQPage schema, related-procedures links); listed under Additional
+  Procedures band + "Restorative & aesthetic" directory group; homepage
+  band copy updated; "Earlobe repair" added to the appointment-form reason
+  dropdown (before Nail issue — Dr. Modi may re-order or veto).
+- Content calibrated against national norms (R. Friedman MD Plano,
+  dermatology-practice earlobe pages). Conservative by design — NO pricing,
+  NO procedure-duration claims, NO gauged-earlobe reversal (not confirmed),
+  re-piercing timing left as "when your surgeon says ready".
+  AWAITING DR. MODI: whether to state re-piercing timeline (~6-8 wks
+  national norm), both-ears-same-visit, gauge reversals, pricing policy.

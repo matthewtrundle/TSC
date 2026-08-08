@@ -81,6 +81,7 @@ const bandDetailLinks: Record<string, { name: string; slug: string }[]> = {
     { name: "Lipoma removal", slug: "lipoma-removal" },
     { name: "Mole evaluation & removal", slug: "mole-removal" },
     { name: "Keloid & scar revision", slug: "keloid-scar-revision" },
+    { name: "Earlobe repair", slug: "earlobe-repair" },
     { name: "Benign lesion removal", slug: "benign-lesion-removal" },
     { name: "Nail procedures & biopsies", slug: "nail-procedures" },
     { name: "Eyelid biopsies", slug: "eyelid-biopsies" },
@@ -374,7 +375,7 @@ export default function ServicesPage() {
               },
               {
                 group: "Restorative & aesthetic",
-                slugs: ["skin-resurfacing", "prp-hair-restoration", "keloid-scar-revision"],
+                slugs: ["skin-resurfacing", "prp-hair-restoration", "keloid-scar-revision", "earlobe-repair"],
               },
             ].map(({ group, slugs }) => (
               <div key={group}>
