@@ -305,3 +305,12 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   Dr. Modi chose A — the existing SC monogram. favicon.ico rebuilt from
   src/app/icon.png (16/32/48). Google's cached SERP favicon refreshes on
   its own schedule (days to ~2 weeks).
+
+### 2026-08-08 — Header logo: wide single-line lockup (Dr. Modi: "Love it")
+- Header now uses a wide Logo layout ("THE SURGERY CENTER" one line, rule,
+  "PLANO DERMATOLOGY" below): ~24px main line on phones (was ~17px), 23-25px
+  on desktop, subline 7-9px (was ~5px). Trade-offs accepted: hamburger below
+  1216px (iPad Pro landscape included); full-size nav text reserved for 2xl
+  with a 90rem header container. Footer keeps the stacked master lockup.
+  CTA fit verified at 11 widths; note fixed-header overflow is invisible to
+  scrollWidth scans — check CTA right-edge explicitly when touching the nav.
