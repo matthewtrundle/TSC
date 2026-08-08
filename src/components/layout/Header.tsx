@@ -50,7 +50,7 @@ export default function Header() {
           isScrolled ? "max-h-0 border-b-0" : "max-h-10"
         }`}
       >
-        <div className="mx-auto flex h-10 max-w-7xl items-center justify-between gap-8 px-6">
+        <div className="mx-auto flex h-10 max-w-7xl 2xl:max-w-[90rem] items-center justify-between gap-8 px-6">
           <div className="flex items-center gap-6">
             <a
               href={siteConfig.links.patientPortal}
@@ -91,22 +91,44 @@ export default function Header() {
       </div>
 
       {/* Main row — logo left, nav + CTA right. */}
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl 2xl:max-w-[90rem] px-6">
         <div className="flex h-24 items-center justify-between gap-4 lg:h-[4.5rem] xl:gap-6">
+          {/* Wide single-line lockup at sizes tuned per breakpoint: the
+              stacked mark rendered THE SURGERY CENTER at ~17px and PLANO
+              DERMATOLOGY at ~5px, which Dr. Modi found unreadable
+              (2026-08-08). Phones get a viewport-clamped width so 320px
+              screens never overflow. */}
           <Link href="/" className="flex flex-shrink-0 items-center">
-            <Logo height={62} />
+            <Logo
+              layout="wide"
+              height={54}
+              className="min-[1216px]:hidden h-auto w-auto max-w-[min(270px,100vw-7.5rem)]"
+            />
+            <Logo
+              layout="wide"
+              height={44}
+              className="hidden min-[1216px]:block min-[1400px]:hidden"
+            />
+            <Logo
+              layout="wide"
+              height={52}
+              className="hidden min-[1400px]:block 2xl:hidden"
+            />
+            <Logo layout="wide" height={56} className="hidden 2xl:block" />
           </Link>
 
-          {/* Desktop Navigation. Sizes step down between lg and xl: six
-              tracked-caps items plus the CTA need ~1300px at full size, and
-              iPad-landscape viewports (1024-1194px) were cropping the CTA
-              off-screen. */}
-          <nav className="hidden min-[1120px]:flex items-center gap-3 xl:gap-6">
+          {/* Desktop Navigation. The wide logo costs ~100-160px more than the
+              old stacked mark, so the tiers moved up: hamburger below 1216px,
+              compact nav 1216-1535px, full size + big logo at 2xl. The header
+              is position:fixed, so overflow here never shows up in
+              scrollWidth checks — verify CTA right-edge explicitly at 1216,
+              1280, 1440, 1536 when touching these sizes. */}
+          <nav className="hidden min-[1216px]:flex items-center gap-3 2xl:gap-6">
             {navigation.main.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`whitespace-nowrap text-[0.75rem] tracking-[0.1em] xl:text-[0.8125rem] xl:tracking-[0.14em] uppercase font-semibold transition-colors ${
+                className={`whitespace-nowrap text-[0.75rem] tracking-[0.1em] 2xl:text-[0.8125rem] 2xl:tracking-[0.14em] uppercase font-semibold transition-colors ${
                   isActive(item.href)
                     ? "text-[var(--charcoal)] underline decoration-[var(--bronze)] decoration-2 underline-offset-8"
                     : "text-[var(--warm-gray-light)] hover:text-[var(--charcoal)]"
@@ -117,7 +139,7 @@ export default function Header() {
             ))}
             <Link
               href="/appointment"
-              className="btn-outline-bronze whitespace-nowrap px-3 py-2 text-[0.6875rem] xl:px-3.5 xl:text-[0.75rem]"
+              className="btn-outline-bronze whitespace-nowrap px-3 py-2 text-[0.6875rem] 2xl:px-3.5 2xl:text-[0.75rem]"
             >
               Request Appointment
             </Link>
@@ -126,7 +148,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="min-[1120px]:hidden inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-2 text-[var(--charcoal)]"
+            className="min-[1216px]:hidden inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-2 text-[var(--charcoal)]"
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
@@ -138,7 +160,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div id="mobile-menu" className="min-[1120px]:hidden bg-[var(--ivory)] border-t border-[var(--gray-200)]">
+        <div id="mobile-menu" className="min-[1216px]:hidden bg-[var(--ivory)] border-t border-[var(--gray-200)]">
           <div className="mx-auto max-w-7xl px-6 py-6">
             <nav className="flex flex-col gap-1">
               {navigation.main.map((item) => (
