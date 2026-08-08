@@ -292,3 +292,9 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   Friedman (Plano) $550 one ear / $995 both, gauged $1,250/$2,250;
   Texas Facial Aesthetics (Frisco) ~$1,100–1,250 per ear;
   Brobst (Plano) quotes $500–2,000 range.
+
+### 2026-08-08 — Earlobe repair LIVE (Dr. Modi: "go live, including xml")
+- Merged to main and verified in production: /services/earlobe-repair page
+  (title, FAQPage schema), homepage band mention, appointment reason option,
+  sitemap now 30 URLs including the new page. Search Console sitemap was
+  already registered — Google re-fetches on its own schedule.
