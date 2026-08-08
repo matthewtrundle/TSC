@@ -4,20 +4,18 @@
  * thin charcoal strokes with bronze accents, schematic rather than anatomical.
  * A side-view ear, tasteful and abstract.
  *
- * Flow is deliberately "A or B → the repair" rather than 01/02/03: the first
- * two panels are alternative problems, either of which leads to the same fix
- * (Dr. Modi 2026-08-08).
+ * Deliberately unnumbered (Dr. Modi 2026-08-08): the first two panels are
+ * alternative problems, either of which leads to the same fix — the captions
+ * carry that logic ("Either way, ...").
  */
 const STROKE = "#1C242C";
 const ACCENT = "#A6803E";
 
 function Panel({
-  step,
   title,
   caption,
   children,
 }: {
-  step: string;
   title: string;
   caption: string;
   children: React.ReactNode;
@@ -33,12 +31,6 @@ function Panel({
         {children}
       </svg>
       <figcaption>
-        <span
-          className="mr-2 text-lg"
-          style={{ fontFamily: "var(--font-serif)", color: "var(--bronze-text)" }}
-        >
-          {step}
-        </span>
         <span className="font-semibold text-[var(--navy-primary)]">{title}</span>
         <span className="mt-1 block text-sm leading-relaxed text-[var(--warm-gray)]">
           {caption}
@@ -77,7 +69,6 @@ export function EarlobeDiagram() {
   return (
     <div className="grid gap-10 sm:grid-cols-3">
       <Panel
-        step="A"
         title="A split lobe"
         caption="A sudden pull can tear the piercing clean through the edge of the lobe."
       >
@@ -87,7 +78,6 @@ export function EarlobeDiagram() {
       </Panel>
 
       <Panel
-        step="B"
         title="A stretched piercing"
         caption="Years of earrings lengthen the hole until studs sit low, hang unevenly, or slip through."
       >
@@ -105,8 +95,7 @@ export function EarlobeDiagram() {
       </Panel>
 
       <Panel
-        step="A or B →"
-        title="The repair"
+        title="The custom repair"
         caption="Either way, the damaged tract is removed and the lobe rebuilt with fine layered sutures to a natural contour."
       >
         <Ear />

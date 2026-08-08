@@ -208,7 +208,7 @@ export const procedures: Procedure[] = [
       {
         question: "Is earlobe repair covered by insurance?",
         answer:
-          "Sometimes. Coverage depends on your plan and the circumstances of the repair. The best way to find out is to visit with us — we will examine the lobe, walk you through your options, and discuss cost before anything is scheduled.",
+          "Sometimes. Coverage depends on your plan and the circumstances of the tear. The best way to find out is to visit with us — we will examine the lobe, walk you through your options, and discuss cost before anything is scheduled.",
       },
     ],
     image: "/images/svc-surgical-light.webp",
