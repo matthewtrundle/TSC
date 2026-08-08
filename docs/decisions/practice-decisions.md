@@ -278,3 +278,17 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   re-piercing timing left as "when your surgeon says ready".
   AWAITING DR. MODI: whether to state re-piercing timeline (~6-8 wks
   national norm), both-ears-same-visit, gauge reversals, pricing policy.
+
+### 2026-08-08 — Earlobe repair page revisions (Dr. Modi)
+- Body TIGHTENED (Dr. Modi: "a little too dramatic... too many words") to
+  three short paragraphs; re-piercing kept but "beside the scar line" and
+  "surgeon will tell you when tissue is ready" DELETED per Dr. Modi.
+- CONFIRMED by Dr. Modi: insurance answer is "Sometimes" + invitation to
+  visit and discuss; practice USUALLY OFFERS COMPLIMENTARY RE-PIERCING once
+  the ear has healed (now stated in the re-piercing FAQ).
+- Added EarlobeDiagram (3-panel line art: split lobe / stretched piercing
+  with drooping earring / after repair) in the CleftLiftDiagram style.
+- Local pricing intel gathered for Dr. Modi (NOT published on site):
+  Friedman (Plano) $550 one ear / $995 both, gauged $1,250/$2,250;
+  Texas Facial Aesthetics (Frisco) ~$1,100–1,250 per ear;
+  Brobst (Plano) quotes $500–2,000 range.

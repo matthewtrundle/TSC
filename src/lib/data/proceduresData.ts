@@ -159,9 +159,9 @@ export const procedures: Procedure[] = [
     summary:
       "Surgical repair of torn, split, or stretched earlobes — a short office procedure with closure designed for the final appearance.",
     body: [
-      "Earlobes carry a lifetime of wear. A single pull — an earring caught on a sweater, a grab from a small child — can split the lobe outright. More often the change is gradual: years of earrings slowly lengthen the piercing until studs sit low, dangle unevenly, or slip through altogether. And with time the lobe itself softens and elongates, so earrings no longer rest where they once did.",
-      "Repair is a short procedure performed in our office under local anesthetic. The torn or stretched tract is removed entirely — simply stitching over it would leave a weakened channel — and the lobe is rebuilt with fine, layered sutures that restore its natural contour. The closure draws on the same techniques our surgeons use every day in facial reconstruction after skin cancer surgery, where the final appearance is the measure of the work.",
-      "Most patients return to their normal day immediately. Once the repair has fully healed, most earlobes can be pierced again, with the new piercing placed just beside the repaired line — your surgeon will tell you when the tissue is ready.",
+      "A single pull — an earring caught on a sweater — can split an earlobe outright. More often the change is gradual: years of earrings lengthen the piercing until studs sit low, hang unevenly, or slip through entirely. With time, the lobe itself can stretch and droop.",
+      "Repair is a short office procedure under local anesthetic. The torn or stretched tract is removed and the lobe is rebuilt with fine, layered sutures — the same closure techniques our surgeons use every day in facial reconstruction after skin cancer surgery.",
+      "Most patients return to their normal day immediately, and once the repair has healed, the earlobe can be pierced again.",
     ],
     whenToConsider: [
       "A torn or split earlobe — whether it happened yesterday or years ago",
@@ -193,7 +193,7 @@ export const procedures: Procedure[] = [
       {
         question: "Can I get my ear re-pierced afterward?",
         answer:
-          "Usually, yes. Once the repair has fully healed and the tissue has regained its strength, the new piercing is placed just beside the repaired line rather than through it. Your surgeon will tell you when the lobe is ready.",
+          "Usually, yes. Once the repair has fully healed, the ear can be pierced again — and we usually offer complimentary re-piercing once the ear has healed.",
       },
       {
         question: "My earlobe isn't torn — it has just stretched and drooped over the years. Can that be fixed?",
@@ -208,7 +208,7 @@ export const procedures: Procedure[] = [
       {
         question: "Is earlobe repair covered by insurance?",
         answer:
-          "It is generally considered a cosmetic procedure, so most insurance plans do not cover it. Our office can discuss cost with you when you schedule.",
+          "Sometimes. Coverage depends on your plan and the circumstances of the repair. The best way to find out is to visit with us — we will examine the lobe, walk you through your options, and discuss cost before anything is scheduled.",
       },
     ],
     image: "/images/svc-surgical-light.webp",

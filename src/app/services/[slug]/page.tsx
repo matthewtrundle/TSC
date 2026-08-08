@@ -8,6 +8,7 @@ import { procedures, getProcedure } from "@/lib/data/proceduresData";
 import { LuxuryCta } from "@/components/ui/LuxuryCta";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { CleftLiftDiagram } from "@/components/ui/CleftLiftDiagram";
+import { EarlobeDiagram } from "@/components/ui/EarlobeDiagram";
 import { JsonLd, faqPageSchema } from "@/lib/structuredData";
 
 export function generateStaticParams() {
@@ -181,6 +182,16 @@ export default async function ProcedurePage({
           <div className="mx-auto max-w-6xl px-6">
             <p className="label-caps mb-10">A lift and a shift, drawn simply</p>
             <CleftLiftDiagram />
+          </div>
+        </section>
+      )}
+
+      {/* Earlobe only: the problem and the repair, drawn simply */}
+      {procedure.slug === "earlobe-repair" && (
+        <section className="border-t border-[var(--gray-200)] bg-white py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <p className="label-caps mb-10">Earlobe repair, drawn simply</p>
+            <EarlobeDiagram />
           </div>
         </section>
       )}
