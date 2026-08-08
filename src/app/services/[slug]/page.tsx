@@ -136,6 +136,16 @@ export default async function ProcedurePage({
         </div>
       </section>
 
+      {/* Earlobe only: the problem and the repair, drawn simply */}
+      {procedure.slug === "earlobe-repair" && (
+        <section className="border-t border-[var(--gray-200)] bg-white py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <p className="label-caps mb-10">Earlobe repair, drawn simply</p>
+            <EarlobeDiagram />
+          </div>
+        </section>
+      )}
+
       {/* When to consider + how we treat it */}
       <section className="py-20 bg-[var(--ivory-deep)]">
         <div className="mx-auto max-w-6xl px-6">
@@ -182,16 +192,6 @@ export default async function ProcedurePage({
           <div className="mx-auto max-w-6xl px-6">
             <p className="label-caps mb-10">A lift and a shift, drawn simply</p>
             <CleftLiftDiagram />
-          </div>
-        </section>
-      )}
-
-      {/* Earlobe only: the problem and the repair, drawn simply */}
-      {procedure.slug === "earlobe-repair" && (
-        <section className="border-t border-[var(--gray-200)] bg-white py-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <p className="label-caps mb-10">Earlobe repair, drawn simply</p>
-            <EarlobeDiagram />
           </div>
         </section>
       )}
