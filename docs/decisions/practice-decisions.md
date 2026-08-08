@@ -314,3 +314,9 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   with a 90rem header container. Footer keeps the stacked master lockup.
   CTA fit verified at 11 widths; note fixed-header overflow is invisible to
   scrollWidth scans — check CTA right-edge explicitly when touching the nav.
+
+### 2026-08-08 — Front-office Google profile icon: SC monogram (option A)
+- Dr. Modi chose the SC monogram (matching the new favicon) over line-art
+  microscope/scalpel/suture and photo options for the office@ Workspace
+  avatar. File: _profile-icons/FINAL-google-profile-SC.png (1024px).
+  Rationale: one mark across search results, Maps, and email.
