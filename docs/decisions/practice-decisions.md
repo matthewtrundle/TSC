@@ -320,3 +320,9 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   microscope/scalpel/suture and photo options for the office@ Workspace
   avatar. File: _profile-icons/FINAL-google-profile-SC.png (1024px).
   Rationale: one mark across search results, Maps, and email.
+
+### 2026-08-08 — Workspace branding complete
+- Custom logo (wide lockup, 320x132) uploaded to Google Admin Personalization
+  by Dr. Modi — replaces the "Google" wordmark in Gmail/Drive/Calendar for
+  the whole practice. SC monogram set as office@ profile avatar. Signature
+  image (logo-wide-white.png) provided for Gmail signatures.
