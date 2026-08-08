@@ -298,3 +298,10 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   (title, FAQPage schema), homepage band mention, appointment reason option,
   sitemap now 30 URLs including the new page. Search Console sitemap was
   already registered — Google re-fetches on its own schedule.
+
+### 2026-08-08 — Favicon: Dr. Modi chose the SC mark (option A)
+- The live favicon.ico was Vercel's default triangle (leftover), outranking
+  the site's SC icon in Google results. Five candidates shown at SERP scale;
+  Dr. Modi chose A — the existing SC monogram. favicon.ico rebuilt from
+  src/app/icon.png (16/32/48). Google's cached SERP favicon refreshes on
+  its own schedule (days to ~2 weeks).
