@@ -84,21 +84,16 @@ export function CredentialBar({
 }: CredentialBarProps) {
   if (variant === "dark") {
     return (
+      // Phones: a centered vertical list, one credential per line. sm+: an
+      // inline wrapping row spaced by gaps alone. No diamond separators at
+      // any size — the strip wraps at most widths, and wrapping strands a
+      // separator at the start of each new line (Dr. Modi's iOS screenshot,
+      // 2026-08-09).
       <ul
-        className={`flex flex-wrap items-center justify-center gap-x-5 gap-y-3 ${className}`.trim()}
+        className={`flex flex-col items-center gap-y-2.5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-9 sm:gap-y-3 ${className}`.trim()}
       >
-        {ITEMS.map((item, index) => (
-          <li key={item.name} className="flex items-center gap-x-5">
-            {index > 0 && (
-              <span
-                aria-hidden="true"
-                className="text-[0.4375rem] leading-none text-[var(--champagne)]"
-              >
-                &#9670;
-              </span>
-            )}
-            {/* Nowrap only once the viewport can afford it — on phones the
-                longest society name is wider than the screen and must wrap. */}
+        {ITEMS.map((item) => (
+          <li key={item.name} className="flex items-center justify-center">
             <a
               href={item.href}
               target="_blank"
