@@ -54,6 +54,17 @@ export function medicalBusinessSchema() {
       addressCountry: "US",
     },
     openingHoursSpecification: openingHours(),
+    // The practice's true catchment (Dr. Modi, 2026-08-09): Collin County
+    // suburbs, the US-75 corridor through Grayson County, Denton/Cooke to
+    // the west, and southern Oklahoma. Mirrored on /areas-we-serve.
+    areaServed: [
+      "Plano", "Frisco", "Allen", "McKinney", "Prosper", "Celina", "Anna",
+      "Melissa", "Lucas", "Wylie", "Sachse", "Murphy", "Richardson", "Dallas",
+      "Gunter", "Howe", "Van Alstyne", "Sherman", "Denison", "Pottsboro",
+      "Bells", "Denton", "Little Elm", "Gainesville",
+    ]
+      .map((name) => ({ "@type": "City" as const, name: `${name}, TX` }))
+      .concat([{ "@type": "City" as const, name: "Durant, OK" }]),
     availableService: services.map((service) => ({
       "@type": "MedicalProcedure",
       name: service.name,

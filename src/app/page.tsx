@@ -91,7 +91,13 @@ export default function Home() {
 
             <p className="text-sm text-white/60">
               Physician-owned and operated &middot; Physician referrals welcome
-              &middot; Most insurance accepted
+              &middot; Most insurance accepted &middot;{" "}
+              <Link
+                href="/areas-we-serve"
+                className="underline decoration-white/30 underline-offset-4 transition-colors hover:text-white"
+              >
+                Serving all of North Texas
+              </Link>
             </p>
           </div>
         </div>

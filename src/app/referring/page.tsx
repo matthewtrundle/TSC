@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { siteConfig } from "@/lib/data/siteData";
 import { Mail, Phone, Printer } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -41,7 +42,14 @@ export default function ReferringPage() {
                 care — we treat the cancer you send us and send the patient
                 back. No referral forms or portals are required: a phone call
                 or a fax is enough, and our staff handles the rest with your
-                office and the patient.
+                office and the patient. Referrals reach us from{" "}
+                <Link
+                  href="/areas-we-serve"
+                  className="font-semibold text-[var(--bronze-text)] transition-colors hover:text-[var(--charcoal)]"
+                >
+                  across North Texas and southern Oklahoma
+                </Link>
+                {" "}— distance is rarely a barrier for a one-visit surgery.
               </p>
             </FadeIn>
           </div>
