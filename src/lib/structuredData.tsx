@@ -61,7 +61,7 @@ export function medicalBusinessSchema() {
       "Plano", "Frisco", "Allen", "McKinney", "Prosper", "Celina", "Anna",
       "Melissa", "Lucas", "Wylie", "Sachse", "Murphy", "Richardson", "Dallas",
       "Gunter", "Howe", "Van Alstyne", "Sherman", "Denison", "Pottsboro",
-      "Bells", "Denton", "Little Elm", "Gainesville",
+      "Bells", "Denton", "Little Elm", "Gainesville", "Paris",
     ]
       .map((name) => ({ "@type": "City" as const, name: `${name}, TX` }))
       .concat([{ "@type": "City" as const, name: "Durant, OK" }]),

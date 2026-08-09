@@ -35,9 +35,9 @@ const AREA_GROUPS = [
     towns: ["Gunter", "Van Alstyne", "Howe", "Sherman", "Denison", "Pottsboro", "Bells"],
   },
   {
-    title: "West and northwest",
-    blurb: "US-380 and I-35 bring Denton and Cooke County straight to our door.",
-    towns: ["Denton", "Little Elm", "The Colony", "Gainesville"],
+    title: "East and west",
+    blurb: "US-380 runs both directions — Denton and Cooke County to the west, and referrals reach us from as far east as Paris.",
+    towns: ["Denton", "Little Elm", "The Colony", "Gainesville", "Paris"],
   },
   {
     title: "Southern Oklahoma",
