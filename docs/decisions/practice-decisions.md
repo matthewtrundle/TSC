@@ -326,3 +326,9 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   by Dr. Modi — replaces the "Google" wordmark in Gmail/Drive/Calendar for
   the whole practice. SC monogram set as office@ profile avatar. Signature
   image (logo-wide-white.png) provided for Gmail signatures.
+
+### 2026-08-09 — Footer credential strip cleanup (Dr. Modi iOS screenshot)
+- Wrapping stranded the diamond separators at line starts (worst on phones).
+  Fix live: phones get a centered one-per-line stack; sm+ keeps centered
+  wrapping rows with gap spacing only. Diamond separators retired at all
+  sizes.
