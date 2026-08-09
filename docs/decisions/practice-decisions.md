@@ -332,3 +332,18 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   Fix live: phones get a centered one-per-line stack; sm+ keeps centered
   wrapping rows with gap spacing only. Diamond separators retired at all
   sizes.
+
+### 2026-08-09 — Areas We Serve page LIVE (catchment strategy, Dr. Modi)
+- Dr. Modi's target catchment: Collin County suburbs + US-75 corridor
+  (Grayson Co.) + Denton/Gainesville + southern Oklahoma (Durant/Texoma);
+  Dallas is desirable but not the focus. PARIS INCLUDED — Dr. Modi confirmed
+  real referrals arrive from Paris, TX. Spellings normalized (Gunter,
+  Sachse, Denison).
+- Shipped: /areas-we-serve (4 community groups + one-trip-done-right case),
+  areaServed cities in MedicalBusiness schema, footer nav link, homepage
+  hero microline link, referring-page sentence. Deliberately NOT in header
+  nav (page is a Google landing door, header is full).
+- Strategy notes given: referral outreach to Sherman/Denison/McKinney/
+  Denton/Gainesville practices is the highest-yield next step (letter offer
+  open); ask happy out-of-town patients to name their city in reviews; NO
+  per-city doorway pages; Google Ads optional.
