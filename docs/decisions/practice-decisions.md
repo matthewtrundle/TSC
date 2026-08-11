@@ -421,3 +421,13 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - **Status:** Confirmed — live on planoderm.com (merge 1ba21e1)
 - **Source:** chat 2026-08-10
 - **Links:** [[medical-focus]] [[design-decisions]] [[focus-areas]]
+
+### 2026-08-11 — Cleft-lift comparison: sourcing note removed
+- **Decision:** The "Figures reflect ranges reported in the published
+  surgical literature…" note under the excision-vs-cleft-lift comparison
+  table is removed at Dr. Modi's direction. The comparison figures
+  (95–97% cleft-lift success; 30–50% midline-excision recurrence) stand
+  unchanged.
+- **Status:** Confirmed — live (commit 72c2c79)
+- **Source:** chat 2026-08-11
+- **Links:** [[medical-focus]]
