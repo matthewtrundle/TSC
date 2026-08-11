@@ -345,8 +345,9 @@ export const services = [
       "Definitive treatment for pilonidal disease, with an off-midline closure.",
     icon: "plus",
     features: [
-      // TODO(Dr. Modi): confirm recovery expectations and anesthesia before publishing.
-      "PLACEHOLDER — recovery time and anesthesia details to be confirmed",
+      // Recovery/anesthesia details confirmed by Dr. Modi 2026-08-06,
+      // reconfirmed 2026-08-10 (docs/decisions/medical-focus.md).
+      "Outpatient surgery under general anesthesia — sitting encouraged the next day, back to work within days",
       "Pilonidal cysts, abscesses, and sinus tracts — including recurrent disease",
       "Bascom cleft lift: the gold standard for cure",
       "Success rates of 95–97% in large published series",
@@ -387,7 +388,7 @@ export const services = [
     shortName: "Hair Loss & PRP",
     slug: "hair-loss",
     description:
-      "Hair loss is a medical problem before it is a cosmetic one, and we treat it that way. Evaluation starts with a physical and clinical examination and, where indicated, laboratory testing — because thyroid disease, iron deficiency, and other medical causes need to be found, not covered up. Treatment is then built holistically from the tools with evidence behind them: oral medications, topical medications, and platelet-rich plasma (PRP) — your own concentrated platelets injected into thinning areas over a series of sessions. PRP is one tool in a complete plan, not the whole plan.",
+      "Hair loss is a medical problem before it is a cosmetic one, and we treat it that way. Evaluation starts with a physical and clinical examination and, where indicated, laboratory testing — because thyroid disease, iron deficiency, and other medical causes need to be found, not covered up. Treatment is then built holistically from the tools with evidence behind them: oral medications, topical medications, and platelet-rich plasma (PRP) — your own concentrated platelets injected into thinning areas over a series of sessions. We use a second-generation preparation, platelet-rich fibrin matrix (PRFM), which converts the platelet concentrate into a natural fibrin gel — holding the platelets where they are placed and releasing their growth factors gradually, over days rather than minutes. PRP is one tool in a complete plan, not the whole plan.",
     shortDescription:
       "Hair loss treated holistically — clinical exam, laboratory workup, oral and topical medication, and PRP.",
     icon: "plus",
@@ -395,7 +396,7 @@ export const services = [
       "Physical and clinical examination of the scalp and hair",
       "Laboratory evaluation where indicated",
       "Oral and topical medical therapy",
-      "Platelet-rich plasma (PRP) injections",
+      "Second-generation PRP: platelet-rich fibrin matrix (PRFM) injections",
       "A complete, medical approach — not PRP in isolation",
     ],
     image: undefined as string | undefined,
