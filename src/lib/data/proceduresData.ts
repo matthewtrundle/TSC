@@ -23,6 +23,10 @@ export type Procedure = {
   /** Which evocative image pairs with the page. */
   image: string;
   imageAlt: string;
+  /** Real photography (e.g. the lab's own slides) renders in full color
+      with an optional caption; evocative imagery stays duotone. */
+  imageColor?: boolean;
+  imageCaption?: string;
   /** Optional before/after pairs, from the practice's own patient photos. */
   gallery?: { before: string; after: string; label: string }[];
   /** Optional SEO overrides for the metadata title/description. */
@@ -452,8 +456,12 @@ export const procedures: Procedure[] = [
         note: "Sentinel lymph node evaluation and referrals to medical oncology, arranged and followed by our team.",
       },
     ],
-    image: "/images/svc-histology-art.webp",
-    imageAlt: "Stained tissue section as abstract art",
+    // Real slide from the practice's own lab (Dr. Modi, 2026-08-10).
+    image: "/images/ihc/sox10-01.webp",
+    imageAlt: "SOX10 immunostain photographed through the microscope: melanocyte nuclei stained blue in a line along the epidermal underside",
+    imageColor: true,
+    imageCaption:
+      "From our own laboratory, on the day of surgery: a SOX10 immunostain — melanocyte nuclei stained blue, read while the patient waits.",
   },
   {
     slug: "basal-cell-carcinoma",

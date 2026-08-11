@@ -52,10 +52,18 @@ function withSameDayEmphasis(text: string) {
 
 // Evocative laboratory/instrument imagery for the bands that carry it — no
 // staged patients, no fake interiors. Keyed by service id.
-const serviceImages: Record<string, { src: string; alt: string }> = {
+const serviceImages: Record<
+  string,
+  { src: string; alt: string; color?: boolean; caption?: string }
+> = {
+  // Real slide photography (Dr. Modi's own lab, 2026-08-10) stays in COLOR
+  // with a caption — the stain is the story; duotone is for mood imagery.
   immunostaining: {
-    src: "/images/svc-histology-art.webp",
-    alt: "Stained tissue section under the microscope, an abstract field of color",
+    src: "/images/ihc/mart1-03.webp",
+    alt: "MART-1 immunostain photographed through the microscope: melanoma cells stained blue beneath the pink epidermis",
+    color: true,
+    caption:
+      "From our own laboratory, on the day of surgery: a MART-1 immunostain read in real time — melanoma cells stained blue, unmistakable at the margin.",
   },
   "high-risk-immunostaining": {
     src: "/images/svc-slide-glass.webp",
@@ -79,11 +87,9 @@ const bandDetailLinks: Record<string, { name: string; slug: string }[]> = {
     { name: "Squamous cell carcinoma", slug: "squamous-cell-carcinoma" },
     { name: "Actinic keratosis", slug: "actinic-keratosis" },
   ],
-  immunostaining: [
-    { name: "Melanoma, in detail", slug: "melanoma" },
-    { name: "Sebaceous carcinoma", slug: "sebaceous-carcinoma" },
-    { name: "DFSP", slug: "dermatofibrosarcoma-protuberans" },
-  ],
+  // Melanoma only (Dr. Modi 2026-08-10) — the sebaceous/DFSP pages still
+  // exist and stay reachable from the "we treat" cancer list below.
+  immunostaining: [{ name: "Melanoma, in detail", slug: "melanoma" }],
   "high-risk-immunostaining": [
     { name: "Atypical fibroxanthoma", slug: "atypical-fibroxanthoma" },
     { name: "Microcystic adnexal carcinoma", slug: "microcystic-adnexal-carcinoma" },
@@ -200,19 +206,32 @@ export default function ServicesPage() {
                     {service.shortDescription}
                   </p>
                   {image && (
-                    <div className="duotone-frame aspect-[4/5] mt-8">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        fill
-                        sizes="(min-width: 1024px) 21rem, 100vw"
-                        className="img-duotone object-cover"
-                      />
+                    <figure className="m-0 mt-8">
                       <div
-                        className="absolute inset-2 z-10 border border-[var(--hairline-bronze)] pointer-events-none"
-                        aria-hidden="true"
-                      />
-                    </div>
+                        className={
+                          image.color
+                            ? "relative overflow-hidden aspect-[4/3]"
+                            : "duotone-frame aspect-[4/5]"
+                        }
+                      >
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          sizes="(min-width: 1024px) 21rem, 100vw"
+                          className={image.color ? "object-cover" : "img-duotone object-cover"}
+                        />
+                        <div
+                          className="absolute inset-2 z-10 border border-[var(--hairline-bronze)] pointer-events-none"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      {image.caption && (
+                        <figcaption className="mt-3 text-sm leading-snug text-[var(--warm-gray-light)]">
+                          {image.caption}
+                        </figcaption>
+                      )}
+                    </figure>
                   )}
                 </FadeIn>
 
