@@ -756,7 +756,6 @@ export const procedures: Procedure[] = [
           b: "95-97% success in large published series, including recurrent disease.",
         },
       ],
-      note: "Figures reflect ranges reported in the published surgical literature and patient-advocacy resources for midline excision and the Bascom cleft lift; individual results vary, and your surgeon will discuss what applies to you.",
     },
     image: "/images/pilonidal-illustration.webp",
     imageAlt: "Illustration of the cleft lift concept",
