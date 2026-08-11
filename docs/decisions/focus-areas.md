@@ -54,10 +54,13 @@ These block publishable copy — details in [[medical-focus]]:
   captures). Archived at _original-photos/ihc-histology/ (project root):
   originals/ untouched, cleaned/ = crop + white-balance + contrast ONLY —
   conventional adjustments; generative AI on medical imagery is banned
-  (Dr. Modi asked; rule confirmed in chat). NEXT: Dr. Modi to label each
-  photo (stain + tumor) — captions are clinical claims, never guessed —
-  then design placement on the /services immunostaining bands + melanoma
-  page via preview.
+  (Dr. Modi asked; rule confirmed in chat). LABELED by Dr. Modi 2026-08-10:
+  mart1-01..05 are MART-1; sox10-01..02 are SOX10 (from IMG_0224/0225.HEIC).
+  All 7 cleaned with one hue-preserving pipeline (crop, softened WB,
+  tone-preserving contrast — per-channel stretch turned pale slides green,
+  lesson recorded). NEXT: placement design on the /services immunostaining
+  bands + melanoma page via preview; caption wording (tumor naming) goes to
+  Dr. Modi for approval on the preview.
 - **Real hero video clips** — `HeroMedia` is video-ready; currently runs Ken
   Burns stills. Waiting on real footage.
 - **Staff photography / team imagery** — Dr. Modi wants better source photos
