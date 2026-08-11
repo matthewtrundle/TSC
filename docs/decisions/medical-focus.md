@@ -67,13 +67,27 @@ say-so. See [[practice-decisions]] for the no-fabricated-content rule and the
 - **Source:** Dr. Modi, chat 2026-08-10
 - **Links:** [[focus-areas]] [[practice-decisions]]
 
+### 2026-08-10 — High-risk stain panel: AE1/AE3 for SCC and EMPD (LAST placeholder resolved)
+- **Decision:** Publishable: cytokeratin immunostains (AE1/AE3) for high-risk
+  squamous cell carcinoma and extramammary Paget's disease. Dr. Modi: "We do
+  this, but sparingly. It's more for boasting my capability" — so it is
+  phrased as a capability, NEVER as routine use, and no other stains or
+  tumor types may be added without new confirmation.
+- With this, the siteData PLACEHOLDER filter has nothing left to catch —
+  every rendered claim on the site is confirmed.
+- **Status:** Confirmed
+- **Source:** Dr. Modi, chat 2026-08-10
+- **Links:** [[definitions]] [[focus-areas]]
+
 ## UNCONFIRMED (never render)
 
 These stay behind the `PLACEHOLDER` filter until a physician confirms them:
 
-- **High-risk (non-melanoma) tumor/stain panel** — which stains, which
-  tumors. The LAST remaining placeholder; question put to Dr. Modi
-  2026-08-10 (visible band copy stays generic until he answers).
+**(none as of 2026-08-10 — every rendered claim on the site is confirmed.)**
+New unconfirmed claims land here, behind the PLACEHOLDER filter, as always.
+
+- ~~High-risk tumor/stain panel~~ — CONFIRMED 2026-08-10 (AE1/AE3 for
+  high-risk SCC and EMPD, capability framing), see above.
 - ~~Pilonidal recovery details~~ — CONFIRMED 2026-08-10, see above.
 - ~~PRP / nail biopsy / eyelid biopsy specifics~~ — CONFIRMED 2026-08-10
   (with the PRFM addition), see above.

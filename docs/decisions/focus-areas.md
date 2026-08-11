@@ -40,10 +40,13 @@ Current priorities and open threads. Entry format: see [[INDEX]].
 
 These block publishable copy — details in [[medical-focus]]:
 
-- **High-risk (non-melanoma) tumor/stain panel** — the LAST remaining
-  content blocker; stain/tumor question put to Dr. Modi 2026-08-10.
+**All clear as of 2026-08-10** — every rendered claim is confirmed; see
+[[medical-focus]] for the ledger.
+
+- ~~High-risk tumor/stain panel~~ — CONFIRMED 2026-08-10 (AE1/AE3 for
+  high-risk SCC and EMPD, capability framing).
 - ~~Pilonidal recovery~~ and ~~PRP/nail/eyelid specifics~~ — both CONFIRMED
-  2026-08-10 (PRP now carries the PRFM claim); see [[medical-focus]].
+  2026-08-10 (PRP now carries the PRFM claim).
 
 ## Deferred
 
