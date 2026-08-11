@@ -63,7 +63,7 @@ const serviceImages: Record<
     alt: "MART-1 immunostain photographed through the microscope: melanoma cells stained blue beneath the pink epidermis",
     color: true,
     caption:
-      "From our own laboratory: a MART-1 immunostain read during Mohs surgery — melanoma cells stained blue, unmistakable at the margin.",
+      "From our own laboratory, on the day of surgery: a MART-1 immunostain read in real time — melanoma cells stained blue, unmistakable at the margin.",
   },
   "high-risk-immunostaining": {
     src: "/images/svc-slide-glass.webp",

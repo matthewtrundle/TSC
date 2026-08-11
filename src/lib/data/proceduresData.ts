@@ -461,7 +461,7 @@ export const procedures: Procedure[] = [
     imageAlt: "SOX10 immunostain photographed through the microscope: melanocyte nuclei stained blue in a line along the epidermal underside",
     imageColor: true,
     imageCaption:
-      "From our own laboratory: a SOX10 immunostain — melanocyte nuclei stained blue, read while the patient waits.",
+      "From our own laboratory, on the day of surgery: a SOX10 immunostain — melanocyte nuclei stained blue, read while the patient waits.",
   },
   {
     slug: "basal-cell-carcinoma",
