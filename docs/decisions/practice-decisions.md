@@ -390,3 +390,17 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - **Status:** Confirmed — same branch/preview as the texting entry above.
 - **Source:** chat 2026-08-10
 - **Links:** [[medical-focus]] [[focus-areas]]
+
+### 2026-08-10 — Texting note wording: texts only, no calls
+- **Decision:** The /contact texting note states the SMS number sends and
+  receives text messages but cannot take phone calls, and points callers to
+  the main line — per Dr. Modi's clarification of how the 8x8 number works.
+- **Status:** Confirmed (on branch feat/same-day-texting with the rest)
+- **Source:** chat 2026-08-10
+
+### 2026-08-10 — Directory listings: Healthgrades done, Vitals next
+- **Decision:** Dr. Modi updated the practice's Healthgrades listing himself;
+  the Vitals NAP check/update is the only outstanding directory item.
+- **Status:** Confirmed
+- **Source:** chat 2026-08-10
+- **Links:** [[focus-areas]]

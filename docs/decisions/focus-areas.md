@@ -40,14 +40,10 @@ Current priorities and open threads. Entry format: see [[INDEX]].
 
 These block publishable copy — details in [[medical-focus]]:
 
-- **High-risk (non-melanoma) tumor/stain panel** — offering areas exist in
-  `siteData.ts` as `PLACEHOLDER` lines; awaiting Dr. Modi's confirmation.
-- **Pilonidal disease recovery details** — detailed recovery FAQs are LIVE on
-  /services/pilonidal-cyst-surgery; Dr. Modi pointed at them approvingly in
-  chat 2026-08-10 and a line-by-line read-back is awaiting his explicit
-  sign-off — see [[medical-focus]] before treating them as confirmed.
-- **PRP, nail biopsy, eyelid biopsy clinical specifics** — offerings confirmed
-  by Dr. Modi; clinical details (anesthesia, recovery, protocols) not.
+- **High-risk (non-melanoma) tumor/stain panel** — the LAST remaining
+  content blocker; stain/tumor question put to Dr. Modi 2026-08-10.
+- ~~Pilonidal recovery~~ and ~~PRP/nail/eyelid specifics~~ — both CONFIRMED
+  2026-08-10 (PRP now carries the PRFM claim); see [[medical-focus]].
 
 ## Deferred
 

@@ -52,20 +52,31 @@ say-so. See [[practice-decisions]] for the no-fabricated-content rule and the
 - **Source:** chat 2026-08-10
 - **Links:** [[definitions]]
 
+### 2026-08-10 — Pilonidal recovery, nail/eyelid biopsy pages, and PRFM all confirmed
+- **Decision:** Dr. Modi confirmed the pilonidal recovery read-back in full
+  ("pilonidal stuff confirmed" — closing the loop the 2026-08-06 cleft-lift
+  FAQ entry opened) and approved the nail-biopsy and eyelid-biopsy page
+  details as written. NEW confirmed claim: the practice's PRP is
+  **second-generation — platelet-rich fibrin matrix (PRFM)**. Site copy
+  describes only the mechanism (platelet concentrate converted to a natural
+  fibrin gel; gradual growth-factor release over days rather than minutes) —
+  no superiority, session-count, or percentage claims.
+- The pilonidal siteData PLACEHOLDER was replaced with a real feature line
+  (general anesthesia; sitting the next day; back to work within days).
+- **Status:** Confirmed
+- **Source:** Dr. Modi, chat 2026-08-10
+- **Links:** [[focus-areas]] [[practice-decisions]]
+
 ## UNCONFIRMED (never render)
 
 These stay behind the `PLACEHOLDER` filter until a physician confirms them:
 
-- **High-risk (non-melanoma) tumor/stain panel** — which stains, which tumors.
-- **Pilonidal disease recovery details** — timelines, restrictions, protocol.
-  NOTE 2026-08-10: detailed recovery FAQs are already LIVE on
-  /services/pilonidal-cyst-surgery (general anesthesia; drain ~2 days;
-  sitting encouraged from day one; back to work in a few days, 1–2 weeks for
-  sitting/lifting jobs; full exercise 3–6 weeks; 95–97% published success).
-  Dr. Modi pointed at them approvingly in chat and a line-by-line read-back
-  was sent 2026-08-10 — move to CONFIRMED only on his explicit sign-off.
-- **PRP, nail biopsy, eyelid biopsy clinical specifics** — offerings are
-  confirmed and listed; anesthesia/recovery/protocol details are not.
+- **High-risk (non-melanoma) tumor/stain panel** — which stains, which
+  tumors. The LAST remaining placeholder; question put to Dr. Modi
+  2026-08-10 (visible band copy stays generic until he answers).
+- ~~Pilonidal recovery details~~ — CONFIRMED 2026-08-10, see above.
+- ~~PRP / nail biopsy / eyelid biopsy specifics~~ — CONFIRMED 2026-08-10
+  (with the PRFM addition), see above.
 
 ## The rule
 
