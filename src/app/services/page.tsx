@@ -87,11 +87,9 @@ const bandDetailLinks: Record<string, { name: string; slug: string }[]> = {
     { name: "Squamous cell carcinoma", slug: "squamous-cell-carcinoma" },
     { name: "Actinic keratosis", slug: "actinic-keratosis" },
   ],
-  immunostaining: [
-    { name: "Melanoma, in detail", slug: "melanoma" },
-    { name: "Sebaceous carcinoma", slug: "sebaceous-carcinoma" },
-    { name: "DFSP", slug: "dermatofibrosarcoma-protuberans" },
-  ],
+  // Melanoma only (Dr. Modi 2026-08-10) — the sebaceous/DFSP pages still
+  // exist and stay reachable from the "we treat" cancer list below.
+  immunostaining: [{ name: "Melanoma, in detail", slug: "melanoma" }],
   "high-risk-immunostaining": [
     { name: "Atypical fibroxanthoma", slug: "atypical-fibroxanthoma" },
     { name: "Microcystic adnexal carcinoma", slug: "microcystic-adnexal-carcinoma" },
