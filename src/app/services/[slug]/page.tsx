@@ -118,19 +118,32 @@ export default async function ProcedurePage({
             </div>
 
             <div className="lg:col-span-2">
-              <div className="duotone-frame relative aspect-[4/3]">
-                <Image
-                  src={procedure.image}
-                  alt={procedure.imageAlt}
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                  className="img-duotone object-cover"
-                />
+              <figure className="m-0">
                 <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-2 z-10 border border-[var(--hairline-bronze)]"
-                />
-              </div>
+                  className={
+                    procedure.imageColor
+                      ? "relative overflow-hidden aspect-[4/3]"
+                      : "duotone-frame relative aspect-[4/3]"
+                  }
+                >
+                  <Image
+                    src={procedure.image}
+                    alt={procedure.imageAlt}
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    className={procedure.imageColor ? "object-cover" : "img-duotone object-cover"}
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-2 z-10 border border-[var(--hairline-bronze)]"
+                  />
+                </div>
+                {procedure.imageCaption && (
+                  <figcaption className="mt-3 text-sm leading-snug text-[var(--warm-gray-light)]">
+                    {procedure.imageCaption}
+                  </figcaption>
+                )}
+              </figure>
             </div>
           </div>
         </div>
