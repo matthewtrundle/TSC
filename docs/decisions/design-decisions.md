@@ -289,3 +289,11 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
   flex-wrap (overflowed ≤360px); related-procedures now CURATED per page
   (cancer pages cross-link cancers — old first-3 logic sent melanoma
   readers to lipoma removal and starved cancer pages of internal links).
+
+### 2026-08-11 — Cleft-lift diagram stays full-width on /services
+- **Decision:** The pilonidal band keeps its full-width PilonidalDiagram in
+  the content column. A sidebar-sized variant (diagram under the heading,
+  like the other bands' images) was built, previewed, and REJECTED by
+  Dr. Modi ("eh, let's leave it as it is"). Don't re-propose shrinking it.
+- **Status:** Confirmed (branch feat/pilonidal-diagram discarded, never live)
+- **Source:** chat 2026-08-11
