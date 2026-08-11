@@ -43,12 +43,27 @@ say-so. See [[practice-decisions]] for the no-fabricated-content rule and the
   days of referral, call within one business day")
 - **Links:** [[practice-decisions]]
 
+### 2026-08-10 — Melanoma stain panel reconfirmed: MART-1 + SOX10
+- **Decision:** The melanoma IHC panel is MART-1 and SOX10 — reconfirmed by
+  Dr. Modi ("we decided on mart and sox"), resolving a stray S-100 mention
+  that had crept into session memory. Site copy verified correct (siteData
+  description, melanoma procedure page, referring page).
+- **Status:** Confirmed
+- **Source:** chat 2026-08-10
+- **Links:** [[definitions]]
+
 ## UNCONFIRMED (never render)
 
 These stay behind the `PLACEHOLDER` filter until a physician confirms them:
 
 - **High-risk (non-melanoma) tumor/stain panel** — which stains, which tumors.
 - **Pilonidal disease recovery details** — timelines, restrictions, protocol.
+  NOTE 2026-08-10: detailed recovery FAQs are already LIVE on
+  /services/pilonidal-cyst-surgery (general anesthesia; drain ~2 days;
+  sitting encouraged from day one; back to work in a few days, 1–2 weeks for
+  sitting/lifting jobs; full exercise 3–6 weeks; 95–97% published success).
+  Dr. Modi pointed at them approvingly in chat and a line-by-line read-back
+  was sent 2026-08-10 — move to CONFIRMED only on his explicit sign-off.
 - **PRP, nail biopsy, eyelid biopsy clinical specifics** — offerings are
   confirmed and listed; anesthesia/recovery/protocol details are not.
 

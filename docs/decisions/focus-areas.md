@@ -4,6 +4,19 @@ Current priorities and open threads. Entry format: see [[INDEX]].
 
 ## Active
 
+### 2026-08-10 — Site LAUNCHED on planoderm.com (launch day was 2026-08-07)
+- **Decision:** planoderm.com serves the redesign from Dr. Modi's own Vercel;
+  registrar, DNS, and DNSSEC all live in his Cloudflare account.
+- Post-launch, all complete: production form test passed; Search Console
+  verified with sitemap accepted (29 pages); Google Business Profile
+  optimized by Dr. Modi (photos, services, launch post, booking link);
+  listed in the ACMS surgeon finder and AAD directory.
+- Remaining launch-related tail: cancel DreamHost hosting ~2026-08-21 after
+  two weeks of stability; mid-August SERP + Search Console pull on request.
+- **Status:** Confirmed
+- **Source:** chat 2026-08-07 through 2026-08-10
+- **Links:** [[practice-decisions]]
+
 ### 2026-08-02 — Site is live on the LUXURY system
 - **Decision:** The LUXURY design system (ivory/charcoal/bronze) is the shipped
   design; all new work builds on it, never around it.
@@ -29,8 +42,10 @@ These block publishable copy — details in [[medical-focus]]:
 
 - **High-risk (non-melanoma) tumor/stain panel** — offering areas exist in
   `siteData.ts` as `PLACEHOLDER` lines; awaiting Dr. Modi's confirmation.
-- **Pilonidal disease recovery details** — offering confirmed; recovery
-  specifics unconfirmed.
+- **Pilonidal disease recovery details** — detailed recovery FAQs are LIVE on
+  /services/pilonidal-cyst-surgery; Dr. Modi pointed at them approvingly in
+  chat 2026-08-10 and a line-by-line read-back is awaiting his explicit
+  sign-off — see [[medical-focus]] before treating them as confirmed.
 - **PRP, nail biopsy, eyelid biopsy clinical specifics** — offerings confirmed
   by Dr. Modi; clinical details (anesthesia, recovery, protocols) not.
 
@@ -38,8 +53,14 @@ These block publishable copy — details in [[medical-focus]]:
 
 - **Real hero video clips** — `HeroMedia` is video-ready; currently runs Ken
   Burns stills. Waiting on real footage.
-- **Deployment status** — Vercel deployment was referenced in the old (stale)
-  CLAUDE.md but has not been verified. Treat as unknown until checked.
+- **Staff photography / team imagery** — Dr. Modi wants better source photos
+  of the staff before any AI-assisted team content; team-navy-FINAL.png stays
+  parked (2026-08-10).
+- **Patient portal URL** — Dr. Modi is waiting on material from Sadio before
+  the portal link (currently sadio.com in siteData) can be confirmed
+  (2026-08-10).
+- ~~Deployment status~~ — resolved: launched 2026-08-07 from Dr. Modi's own
+  Vercel; see the Active entry above.
 
 ## Operational
 

@@ -347,3 +347,46 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   Denton/Gainesville practices is the highest-yield next step (letter offer
   open); ask happy out-of-town patients to name their city in reviews; NO
   per-city doorway pages; Google Ads optional.
+
+### 2026-08-10 — No insurance-carrier list on the site
+- **Decision:** The site will not list accepted insurance carriers; patients
+  are directed to call the office instead.
+- **Rationale:** Dr. Modi: better for patients to call — carrier lists drift
+  out of date and invite wrong self-triage.
+- **Status:** Confirmed (closes the "insurance carrier list" open item)
+- **Source:** chat 2026-08-10
+- **Links:** [[focus-areas]]
+
+### 2026-08-10 — No wound-care instructions on the site
+- **Decision:** Wound-care / pre-op instruction content stays off the site.
+- **Rationale:** Staff decision relayed by Dr. Modi: patients get spun up and
+  confused reading instructions before their appointments; instructions are
+  given in person.
+- **Status:** Confirmed (reverses the earlier plan to port the legacy
+  patient-resources wound-care content)
+- **Source:** chat 2026-08-10
+- **Links:** [[focus-areas]]
+
+### 2026-08-10 — Practice texting line via 8x8 (BAA executed)
+- **Decision:** 8x8 BAA is executed on the practice account, and the business
+  SMS number is (469) 945-4414 — texts only, distinct from the main voice
+  line (972) 378-0620. Site affordances: a Text row on /contact (with a
+  texts-only, call-if-urgent note), a footer Text line, and a Text button in
+  the mobile call bar (now Call | Text | Appointment).
+- **Rationale:** BAA coverage was the precondition set 2026-08-09; number
+  supplied by Dr. Modi 2026-08-10.
+- **Status:** Confirmed — implementation on branch feat/same-day-texting,
+  awaiting Dr. Modi's preview approval; texting wording should ride along in
+  the still-pending privacy/counsel review.
+- **Source:** chat 2026-08-10
+- **Links:** [[focus-areas]]
+
+### 2026-08-10 — "Same day" leads the melanoma story
+- **Decision:** The melanoma service description opens with "same-day", and
+  the phrase "all on the same day" renders bold with a bronze underline on
+  /services.
+- **Rationale:** Dr. Modi: same-day IHC melanoma Mohs "really differentiates
+  us from competition."
+- **Status:** Confirmed — same branch/preview as the texting entry above.
+- **Source:** chat 2026-08-10
+- **Links:** [[medical-focus]] [[focus-areas]]
