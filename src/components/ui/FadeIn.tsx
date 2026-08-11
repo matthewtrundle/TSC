@@ -74,6 +74,8 @@ export function useCountUp(
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Reduced-motion users keep the server-rendered target value — no count.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (!startOnView) {
       setHasStarted(true);
       return;

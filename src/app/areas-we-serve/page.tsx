@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: "Serving North Texas & Southern Oklahoma | Mohs Surgery in Plano, TX",
   description:
     "Patients travel to The Surgery Center at Plano Dermatology from Frisco, McKinney, Allen, Prosper, Celina, Sherman, Denison, Denton, Gainesville, and Durant, OK. Mohs surgery is a one-visit operation — margins read on site the same day.",
+  alternates: { canonical: "/areas-we-serve" },
 };
 
 const AREA_GROUPS = [

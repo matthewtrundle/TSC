@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { siteConfig } from "@/lib/data/siteData";
 import {
   sendToPractice,
   requireText,
@@ -37,6 +38,13 @@ const REASON_LABELS: Record<(typeof REASONS)[number], string> = {
   "laser-chemical-peel": "Laser or chemical peel",
   "earlobe-repair": "Earlobe repair",
   "nail-issue": "Nail issue",
+  other: "Other",
+};
+const REFERRAL_SOURCE_LABELS: Record<string, string> = {
+  "doctor-referral": "Doctor Referral",
+  "friend-family": "Friend or Family",
+  google: "Google Search",
+  insurance: "Insurance Provider",
   other: "Other",
 };
 const REFERRAL_SOURCES = [
@@ -111,7 +119,7 @@ export async function POST(request: Request) {
     `Email:           ${email}`,
     `Visit type:      ${VISIT_TYPE_LABELS[visitType]}`,
     `Reason:          ${REASON_LABELS[reason!]}`,
-    `Heard about us:  ${referralSource || "Not specified"}`,
+    `Heard about us:  ${REFERRAL_SOURCE_LABELS[referralSource] || "Not specified"}`,
     "",
     "Message from the patient:",
     message || "(none)",
@@ -133,7 +141,7 @@ export async function POST(request: Request) {
       {
         ok: false,
         message:
-          "We couldn't submit your request. Please call us at (972) 378-0620 and we'll get you scheduled.",
+          `We couldn't submit your request. Please call us at ${siteConfig.contact.phone} and we'll get you scheduled.`,
       },
       { status: 502 },
     );

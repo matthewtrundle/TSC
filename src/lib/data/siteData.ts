@@ -540,6 +540,15 @@ export const values = [
 ];
 
 export const practiceInfo = {
+  // Confirmed practice stats — single source for the homepage stats row.
+  // 70+ combined years: practice-decisions.md 2026-08-04 (was 65+ before).
+  // 15 Mohs surgeons trained: Dr. Parry's bio. 3 surgeons: the partners.
+  stats: {
+    surgeons: "3",
+    combinedExperienceYears: "70+",
+    mohsSurgeonsTrained: "15",
+  },
+
   about: `The Surgery Center at Plano Dermatology is committed to providing world-class care in a safe and comfortable environment. Dr. Modi, Dr. Wells, and Dr. Parry are each board certified and fellowship trained in the surgical treatment of skin cancer and other dermatologic conditions.
 
 This includes Mohs micrographic surgery, reconstructive surgery, mole and cyst removal, nail procedures, as well as the treatment of melanoma and other high-risk skin cancers.`,

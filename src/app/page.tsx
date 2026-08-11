@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { siteConfig, doctors, services } from "@/lib/data/siteData";
+import { siteConfig, doctors, services, practiceInfo } from "@/lib/data/siteData";
 import { Phone, ChevronRight, Calendar } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { MohsDiagram } from "@/components/ui/MohsDiagram";
@@ -142,9 +142,9 @@ export default function Home() {
           <FadeIn delay={0.3}>
             <div className="mt-16 grid grid-cols-1 gap-8 border-t border-[var(--hairline)] pt-10 sm:grid-cols-3">
               {[
-                { value: "3", label: "Fellowship-trained Mohs surgeons" },
-                { value: "70+", label: "Years of combined experience" },
-                { value: "15", label: "Mohs surgeons trained by our physicians" },
+                { value: practiceInfo.stats.surgeons, label: "Fellowship-trained Mohs surgeons" },
+                { value: practiceInfo.stats.combinedExperienceYears, label: "Years of combined experience" },
+                { value: practiceInfo.stats.mohsSurgeonsTrained, label: "Mohs surgeons trained by our physicians" },
               ].map((stat) => (
                 <CountUpStat key={stat.label} value={stat.value} label={stat.label} />
               ))}

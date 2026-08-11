@@ -43,6 +43,48 @@ say-so. See [[practice-decisions]] for the no-fabricated-content rule and the
   days of referral, call within one business day")
 - **Links:** [[practice-decisions]]
 
+### 2026-08-02 — Skin resurfacing service CONFIRMED (publishable)
+- **Decision:** The practice offers skin resurfacing: fractional CO2 laser and
+  medium-to-deep chemical peels with Jessner's solution and TCA, used for
+  photodamaged skin, field treatment of actinic keratoses/precancers, and
+  aesthetic rejuvenation. Performed/framed under Dr. Modi.
+- **Status:** Confirmed — no percentages, downtime, or session counts are
+  published (unconfirmed; add only if Dr. Modi supplies them).
+- **Source:** chat 2026-08-02
+
+### 2026-08-02 — Surgery-day timeline refinements (Dr. Modi confirmed)
+- 7:30 AM typical check-in (not a fixed window); most tumors clear in one to
+  two stages (practice experience); "Same morning: repair or reconstruction,
+  then home"; patients usually do NOT need a driver. FAQ updated to match.
+
+### 2026-08-03 — Stain correction: SOX10, not S-100
+- **Decision:** The melanoma Mohs immunostain panel is MART-1 and SOX10.
+  Dr. Modi corrected the earlier statement — S-100 is NOT used. All site
+  copy, ledger entries, and the skill were swept.
+- **Status:** Confirmed (supersedes the S-100 references above)
+- **Source:** chat 2026-08-03
+
+### 2026-08-04 — Lip and oral biopsies (Dr. Modi confirmed in chat)
+- **Decision:** The practice performs lip and oral biopsies — including the
+  gums and the tongue. Indications: growths, and confirming inflammatory or
+  autoimmune conditions such as oral lichen planus and Sjögren's syndrome
+  (lip biopsy). Published as a detail page (/services/lip-oral-biopsies)
+  and listed under Additional Procedures. The inner-lip minor-salivary-gland
+  description is standard medicine, phrased generally.
+- **Status:** Confirmed
+- **Source:** Dr. Modi, chat, 2026-08-04
+
+### 2026-08-06 — Cleft-lift FAQ details CONFIRMED (Dr. Modi in chat)
+- **Decision:** The pilonidal cleft-lift FAQ answers are confirmed practice
+  facts: general anesthesia most common; drain typically ~TWO DAYS (his
+  correction — not the adapted source's one week); sitting encouraged from
+  the day after surgery; back to work in days (1-2 weeks for prolonged
+  sitting/heavy lifting); full activity with no restrictions in 3-6 weeks.
+  This supersedes the "pilonidal recovery details UNCONFIRMED" entry for
+  these specific items.
+- **Status:** Confirmed
+- **Source:** Dr. Modi, chat, 2026-08-06
+
 ### 2026-08-10 — Melanoma stain panel reconfirmed: MART-1 + SOX10
 - **Decision:** The melanoma IHC panel is MART-1 and SOX10 — reconfirmed by
   Dr. Modi ("we decided on mart and sox"), resolving a stray S-100 mention
@@ -99,45 +141,3 @@ by Dr. Modi (or another physician of the practice) in chat. Never invent
 stats, testimonials, staff, response times, or clinical details. Feature lines
 containing `PLACEHOLDER` must never render. When a physician confirms a claim
 in chat, record it here with the date, then update siteData.
-
-### 2026-08-02 — Skin resurfacing service CONFIRMED (publishable)
-- **Decision:** The practice offers skin resurfacing: fractional CO2 laser and
-  medium-to-deep chemical peels with Jessner's solution and TCA, used for
-  photodamaged skin, field treatment of actinic keratoses/precancers, and
-  aesthetic rejuvenation. Performed/framed under Dr. Modi.
-- **Status:** Confirmed — no percentages, downtime, or session counts are
-  published (unconfirmed; add only if Dr. Modi supplies them).
-- **Source:** chat 2026-08-02
-
-### 2026-08-02 — Surgery-day timeline refinements (Dr. Modi confirmed)
-- 7:30 AM typical check-in (not a fixed window); most tumors clear in one to
-  two stages (practice experience); "Same morning: repair or reconstruction,
-  then home"; patients usually do NOT need a driver. FAQ updated to match.
-
-### 2026-08-03 — Stain correction: SOX10, not S-100
-- **Decision:** The melanoma Mohs immunostain panel is MART-1 and SOX10.
-  Dr. Modi corrected the earlier statement — S-100 is NOT used. All site
-  copy, ledger entries, and the skill were swept.
-- **Status:** Confirmed (supersedes the S-100 references above)
-- **Source:** chat 2026-08-03
-
-### 2026-08-04 — Lip and oral biopsies (Dr. Modi confirmed in chat)
-- **Decision:** The practice performs lip and oral biopsies — including the
-  gums and the tongue. Indications: growths, and confirming inflammatory or
-  autoimmune conditions such as oral lichen planus and Sjögren's syndrome
-  (lip biopsy). Published as a detail page (/services/lip-oral-biopsies)
-  and listed under Additional Procedures. The inner-lip minor-salivary-gland
-  description is standard medicine, phrased generally.
-- **Status:** Confirmed
-- **Source:** Dr. Modi, chat, 2026-08-04
-
-### 2026-08-06 — Cleft-lift FAQ details CONFIRMED (Dr. Modi in chat)
-- **Decision:** The pilonidal cleft-lift FAQ answers are confirmed practice
-  facts: general anesthesia most common; drain typically ~TWO DAYS (his
-  correction — not the adapted source's one week); sitting encouraged from
-  the day after surgery; back to work in days (1-2 weeks for prolonged
-  sitting/heavy lifting); full activity with no restrictions in 3-6 weeks.
-  This supersedes the "pilonidal recovery details UNCONFIRMED" entry for
-  these specific items.
-- **Status:** Confirmed
-- **Source:** Dr. Modi, chat, 2026-08-06

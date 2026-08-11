@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { siteConfig } from "@/lib/data/siteData";
 import {
   sendToPractice,
   requireText,
@@ -75,7 +76,7 @@ export async function POST(request: Request) {
       {
         ok: false,
         message:
-          "We couldn't send your message. Please call us at (972) 378-0620.",
+          `We couldn't send your message. Please call us at ${siteConfig.contact.phone}.`,
       },
       { status: 502 },
     );
