@@ -35,7 +35,9 @@ export function AppointmentForm() {
     message: "",
   });
   // Honeypot timing: bots submit instantly; humans take seconds.
-  const [startedAt] = useState(() => Date.now());
+  // Monotonic stopwatch for the too-fast spam signal — performance.now is
+  // unaffected by the device clock being set wrong (Date.now was not).
+  const [openedAt] = useState(() => performance.now());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
@@ -51,7 +53,7 @@ export function AppointmentForm() {
       const response = await fetch("/api/appointment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, startedAt }),
+        body: JSON.stringify({ ...formData, elapsedMs: Math.round(performance.now() - openedAt) }),
       });
       const result = await response.json();
 

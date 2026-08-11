@@ -431,3 +431,19 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - **Status:** Confirmed — live (commit 72c2c79)
 - **Source:** chat 2026-08-11
 - **Links:** [[medical-focus]]
+
+### 2026-08-11 — Form spam guard: flag, never drop; one-clock stopwatch
+- **Decision:** Suspicious form submissions (honeypot or <4s fill time) are
+  now DELIVERED to the office flagged "[POSSIBLE SPAM — verify before
+  calling/replying]" and logged — never silently discarded. Only
+  flagged-AND-invalid junk is still dropped with fake success. Timing now
+  uses the browser's monotonic stopwatch (performance.now), immune to
+  wrong device clocks, replacing the server-vs-client Date.now comparison
+  that could misclassify real patients.
+- **Rationale:** A misclassified patient silently losing an appointment
+  request is the worst failure a medical site can have; a flagged junk
+  email costs staff two seconds. Turnstile kept in the back pocket.
+- **Status:** Confirmed — live (this commit)
+- **Source:** chat 2026-08-11 (code-review finding, Dr. Modi: "do the
+  first two")
+- **Links:** [[focus-areas]]

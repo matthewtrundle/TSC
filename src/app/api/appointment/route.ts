@@ -73,12 +73,21 @@ export async function POST(request: Request) {
   }
 
   const data = (payload ?? {}) as Record<string, unknown>;
-  // Honeypot + timing: pretend success so bots learn nothing; send nothing.
   const hp = typeof data.company === "string" && data.company.trim().length > 0;
-  const tooFast = typeof data.startedAt === "number" && Date.now() - data.startedAt < 4000;
-  if (hp || tooFast) {
-    return NextResponse.json({ ok: true });
-  }
+  // Elapsed time comes from the browser's monotonic stopwatch
+  // (performance.now delta) — immune to a wrong device clock, unlike the
+  // old server-vs-client Date.now comparison that misfired on fast clocks.
+  // Old pages may still send startedAt; without elapsedMs there is simply
+  // no timing signal.
+  const tooFast =
+    typeof data.elapsedMs === "number" && data.elapsedMs >= 0 && data.elapsedMs < 4000;
+  // Spam signals FLAG the email for staff instead of silently dropping the
+  // request (Dr. Modi, 2026-08-11): a misclassified patient must never be
+  // lost. Bots still learn nothing — see the validation-failure path.
+  const spamSignals = [
+    hp ? "hidden honeypot field was filled (can be browser autofill)" : "",
+    tooFast ? `form submitted ${Math.round(data.elapsedMs as number)}ms after opening` : "",
+  ].filter(Boolean);
 
   const errors: FieldErrors = {};
 
@@ -108,6 +117,12 @@ export async function POST(request: Request) {
   }
 
   if (Object.keys(errors).length > 0) {
+    // A flagged submission that also fails validation is junk: pretend
+    // success so bots learn nothing, log it, send nothing.
+    if (spamSignals.length > 0) {
+      console.warn("[spam-guard] dropped invalid flagged submission:", spamSignals.join("; "));
+      return NextResponse.json({ ok: true });
+    }
     return NextResponse.json({ ok: false, errors }, { status: 400 });
   }
 
@@ -128,9 +143,17 @@ export async function POST(request: Request) {
     "do not forward outside the practice.",
   ].join("\n");
 
+  const flagged = spamSignals.length > 0;
+  if (flagged) {
+    console.warn("[spam-guard] delivering flagged appointment request:", spamSignals.join("; "));
+  }
   const result = await sendToPractice({
-    subject: `Appointment request — ${firstName} ${lastName}`,
-    body,
+    subject: flagged
+      ? `[POSSIBLE SPAM — verify before calling] Appointment request — ${firstName} ${lastName}`
+      : `Appointment request — ${firstName} ${lastName}`,
+    body: flagged
+      ? `FLAGGED AS POSSIBLE SPAM (${spamSignals.join("; ")}).\nReal patients can trip these checks — please verify rather than discard.\n\n${body}`
+      : body,
     replyTo: email,
   });
 
