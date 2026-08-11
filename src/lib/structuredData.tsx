@@ -56,10 +56,10 @@ export function medicalBusinessSchema() {
     openingHoursSpecification: openingHours(),
     // The practice's true catchment (Dr. Modi, 2026-08-09): Collin County
     // suburbs, the US-75 corridor through Grayson County, Denton/Cooke to
-    // the west, and southern Oklahoma. Follows /areas-we-serve, EXCEPT:
-    // Durant is the only Oklahoma town in the schema — Calera and Kingston
-    // are deliberately excluded (Dr. Modi, 2026-08-11). Every name in the
-    // main array gets a ", TX" suffix, so never add Oklahoma towns to it.
+    // the west, and southern Oklahoma. Mirrors /areas-we-serve. Every name
+    // in the main array gets a ", TX" suffix — Oklahoma towns go ONLY in
+    // the concat list below (Dr. Modi reversed the earlier Calera/Kingston
+    // exclusion, 2026-08-11).
     areaServed: [
       "Plano", "Frisco", "Allen", "McKinney", "Prosper", "Celina", "Anna",
       "Melissa", "Lucas", "Wylie", "Sachse", "Murphy", "Richardson", "Dallas",
@@ -67,7 +67,12 @@ export function medicalBusinessSchema() {
       "Pottsboro", "Bells", "Denton", "Little Elm", "Gainesville", "Paris",
     ]
       .map((name) => ({ "@type": "City" as const, name: `${name}, TX` }))
-      .concat([{ "@type": "City" as const, name: "Durant, OK" }]),
+      .concat(
+        ["Durant", "Calera", "Kingston"].map((name) => ({
+          "@type": "City" as const,
+          name: `${name}, OK`,
+        })),
+      ),
     availableService: services.map((service) => ({
       "@type": "MedicalProcedure",
       name: service.name,
