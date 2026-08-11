@@ -304,9 +304,10 @@ export const services = [
       "Aggressive non-melanoma tumors traced accurately to their true margins.",
     icon: "shield",
     features: [
-      // TODO(Dr. Modi): confirm which tumor types and which stains.
-      "PLACEHOLDER — tumor types and stain panel to be supplied",
-      "High-risk squamous cell carcinoma",
+      // Confirmed by Dr. Modi 2026-08-10: AE1/AE3 for high-risk SCC and
+      // extramammary Paget's, used selectively — keep this a capability
+      // statement, never a routine-use promise (medical-focus.md).
+      "Cytokeratin immunostains (AE1/AE3) for high-risk squamous cell carcinoma and extramammary Paget's disease",
       "Same-day, on-site processing",
       "Margin control for poorly-defined tumors",
     ],
