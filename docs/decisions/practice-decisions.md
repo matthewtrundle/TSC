@@ -392,9 +392,10 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - **Links:** [[medical-focus]] [[focus-areas]]
 
 ### 2026-08-10 — Texting note wording: texts only, no calls
-- **Decision:** The /contact texting note states the SMS number sends and
-  receives text messages but cannot take phone calls, and points callers to
-  the main line — per Dr. Modi's clarification of how the 8x8 number works.
+- **Decision:** The /contact texting note is exactly one sentence: "This
+  number sends and receives text messages but cannot take phone calls."
+  Dr. Modi trimmed the longer draft — no scheduling preamble, no
+  call-the-number-above pointer.
 - **Status:** Confirmed (on branch feat/same-day-texting with the rest)
 - **Source:** chat 2026-08-10
 
