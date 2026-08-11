@@ -62,6 +62,14 @@ export default function Footer() {
                   {siteConfig.contact.phone}
                 </a>
               </li>
+              <li>
+                <a
+                  href={`sms:${siteConfig.contact.smsRaw}`}
+                  className="transition-colors hover:text-white"
+                >
+                  Text: {siteConfig.contact.sms}
+                </a>
+              </li>
               <li>Fax: {siteConfig.contact.fax}</li>
               <li>
                 <a
