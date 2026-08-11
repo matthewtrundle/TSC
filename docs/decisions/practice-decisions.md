@@ -375,9 +375,9 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   the mobile call bar (now Call | Text | Appointment).
 - **Rationale:** BAA coverage was the precondition set 2026-08-09; number
   supplied by Dr. Modi 2026-08-10.
-- **Status:** Confirmed — implementation on branch feat/same-day-texting,
-  awaiting Dr. Modi's preview approval; texting wording should ride along in
-  the still-pending privacy/counsel review.
+- **Status:** Confirmed — LIVE on planoderm.com 2026-08-10 (merge f292718);
+  texting wording should still ride along in the pending privacy/counsel
+  review.
 - **Source:** chat 2026-08-10
 - **Links:** [[focus-areas]]
 
@@ -387,7 +387,7 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   /services.
 - **Rationale:** Dr. Modi: same-day IHC melanoma Mohs "really differentiates
   us from competition."
-- **Status:** Confirmed — same branch/preview as the texting entry above.
+- **Status:** Confirmed — LIVE on planoderm.com 2026-08-10 (merge f292718).
 - **Source:** chat 2026-08-10
 - **Links:** [[medical-focus]] [[focus-areas]]
 
@@ -396,7 +396,7 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
   number sends and receives text messages but cannot take phone calls."
   Dr. Modi trimmed the longer draft — no scheduling preamble, no
   call-the-number-above pointer.
-- **Status:** Confirmed (on branch feat/same-day-texting with the rest)
+- **Status:** Confirmed — LIVE on planoderm.com 2026-08-10
 - **Source:** chat 2026-08-10
 
 ### 2026-08-10 — Directory listings: Healthgrades done, Vitals next
