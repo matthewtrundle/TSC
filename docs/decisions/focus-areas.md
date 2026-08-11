@@ -50,6 +50,11 @@ These block publishable copy — details in [[medical-focus]]:
 
 ## Deferred
 
+- **IHC Mohs histology photos** — Dr. Modi wants real stained-slide images
+  (MART-1 / SOX10 / AE1-AE3) on the site (requested 2026-08-10). Waiting on
+  de-identified slide photos from his own lab — REAL images only, never
+  AI-generated medical imagery. Likely homes: the two immunostaining bands
+  on /services and the melanoma procedure page.
 - **Real hero video clips** — `HeroMedia` is video-ready; currently runs Ken
   Burns stills. Waiting on real footage.
 - **Staff photography / team imagery** — Dr. Modi wants better source photos
