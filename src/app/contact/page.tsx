@@ -93,10 +93,8 @@ export default function ContactPage() {
                         {siteConfig.contact.sms}
                       </a>
                       <p className="mt-1 text-sm text-[var(--warm-gray)]">
-                        Text us for scheduling and general questions — this
-                        number sends and receives text messages but cannot
-                        take phone calls. To speak with the office, call the
-                        number above.
+                        This number sends and receives text messages but
+                        cannot take phone calls.
                       </p>
                     </dd>
                   </div>
