@@ -405,3 +405,19 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - **Status:** Confirmed
 - **Source:** chat 2026-08-10
 - **Links:** [[focus-areas]]
+
+### 2026-08-10 — Real IHC slide photography LIVE (first real clinical imagery)
+- **Decision:** Dr. Modi's own slide photos are live: MART-1 (full color +
+  caption) on the /services melanoma band; SOX10 on /services/melanoma.
+  Captions confirmed by Dr. Modi: "From our own laboratory, on the day of
+  surgery… read in real time / read while the patient waits." Melanoma band's
+  In-detail links trimmed to melanoma only (sebaceous/DFSP pages remain, via
+  the cancer list). Library: 7 labeled photos (5 MART-1, 2 SOX10) at
+  project-root _original-photos/ihc-histology/.
+- **Rules set:** real photography renders in COLOR (duotone is for mood
+  imagery); NO generative AI on medical imagery ever; NO visible watermarks —
+  invisible © EXIF instead (practice ©, artist Gunjan Modi, MD). An AE1/AE3
+  slide is wanted someday for the high-risk band.
+- **Status:** Confirmed — live on planoderm.com (merge 1ba21e1)
+- **Source:** chat 2026-08-10
+- **Links:** [[medical-focus]] [[design-decisions]] [[focus-areas]]
