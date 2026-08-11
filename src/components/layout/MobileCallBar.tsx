@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { MessageSquare, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/data/siteData";
 
 /**
@@ -22,14 +22,22 @@ export default function MobileCallBar() {
           className="flex flex-1 items-center justify-center gap-2 min-h-[56px] text-[var(--ivory)] font-semibold"
         >
           <Phone className="w-5 h-5" aria-hidden="true" />
-          <span>Call Now</span>
+          <span>Call</span>
+        </a>
+        <div className="w-px bg-white/15" aria-hidden="true" />
+        <a
+          href={`sms:${siteConfig.contact.smsRaw}`}
+          className="flex flex-1 items-center justify-center gap-2 min-h-[56px] text-[var(--ivory)] font-semibold"
+        >
+          <MessageSquare className="w-5 h-5" aria-hidden="true" />
+          <span>Text</span>
         </a>
         <div className="w-px bg-white/15" aria-hidden="true" />
         <Link
           href="/appointment"
           className="flex flex-1 items-center justify-center min-h-[56px] text-[var(--champagne)] font-semibold"
         >
-          Request Appointment
+          Appointment
         </Link>
       </div>
     </div>

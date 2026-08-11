@@ -84,6 +84,23 @@ export default function ContactPage() {
                   </div>
 
                   <div className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-6 py-4 border-b border-[var(--gray-200)]">
+                    <dt className="label-caps pt-1">Text</dt>
+                    <dd>
+                      <a
+                        href={`sms:${siteConfig.contact.smsRaw}`}
+                        className="text-lg font-semibold text-[var(--navy-primary)] hover:text-[var(--teal-accent)] transition-colors"
+                      >
+                        {siteConfig.contact.sms}
+                      </a>
+                      <p className="mt-1 text-sm text-[var(--warm-gray)]">
+                        Text us for scheduling and general questions. This
+                        number receives texts only — for anything urgent,
+                        please call.
+                      </p>
+                    </dd>
+                  </div>
+
+                  <div className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-6 py-4 border-b border-[var(--gray-200)]">
                     <dt className="label-caps pt-1">Fax</dt>
                     <dd className="text-[var(--warm-gray)]">{siteConfig.contact.fax}</dd>
                   </div>

@@ -32,6 +32,24 @@ function publishableFeatures(features: string[]): string[] {
     );
 }
 
+// The same-day claim is the practice's sharpest differentiator (Dr. Modi,
+// 2026-08-10) — when a description carries this exact phrase, it renders
+// bold and underlined so it cannot be skimmed past.
+const SAME_DAY_PHRASE = "all on the same day";
+function withSameDayEmphasis(text: string) {
+  const at = text.indexOf(SAME_DAY_PHRASE);
+  if (at === -1) return text;
+  return (
+    <>
+      {text.slice(0, at)}
+      <strong className="font-semibold text-[var(--navy-primary)] underline decoration-[var(--bronze)] decoration-2 underline-offset-4">
+        {SAME_DAY_PHRASE}
+      </strong>
+      {text.slice(at + SAME_DAY_PHRASE.length)}
+    </>
+  );
+}
+
 // Evocative laboratory/instrument imagery for the bands that carry it — no
 // staged patients, no fake interiors. Keyed by service id.
 const serviceImages: Record<string, { src: string; alt: string }> = {
@@ -201,7 +219,7 @@ export default function ServicesPage() {
                 {/* Wide content column. */}
                 <FadeIn delay={0.1} className="lg:col-span-2">
                   <p className="text-lg text-[var(--warm-gray)] leading-relaxed mb-6">
-                    {service.description}
+                    {withSameDayEmphasis(service.description)}
                   </p>
 
                   {/* All of the rewritten explainer paragraphs — the old copy

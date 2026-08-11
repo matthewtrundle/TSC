@@ -13,6 +13,11 @@ export const siteConfig = {
   contact: {
     phone: "(972) 378-0620",
     phoneRaw: "9723780620",
+    // Business-SMS line on the practice's 8x8 account (BAA executed;
+    // number supplied by Dr. Modi 2026-08-10). Texting only — not a
+    // voice line, and distinct from the main number above.
+    sms: "(469) 945-4414",
+    smsRaw: "4699454414",
     fax: "(972) 378-0630",
     email: "office@planoderm.com",
     address: {
@@ -274,7 +279,7 @@ export const services = [
     shortName: "Mohs for Melanoma",
     slug: "immunostaining",
     description:
-      "We perform Mohs surgery for melanoma with immunohistochemical staining — MART-1 and SOX10 — run in our own laboratory during your surgery. These stains make melanoma cells visible at the margin in a way routine frozen sections cannot. The cancer is removed, every margin is tested with the stains, and once the margins are clear the wound is reconstructed — all on the same day. The traditional alternatives are wide local excision, or a staged excision (sometimes called \"slow Mohs\") that stretches the removal and margin reading over one to three days. True same-day, margin-controlled Mohs for melanoma is what this laboratory was built to do.",
+      "We perform same-day Mohs surgery for melanoma with immunohistochemical staining — MART-1 and SOX10 — run in our own laboratory during your surgery. These stains make melanoma cells visible at the margin in a way routine frozen sections cannot. The cancer is removed, every margin is tested with the stains, and once the margins are clear the wound is reconstructed — all on the same day. The traditional alternatives are wide local excision, or a staged excision (sometimes called \"slow Mohs\") that stretches the removal and margin reading over one to three days. True same-day, margin-controlled Mohs for melanoma is what this laboratory was built to do.",
     shortDescription:
       "Same-day Mohs for melanoma: removed, margins tested with MART-1 and SOX10 stains, and reconstructed — in one visit.",
     icon: "microscope",
