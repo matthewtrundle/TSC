@@ -96,8 +96,23 @@ function singlePhysician(doctor: Doctor) {
     jobTitle: doctor.title,
     medicalSpecialty: "Dermatology",
     description: doctor.shortBio,
-    url: `${SITE_URL}/team#${doctor.id}`,
+    // Dedicated per-surgeon page (2026-08-13); the stable @id above is
+    // unchanged so existing references keep resolving.
+    url: `${SITE_URL}/team/${doctor.slug}`,
     worksFor: { "@id": `${SITE_URL}/#practice` },
+    telephone: siteConfig.contact.phone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: siteConfig.contact.address.street,
+      addressLocality: siteConfig.contact.address.city,
+      addressRegion: siteConfig.contact.address.state,
+      postalCode: siteConfig.contact.address.zip,
+      addressCountry: "US",
+    },
+    // sameAs ties this Physician entity to third-party profiles.
+    // TODO(Dr. Modi): supply each surgeon's ACMS, ABD, and AAD directory
+    // profile URLs to add here alongside the ABMS verification link.
+    ...(doctor.certificationUrl ? { sameAs: [doctor.certificationUrl] } : {}),
     alumniOf: doctor.education.map((edu) => ({
       "@type": "EducationalOrganization",
       name: edu.institution,
@@ -113,6 +128,22 @@ export function physicianSchema(): ReturnType<typeof singlePhysician>[];
 export function physicianSchema(doctor: Doctor): ReturnType<typeof singlePhysician>;
 export function physicianSchema(doctor?: Doctor) {
   return doctor ? singlePhysician(doctor) : doctors.map(singlePhysician);
+}
+
+/**
+ * BreadcrumbList markup — items ordered from Home to the current page.
+ */
+export function breadcrumbSchema(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
 }
 
 /**
