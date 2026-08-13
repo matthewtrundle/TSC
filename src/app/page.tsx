@@ -132,7 +132,7 @@ export default function Home() {
                   name={doctor.name}
                   fellowship={fellowships[doctor.id]}
                   image={editorialPortraits[doctor.id]}
-                  href={`/team#${doctor.id}`}
+                  href={`/team/${doctor.slug}`}
                   bio={doctor.shortBio}
                 />
               </FadeIn>
