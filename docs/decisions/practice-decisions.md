@@ -447,3 +447,13 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - **Source:** chat 2026-08-11 (code-review finding, Dr. Modi: "do the
   first two")
 - **Links:** [[focus-areas]]
+
+### 2026-08-13 — No public referring-physician phone line
+- **Decision:** The site will NOT publish a dedicated direct line for
+  referring physicians — Dr. Modi: a published number "will get used by
+  non-physicians." Referral channel stays fax + form. Relationship-building
+  material is PHYSICAL: brochures / referral pamphlets handed to referring
+  offices in person (Claude to design the print pamphlet).
+- **Status:** Confirmed (amends Task 3 of the 2026-08-13 SEO brief)
+- **Source:** Dr. Modi, chat 2026-08-13
+- **Links:** [[focus-areas]]
