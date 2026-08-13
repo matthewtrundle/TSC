@@ -9,7 +9,7 @@ import { LuxuryCta } from "@/components/ui/LuxuryCta";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { CleftLiftDiagram } from "@/components/ui/CleftLiftDiagram";
 import { EarlobeDiagram } from "@/components/ui/EarlobeDiagram";
-import { JsonLd, faqPageSchema } from "@/lib/structuredData";
+import { JsonLd, faqPageSchema, breadcrumbSchema, SITE_URL } from "@/lib/structuredData";
 
 export function generateStaticParams() {
   return procedures.map((p) => ({ slug: p.slug }));
@@ -75,10 +75,23 @@ export default async function ProcedurePage({
 
   return (
     <div className="pt-28">
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: `${SITE_URL}/` },
+          { name: "Services", url: `${SITE_URL}/services` },
+          { name: procedure.name, url: `${SITE_URL}/services/${procedure.slug}` },
+        ])}
+      />
       {/* Header */}
       <section className="bg-[var(--surface)] border-b border-[var(--gray-200)]">
         <div className="mx-auto max-w-6xl px-6 pt-14 pb-16">
           <nav aria-label="Breadcrumb" className="mb-8 text-sm text-[var(--warm-gray-light)]">
+            <Link href="/" className="hover:text-[var(--teal-accent)] transition-colors">
+              Home
+            </Link>
+            <span aria-hidden="true" className="mx-2">
+              /
+            </span>
             <Link href="/services" className="hover:text-[var(--teal-accent)] transition-colors">
               Services
             </Link>

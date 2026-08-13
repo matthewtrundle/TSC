@@ -675,6 +675,7 @@ export const procedures: Procedure[] = [
       "Pilonidal disease is usually called a cyst. It is really an infection: abscesses and sinus tracts near the tailbone, where hair and debris work into the deep cleft between the buttocks and the area cannot heal. The result is a cycle — painful flare-up, drainage, wait for the next one.",
       "Two things are worth saying plainly. It is nobody's fault: the cause is anatomy, hair, friction, and often heredity — not hygiene — and almost no one talks about it. And it is miserable. Sitting hurts. Many patients quietly plan their lives around it for years. You do not have to.",
       "Traditional excision removes the infection but leaves the deep cleft that caused it, which is why the disease so often returns. The Bascom cleft lift is a lift and a shift: diseased tissue out, the closure shifted off the midline to skin that actually heals, and the cleft flattened so nothing traps hair and moisture again. Disease, infection, and anatomy — fixed in one outpatient operation, successful in 95 to 97 percent of patients in large published series.",
+      "You do not need a referral. Many of our pilonidal patients find us on their own — often after one or more operations elsewhere — and we welcome self-referred patients. Call the office or request an appointment online.",
     ],
     whenToConsider: [
       "Recurring abscesses or drainage near the tailbone",
@@ -693,6 +694,10 @@ export const procedures: Procedure[] = [
       },
     ],
     faqs: [
+      {
+        question: "Do I need a referral for pilonidal surgery?",
+        answer: "No. We welcome self-referred patients for pilonidal disease — many of our patients find us on their own, often after previous surgery elsewhere. Call the office or request an appointment online, and bring any prior operative or pathology records you have.",
+      },
       {
         question: "What kind of anesthesia is used for a cleft lift?",
         answer: "General anesthesia is the most common approach — it is the safest way to keep you comfortable while you are positioned face-down for the operation. Your surgeon will go over the anesthesia plan with you before anything is scheduled.",
