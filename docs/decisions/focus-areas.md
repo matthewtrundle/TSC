@@ -77,3 +77,11 @@ These block publishable copy — details in [[medical-focus]]:
 - **OpenRouter API key** — the key used for the 2026-08-01 image generation was
   a temporary one supplied in chat. Ask Dr. Modi for a fresh key before any
   image regeneration (`TSC/scripts/generate-images.mjs`); never commit keys.
+
+### 2026-08-13 — SEO expansion brief adopted (from parallel session)
+- **Decision:** The 7-task SEO brief (individual surgeon pages, referring-page
+  sharpening, pilonidal/melanoma expansion, schema polish) is adopted as the
+  active work queue — reconciled plan in [[../plans/2026-08-13-seo-expansion-brief]].
+  Tasks 2 and 4 were found already satisfied; surgeon pages build first.
+- **Status:** Confirmed
+- **Source:** Dr. Modi, chat 2026-08-13 (brief transferred from another session)
