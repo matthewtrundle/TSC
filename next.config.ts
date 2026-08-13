@@ -25,9 +25,11 @@ const nextConfig: NextConfig = {
 
       // Physicians
       { source: "/physicians", destination: "/team", permanent: true },
-      { source: "/physicians/modi", destination: "/team#dr-modi", permanent: true },
-      { source: "/physicians/wells", destination: "/team#dr-wells", permanent: true },
-      { source: "/physicians/parry", destination: "/team#dr-parry", permanent: true },
+      // Old per-doctor URLs point at the dedicated surgeon pages
+      // (2026-08-13) so their accumulated link equity lands there.
+      { source: "/physicians/modi", destination: "/team/dr-gunjan-modi", permanent: true },
+      { source: "/physicians/wells", destination: "/team/dr-michael-wells", permanent: true },
+      { source: "/physicians/parry", destination: "/team/dr-edward-parry", permanent: true },
 
       // Patients hub — UPDATE-LATER: point at /resources when it exists
       { source: "/patients", destination: "/appointment", permanent: true },
