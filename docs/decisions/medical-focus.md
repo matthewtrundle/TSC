@@ -141,3 +141,21 @@ by Dr. Modi (or another physician of the practice) in chat. Never invent
 stats, testimonials, staff, response times, or clinical details. Feature lines
 containing `PLACEHOLDER` must never render. When a physician confirms a claim
 in chat, record it here with the date, then update siteData.
+
+### 2026-08-13 — Melanoma margin-story copy + six literature citations LIVE
+- **Decision:** Dr. Modi approved on preview: "Mohs Surgery for Melanoma"
+  headline; margin-story paragraph (MIS/lentigo maligna extend beyond the
+  visible edge, esp. head/neck; 100% margin exam vs fixed-margin excision);
+  claims limited to "recurrence below one percent" and "survival at least
+  equal to — and for early invasive melanoma, modestly better than — wide
+  excision." Six citations, ALL verified on PubMed and cross-checked
+  against two frontier models via OpenRouter: Cheraghlou JAMA Derm 2019
+  (31553403), Nosrati JAMA Derm 2017 (28241261), Etzkorn JAAD 2015,
+  Valentin-Nogueras Derm Surg 2016 (27158886), Bricca JAAD 2005
+  (15627086), Kunishige JAAD 2012 (22196979). Rendered under "Mohs for
+  melanoma is well-studied and validated" with an anchor link from the
+  intro. NO hosted PDFs and NO journal-cover thumbnails (copyright — links
+  to PubMed only).
+- **Status:** Confirmed — live (merge f32519a)
+- **Source:** Dr. Modi, chat 2026-08-13
+- **Links:** [[focus-areas]] [[definitions]]
