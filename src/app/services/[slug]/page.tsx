@@ -46,7 +46,7 @@ export default async function ProcedurePage({
   // benign — the old first-three fallback sent melanoma readers to lipoma
   // removal and starved the cancer pages of internal links.
   const RELATED: Record<string, string[]> = {
-    melanoma: ["basal-cell-carcinoma", "squamous-cell-carcinoma", "actinic-keratosis"],
+    melanoma: ["basal-cell-carcinoma", "squamous-cell-carcinoma", "atypical-fibroxanthoma"],
     "basal-cell-carcinoma": ["squamous-cell-carcinoma", "melanoma", "actinic-keratosis"],
     "squamous-cell-carcinoma": ["basal-cell-carcinoma", "actinic-keratosis", "melanoma"],
     "actinic-keratosis": ["squamous-cell-carcinoma", "basal-cell-carcinoma", "skin-resurfacing"],
@@ -116,9 +116,32 @@ export default async function ProcedurePage({
                   key={paragraph.slice(0, 40)}
                   className="mb-5 text-lg leading-relaxed text-[var(--warm-gray)] last:mb-0"
                 >
-                  {paragraph}
+                  {/* **span** renders bold with the bronze underline — the
+                      same emphasis treatment as the services page. */}
+                  {paragraph.split("**").map((part, i) =>
+                    i % 2 === 1 ? (
+                      <strong
+                        key={i}
+                        className="font-semibold text-[var(--navy-primary)] underline decoration-[var(--bronze)] decoration-2 underline-offset-4"
+                      >
+                        {part}
+                      </strong>
+                    ) : (
+                      part
+                    )
+                  )}
                 </p>
               ))}
+              {procedure.references && (
+                <p className="mt-6 text-lg">
+                  <a
+                    href="#literature"
+                    className="font-semibold text-[var(--bronze-text)] underline decoration-[var(--hairline-bronze)] underline-offset-4 hover:decoration-[var(--bronze)] transition-colors"
+                  >
+                    A selection of the literature appears below &darr;
+                  </a>
+                </p>
+              )}
 
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
@@ -336,10 +359,10 @@ export default async function ProcedurePage({
       )}
 
       {procedure.references && (
-        <section className="bg-[var(--surface)] border-t border-[var(--gray-200)] py-14">
+        <section id="literature" className="scroll-mt-32 bg-[var(--surface)] border-t border-[var(--gray-200)] py-14">
           <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-lg font-semibold text-[var(--navy-primary)] mb-2">
-              Selected peer-reviewed literature
+            <h2 className="text-2xl font-semibold text-[var(--navy-primary)] mb-2" style={{ fontFamily: "var(--font-serif)" }}>
+              {procedure.referencesHeading ?? "Selected peer-reviewed literature"}
             </h2>
             <p className="text-[var(--warm-gray-light)] mb-6">
               For colleagues — and patients who want the data behind the approach.

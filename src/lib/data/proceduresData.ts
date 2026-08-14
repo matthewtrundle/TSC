@@ -38,6 +38,8 @@ export type Procedure = {
       list — civilian-readable page, but the references signal rigor to
       colleagues. Only verified, real publications (medical-focus.md rule). */
   references?: { label: string; url: string }[];
+  /** Heading over the references block (defaults to a generic line). */
+  referencesHeading?: string;
   /** Optional two-column treatment comparison table. */
   comparison?: {
     title: string;
@@ -432,14 +434,14 @@ export const procedures: Procedure[] = [
     slug: "melanoma",
     seoTitle: "Mohs Surgery for Melanoma in Plano, TX",
     seoDescription: "Same-day Mohs surgery for melanoma with MART-1 and SOX10 immunostaining read in our own Plano laboratory - removal, margin control, and reconstruction in one visit. (972) 378-0620.",
-    name: "Melanoma",
+    name: "Mohs Surgery for Melanoma",
     summary:
       "The most serious common skin cancer — treated here with same-day, margin-controlled Mohs surgery for appropriate cases.",
     body: [
       "Melanoma arises from the skin's pigment cells and is the most serious of the common skin cancers, because it can spread if it is not treated early. It usually announces itself as a mole that changes — in size, shape, or color — or a new spot that stands out from the rest.",
-      "For appropriate melanomas, we offer what few practices can: same-day, margin-controlled Mohs surgery with immunohistochemical staining — MART-1 and SOX10 — run in our own laboratory. The cancer is removed, every margin is tested, and once the margins are clear the wound is reconstructed, all in one visit. Wide local excision remains the right operation for some melanomas, and when a deeper melanoma calls for sentinel lymph node evaluation or additional specialists, we coordinate that care.",
+      "For appropriate melanomas, **we offer what few practices can: same-day, margin-controlled Mohs surgery with immunohistochemical staining — MART-1 and SOX10 — run in our own laboratory.** The cancer is removed, every margin is tested, and once the margins are clear the wound is reconstructed, all in one visit. Wide local excision remains the right operation for some melanomas, and when a deeper melanoma calls for sentinel lymph node evaluation or additional specialists, we coordinate that care.",
       "Margins matter most where melanoma hides. Melanoma in situ — especially the lentigo maligna type on the head, neck, and other sun-damaged skin — often extends invisibly beyond its visible edge. A conventional excision removes a fixed margin and waits days for the laboratory to say whether it was enough; sometimes it was not. Mohs replaces that uncertainty with a measurement: one hundred percent of the margin is examined, with immunostains that make even single melanoma cells visible, before anything is reconstructed. On the face, that same precision spares healthy tissue a wider blind margin would sacrifice.",
-      "This approach is well studied. Peer-reviewed series of Mohs surgery for melanoma performed with MART-1 immunostaining report local recurrence rates below one percent, and large national analyses report survival at least equal to — and for early invasive melanoma, modestly better than — conventional wide excision. A selection of the literature appears below.",
+      "This approach is well studied. Peer-reviewed series of Mohs surgery for melanoma performed with MART-1 immunostaining report local recurrence rates below one percent, and large national analyses report survival at least equal to — and for early invasive melanoma, modestly better than — conventional wide excision.",
       "Your surgeon will recommend the approach that fits your melanoma — its depth, its location, and you.",
     ],
     whenToConsider: [
@@ -462,6 +464,7 @@ export const procedures: Procedure[] = [
         note: "Sentinel lymph node evaluation and referrals to medical oncology, arranged and followed by our team.",
       },
     ],
+    referencesHeading: "Mohs for melanoma is well-studied and validated",
     references: [
       {
         label: "Cheraghlou S, et al. Comparison of survival after Mohs micrographic surgery vs wide margin excision for early-stage invasive melanoma. JAMA Dermatology. 2019;155(11):1252-1259.",
