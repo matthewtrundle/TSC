@@ -480,8 +480,12 @@ export const procedures: Procedure[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/27158886/",
       },
       {
-        label: "Shin TM, et al. Mohs micrographic surgery with MART-1 immunostaining has durable low local recurrence rates for in situ and invasive melanomas. Journal of the American Academy of Dermatology. 2021;84(1):196-198.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/32339704/",
+        label: "Bricca GM, et al. Cutaneous head and neck melanoma treated with Mohs micrographic surgery. Journal of the American Academy of Dermatology. 2005;52(1):92-100.",
+        url: "https://pubmed.ncbi.nlm.nih.gov/15627086/",
+      },
+      {
+        label: "Kunishige JH, Brodland DG, Zitelli JA. Surgical margins for melanoma in situ. Journal of the American Academy of Dermatology. 2012;66(3):438-444.",
+        url: "https://pubmed.ncbi.nlm.nih.gov/22196979/",
       },
     ],
     // Real slide from the practice's own lab (Dr. Modi, 2026-08-10).
