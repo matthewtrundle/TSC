@@ -34,6 +34,10 @@ export type Procedure = {
   seoDescription?: string;
   /** Optional page-specific FAQ (rendered with FAQPage schema). */
   faqs?: { question: string; answer: string }[];
+  /** Optional peer-reviewed citations, rendered as a "Selected literature"
+      list — civilian-readable page, but the references signal rigor to
+      colleagues. Only verified, real publications (medical-focus.md rule). */
+  references?: { label: string; url: string }[];
   /** Optional two-column treatment comparison table. */
   comparison?: {
     title: string;
@@ -434,6 +438,8 @@ export const procedures: Procedure[] = [
     body: [
       "Melanoma arises from the skin's pigment cells and is the most serious of the common skin cancers, because it can spread if it is not treated early. It usually announces itself as a mole that changes — in size, shape, or color — or a new spot that stands out from the rest.",
       "For appropriate melanomas, we offer what few practices can: same-day, margin-controlled Mohs surgery with immunohistochemical staining — MART-1 and SOX10 — run in our own laboratory. The cancer is removed, every margin is tested, and once the margins are clear the wound is reconstructed, all in one visit. Wide local excision remains the right operation for some melanomas, and when a deeper melanoma calls for sentinel lymph node evaluation or additional specialists, we coordinate that care.",
+      "Margins matter most where melanoma hides. Melanoma in situ — especially the lentigo maligna type on the head, neck, and other sun-damaged skin — often extends invisibly beyond its visible edge. A conventional excision removes a fixed margin and waits days for the laboratory to say whether it was enough; sometimes it was not. Mohs replaces that uncertainty with a measurement: one hundred percent of the margin is examined, with immunostains that make even single melanoma cells visible, before anything is reconstructed. On the face, that same precision spares healthy tissue a wider blind margin would sacrifice.",
+      "This approach is well studied. Peer-reviewed series of Mohs surgery for melanoma performed with MART-1 immunostaining report local recurrence rates below one percent, and large national analyses report survival at least equal to — and for early invasive melanoma, modestly better than — conventional wide excision. A selection of the literature appears below.",
       "Your surgeon will recommend the approach that fits your melanoma — its depth, its location, and you.",
     ],
     whenToConsider: [
@@ -454,6 +460,28 @@ export const procedures: Procedure[] = [
       {
         name: "Coordinated escalation when indicated",
         note: "Sentinel lymph node evaluation and referrals to medical oncology, arranged and followed by our team.",
+      },
+    ],
+    references: [
+      {
+        label: "Cheraghlou S, et al. Comparison of survival after Mohs micrographic surgery vs wide margin excision for early-stage invasive melanoma. JAMA Dermatology. 2019;155(11):1252-1259.",
+        url: "https://pubmed.ncbi.nlm.nih.gov/31553403/",
+      },
+      {
+        label: "Nosrati A, et al. Outcomes of melanoma in situ treated with Mohs micrographic surgery compared with wide local excision. JAMA Dermatology. 2017;153(5):436-441.",
+        url: "https://pubmed.ncbi.nlm.nih.gov/28241261/",
+      },
+      {
+        label: "Etzkorn JR, et al. Low recurrence rates for in situ and invasive melanomas using Mohs micrographic surgery with MART-1 immunostaining. Journal of the American Academy of Dermatology. 2015;72(5):840-850.",
+        url: "https://www.sciencedirect.com/science/article/abs/pii/S0190962215000389",
+      },
+      {
+        label: "Valentin-Nogueras SM, et al. Mohs micrographic surgery using MART-1 immunostain in the treatment of invasive melanoma and melanoma in situ. Dermatologic Surgery. 2016;42(6):733-744.",
+        url: "https://pubmed.ncbi.nlm.nih.gov/27158886/",
+      },
+      {
+        label: "Shin TM, et al. Mohs micrographic surgery with MART-1 immunostaining has durable low local recurrence rates for in situ and invasive melanomas. Journal of the American Academy of Dermatology. 2021;84(1):196-198.",
+        url: "https://pubmed.ncbi.nlm.nih.gov/32339704/",
       },
     ],
     // Real slide from the practice's own lab (Dr. Modi, 2026-08-10).

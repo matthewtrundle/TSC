@@ -335,6 +335,34 @@ export default async function ProcedurePage({
         </section>
       )}
 
+      {procedure.references && (
+        <section className="bg-[var(--surface)] border-t border-[var(--gray-200)] py-14">
+          <div className="mx-auto max-w-6xl px-6">
+            <h2 className="text-lg font-semibold text-[var(--navy-primary)] mb-2">
+              Selected peer-reviewed literature
+            </h2>
+            <p className="text-[var(--warm-gray-light)] mb-6">
+              For colleagues — and patients who want the data behind the approach.
+            </p>
+            <span aria-hidden="true" className="rule-bronze mb-6" />
+            <ol className="space-y-3 max-w-4xl list-decimal pl-5">
+              {procedure.references.map((ref) => (
+                <li key={ref.url} className="text-sm leading-relaxed text-[var(--warm-gray)]">
+                  <a
+                    href={ref.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[var(--bronze-text)] transition-colors underline decoration-[var(--hairline-bronze)] underline-offset-4"
+                  >
+                    {ref.label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
+
       {/* Related procedures */}
       <section className="py-20 bg-[var(--surface)]">
         <div className="mx-auto max-w-6xl px-6">
