@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- Source for the "Fax Rescue Card.pdf" staff instruction card (US Letter).
+     Render: headless Chrome --print-to-pdf --no-pdf-header-footer.
+     Context: 8x8 fax bug (see memory project-8x8-fax-tiff-bug) — staff
+     tool is "Fix Fax (Office).command". Created 2026-08-11. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Fax Rescue Card</title>
+<meta name="hz:slide-selector" content=".page" />
+<meta name="hz:canvas-width" content="816" />
+<meta name="hz:canvas-height" content="1056" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: letter; margin: 0; }
+  body { background: #ffffff; }
+  .page {
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+    background: #ffffff;
+    font-family: 'Libre Franklin', sans-serif;
+    color: #1C242C;
+    overflow: hidden;
+  }
+  .band {
+    background: #1C242C;
+    color: #F7F4EF;
+    padding: 0.45in 0.6in 0.35in;
+    border-bottom: 4px solid #A6803E;
+  }
+  .band h1 { font-size: 30pt; font-weight: 800; letter-spacing: 0.5px; }
+  .band .sub { font-size: 11pt; margin-top: 6px; color: #C9A96A; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+  .intro {
+    margin: 0.32in 0.6in 0.1in;
+    font-size: 13.5pt;
+    line-height: 1.45;
+  }
+  .intro strong { color: #7A5C26; }
+  .steps { margin: 0.25in 0.6in 0; }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.25in;
+    padding: 0.19in 0;
+    border-bottom: 1px solid #e2ddd4;
+  }
+  .step:last-child { border-bottom: none; }
+  .num {
+    flex: 0 0 auto;
+    width: 0.58in; height: 0.58in;
+    border-radius: 50%;
+    background: #A6803E;
+    color: #ffffff;
+    font-size: 22pt; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step h2 { font-size: 15.5pt; font-weight: 800; margin-bottom: 4px; }
+  .step p { font-size: 12.5pt; line-height: 1.45; }
+  .step .calm { color: #5a6472; font-size: 11.5pt; margin-top: 3px; }
+  .btn { font-weight: 800; white-space: nowrap; }
+  .notes {
+    position: absolute;
+    left: 0.6in; right: 0.6in; bottom: 0.5in;
+    background: #F7F4EF;
+    border: 1px solid #d9d2c4;
+    border-left: 5px solid #A6803E;
+    padding: 0.22in 0.28in;
+    font-size: 11.5pt;
+    line-height: 1.5;
+  }
+  .notes b { font-weight: 800; }
+</style>
+</head>
+<body>
+<div class="page" data-canvas-width="816" data-canvas-height="1056">
+  <div class="band">
+    <h1>Fax won&rsquo;t open? Here&rsquo;s the fix.</h1>
+    <div class="sub">The Surgery Center at Plano Dermatology &middot; Front Office Guide</div>
+  </div>
+
+  <p class="intro">
+    Sometimes a fax arrives looking <strong>&ldquo;corrupted&rdquo;</strong> and won&rsquo;t open.
+    <strong>The fax is fine</strong> &mdash; it just arrived with the wrong label. This fixes it in
+    about ten seconds. Nothing is ever deleted or changed.
+  </p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <div>
+        <h2>Save the fax to this computer</h2>
+        <p>In Gmail or Google Drive, click the <span class="btn">download arrow (&#8595;)</span> on the fax.
+        It lands in the <span class="btn">Downloads</span> folder automatically.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <div>
+        <h2>Double-click &ldquo;Fix Fax&rdquo; on the Desktop</h2>
+        <p>A small text window will open by itself.</p>
+        <p class="calm">That window is normal &mdash; it&rsquo;s the tool working. You don&rsquo;t need to type anything.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <div>
+        <h2>The readable fax opens on its own</h2>
+        <p>After a moment, the fixed fax pops up in Preview &mdash; read it or print it as usual.
+        When you&rsquo;re done, press <span class="btn">Return</span> to close the text window.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">4</div>
+      <div>
+        <h2>Need it as a PDF for the chart?</h2>
+        <p>In Preview, click <span class="btn">File &rarr; Export as PDF</span>, then save. Done.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes">
+    <b>If it says &ldquo;No broken fax files found&rdquo;:</b> that fax has a different problem &mdash;
+    set it aside and let the office manager or Dr.&nbsp;Modi know.<br />
+    <b>Good to know:</b> the tool only makes a readable <i>copy</i> &mdash; the original fax always
+    stays exactly as it arrived, and everything happens on this computer.
+  </div>
+</div>
+</body>
+</html>
