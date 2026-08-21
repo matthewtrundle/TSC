@@ -162,13 +162,18 @@ export default function Home() {
                 Why fellowship training matters
               </h3>
               <p className="max-w-3xl leading-relaxed text-[var(--warm-gray)]">
-                Any dermatologist may perform Mohs surgery. A{" "}
-                <strong className="font-semibold">fellowship-trained</strong>{" "}
-                Mohs surgeon has done something harder: one to two additional
-                years of accredited training under an established Mohs surgeon,
-                covering hundreds of cases — the surgery, the microscope work,
-                and the reconstruction. All three of our surgeons carry that
-                training.
+                Fellowship training is one to two additional years devoted
+                entirely to skin cancer: a fellowship in{" "}
+                <strong className="font-semibold">
+                  Micrographic Surgery and Dermatologic Oncology
+                </strong>
+                , accredited by the American College of Mohs Surgery, spent
+                under an established Mohs surgeon across hundreds of cases. It
+                covers the full discipline — the oncology of how these tumors
+                behave, the microscope work that reads each stage&apos;s
+                margins, and advanced reconstruction of the site once the
+                cancer is out. All three of our surgeons carry that training,
+                and it is the foundation of everything this practice does.
               </p>
             </aside>
           </FadeIn>
