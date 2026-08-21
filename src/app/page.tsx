@@ -159,21 +159,31 @@ export default function Home() {
                 className="mb-3 text-xl text-[var(--navy-primary)]"
                 style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
               >
-                Why fellowship training matters
+                The fellowship training edge
               </h3>
               <p className="max-w-3xl leading-relaxed text-[var(--warm-gray)]">
-                Fellowship training is one to two additional years devoted
-                entirely to skin cancer: a fellowship in{" "}
-                <strong className="font-semibold">
+                All three of our surgeons completed fellowships in{" "}
+                <a
+                  href="https://www.abderm.org/residents-and-fellows/fellowship-training/micrographic-surgery-and-dermatologic-oncology"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[var(--bronze-text)] underline decoration-1 underline-offset-4 transition-opacity hover:opacity-75"
+                >
                   Micrographic Surgery and Dermatologic Oncology
-                </strong>
-                , accredited by the American College of Mohs Surgery, spent
-                under an established Mohs surgeon across hundreds of cases. It
-                covers the full discipline — the oncology of how these tumors
-                behave, the microscope work that reads each stage&apos;s
-                margins, and advanced reconstruction of the site once the
-                cancer is out. All three of our surgeons carry that training,
-                and it is the foundation of everything this practice does.
+                </a>
+                , accredited by the{" "}
+                <a
+                  href="https://www.mohscollege.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[var(--bronze-text)] underline decoration-1 underline-offset-4 transition-opacity hover:opacity-75"
+                >
+                  American College of Mohs Surgery
+                </a>{" "}
+                — one to two years dedicated to cutaneous oncology, the
+                microscopic reading of each margin, and advanced
+                reconstruction. That training is the foundation of this
+                practice.
               </p>
             </aside>
           </FadeIn>
