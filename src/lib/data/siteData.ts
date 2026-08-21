@@ -47,7 +47,7 @@ export const siteConfig = {
 
   links: {
     patientPortal: "https://sadio.com/",
-    billPay: "https://quickclick.com/r/c5orl",
+    billPay: "https://collectcheckout.com/r/nv2gpirm7y3kabbs5oj638lnfnp1lx",
     // The practice's Google Business Profile (place ID verified against the
     // 6100 Windhaven Pkwy listing). Opens Google's own reviews panel — we
     // link to real reviews rather than restating ratings on-site.
