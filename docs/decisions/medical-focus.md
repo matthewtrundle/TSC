@@ -8,6 +8,15 @@ say-so. See [[practice-decisions]] for the no-fabricated-content rule and the
 
 ## CONFIRMED (publishable)
 
+### 2026-08-21 — Fellowship name + accreditation CONFIRMED (publishable)
+- **Decision:** All three surgeons' fellowships may be described as a
+  fellowship in Micrographic Surgery and Dermatologic Oncology, accredited by
+  the American College of Mohs Surgery. Dr. Modi supplied the exact naming and
+  the ACMS-accreditation wording himself.
+- **Status:** Confirmed
+- **Source:** chat 2026-08-21 / commit c433bf9 (homepage aside)
+- **Links:** [[practice-decisions#2026-08-21--never-talk-down-to-referring-physicians-in-copy]]
+
 ### 2026-08-01 — Same-day melanoma Mohs with MART-1 + SOX10
 - **Decision:** The practice performs Mohs surgery for melanoma with
   immunohistochemical staining using MART-1 and SOX10, all on the same day:
