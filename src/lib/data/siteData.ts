@@ -8,7 +8,7 @@ export const siteConfig = {
   shortName: "Plano Dermatology",
   tagline: "Experts in Mohs Micrographic Surgery",
   description:
-    "World-class skin cancer care in a safe and comfortable environment. Our board certified and fellowship trained surgeons specialize in Mohs micrographic surgery and the treatment of skin cancer.",
+    "Skin cancer surgery in Plano, Texas. Three board-certified, fellowship-trained Mohs surgeons; tissue margins read on-site, same day.",
 
   contact: {
     phone: "(972) 378-0620",
