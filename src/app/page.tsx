@@ -159,7 +159,7 @@ export default function Home() {
                 className="mb-3 text-xl text-[var(--navy-primary)]"
                 style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
               >
-                The fellowship training edge
+                The fellowship training standard
               </h3>
               <p className="max-w-3xl leading-relaxed text-[var(--warm-gray)]">
                 All three of our surgeons completed fellowships in{" "}
@@ -180,9 +180,9 @@ export default function Home() {
                 >
                   American College of Mohs Surgery
                 </a>{" "}
-                — one to two years dedicated to cutaneous oncology, the
-                microscopic reading of each margin, and advanced
-                reconstruction. That training is the foundation of this
+                — one to two years dedicated to cutaneous oncology, precise
+                surgical removal, the microscopic reading of each margin, and
+                advanced reconstruction. That training is the foundation of this
                 practice.
               </p>
             </aside>
