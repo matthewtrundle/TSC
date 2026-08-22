@@ -8,6 +8,16 @@ say-so. See [[practice-decisions]] for the no-fabricated-content rule and the
 
 ## CONFIRMED (publishable)
 
+### 2026-08-21 — Prep guidance qualified; anesthesia claim aligned (Dr. Modi confirmed)
+- **Decision:** Homepage Mohs-day FAQ: "Most patients eat breakfast and take
+  all their normal medications — we confirm your instructions when we
+  schedule you" (replaces the blanket no-fasting/meds promise). Pilonidal
+  anesthesia answer: general anesthesia is "the most common approach" only —
+  the "safest way" wording is retired and must not return.
+- **Status:** Confirmed
+- **Source:** chat 2026-08-21 / commit d3a9639 (pressure-test follow-up)
+- **Links:** [[focus-areas#2026-08-21--two-model-pressure-test-findings-triaged]]
+
 ### 2026-08-21 — Fellowship name + accreditation CONFIRMED (publishable)
 - **Decision:** All three surgeons' fellowships may be described as a
   fellowship in Micrographic Surgery and Dermatologic Oncology, accredited by
