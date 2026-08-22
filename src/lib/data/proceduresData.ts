@@ -735,7 +735,7 @@ export const procedures: Procedure[] = [
       },
       {
         question: "What kind of anesthesia is used for a cleft lift?",
-        answer: "General anesthesia is the most common approach — it is the safest way to keep you comfortable while you are positioned face-down for the operation. Your surgeon will go over the anesthesia plan with you before anything is scheduled.",
+        answer: "General anesthesia is the most common approach — it keeps you comfortable while you are positioned face-down for the operation. Your surgeon will go over the anesthesia plan with you before anything is scheduled.",
       },
       {
         question: "Will I have a drain afterward?",

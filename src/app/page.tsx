@@ -278,7 +278,7 @@ export default function Home() {
                   time: "7:30 AM",
                   title: "Check in",
                   description:
-                    "A typical day starts at 7:30. Bring a book, headphones, and any medication you normally take. Eat breakfast first — there is no fasting requirement.",
+                    "A typical day starts at 7:30. Bring a book and headphones. Most patients eat breakfast and take all their normal medications — we confirm your instructions when we schedule you.",
                 },
                 {
                   time: "First hour",
