@@ -192,9 +192,9 @@ export default function PracticePage() {
                 Surgeons who taught the surgery
               </h2>
               <p className="text-[var(--warm-gray)] leading-relaxed mb-6">
-                Fellowship training is the highest credential in Mohs surgery: a
-                year or more spent doing nothing but this operation under a
-                senior surgeon. All three of our physicians hold it — and each
+                Fellowship training is the standard this practice was built
+                on: a year or more spent doing nothing but this operation under
+                a senior surgeon. All three of our physicians hold it — and each
                 has spent a substantial part of his career on the teaching side
                 of that arrangement.
               </p>

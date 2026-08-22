@@ -58,7 +58,7 @@ export const procedures: Procedure[] = [
       "Complete excision of painful, infected, or bothersome cysts, including the sac, to help prevent recurrence.",
     body: [
       "Cysts are closed sacs under the skin that can fill with fluid, pus, or other material. Most are benign, but they can grow, become painful or infected, or simply be in a place where they bother you every day.",
-      "Removing a cyst properly means removing the whole sac, not just draining it — a drained cyst usually refills. Our surgeons excise the cyst and its sac through a small incision under local anesthetic, and close the wound with attention to the final scar.",
+      "Complete removal means taking the whole sac, not just draining it — a drained cyst usually refills. Our surgeons excise the cyst and its sac through a small incision under local anesthetic, and close the wound with attention to the final scar.",
     ],
     whenToConsider: [
       "A lump that is growing or changing",
@@ -310,7 +310,7 @@ export const procedures: Procedure[] = [
     summary:
       "Biopsies of the lip, gums, and tongue — for growths, and to help confirm inflammatory and autoimmune conditions.",
     body: [
-      "Lesions of the mouth often fall between specialties: too far inside for many dermatologists, outside the territory of most physicians. Our surgeons perform biopsies of the lip, the gums, and the tongue as brief office procedures under local anesthetic.",
+      "Lesions of the mouth often fall between specialties — a niche few practices claim. Our surgeons perform biopsies of the lip, the gums, and the tongue as brief office procedures under local anesthetic.",
       "These biopsies do two different jobs. The first is diagnosing growths — a lump, sore, or patch that needs a name before it can be treated. The second is confirming inflammatory and autoimmune conditions: a biopsy can establish oral lichen planus, and a small sample from the inside of the lip — where the minor salivary glands sit — helps confirm Sjögren's syndrome. Either way, the tissue goes to pathology and you get an answer.",
     ],
     whenToConsider: [
@@ -595,7 +595,7 @@ export const procedures: Procedure[] = [
       "A rare cancer of the deeper skin that spreads by root-like extensions — the problem margin-controlled surgery was built to solve.",
     body: [
       "DFSP begins in the deeper layer of the skin as a firm, slowly enlarging plaque or nodule, often on the trunk or shoulders, and often present for years before diagnosis. It rarely spreads to other organs — its danger is local: it sends out root-like extensions well beyond the visible edge of the tumor.",
-      "That growth pattern is exactly what margin-controlled surgery exists for. Standard excision judged by eye leaves those roots behind; examining the full margin under the microscope lets the surgeon follow every extension to its end before closing.",
+      "That growth pattern is exactly what margin-controlled surgery exists for. Excision judged by eye may leave those roots behind; examining the full margin under the microscope lets the surgeon follow every extension to its end before closing.",
     ],
     whenToConsider: [
       "A firm, slowly growing plaque or nodule, often on the trunk or shoulder",
