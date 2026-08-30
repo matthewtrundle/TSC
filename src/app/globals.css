@@ -26,6 +26,10 @@
   --champagne: #C9A96A;       /* bronze for dark backgrounds */
   --hairline: #E3DCD0;
   --hairline-bronze: rgba(166, 128, 62, 0.35);
+  --input-border: #857C6E;    /* form control boundaries: 4.1:1 on white,
+                                 3.5:1 on ivory-deep (WCAG 1.4.11 needs 3:1).
+                                 Hairline stays for decorative dividers only.
+                                 ADA audit 2026-08-30, finding #2. */
 
   /* Legacy names, remapped. Pages reference these; the remap restyles every
      page without touching call sites. The names are wrong now — the values
@@ -604,6 +608,36 @@ h3, h4 {
 *:focus-visible {
   outline: 2px solid var(--bronze-text);
   outline-offset: 2px;
+}
+
+/* Bronze-text measures only ~2.5:1 against the charcoals (WCAG 1.4.11 needs
+   3:1 for focus indication), so every dark surface swaps the ring to
+   champagne (7:1 on charcoal). List every dark container here when adding
+   one. ADA audit 2026-08-30, finding #5. */
+:where(.band-dark, .card-dark, footer, .kenburns-frame, .focus-on-dark) :focus-visible {
+  outline-color: var(--champagne);
+}
+
+/* Skip link — first focusable element on every page (WCAG 2.4.1). Hidden
+   above the viewport until keyboard focus lands on it; z-index clears the
+   fixed header (z-50). ADA audit 2026-08-30, finding #1. */
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 60;
+  transform: translateY(-250%);
+  background: var(--ivory);
+  color: var(--charcoal);
+  border: 2px solid var(--bronze-text);
+  border-radius: var(--card-radius);
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 /* =============================================================================

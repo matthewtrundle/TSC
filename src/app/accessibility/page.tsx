@@ -55,11 +55,11 @@ export default function AccessibilityPage() {
                   want to know — and our staff is available by phone during
                   office hours.
                   Call{" "}
-                  <a href={`tel:${siteConfig.contact.phoneRaw}`} className="font-semibold text-[var(--bronze-text)] hover:underline">
+                  <a href={`tel:${siteConfig.contact.phoneRaw}`} className="font-semibold text-[var(--bronze-text)] underline underline-offset-2">
                     {siteConfig.contact.phone}
                   </a>{" "}
                   or email{" "}
-                  <a href={`mailto:${siteConfig.contact.email}`} className="font-semibold text-[var(--bronze-text)] hover:underline">
+                  <a href={`mailto:${siteConfig.contact.email}`} className="font-semibold text-[var(--bronze-text)] underline underline-offset-2">
                     {siteConfig.contact.email}
                   </a>{" "}
                   and we will help directly and work to fix the issue.

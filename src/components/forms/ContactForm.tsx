@@ -108,12 +108,13 @@ export function ContactForm() {
               type="text"
               id="name"
               name="name"
+              autoComplete="name"
               required
               aria-invalid={!!fieldErrors.name}
               aria-describedby={fieldErrors.name ? "name-error" : undefined}
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] bg-white"
               placeholder="Your name"
             />
             <FieldError id="name" message={fieldErrors.name} />
@@ -131,12 +132,13 @@ export function ContactForm() {
                 type="email"
                 id="email"
                 name="email"
+                autoComplete="email"
                 required
                 aria-invalid={!!fieldErrors.email}
                 aria-describedby={fieldErrors.email ? "email-error" : undefined}
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] bg-white"
                 placeholder="you@example.com"
               />
               <FieldError id="email" message={fieldErrors.email} />
@@ -152,11 +154,12 @@ export function ContactForm() {
                 type="tel"
                 id="phone"
                 name="phone"
+                autoComplete="tel"
                 aria-invalid={!!fieldErrors.phone}
                 aria-describedby={fieldErrors.phone ? "phone-error" : undefined}
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] bg-white"
                 placeholder="(555) 555-5555"
               />
               <FieldError id="phone" message={fieldErrors.phone} />
@@ -175,7 +178,7 @@ export function ContactForm() {
               name="preferredContact"
               value={formData.preferredContact}
               onChange={handleChange}
-              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] bg-white"
             >
               <option value="phone">Phone</option>
               <option value="email">Email</option>
@@ -198,7 +201,7 @@ export function ContactForm() {
               aria-describedby="message-privacy-note"
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] resize-none bg-white"
+              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] resize-none bg-white"
               placeholder="How can we help you?"
             />
             <p
@@ -210,7 +213,7 @@ export function ContactForm() {
               anything urgent, call{" "}
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="font-semibold text-[var(--teal-accent)] hover:underline"
+                className="font-semibold text-[var(--teal-accent)] underline underline-offset-2"
               >
                 {siteConfig.contact.phone}
               </a>

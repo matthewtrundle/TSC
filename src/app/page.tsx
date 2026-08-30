@@ -371,11 +371,11 @@ export default function Home() {
             <p className="leading-relaxed text-[var(--warm-gray)]">
               We report back promptly and return every patient to your care.
               Referrals by phone at{" "}
-              <a href={`tel:${siteConfig.contact.phoneRaw}`} className="font-semibold text-[var(--navy-primary)] hover:text-[var(--teal-accent)]">
+              <a href={`tel:${siteConfig.contact.phoneRaw}`} className="font-semibold text-[var(--navy-primary)] underline decoration-[var(--hairline-bronze)] underline-offset-4 hover:text-[var(--teal-accent)]">
                 {siteConfig.contact.phone}
               </a>{" "}
               or fax at <span className="font-semibold text-[var(--navy-primary)]">{siteConfig.contact.fax}</span>.{" "}
-              <Link href="/referring" className="font-semibold text-[var(--teal-accent)] hover:underline whitespace-nowrap">
+              <Link href="/referring" className="font-semibold text-[var(--teal-accent)] underline underline-offset-2 whitespace-nowrap">
                 How to refer a patient
                 <ChevronRight className="ml-0.5 inline h-4 w-4 align-[-2px]" />
               </Link>

@@ -44,3 +44,5 @@ next-env.d.ts
 
 # raw image-generation masters (review artifacts, not source)
 scripts/.gen-raw/
+
+.playwright-mcp/

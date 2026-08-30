@@ -104,9 +104,16 @@ export default function RootLayout({
           (footer links especially) hides behind it — 56px bar height plus the
           home-indicator safe area on notched phones. */}
       <body className="antialiased pb-[calc(3.5rem+env(safe-area-inset-bottom))] lg:pb-0">
+        {/* First focusable element on every page (WCAG 2.4.1 Bypass Blocks).
+            Visually hidden until keyboard focus reaches it — see .skip-link. */}
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         <JsonLd data={medicalBusinessSchema()} />
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main id="main" tabIndex={-1} className="min-h-screen outline-none">
+          {children}
+        </main>
         <Footer />
         <MobileCallBar />
         <Analytics />

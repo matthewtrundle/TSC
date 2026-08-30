@@ -12,7 +12,7 @@ import { siteConfig } from "@/lib/data/siteData";
 export default function MobileCallBar() {
   return (
     <div
-      className="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-[var(--charcoal)] border-t border-[var(--champagne)] pb-[env(safe-area-inset-bottom)]"
+      className="fixed bottom-0 inset-x-0 z-40 lg:hidden focus-on-dark bg-[var(--charcoal)] border-t border-[var(--champagne)] pb-[env(safe-area-inset-bottom)]"
       role="navigation"
       aria-label="Quick contact"
     >

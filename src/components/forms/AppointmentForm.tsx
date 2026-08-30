@@ -124,12 +124,13 @@ export function AppointmentForm() {
                 type="text"
                 id="firstName"
                 name="firstName"
+                autoComplete="given-name"
                 required
                 aria-invalid={!!fieldErrors.firstName}
                 aria-describedby={fieldErrors.firstName ? "firstName-error" : undefined}
                 value={formData.firstName}
                 onChange={handleChange}
-                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] bg-white"
                 placeholder="First name"
               />
               <FieldError id="firstName" message={fieldErrors.firstName} />
@@ -145,12 +146,13 @@ export function AppointmentForm() {
                 type="text"
                 id="lastName"
                 name="lastName"
+                autoComplete="family-name"
                 required
                 aria-invalid={!!fieldErrors.lastName}
                 aria-describedby={fieldErrors.lastName ? "lastName-error" : undefined}
                 value={formData.lastName}
                 onChange={handleChange}
-                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] bg-white"
                 placeholder="Last name"
               />
               <FieldError id="lastName" message={fieldErrors.lastName} />
@@ -170,12 +172,13 @@ export function AppointmentForm() {
                 type="email"
                 id="email"
                 name="email"
+                autoComplete="email"
                 required
                 aria-invalid={!!fieldErrors.email}
                 aria-describedby={fieldErrors.email ? "email-error" : undefined}
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] bg-white"
                 placeholder="you@example.com"
               />
               <FieldError id="email" message={fieldErrors.email} />
@@ -191,12 +194,13 @@ export function AppointmentForm() {
                 type="tel"
                 id="phone"
                 name="phone"
+                autoComplete="tel"
                 required
                 aria-invalid={!!fieldErrors.phone}
                 aria-describedby={fieldErrors.phone ? "phone-error" : undefined}
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+                className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] bg-white"
                 placeholder="(555) 555-5555"
               />
               <FieldError id="phone" message={fieldErrors.phone} />
@@ -216,7 +220,7 @@ export function AppointmentForm() {
               required
               value={formData.visitType}
               onChange={handleChange}
-              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] bg-white"
             >
               <option value="new-patient">No — I&apos;m a new patient</option>
               <option value="returning-patient">Yes — I&apos;m a returning patient</option>
@@ -236,7 +240,7 @@ export function AppointmentForm() {
               name="referralSource"
               value={formData.referralSource}
               onChange={handleChange}
-              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] bg-white"
             >
               <option value="">Select an option</option>
               <option value="doctor-referral">Doctor Referral</option>
@@ -266,7 +270,7 @@ export function AppointmentForm() {
               aria-describedby={fieldErrors.reason ? "reason-error" : undefined}
               value={formData.reason}
               onChange={handleChange}
-              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] bg-white"
             >
               <option value="">Select a reason</option>
               <option value="skin-cancer">Skin cancer</option>
@@ -304,7 +308,7 @@ export function AppointmentForm() {
               aria-describedby={fieldErrors.message ? "message-error" : "message-help"}
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--gray-200)] bg-white"
+              className="w-full px-4 py-3.5 text-base rounded-sm border border-[var(--input-border)] bg-white"
               placeholder="Tell us as much as you're comfortable sharing"
             />
             <FieldError id="message" message={fieldErrors.message} />
@@ -316,7 +320,7 @@ export function AppointmentForm() {
               email. Prefer to talk it through instead? Call{" "}
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="font-semibold text-[var(--teal-accent)] hover:underline"
+                className="font-semibold text-[var(--teal-accent)] underline underline-offset-2"
               >
                 {siteConfig.contact.phone}
               </a>

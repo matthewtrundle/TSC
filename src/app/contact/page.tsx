@@ -128,7 +128,7 @@ export default function ContactPage() {
                         href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.address.full)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[var(--teal-accent)] font-semibold hover:underline mt-1 inline-block"
+                        className="text-[var(--teal-accent)] font-semibold underline underline-offset-2 mt-1 inline-block"
                       >
                         Get directions
                       </a>

@@ -289,7 +289,7 @@ export default async function SurgeonPage({
             <p className="mt-14 text-[var(--warm-gray-light)]">
               <Link
                 href="/team"
-                className="font-semibold text-[var(--bronze-text)] hover:underline underline-offset-4"
+                className="font-semibold text-[var(--bronze-text)] underline decoration-[var(--hairline-bronze)] underline-offset-4 hover:decoration-[var(--bronze)]"
               >
                 &larr; All three surgeons
               </Link>
@@ -299,7 +299,7 @@ export default async function SurgeonPage({
               Referring a patient? See our{" "}
               <Link
                 href="/referring"
-                className="font-semibold text-[var(--bronze-text)] hover:underline underline-offset-4"
+                className="font-semibold text-[var(--bronze-text)] underline decoration-[var(--hairline-bronze)] underline-offset-4 hover:decoration-[var(--bronze)]"
               >
                 physician referral page
               </Link>

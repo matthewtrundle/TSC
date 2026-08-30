@@ -38,7 +38,7 @@ export default function PrivacyPage() {
                   records and protected health information are governed
                   separately by our Notice of Privacy Practices under HIPAA,
                   available from our office — please call{" "}
-                  <a href={`tel:${siteConfig.contact.phoneRaw}`} className="font-semibold text-[var(--bronze-text)] hover:underline">
+                  <a href={`tel:${siteConfig.contact.phoneRaw}`} className="font-semibold text-[var(--bronze-text)] underline underline-offset-2">
                     {siteConfig.contact.phone}
                   </a>{" "}
                   to request a copy.
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
                 </h2>
                 <p>
                   Contact us at{" "}
-                  <a href={`mailto:${siteConfig.contact.email}`} className="font-semibold text-[var(--bronze-text)] hover:underline">
+                  <a href={`mailto:${siteConfig.contact.email}`} className="font-semibold text-[var(--bronze-text)] underline underline-offset-2">
                     {siteConfig.contact.email}
                   </a>{" "}
                   or {siteConfig.contact.phone}, or write to us at{" "}

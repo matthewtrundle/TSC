@@ -70,7 +70,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`sms:${siteConfig.contact.smsRaw}`}
-                  className="transition-colors hover:text-white"
+                  className="underline decoration-white/40 underline-offset-4 transition-colors hover:text-white"
                 >
                   Text: {siteConfig.contact.sms}
                 </a>
@@ -79,7 +79,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="transition-colors hover:text-white"
+                  className="underline decoration-white/40 underline-offset-4 transition-colors hover:text-white"
                 >
                   {siteConfig.contact.email}
                 </a>
@@ -89,7 +89,7 @@ export default function Footer() {
                   href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.address.full)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors hover:text-white"
+                  className="underline decoration-white/40 underline-offset-4 transition-colors hover:text-white"
                 >
                   {siteConfig.contact.address.full}
                 </a>
