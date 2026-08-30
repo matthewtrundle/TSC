@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/structuredData";
 import { procedures } from "@/lib/data/proceduresData";
+import { articles } from "@/lib/data/learnData";
 import { doctors } from "@/lib/data/siteData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -25,6 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/practice`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/referring`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/areas-we-serve`, lastModified, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE_URL}/learn`, lastModified, changeFrequency: "monthly", priority: 0.6 },
+    ...articles.map((a) => ({
+      url: `${SITE_URL}/learn/${a.slug}`,
+      lastModified: new Date(a.dateModified),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
     { url: `${SITE_URL}/appointment`, lastModified, changeFrequency: "yearly", priority: 0.9 },
     { url: `${SITE_URL}/contact`, lastModified, changeFrequency: "yearly", priority: 0.7 },
     { url: `${SITE_URL}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.2 },

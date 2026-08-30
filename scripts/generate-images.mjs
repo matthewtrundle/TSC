@@ -171,6 +171,21 @@ const MANIFEST = [
     quality: 78,
   },
   {
+    // /learn/neosporin-on-wounds + /learn index card. Evocative still life —
+    // no people, no brands. Renders duotone on the page.
+    id: "learn-wound-care",
+    prompt:
+      "Elegant still life photograph: a small apothecary-style clear glass jar of translucent " +
+      "petrolatum ointment with its lid resting beside it, a neatly rolled cotton gauze bandage, " +
+      "and a folded ivory linen cloth, arranged on a honed pale marble surface. Soft directional " +
+      "window light from the left, gentle shadows, shallow depth of field, generous negative " +
+      "space. No labels, no branding, no hands, no people. Aspect 4:3. " + GRADE,
+    width: 1600,
+    height: 1200,
+    out: "learn-wound-care.webp",
+    quality: 78,
+  },
+  {
     id: "svc-microscope-detail",
     prompt:
       "Close macro detail of a laboratory microscope stage and eyepiece, brushed metal and " +
