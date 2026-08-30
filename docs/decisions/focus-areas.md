@@ -4,6 +4,22 @@ Current priorities and open threads. Entry format: see [[INDEX]].
 
 ## Active
 
+### 2026-08-21 — Two-model pressure test: findings triaged
+- **Decision:** From the 34-page GPT-5.1 + Gemini 3.1 Pro site audit, Dr. Modi
+  applied all P1 referrer-risk rewrites (/services "Done properly", /practice
+  "highest credential", lip-oral "too far inside") plus two P2s (cyst-removal
+  "properly", DFSP "judged by eye leaves" → "may leave"); schema description's
+  "World-class" also removed. The REMAINING P2s and P3s (pilonidal absolutes,
+  /referring "coordinators of care", PRP phrasing) are deliberately left
+  as-is — do not re-pitch. Audit's medical-judgment items (medications
+  promise, "safest way" anesthesia) remain open for his call.
+- **Rationale:** Referring-doc-safe voice rule applied where risk is real;
+  his judgment that the rest is fine.
+- **Status:** Confirmed
+- **Source:** chat 2026-08-21; commits 92039bb, 258898a, df9a7ad; report
+  artifact 0c5ed8ae-97ee-4363-b07f-802765912b68
+- **Links:** [[practice-decisions]] [[medical-focus]]
+
 ### 2026-08-10 — Site LAUNCHED on planoderm.com (launch day was 2026-08-07)
 - **Decision:** planoderm.com serves the redesign from Dr. Modi's own Vercel;
   registrar, DNS, and DNSSEC all live in his Cloudflare account.

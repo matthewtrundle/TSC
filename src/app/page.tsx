@@ -159,16 +159,31 @@ export default function Home() {
                 className="mb-3 text-xl text-[var(--navy-primary)]"
                 style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}
               >
-                Why fellowship training matters
+                The fellowship training standard
               </h3>
               <p className="max-w-3xl leading-relaxed text-[var(--warm-gray)]">
-                Any dermatologist may perform Mohs surgery. A{" "}
-                <strong className="font-semibold">fellowship-trained</strong>{" "}
-                Mohs surgeon has done something harder: one to two additional
-                years of accredited training under an established Mohs surgeon,
-                covering hundreds of cases — the surgery, the microscope work,
-                and the reconstruction. All three of our surgeons carry that
-                training.
+                All three of our surgeons completed fellowships in{" "}
+                <a
+                  href="https://www.abderm.org/residents-and-fellows/fellowship-training/micrographic-surgery-and-dermatologic-oncology"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[var(--bronze-text)] underline decoration-1 underline-offset-4 transition-opacity hover:opacity-75"
+                >
+                  Micrographic Surgery and Dermatologic Oncology
+                </a>
+                , accredited by the{" "}
+                <a
+                  href="https://www.mohscollege.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[var(--bronze-text)] underline decoration-1 underline-offset-4 transition-opacity hover:opacity-75"
+                >
+                  American College of Mohs Surgery
+                </a>{" "}
+                — one to two years dedicated to cutaneous oncology, precise
+                surgical removal, the microscopic reading of each margin, and
+                advanced reconstruction. That training is the foundation of this
+                practice.
               </p>
             </aside>
           </FadeIn>
@@ -263,7 +278,7 @@ export default function Home() {
                   time: "7:30 AM",
                   title: "Check in",
                   description:
-                    "A typical day starts at 7:30. Bring a book, headphones, and any medication you normally take. Eat breakfast first — there is no fasting requirement.",
+                    "A typical day starts at 7:30. Bring a book and headphones. Most patients eat breakfast and take all their normal medications — we confirm your instructions when we schedule you.",
                 },
                 {
                   time: "First hour",

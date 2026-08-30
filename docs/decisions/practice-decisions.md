@@ -15,6 +15,19 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - **Source:** chat 2026-08-29 (pamphlet iteration, v11)
 - **Links:** [[practice-decisions#voice]] — peer-audience voice rules set the same day: no em-dashes in prose, no cute or wry lines, never explain fellowships, Mohs cure rates, or stage counts to colleagues; "gold standard" reserved for patient-facing copy.
 
+### 2026-08-21 — Never talk down to referring physicians in copy
+- **Decision:** Site copy must never rank our surgeons above referring
+  physicians — most referrers are dermatologists, some of whom perform Mohs
+  without fellowship training; they are customers. Tout credentials by
+  DESCRIBING the training (what the fellowship years cover), never by
+  comparison ("harder", "unlike others", "few can").
+- **Rationale:** Raised by Dr. Modi's wife 2026-08-21: the homepage aside's
+  "done something harder" framing read as condescending toward the exact
+  doctors who send us patients. Dr. Modi agreed and set the rule.
+- **Status:** Confirmed
+- **Source:** chat 2026-08-21 / commit c433bf9
+- **Links:** [[medical-focus]] (fellowship-name claim) [[design-decisions]]
+
 ### 2026-08-01 — Positioning: destination Mohs practice
 - **Decision:** The site positions the practice as a destination for Mohs
   surgery; register is luxury-institutional (think private bank) — never spa,

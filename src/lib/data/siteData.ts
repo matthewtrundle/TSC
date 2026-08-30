@@ -8,7 +8,7 @@ export const siteConfig = {
   shortName: "Plano Dermatology",
   tagline: "Experts in Mohs Micrographic Surgery",
   description:
-    "World-class skin cancer care in a safe and comfortable environment. Our board certified and fellowship trained surgeons specialize in Mohs micrographic surgery and the treatment of skin cancer.",
+    "Skin cancer surgery in Plano, Texas. Three board-certified, fellowship-trained Mohs surgeons; tissue margins read on-site, same day.",
 
   contact: {
     phone: "(972) 378-0620",
@@ -47,7 +47,7 @@ export const siteConfig = {
 
   links: {
     patientPortal: "https://sadio.com/",
-    billPay: "https://quickclick.com/r/c5orl",
+    billPay: "https://collectcheckout.com/r/nv2gpirm7y3kabbs5oj638lnfnp1lx",
     // The practice's Google Business Profile (place ID verified against the
     // 6100 Windhaven Pkwy listing). Opens Google's own reviews panel — we
     // link to real reviews rather than restating ratings on-site.
@@ -555,7 +555,7 @@ This includes Mohs micrographic surgery, reconstructive surgery, mole and cyst r
 
   mohsDescription: `What sets Mohs apart is simple. Instead of removing a margin of healthy skin and waiting days for a lab to report whether the edges were clear, your surgeon examines 100% of the margin under the microscope while you wait. If any cancer remains, its exact location is mapped and only that spot is removed — the cancer is traced to its roots, and nothing healthy is taken unnecessarily.
 
-Done properly, Mohs requires a fellowship-trained surgeon, dedicated laboratory staff, and an on-site laboratory where your tissue is frozen, sectioned, stained, and read within the hour it is removed. This practice is built around exactly that. The stages of a Mohs day take time because the microscope — not estimation — decides when your surgery is finished.
+Mohs surgery pairs the surgeon with dedicated laboratory staff and an on-site laboratory, where your tissue is frozen, sectioned, stained, and read within the hour it is removed. This practice is built around exactly that. The stages of a Mohs day take time because the microscope — not estimation — decides when your surgery is finished.
 
 The result is the treatment's defining combination: cure rates up to 99% for previously untreated cancers, the most healthy skin preserved, and an answer before you leave that the cancer is gone.`,
 
