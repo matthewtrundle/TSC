@@ -8,6 +8,13 @@ The Surgery Center at Plano Dermatology (Plano, TX) — three fellowship-trained
 Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 **Dr. Edward Parry**.
 
+### 2026-08-29 — Referral pamphlet: doctor's line, texting line, and peer-voice rules
+- **Decision:** The tri-fold referral pamphlet carries a Doctor's line, (972) 403-8068, stated as "Answered by a person. No phone tree." (Dr. Modi: "It absolutely does"), and the HIPAA-compliant provider texting line (469) 945-4414 pitched for texting photos and pathology reports. New confirmed practice facts: treatment letters are generated the same day; large cysts and lipomas are excised with the tumescent technique.
+- **Rationale:** Direct physician access and low-friction referral channels are the practice's strongest pitch to referring dermatologists and their APPs; 95% of business is referral-driven.
+- **Status:** Confirmed
+- **Source:** chat 2026-08-29 (pamphlet iteration, v11)
+- **Links:** [[practice-decisions#voice]] — peer-audience voice rules set the same day: no em-dashes in prose, no cute or wry lines, never explain fellowships, Mohs cure rates, or stage counts to colleagues; "gold standard" reserved for patient-facing copy.
+
 ### 2026-08-01 — Positioning: destination Mohs practice
 - **Decision:** The site positions the practice as a destination for Mohs
   surgery; register is luxury-institutional (think private bank) — never spa,
