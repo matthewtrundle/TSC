@@ -22,7 +22,7 @@ say-so. See [[practice-decisions]] for the no-fabricated-content rule and the
 - **Rationale:** First patient-education article; every clinical sentence
   needed explicit sign-off per the content-integrity rules. References
   verified against JAMA Network / PubMed 2026-08-30.
-- **Status:** Confirmed (page itself not yet deployed — see [[focus-areas]])
+- **Status:** Confirmed — live on planoderm.com 2026-08-30
 - **Source:** Dr. Modi, chat 2026-08-30 ("Approved"); commit 04adf03 on
   branch learn-education
 - **Links:** [[practice-decisions]] [[focus-areas]]

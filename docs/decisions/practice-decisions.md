@@ -20,8 +20,7 @@ Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 - **Rationale:** Education pages answering real search queries bring
   patients the practice's own pages never reach; internal links (both
   directions) beat an orphan page for ranking.
-- **Status:** Confirmed (section approved and built; deployment pending —
-  see [[focus-areas]])
+- **Status:** Confirmed — live on planoderm.com 2026-08-30
 - **Source:** Dr. Modi, chat 2026-08-30; commit 04adf03 on learn-education
 - **Links:** [[medical-focus]] [[focus-areas]]
 
