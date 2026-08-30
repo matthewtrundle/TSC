@@ -9,6 +9,25 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
 
 ## Accessibility
 
+### 2026-08-30 — Round-2 adversarial stress-test fixes deployed
+- **Decision:** Eight further verified findings from the plaintiff's-expert
+  round table are live: color-based link hovers (never opacity on light
+  surfaces — it dropped contrast to 3.36:1), explicit `::placeholder`
+  #6E675C (Tailwind's 50%-alpha default fails 4.5:1), FadeIn reveals on
+  focusin, hero fine print at white/80 minimum over imagery (pixel-measured),
+  solid backgrounds under photo overlay labels, `aria-current="page"` on nav
+  and breadcrumbs, required-fields legend on every form, mobile menu always
+  in the DOM (hidden when closed) with Escape-to-close, navs labeled "Main",
+  Mohs diagram steps as `<ol>`, and `scroll-padding` for the fixed chrome.
+  These are binding patterns for new work, not one-off patches.
+- **Rationale:** Second 5-model panel briefed adversarially + runtime testing
+  (axe on 15 pages: zero violations; pixel sampling of the hero) confirmed
+  each; everything else the panel alleged was refuted and documented.
+- **Status:** Confirmed (Dr. Modi approved deploy 2026-08-30, commit 8b45f6b)
+- **Source:** chat 2026-08-30 / audit artifact Round 2 section /
+  claudeproj/planoderm-ada-audit/round2-results/
+- **Links:** [[design-decisions#2026-08-30--five-ada-fixes-deployed-accessibility-is-native-never-an-overlay]]
+
 ### 2026-08-30 — Five ADA fixes deployed; accessibility is native, never an overlay
 - **Decision:** The five verified fixes from the six-model ADA audit are live
   on main: skip-to-content link, `--input-border` #857C6E form-control
