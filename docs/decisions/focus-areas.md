@@ -4,6 +4,17 @@ Current priorities and open threads. Entry format: see [[INDEX]].
 
 ## Active
 
+### 2026-08-30 — /learn section built, NOT yet published
+- **Decision:** The /learn patient-education section (index + Neosporin
+  article, footer + service-page links, sitemap, generated still-life
+  image) is complete and committed on branch `learn-education`
+  (worktree `.claude/worktrees/learn-education`, commit 04adf03) — Dr. Modi
+  said "let's not publish yet," so it must NOT be merged to de-ai-redesign
+  or deployed until he gives the go-ahead.
+- **Status:** Pending — awaiting Dr. Modi's publish approval
+- **Source:** Dr. Modi, chat 2026-08-30
+- **Links:** [[practice-decisions]] [[medical-focus]]
+
 ### 2026-08-10 — Site LAUNCHED on planoderm.com (launch day was 2026-08-07)
 - **Decision:** planoderm.com serves the redesign from Dr. Modi's own Vercel;
   registrar, DNS, and DNSSEC all live in his Cloudflare account.
