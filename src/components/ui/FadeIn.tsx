@@ -36,11 +36,17 @@ export function FadeIn({ children, delay = 0, className = "" }: FadeInProps) {
         { rootMargin: "0px 0px -8% 0px" }
       );
       observer.observe(el);
+      // Keyboard users can Tab into content before the observer reveals it,
+      // leaving focus on an invisible link for up to a second — reveal
+      // immediately the moment focus enters. (ADA stress test 2026-08-30.)
+      const onFocusIn = () => setState("revealed");
+      el.addEventListener("focusin", onFocusIn);
       // Hard backstop: whatever happens with the observer (headless capture,
       // print, an IO bug), nothing stays hidden longer than 2.5s.
       const failsafe = window.setTimeout(() => setState("revealed"), 2500);
       return () => {
         observer.disconnect();
+        el.removeEventListener("focusin", onFocusIn);
         window.clearTimeout(failsafe);
       };
     }

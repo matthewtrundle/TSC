@@ -82,7 +82,7 @@ export default async function SurgeonPage({
               <span aria-hidden="true" className="mx-2">
                 /
               </span>
-              <span className="text-[var(--warm-gray)]">{shortName(doctor.name)}</span>
+              <span aria-current="page" className="text-[var(--warm-gray)]">{shortName(doctor.name)}</span>
             </nav>
           </FadeIn>
 

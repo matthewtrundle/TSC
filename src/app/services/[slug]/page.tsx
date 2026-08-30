@@ -105,7 +105,7 @@ export default async function ProcedurePage({
             <span aria-hidden="true" className="mx-2">
               /
             </span>
-            <span className="text-[var(--warm-gray)]">{procedure.name}</span>
+            <span aria-current="page" className="text-[var(--warm-gray)]">{procedure.name}</span>
           </nav>
 
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
@@ -350,7 +350,7 @@ export default async function ProcedurePage({
                         height={800}
                         className="h-auto w-full"
                       />
-                      <span className="label-caps absolute left-3 top-3 bg-[var(--ivory)]/90 px-2.5 py-1 text-xs">
+                      <span className="label-caps absolute left-3 top-3 bg-[var(--ivory)] px-2.5 py-1 text-xs">
                         Before
                       </span>
                     </div>
@@ -362,7 +362,7 @@ export default async function ProcedurePage({
                         height={800}
                         className="h-auto w-full"
                       />
-                      <span className="label-caps absolute left-3 top-3 bg-[var(--ivory)]/90 px-2.5 py-1 text-xs">
+                      <span className="label-caps absolute left-3 top-3 bg-[var(--ivory)] px-2.5 py-1 text-xs">
                         After
                       </span>
                     </div>

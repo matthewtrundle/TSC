@@ -29,6 +29,16 @@ export default function Header() {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
+  // Escape closes the open mobile menu (keyboard convention)
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [isMobileMenuOpen]);
+
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
@@ -123,11 +133,12 @@ export default function Header() {
               is position:fixed, so overflow here never shows up in
               scrollWidth checks — verify CTA right-edge explicitly at 1216,
               1280, 1440, 1536 when touching these sizes. */}
-          <nav className="hidden min-[1216px]:flex items-center gap-3 2xl:gap-6">
+          <nav aria-label="Main" className="hidden min-[1216px]:flex items-center gap-3 2xl:gap-6">
             {navigation.main.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
+                aria-current={isActive(item.href) ? "page" : undefined}
                 className={`whitespace-nowrap text-[0.75rem] tracking-[0.1em] 2xl:text-[0.8125rem] 2xl:tracking-[0.14em] uppercase font-semibold transition-colors ${
                   isActive(item.href)
                     ? "text-[var(--charcoal)] underline decoration-[var(--bronze)] decoration-2 underline-offset-8"
@@ -158,15 +169,20 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div id="mobile-menu" className="min-[1216px]:hidden bg-[var(--ivory)] border-t border-[var(--gray-200)]">
+      {/* Mobile Menu — always in the DOM (hidden when closed) so the button's
+          aria-controls reference resolves in every state. */}
+      <div
+        id="mobile-menu"
+        hidden={!isMobileMenuOpen}
+        className="min-[1216px]:hidden bg-[var(--ivory)] border-t border-[var(--gray-200)]"
+      >
           <div className="mx-auto max-w-7xl px-6 py-6">
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Main" className="flex flex-col gap-1">
               {navigation.main.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
+                  aria-current={isActive(item.href) ? "page" : undefined}
                   className={`flex min-h-[44px] items-center py-2.5 text-lg font-semibold ${
                     isActive(item.href)
                       ? "text-[var(--charcoal)]"
@@ -210,8 +226,7 @@ export default function Header() {
               </Link>
             </div>
           </div>
-        </div>
-      )}
+      </div>
     </header>
   );
 }

@@ -89,7 +89,7 @@ export default function Home() {
               </a>
             </div>
 
-            <p className="text-sm text-white/60">
+            <p className="text-sm text-white/80">
               Physician-owned and operated &middot; Physician referrals welcome
               &middot; Most insurance accepted &middot;{" "}
               <Link
@@ -167,7 +167,7 @@ export default function Home() {
                   href="https://www.abderm.org/residents-and-fellows/fellowship-training/micrographic-surgery-and-dermatologic-oncology"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-[var(--bronze-text)] underline decoration-1 underline-offset-4 transition-opacity hover:opacity-75"
+                  className="font-semibold text-[var(--bronze-text)] underline decoration-1 underline-offset-4 transition-colors hover:text-[var(--teal-dark)]"
                 >
                   Micrographic Surgery and Dermatologic Oncology
                 </a>
@@ -176,7 +176,7 @@ export default function Home() {
                   href="https://www.mohscollege.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-[var(--bronze-text)] underline decoration-1 underline-offset-4 transition-opacity hover:opacity-75"
+                  className="font-semibold text-[var(--bronze-text)] underline decoration-1 underline-offset-4 transition-colors hover:text-[var(--teal-dark)]"
                 >
                   American College of Mohs Surgery
                 </a>{" "}

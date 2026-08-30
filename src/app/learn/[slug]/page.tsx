@@ -122,7 +122,7 @@ export default async function ArticlePage({
             <span aria-hidden="true" className="mx-2">
               /
             </span>
-            <span className="text-[var(--warm-gray)]">{article.title}</span>
+            <span aria-current="page" className="text-[var(--warm-gray)]">{article.title}</span>
           </nav>
 
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">

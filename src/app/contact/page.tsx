@@ -193,7 +193,7 @@ export default function ContactPage() {
                 </h2>
                 <p className="text-[var(--warm-gray)] mb-8">
                   Write to us here and we will reply by phone or email,
-                  whichever you prefer.
+                  whichever you prefer. Fields marked with * are required.
                 </p>
 
                 <ContactForm />

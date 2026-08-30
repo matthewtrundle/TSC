@@ -118,14 +118,17 @@ export function MohsDiagram() {
 
   return (
     <div ref={ref} className={animate ? "diagram-animate" : ""}>
-      <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
+      {/* An <ol> so screen readers announce this as the 5-step sequence it is;
+          the visible stage numbers stay decorative. */}
+      <ol className="grid list-none grid-cols-2 gap-x-6 gap-y-10 p-0 sm:grid-cols-3 lg:grid-cols-5">
         {stages.map((stage) => (
-          <div key={stage.n}>
+          <li key={stage.n}>
             <svg viewBox="0 0 160 120" className="mb-4 w-full max-w-[11rem]" aria-hidden="true">
               {stage.art}
             </svg>
             <div className="flex items-baseline gap-2 mb-1.5">
               <span
+                aria-hidden="true"
                 className="text-2xl"
                 style={{ fontFamily: "var(--font-display)", color: "var(--champagne)" }}
               >
@@ -136,9 +139,9 @@ export function MohsDiagram() {
               </span>
             </div>
             <p className="text-sm leading-relaxed text-white/60">{stage.note}</p>
-          </div>
+          </li>
         ))}
-      </div>
+      </ol>
       <p className="mt-8 border-t border-white/10 pt-5 text-sm text-white/55">
         If any edge still shows cancer, only that spot is removed and read again —
         the loop repeats until every margin is clear.
