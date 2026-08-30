@@ -7,6 +7,28 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
 > plus `src/app/globals.css`. This file records the decisions and their
 > history; the skill is what agents must load before doing site work.
 
+## Accessibility
+
+### 2026-08-30 — Five ADA fixes deployed; accessibility is native, never an overlay
+- **Decision:** The five verified fixes from the six-model ADA audit are live
+  on main: skip-to-content link, `--input-border` #857C6E form-control
+  boundaries, at-rest underlines on in-sentence links (footer links included),
+  autocomplete tokens on patient forms, and champagne focus rings on every
+  dark surface (`:where(.band-dark, .card-dark, footer, .kenburns-frame,
+  .focus-on-dark) :focus-visible`). New dark containers MUST be added to that
+  selector list; interactive-control borders use `--input-border`, never the
+  `--hairline` tier, which stays decorative-only.
+- **Rationale:** WCAG 2.1 AA is the ADA benchmark; each fix was
+  contrast-computed and keyboard-verified live (bronze rings measured 2.5:1
+  on charcoal — note `transition-colors` pollutes instant
+  getComputedStyle reads; wait ~500&nbsp;ms before measuring).
+- **Status:** Confirmed (Dr. Modi approved via before/after collage, deployed
+  commit 7858a2f)
+- **Source:** chat 2026-08-30 / audit artifact
+  claude.ai/code/artifact/535a766f-3f45-457a-94d8-70afd5c7734b / collage
+  artifact claude.ai/code/artifact/ef3493cb-9d10-47cf-a670-e77c507a811e
+- **Links:** [[practice-decisions#2026-08-30--no-accessibility-overlay-widgets-ever]]
+
 ## Staff group photo
 
 ### 2026-08-02 — Hybrid face-faithful composite pipeline for group photos

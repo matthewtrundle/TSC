@@ -8,6 +8,21 @@ The Surgery Center at Plano Dermatology (Plano, TX) — three fellowship-trained
 Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 **Dr. Edward Parry**.
 
+### 2026-08-30 — No accessibility overlay widgets, ever
+- **Decision:** The practice will never use an accessibility overlay widget
+  (accessiBe, UserWay, etc.); ADA compliance is achieved by fixing the site's
+  own code, verified by scan + keyboard testing.
+- **Rationale:** FTC fined accessiBe $1M (final April 2025) for deceptive
+  compliance claims; 800+ overlay-using businesses were sued in 2023–24 and
+  overlay sites are disproportionately targeted; courts reject overlays as
+  compliance evidence. Dr. Modi nearly modeled his colleague's accessiBe
+  install before the evaluation; a colleague-to-colleague note offering help
+  (including a same-layout Next.js/Vercel conversion) is drafted at
+  claude.ai/code/artifact/495993c2-fa7d-486b-a44f-97c074f71a71 — not yet sent.
+- **Status:** Confirmed
+- **Source:** chat 2026-08-30 / FTC final order Apr 2025
+- **Links:** [[design-decisions#2026-08-30--five-ada-fixes-deployed-accessibility-is-native-never-an-overlay]]
+
 ### 2026-08-30 — SEO patient-education section at /learn
 - **Decision:** The site gets a patient-education section at /learn — short
   question-shaped articles (first: /learn/neosporin-on-wounds) built to draw
