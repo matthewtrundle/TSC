@@ -41,10 +41,15 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              {/* Footer-only page — the header nav is full. */}
+              {/* Footer-only pages — the header nav is full. */}
               <li>
                 <Link href="/areas-we-serve" className="text-white/75 transition-colors hover:text-white">
                   Areas We Serve
+                </Link>
+              </li>
+              <li>
+                <Link href="/learn" className="text-white/75 transition-colors hover:text-white">
+                  Patient Education
                 </Link>
               </li>
             </ul>

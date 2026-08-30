@@ -4,6 +4,16 @@ Current priorities and open threads. Entry format: see [[INDEX]].
 
 ## Active
 
+### 2026-08-30 — /learn section built and APPROVED to publish
+- **Decision:** The /learn patient-education section (index + Neosporin
+  article, footer + service-page links, sitemap, generated still-life
+  image) was built on branch `learn-education` and held unpublished at
+  Dr. Modi's direction; later the same day he approved it ("love it. go
+  live") and it was merged to production.
+- **Status:** Confirmed — live on planoderm.com
+- **Source:** Dr. Modi, chat 2026-08-30; commits 04adf03, 9601308 + merge
+- **Links:** [[practice-decisions]] [[medical-focus]]
+
 ### 2026-08-21 — Two-model pressure test: findings triaged
 - **Decision:** From the 34-page GPT-5.1 + Gemini 3.1 Pro site audit, Dr. Modi
   applied all P1 referrer-risk rewrites (/services "Done properly", /practice

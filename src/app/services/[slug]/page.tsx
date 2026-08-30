@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ChevronRight, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/data/siteData";
 import { procedures, getProcedure } from "@/lib/data/proceduresData";
+import { articles } from "@/lib/data/learnData";
 import { LuxuryCta } from "@/components/ui/LuxuryCta";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { CleftLiftDiagram } from "@/components/ui/CleftLiftDiagram";
@@ -72,6 +73,12 @@ export default async function ProcedurePage({
   const related = relatedSlugs.length
     ? relatedSlugs.map((s) => procedures.find((p) => p.slug === s)).filter((p): p is NonNullable<typeof p> => Boolean(p))
     : procedures.filter((p) => p.slug !== procedure.slug).slice(0, 3);
+
+  // Education articles that point at this procedure get a quiet link back —
+  // internal links in both directions help both pages in search.
+  const furtherReading = articles.filter((a) =>
+    a.relatedProcedures.includes(procedure.slug)
+  );
 
   return (
     <div className="pt-28">
@@ -230,6 +237,22 @@ export default async function ProcedurePage({
                 Your surgeon will walk you through what to expect — including
                 preparation and aftercare — before anything is scheduled.
               </p>
+              {furtherReading.length > 0 && (
+                <p className="mt-4 text-sm leading-relaxed text-[var(--warm-gray-light)]">
+                  Further reading:{" "}
+                  {furtherReading.map((a, i) => (
+                    <span key={a.slug}>
+                      {i > 0 && " · "}
+                      <Link
+                        href={`/learn/${a.slug}`}
+                        className="font-semibold text-[var(--bronze-text)] underline decoration-[var(--hairline-bronze)] underline-offset-4 hover:decoration-[var(--bronze)] transition-colors"
+                      >
+                        {a.title}
+                      </Link>
+                    </span>
+                  ))}
+                </p>
+              )}
             </div>
           </div>
         </div>

@@ -8,6 +8,23 @@ The Surgery Center at Plano Dermatology (Plano, TX) — three fellowship-trained
 Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 **Dr. Edward Parry**.
 
+### 2026-08-30 — SEO patient-education section at /learn
+- **Decision:** The site gets a patient-education section at /learn — short
+  question-shaped articles (first: /learn/neosporin-on-wounds) built to draw
+  organic search traffic and route readers to the service pages. Linking
+  strategy per Dr. Modi: quiet footer link ("Patient Education") plus
+  "Further reading" backlinks from related service pages; nothing on the
+  home page or hero. Articles carry a "Medically reviewed by Gunjan Modi,
+  MD, FAAD, FACMS" byline, MedicalWebPage + FAQPage schema, and verified
+  literature citations.
+- **Rationale:** Education pages answering real search queries bring
+  patients the practice's own pages never reach; internal links (both
+  directions) beat an orphan page for ranking.
+- **Status:** Confirmed (section approved and built; deployment pending —
+  see [[focus-areas]])
+- **Source:** Dr. Modi, chat 2026-08-30; commit 04adf03 on learn-education
+- **Links:** [[medical-focus]] [[focus-areas]]
+
 ### 2026-08-29 — Referral pamphlet: doctor's line, texting line, and peer-voice rules
 - **Decision:** The tri-fold referral pamphlet carries a Doctor's line, (972) 403-8068, stated as "Answered by a person. No phone tree." (Dr. Modi: "It absolutely does"), and the HIPAA-compliant provider texting line (469) 945-4414 pitched for texting photos and pathology reports. New confirmed practice facts: treatment letters are generated the same day; large cysts and lipomas are excised with the tumescent technique.
 - **Rationale:** Direct physician access and low-friction referral channels are the practice's strongest pitch to referring dermatologists and their APPs; 95% of business is referral-driven.

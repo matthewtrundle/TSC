@@ -8,6 +8,25 @@ say-so. See [[practice-decisions]] for the no-fabricated-content rule and the
 
 ## CONFIRMED (publishable)
 
+### 2026-08-30 — Neosporin/wound-care claims for the /learn article
+- **Decision:** Dr. Modi confirmed the full claim set for
+  /learn/neosporin-on-wounds: (1) neomycin and bacitracin are among the most
+  common causes of allergic contact dermatitis (ACDS Allergen of the Year —
+  bacitracin 2003, neomycin 2010); (2) the reaction is frequently mistaken
+  for wound infection; (3) for clean wounds, topical antibiotic shows no
+  infection-prevention benefit over plain petrolatum (Smack et al., JAMA
+  1996;276(12):972–977 — verified); (4) plain petrolatum keeps the wound
+  moist, supports healing, and is the practice recommendation; (5)
+  when-to-call signs: spreading redness, pain increasing after day 2–3, pus,
+  fever, plus the non-healing-sore skin-cancer bridge already on the site.
+- **Rationale:** First patient-education article; every clinical sentence
+  needed explicit sign-off per the content-integrity rules. References
+  verified against JAMA Network / PubMed 2026-08-30.
+- **Status:** Confirmed (page itself not yet deployed — see [[focus-areas]])
+- **Source:** Dr. Modi, chat 2026-08-30 ("Approved"); commit 04adf03 on
+  branch learn-education
+- **Links:** [[practice-decisions]] [[focus-areas]]
+
 ### 2026-08-21 — Prep guidance qualified; anesthesia claim aligned (Dr. Modi confirmed)
 - **Decision:** Homepage Mohs-day FAQ: "Most patients eat breakfast and take
   all their normal medications — we confirm your instructions when we
