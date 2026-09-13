@@ -8,6 +8,13 @@ say-so. See [[practice-decisions]] for the no-fabricated-content rule and the
 
 ## CONFIRMED (publishable)
 
+
+### 2026-09-13 — Mohs-for-melanoma page claims confirmed by publication approval
+- **Decision:** By approving publication ("go live"), Dr. Modi confirmed for the practice: (1) the candidate list on the page reflects real selection criteria (reasons for assessment, not automatic eligibility); (2) the central tumor is examined separately for depth/staging and an upstage can change the plan (upstaging figure 5.5% is attributed to Etzkorn 2015, not the practice); (3) sentinel node evaluation is coordinated with the appropriate specialist and timed with the skin surgery; (4) same-day repair is "usual for appropriate cases", not guaranteed; (5) "about an hour per stage" and "most tumors clear in one to two stages" remain confirmed; (6) the practice's MART-1 slide (public/images/ihc/mart1-03.webp) may be published in color on the page. Literature figures used (all PubMed-verified 2026-09-13): Sharma 2026 DSS 93/88% vs 88/83% at 5/10 y; Pride 2022 pooled LR 7% / 3% / <1%; Beal 2023 LR 4/785; Valentín-Nogueras 2016 LR 7/1,419; Nosrati 2017 5-y 1.1% vs 4.1% (NS); Cheraghlou 2019, Hanson 2020, Demer 2021 survival context. NOT used: Sharma AN 2024 complication numbers (no abstract), Shin 2020 research letter, any practice-specific outcome figures.
+- **Rationale:** Content-integrity rule — every rendered claim confirmed or sourced; the seven sign-off items were presented before publication.
+- **Status:** Confirmed
+- **Source:** chat 2026-09-13; research/mohs-melanoma-2026-09/pubmed-abstracts.md, CONSENSUS.md
+- **Links:** [[practice-decisions#2026-09-13--melanoma-page-editorial-stance-no-adjusted-hazard-ratio-number-balancing-findings-stay]] [[focus-areas]]
 ### 2026-08-30 — Neosporin/wound-care claims for the /learn article
 - **Decision:** Dr. Modi confirmed the full claim set for
   /learn/neosporin-on-wounds: (1) neomycin and bacitracin are among the most

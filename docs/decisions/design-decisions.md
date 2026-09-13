@@ -9,6 +9,13 @@ Design-system history, including reversals. Entry format: see [[INDEX]].
 
 ## Accessibility
 
+
+### 2026-09-13 — Patient charts: static SVG/HTML drawn only from reported numbers
+- **Decision:** Educational charts on /learn are server-rendered SVG/HTML (no chart library, no JS), plot only values printed in the cited publication, carry a "See the numbers as a table" twin, and use Mohs = bronze `#A6803E` (filled circle) vs. wide excision = slate `#545C66` (filled square) — validated for protan/deutan/tritan separation. A survival figure is never redrawn as a curve from two reported points: reported points + dashed straight guide lines, 0–100% axis. An icon array represents percentage points, not patients. A "<1%" estimate is drawn as a hatched ceiling band, not a solid bar. Axis labels are real HTML text so they never shrink below 14px on phones.
+- **Rationale:** Honesty over persuasion (Claude × GPT-6 Astra consensus); accessibility floor; site palette.
+- **Status:** Confirmed
+- **Source:** chat 2026-09-13; src/components/ui/MelanomaCharts.tsx; dataviz palette validator run 2026-09-13
+- **Links:** [[focus-areas]] [[practice-decisions]]
 ### 2026-08-30 — Round-2 adversarial stress-test fixes deployed
 - **Decision:** Eight further verified findings from the plaintiff's-expert
   round table are live: color-based link hovers (never opacity on light

@@ -4,6 +4,13 @@ Current priorities and open threads. Entry format: see [[INDEX]].
 
 ## Active
 
+### 2026-09-13 — /learn Mohs-for-melanoma article PUBLISHED
+- **Decision:** `/learn/mohs-surgery-for-melanoma` ("Can Mohs Surgery Be Used for Melanoma?") with three sourced charts went live on Dr. Modi's word ("go live") after he reviewed the preview and the seven sign-off items in `research/mohs-melanoma-2026-09/CONSENSUS.md`.
+- **Rationale:** He asked for a patient page on the latest research (Sharma et al. 2026, SEER) with consumer-friendly graphics on recurrence and survival, built in consensus with GPT-6 Astra Pro via OpenRouter.
+- **Status:** Confirmed — live (merge 2e13068 → main)
+- **Source:** chat 2026-09-13; commit dc4cedc; research folder planoderm-website/research/mohs-melanoma-2026-09/
+- **Links:** [[practice-decisions#2026-09-13--melanoma-page-editorial-stance-no-adjusted-hazard-ratio-number-balancing-findings-stay]] [[medical-focus#2026-09-13--mohs-for-melanoma-page-claims-confirmed-by-publication-approval]] [[design-decisions#2026-09-13--patient-charts-static-svghtml-drawn-only-from-reported-numbers]]
+
 ### 2026-08-30 — /learn section built and APPROVED to publish
 - **Decision:** The /learn patient-education section (index + Neosporin
   article, footer + service-page links, sitemap, generated still-life

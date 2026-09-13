@@ -8,6 +8,13 @@ The Surgery Center at Plano Dermatology (Plano, TX) — three fellowship-trained
 Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 **Dr. Edward Parry**.
 
+### 2026-09-13 — Melanoma page editorial stance: no adjusted hazard-ratio number; balancing findings stay
+- **Decision:** The Mohs-for-melanoma page does not print the Sharma 2026 adjusted hazard ratio (the paper's text says 1.17, its figure says 1.26); it says the association "remained after statistical adjustment" only. The cohort is stated as "more than 90,000 patients" (table n ≠ stated n) and the study is not called "the largest". The Demer 2021 null result (no survival difference on trunk/limbs) and the Nosrati 2017 not-statistically-significant MIS recurrence comparison stay on the page as editorial balance. Wide local excision is stated as the guideline standard for invasive melanoma throughout; the comparison is between techniques, never between surgeons.
+- **Rationale:** Consensus of Claude and GPT-6 Astra Pro after a two-round review; referring-doc-safe voice; a patient page must not lean on a number the source paper contradicts. Dr. Modi approved by publishing.
+- **Status:** Confirmed
+- **Source:** chat 2026-09-13; research/mohs-melanoma-2026-09/CONSENSUS.md, astra-round2.md §3
+- **Links:** [[practice-decisions#2026-08-21--never-talk-down-to-referring-physicians-in-copy]] [[medical-focus]]
+
 ### 2026-08-31 — Pamphlet v5: addressed to referring physicians by name
 - **Decision:** The cover carries "Guide for Referring Physicians" as a separate small-caps line near the bottom (apart from the "Practice limited to…" tagline), and the contact panel label reads "Referring a patient to us". The "The surgeons" heading above the portraits was removed.
 - **Rationale:** Dr. Modi wants the reader to know at a glance the piece is for referring doctors; the panel review had noted no line directly addressed them.
