@@ -8,6 +8,11 @@ import { procedures } from "@/lib/data/proceduresData";
 import { articles, getArticle } from "@/lib/data/learnData";
 import { LuxuryCta } from "@/components/ui/LuxuryCta";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import {
+  MelanomaSurvivalChart,
+  MelanomaIconArray,
+  MelanomaRecurrenceChart,
+} from "@/components/ui/MelanomaCharts";
 import { JsonLd, faqPageSchema, breadcrumbSchema, SITE_URL } from "@/lib/structuredData";
 
 export function generateStaticParams() {
@@ -33,6 +38,12 @@ export async function generateMetadata({
     },
   };
 }
+
+const FIGURES = {
+  "melanoma-survival": MelanomaSurvivalChart,
+  "melanoma-icon-array": MelanomaIconArray,
+  "melanoma-recurrence": MelanomaRecurrenceChart,
+} as const;
 
 /** The same bronze-underline emphasis treatment the service pages use. */
 function Emphasized({ text }: { text: string }) {
@@ -157,7 +168,7 @@ export default async function ArticlePage({
                   alt={article.imageAlt}
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
-                  className="img-duotone object-cover"
+                  className={`object-cover ${article.imageColor ? "" : "img-duotone"}`}
                 />
                 <div
                   aria-hidden="true"
@@ -198,20 +209,23 @@ export default async function ArticlePage({
                     ))}
                   </ul>
                 )}
+                {section.figure && (() => {
+                  const Chart = FIGURES[section.figure];
+                  return <Chart />;
+                })()}
               </div>
             ))}
 
             <p className="text-sm leading-relaxed text-[var(--warm-gray-light)]">
-              This page is general education, not medical advice for your
-              specific situation. If you are our patient, your surgeon&rsquo;s
-              aftercare instructions come first — call us at{" "}
+              {article.disclaimer ??
+                "This page is general education, not medical advice for your specific situation. If you are our patient, your surgeon\u2019s aftercare instructions come first \u2014 call us at"}{" "}
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
                 className="font-semibold text-[var(--bronze-text)]"
               >
                 {siteConfig.contact.phone}
-              </a>{" "}
-              with any question about a healing wound.
+              </a>
+              {article.disclaimer ? "." : " with any question about a healing wound."}
             </p>
           </div>
         </div>
@@ -271,12 +285,13 @@ export default async function ArticlePage({
       {related.length > 0 && (
         <section className="border-t border-[var(--gray-200)] bg-[var(--ivory-deep)] py-20">
           <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-display mb-3">If a spot will not heal</h2>
+            <h2 className="text-display mb-3">
+              {article.relatedHeading ?? "If a spot will not heal"}
+            </h2>
             <span aria-hidden="true" className="rule-bronze mb-6" />
             <p className="mb-10 max-w-3xl text-lg leading-relaxed text-[var(--warm-gray)]">
-              A wound that never quite closes is one of the ways skin cancer
-              first announces itself. Diagnosing and removing skin cancer is
-              what this practice does all day, every day.
+              {article.relatedLead ??
+                "A wound that never quite closes is one of the ways skin cancer first announces itself. Diagnosing and removing skin cancer is what this practice does all day, every day."}
             </p>
             <div className="grid gap-8 md:grid-cols-3">
               {related.map((p) => (

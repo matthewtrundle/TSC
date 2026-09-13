@@ -58,7 +58,7 @@ export default function LearnIndexPage() {
                     alt={article.imageAlt}
                     fill
                     sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
-                    className="img-duotone object-cover"
+                    className={`object-cover ${article.imageColor ? "" : "img-duotone"}`}
                   />
                   <div
                     aria-hidden="true"
