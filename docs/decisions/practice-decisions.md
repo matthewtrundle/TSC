@@ -8,6 +8,13 @@ The Surgery Center at Plano Dermatology (Plano, TX) — three fellowship-trained
 Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 **Dr. Edward Parry**.
 
+### 2026-09-13 — Melanoma service page survival sentence aligned with the /learn article
+- **Decision:** The /services/melanoma line now reads "...large registry studies have found survival after Mohs at least equal to conventional wide excision, with several reporting a modest advantage for early melanoma that has not yet been confirmed in prospective trials." replacing "at least equal to — and for early invasive melanoma, modestly better than — conventional wide excision."
+- **Rationale:** The new patient article frames the survival evidence as an unproven association; the service page should not sound more certain than the article a referring dermatologist can read one click away.
+- **Status:** Confirmed
+- **Source:** chat 2026-09-13 ("yes please, do the change you suggested"); commit f1253d4
+- **Links:** [[practice-decisions#2026-09-13--melanoma-page-editorial-stance-no-adjusted-hazard-ratio-number-balancing-findings-stay]] [[medical-focus]]
+
 ### 2026-09-13 — Melanoma page editorial stance: no adjusted hazard-ratio number; balancing findings stay
 - **Decision:** The Mohs-for-melanoma page does not print the Sharma 2026 adjusted hazard ratio (the paper's text says 1.17, its figure says 1.26); it says the association "remained after statistical adjustment" only. The cohort is stated as "more than 90,000 patients" (table n ≠ stated n) and the study is not called "the largest". The Demer 2021 null result (no survival difference on trunk/limbs) and the Nosrati 2017 not-statistically-significant MIS recurrence comparison stay on the page as editorial balance. Wide local excision is stated as the guideline standard for invasive melanoma throughout; the comparison is between techniques, never between surgeons.
 - **Rationale:** Consensus of Claude and GPT-6 Astra Pro after a two-round review; referring-doc-safe voice; a patient page must not lean on a number the source paper contradicts. Dr. Modi approved by publishing.
