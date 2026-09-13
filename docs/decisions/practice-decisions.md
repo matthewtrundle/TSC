@@ -8,6 +8,34 @@ The Surgery Center at Plano Dermatology (Plano, TX) — three fellowship-trained
 Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 **Dr. Edward Parry**.
 
+### 2026-08-31 — Pamphlet v5: addressed to referring physicians by name
+- **Decision:** The cover carries "Guide for Referring Physicians" as a separate small-caps line near the bottom (apart from the "Practice limited to…" tagline), and the contact panel label reads "Referring a patient to us". The "The surgeons" heading above the portraits was removed.
+- **Rationale:** Dr. Modi wants the reader to know at a glance the piece is for referring doctors; the panel review had noted no line directly addressed them.
+- **Status:** Confirmed
+- **Source:** chat 2026-08-31
+- **Links:** [[practice-decisions#2026-08-31--pamphlet-v4-five-model-panel-edits-applied-promise-bullets-stay-in-both-places]]
+
+### 2026-08-31 — Pamphlet v4: five-model panel edits applied; promise bullets stay in both places
+- **Decision:** After a five-model OpenRouter review (GPT-5.6 Terra, Gemini 3.1 Pro, Grok 4.6, Kimi K3, Opus 5; saved in pamphlet/reviews-2026-08-31/), Dr. Modi approved: melanoma line loses "rather than staged over days" (now "so margins are cleared and the wound reconstructed in a single visit"); "true margins" becomes "map high-risk SCC and EMPD"; surgeons headline becomes "The surgeons" (eyebrow "The practice"); eyelid line rewritten as "Eyelid and lip lesions, lip biopsies to help confirm Sjögren's syndrome, and biopsy of oral growths and inflammatory conditions." Treatment-letter bullet is his wording, unhedged: "We send a treatment letter to your office the same day." ACMS logo rendered in one ink (charcoal). REJECTED: removing the duplicate four-bullet block from the tri-fold ("I want to make sure they see what differentiates us").
+- **Rationale:** Panel consensus: nothing offensive; experienced 9/10; the flagged lines were the only places the pamphlet talked about the reader instead of the practice. Bi-fold preferred 3 to 2 on aesthetics.
+- **Status:** Confirmed (copy); layout pick still Pending
+- **Source:** chat 2026-08-31
+- **Links:** [[practice-decisions#2026-08-31--pamphlet-v3-personal-cell-numbers-practice-limited-to-tagline-four-variants]] [[practice-decisions#2026-08-21--never-talk-down-to-referring-physicians-in-copy]]
+
+### 2026-08-31 — Pamphlet v3: personal cell numbers, "Practice limited to" tagline, four variants
+- **Decision:** New confirmed practice fact from Dr. Modi: each patient gets the surgeons' personal cell phone numbers, worded exactly "Each patient gets our personal cell phone numbers." (added as a promise bullet, so the closing list is now four). Cover tagline is "Practice limited to referred Mohs surgery and surgical dermatology." (his wording); the cover carries no surgeon names and the lockup is centered. "Referrals by phone or fax" heading removed everywhere. Four variants are maintained: tri-fold and bi-fold, each with and without the building photo (bi-fold surgeons sit on an ivory panel so the ACMS logo shows in its true colors, with the contact block as a dark inset box).
+- **Rationale:** His second review, same session; "Practice limited to" is the conventional physician phrasing for a referral-only practice.
+- **Status:** Pending — awaiting his pick among the four
+- **Source:** chat 2026-08-31
+- **Links:** [[practice-decisions#2026-08-31--referral-pamphlet-v2-treated-in-one-visit-retired-closing-promise-becomes-three-bullets]]
+
+### 2026-08-31 — Referral pamphlet v2: "treated in one visit" retired; closing promise becomes three bullets
+- **Decision:** The referral pamphlet no longer claims "Treated in one visit" for general referrals (Dr. Modi: "not necessarily true"); the melanoma single-visit statement (MART-1/SOX10 in-house) stays. The closing promise is now three bullets: referred patients are usually seen within days; patients are promptly returned to your practice; a treatment letter is usually generated and sent to your office the same day. Service list is headed "Cases we are glad to see" and framed as "A sampling, not a complete list" (no directive headings such as "What to send us"; no "your patient returns to you" phrasing). Cover uses the homepage building hero photo; ACMS logo sits under the surgeon profiles with "Fellows of the American College of Mohs Surgery". A bi-fold variant (2 leaves, shortened copy) exists alongside the tri-fold.
+- **Rationale:** Dr. Modi's review of v1: tone must read as an offer to peers, not a demand; every claim hedged with "usually" so nothing overpromises.
+- **Status:** Pending — awaiting his visual review of tri-fold v2 and bi-fold (files: claudeproj/practice/derm-outreach/pamphlet/pamphlet.html, pamphlet-bifold.html, PDFs alongside; v1 kept as *-v1)
+- **Source:** chat 2026-08-31
+- **Links:** [[practice-decisions#2026-08-29--referral-pamphlet-doctors-line-texting-line-and-peer-voice-rules]] [[medical-focus]]
+
 ### 2026-08-30 — No accessibility overlay widgets, ever
 - **Decision:** The practice will never use an accessibility overlay widget
   (accessiBe, UserWay, etc.); ADA compliance is achieved by fixing the site's
