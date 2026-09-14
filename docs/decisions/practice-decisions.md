@@ -8,6 +8,13 @@ The Surgery Center at Plano Dermatology (Plano, TX) — three fellowship-trained
 Mohs surgeons: **Dr. Gunjan Modi** (the client/user), **Dr. Michael Wells**,
 **Dr. Edward Parry**.
 
+### 2026-09-13 — Referral pamphlet: bi-fold, no photo, is the final layout
+- **Decision:** Of the four v5 variants, Dr. Modi chose the bi-fold with the typographic cover (no building photo). It goes to print; the tri-fold and photo variants are retired. Print prep (bleed, fold-guide removal) is the only remaining work before upload to a print shop.
+- **Rationale:** His pick after socializing the four PDFs with staff and partners; the five-model panel had preferred bi-fold 4–1.
+- **Status:** Confirmed
+- **Source:** chat 2026-09-13 ("let's go with the bi-fold with no photo")
+- **Links:** [[practice-decisions#2026-08-31--pamphlet-v5-addressed-to-referring-physicians-by-name]]
+
 ### 2026-09-13 — Melanoma service page survival sentence aligned with the /learn article
 - **Decision:** The /services/melanoma line now reads "...large registry studies have found survival after Mohs at least equal to conventional wide excision, with several reporting a modest advantage for early melanoma that has not yet been confirmed in prospective trials." replacing "at least equal to — and for early invasive melanoma, modestly better than — conventional wide excision."
 - **Rationale:** The new patient article frames the survival evidence as an unproven association; the service page should not sound more certain than the article a referring dermatologist can read one click away.
