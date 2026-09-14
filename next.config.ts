@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
     return [
       // Contact & location
       { source: "/contact-us", destination: "/contact", permanent: true },
+      // Old directory links append the phone number (/contact-us/9723780620)
+      // — Search Console showed those 404ing on 2026-09-04.
+      { source: "/contact-us/:path*", destination: "/contact", permanent: true },
       { source: "/location", destination: "/contact", permanent: true },
 
       // Mohs surgery
